@@ -1,0 +1,70 @@
+segment_code,family_code,class_code,commodity_code,commodity_title,segment_name,family_name,class_name
+31160000,31161600,31161601,31161601,Hex bolts,Hardware,Fasteners,Bolts
+31160000,31161600,31161602,31161602,Stud bolts,Hardware,Fasteners,Bolts
+31160000,31161600,31161603,31161603,Socket head cap screws,Hardware,Fasteners,Bolts
+31160000,31161700,31161727,31161727,Hex nuts,Hardware,Fasteners,Nuts
+31160000,31161700,31161728,31161728,Heavy hex nuts,Hardware,Fasteners,Nuts
+31160000,31161800,31161801,31161801,Flat washers,Hardware,Fasteners,Washers
+31160000,31161800,31161807,31161807,Spring lock washers,Hardware,Fasteners,Washers
+40140000,40141600,40141607,40141607,Gate valves,Fluid and Gas Flow,Valves,Industrial Valves
+40140000,40141600,40141608,40141608,Globe valves,Fluid and Gas Flow,Valves,Industrial Valves
+40140000,40141600,40141609,40141609,Check valves / Non-return valves,Fluid and Gas Flow,Valves,Industrial Valves
+40140000,40141600,40141611,40141611,Ball valves,Fluid and Gas Flow,Valves,Industrial Valves
+40140000,40141600,40141612,40141612,Butterfly valves,Fluid and Gas Flow,Valves,Industrial Valves
+40140000,40141600,40141613,40141613,Plug valves,Fluid and Gas Flow,Valves,Industrial Valves
+40140000,40141600,40141614,40141614,Needle valves,Fluid and Gas Flow,Valves,Industrial Valves
+40140000,40141600,40141617,40141617,Pressure relief and safety valves,Fluid and Gas Flow,Valves,Safety Valves
+40140000,40141600,40141620,40141620,Control valves,Fluid and Gas Flow,Valves,Automated Valves
+40170000,40171500,40171501,40171501,Carbon steel pipes seamless,Pipe and Tubing,Industrial Pipes,Metallic Pipes
+40170000,40171500,40171502,40171502,Carbon steel pipes ERW/welded,Pipe and Tubing,Industrial Pipes,Metallic Pipes
+40170000,40171500,40171504,40171504,Stainless steel pipes seamless,Pipe and Tubing,Industrial Pipes,Metallic Pipes
+40170000,40171500,40171505,40171505,Alloy steel pipes,Pipe and Tubing,Industrial Pipes,Metallic Pipes
+40170000,40171500,40171508,40171508,API 5L Line pipes,Pipe and Tubing,Industrial Pipes,Line Pipes
+40170000,40171600,40171601,40171601,Instrument tubing stainless steel,Pipe and Tubing,Tubing,Metallic Tubing
+40140000,40141700,40141720,40141720,Weld neck flanges,Pipe Fittings,Flanges,Industrial Flanges
+40140000,40141700,40141721,40141721,Slip-on flanges,Pipe Fittings,Flanges,Industrial Flanges
+40140000,40141700,40141722,40141722,Blind flanges,Pipe Fittings,Flanges,Industrial Flanges
+40140000,40141700,40141723,40141723,Socket weld flanges,Pipe Fittings,Flanges,Industrial Flanges
+40140000,40141700,40141724,40141724,Threaded pipe flanges,Pipe Fittings,Flanges,Industrial Flanges
+40140000,40142300,40142301,40142301,Pipe elbows 90 deg butt-weld,Pipe Fittings,Butt Weld Fittings,Elbows
+40140000,40142300,40142302,40142302,Pipe elbows 45 deg butt-weld,Pipe Fittings,Butt Weld Fittings,Elbows
+40140000,40142300,40142305,40142305,Equal and reducing tees,Pipe Fittings,Butt Weld Fittings,Tees
+40140000,40142300,40142308,40142308,Concentric and eccentric reducers,Pipe Fittings,Butt Weld Fittings,Reducers
+31400000,31401500,31401501,31401501,Spiral wound gaskets with inner/outer rings,Seals and Gaskets,Gaskets,Metallic Gaskets
+31400000,31401500,31401502,31401502,Non-asbestos compressed sheet gaskets,Seals and Gaskets,Gaskets,Sheet Gaskets
+31400000,31401500,31401505,31401505,Ring joint gaskets (RTJ),Seals and Gaskets,Gaskets,Metallic Gaskets
+31400000,31401600,31401601,31401601,Mechanical seals cartridge type,Seals and Gaskets,Mechanical Seals,Cartridge Seals
+31400000,31401600,31401604,31401604,Gland packing PTFE / graphite,Seals and Gaskets,Packings,Braided Packings
+40150000,40151500,40151503,40151503,Centrifugal process pumps API 610,Industrial Pumps,Centrifugal Pumps,Process Pumps
+40150000,40151500,40151508,40151508,Submersible slurry pumps,Industrial Pumps,Centrifugal Pumps,Slurry Pumps
+40150000,40151500,40151512,40151512,Reciprocating positive displacement pumps API 674,Industrial Pumps,Positive Displacement,Plunger Pumps
+40150000,40151500,40151520,40151520,Rotary gear pumps,Industrial Pumps,Positive Displacement,Gear Pumps
+40150000,40151600,40151601,40151601,Centrifugal air compressors,Compressors,Centrifugal Compressors,Air Compressors
+40150000,40151600,40151604,40151604,Reciprocating gas compressors,Compressors,Reciprocating Compressors,Gas Compressors
+40150000,40151600,40151608,40151608,Rotary screw air compressors,Compressors,Screw Compressors,Air Compressors
+26100000,26101600,26101601,26101601,Steam turbines,Power Generation,Turbines,Steam Turbines
+26100000,26101600,26101602,26101602,Gas turbines for mechanical drive/power,Power Generation,Turbines,Gas Turbines
+31170000,31171500,31171504,31171504,Deep groove ball bearings,Bearings,Ball Bearings,Radial Bearings
+31170000,31171500,31171505,31171505,Angular contact ball bearings,Bearings,Ball Bearings,Thrust Bearings
+31170000,31171500,31171510,31171510,Spherical roller bearings,Bearings,Roller Bearings,Spherical Roller
+31170000,31171500,31171512,31171512,Tapered roller bearings,Bearings,Roller Bearings,Tapered Roller
+31170000,31171500,31171515,31171515,Cylindrical roller bearings,Bearings,Roller Bearings,Cylindrical Roller
+31170000,31171600,31171601,31171601,Flexible jaw/gear couplings,Transmission,Couplings,Shaft Couplings
+26120000,26121600,26121629,26121629,HT XLPE power cables 11kV/33kV,Electrical Cables,High Voltage Cables,XLPE Cables
+26120000,26121600,26121630,26121630,LT armored power cables 1.1kV copper/aluminum,Electrical Cables,Low Voltage Cables,Armored Cables
+26120000,26121600,26121632,26121632,Instrumentation screened signal cables,Electrical Cables,Control Cables,Screened Cables
+26100000,26101100,26101111,26101111,Three phase induction motors squirrel cage,Electrical Motors,AC Motors,Induction Motors
+26100000,26101100,26101112,26101112,Flameproof explosion-proof motors (FLP),Electrical Motors,AC Motors,Hazardous Area Motors
+39120000,39121600,39121601,39121601,Air circuit breakers (ACB),Switchgear,Circuit Breakers,Low Voltage ACB
+39120000,39121600,39121606,39121606,Vacuum circuit breakers (VCB),Switchgear,Circuit Breakers,Medium Voltage VCB
+39120000,39121600,39121603,39121603,Molded case circuit breakers (MCCB),Switchgear,Circuit Breakers,MCCB
+41110000,41112400,41112401,41112401,Pressure transmitters 4-20mA HART,Measuring Instruments,Transmitters,Pressure Transmitters
+41110000,41112400,41112404,41112404,Differential pressure transmitters (DP),Measuring Instruments,Transmitters,DP Transmitters
+41110000,41112400,41112410,41112410,Pressure gauges dial Bourdon tube,Measuring Instruments,Gauges,Pressure Gauges
+41110000,41112200,41112201,41112201,Electromagnetic flowmeters,Measuring Instruments,Flowmeters,Liquid Flowmeters
+41110000,41112200,41112205,41112205,Coriolis mass flowmeters,Measuring Instruments,Flowmeters,Mass Flowmeters
+41110000,41112200,41112214,41112214,Ultrasonic flowmeters,Measuring Instruments,Flowmeters,Gas Flowmeters
+41110000,41112300,41112301,41112301,Temperature transmitters RTD PT100,Measuring Instruments,Sensors,Temperature Sensors
+40100000,40101800,40101801,40101801,Shell and tube heat exchangers TEMA,Heating and Cooling,Heat Exchangers,Shell and Tube
+40100000,40101800,40101806,40101806,Air cooled heat exchangers (fin fan),Heating and Cooling,Heat Exchangers,Fin Fan Coolers
+40100000,40101800,40101808,40101808,Plate type heat exchangers (PHE),Heating and Cooling,Heat Exchangers,Plate Exchangers

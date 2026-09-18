@@ -1,0 +1,35 @@
+iso_equipment_class,equipment_class_name,iso_subunit,subunit_name,iso_maintainable_item,maintainable_item_name,cpse_refinery_category,standard_unspsc_mapping
+VALV,Valves,V-BDY,Valve Body Assembly,V-TRM,Trim (Stem / Disc / Ball / Seat),Valves & Actuators,40141607
+VALV,Valves,V-BDY,Valve Body Assembly,V-BON,Bonnet / Cover,Valves & Actuators,40141608
+VALV,Valves,V-SLG,Sealing & Gland,V-GSK,Body Flange Gasket (Spiral Wound),Gaskets & Seals,31181501
+VALV,Valves,V-SLG,Sealing & Gland,V-PCK,Gland Packing Rings (Graphite),Gaskets & Seals,31181504
+VALV,Valves,V-ACT,Actuator / Operator,V-HWH,Handwheel / Manual Gear Operator,Valves & Actuators,40141620
+PUMP,Centrifugal Pumps,P-CAS,Pump Casing / Volute,P-IMP,Impeller (Closed / Semi-Open),Pumps & Spares,40151503
+PUMP,Centrifugal Pumps,P-RTR,Rotor Assembly,P-SFT,Shaft / Sleeve (SS410 / Duplex),Pumps & Spares,40151503
+PUMP,Centrifugal Pumps,P-SEA,Shaft Sealing,P-MSE,Mechanical Seal Cartridge (API 682 Plan 53A),Pumps & Spares,31181502
+PUMP,Centrifugal Pumps,P-BRG,Bearing Housing,P-RBR,Radial / Thrust Bearings (SKF / FAG),Bearings & Power Transmission,31171501
+COMP,Centrifugal Compressors,C-CAS,Compressor Casing,C-DIA,Diaphragm / Guide Vane,Compressors & Turbines,40151601
+COMP,Centrifugal Compressors,C-RTR,Compressor Rotor,C-WHL,Impeller Wheel / Balance Piston,Compressors & Turbines,40151601
+COMP,Centrifugal Compressors,C-SLG,Dry Gas Seal System,C-DGS,Dry Gas Seal Cartridge (Tandem API 614),Compressors & Turbines,31181502
+COMP,Centrifugal Compressors,C-JRN,Journal Bearing,C-TLT,Tilting Pad Journal Bearings,Compressors & Turbines,31171504
+PIPE,Piping & Pipeline,P-PIP,Line Pipe / Spool,P-SML,Seamless Pipe (ASTM A106 Gr B / API 5L),Piping & Tubing,40171501
+PIPE,Piping & Pipeline,P-FLG,Flanged Connections,P-WNF,Weld Neck Flange (ASME B16.5 Class 300/150),Piping Fittings,40141720
+PIPE,Piping & Pipeline,P-FIT,Buttweld Fittings,P-ELB,90 Deg Long Radius Elbow (ASTM A234 WPB),Piping Fittings,40141725
+PIPE,Piping & Pipeline,P-FIT,Buttweld Fittings,P-TEE,Equal / Reducing Tee (ASTM A234 WPB),Piping Fittings,40141726
+PIPE,Piping & Pipeline,P-FST,Flange Fasteners,P-STB,Stud Bolt with Heavy Hex Nuts (ASTM A193 B7 / A194 2H),Fasteners & Hardware,31161602
+HEEX,Shell & Tube Heat Exchangers,H-BDL,Tube Bundle,H-TUB,Heat Exchanger Tubes (ASTM A179 / A213 TP304),Thermal & Heat Transfer,40101801
+HEEX,Shell & Tube Heat Exchangers,H-SHT,Tubesheet,H-TSH,Stationary / Floating Tubesheet (ASTM A516 Gr 70),Thermal & Heat Transfer,40101801
+HEEX,Shell & Tube Heat Exchangers,H-CHL,Channel & Cover,H-GSK,Pass Partition Gasket (Camprofile / Metallic),Gaskets & Seals,31181501
+VESL,Pressure Vessels & Columns,V-SHL,Vessel Shell / Head,V-NOZ,Process Nozzle with Reinforcement Pad,Pressure Vessels,24111801
+VESL,Pressure Vessels & Columns,V-INT,Distillation Column Internals,V-TRY,Valve Tray / Structured Packing (SS316L),Refinery Process Equipment,24111805
+VESL,Pressure Vessels & Columns,V-RLF,Relief System,V-PRV,Pressure Safety Relief Valve (API 526 / ASME VIII),Valves & Actuators,40141617
+DRIV,Electric Motors & Steam Turbines,D-STA,Motor Stator,D-WND,Copper Stator Winding (Class H VPI 6.6 kV),Electrical Motors,26101601
+DRIV,Electric Motors & Steam Turbines,D-ROT,Squirrel Cage Rotor,D-END,End Rings & Shaft (AISI 4140),Electrical Motors,26101601
+DRIV,Electric Motors & Steam Turbines,D-BRG,Motor Bearing System,D-DEB,Drive End Deep Groove Ball Bearing,Bearings & Power Transmission,31171501
+INST,Process Instrumentation,I-TRN,Pressure Transmitter,I-SEN,Piezoresistive / Capacitive Sensor Cell (HART / Fieldbus),Instrumentation & Sensors,41111901
+INST,Process Instrumentation,I-TRN,Temperature Transmitter,I-RTD,Pt100 RTD Sensor Duplex 3-Wire (IEC 60751),Instrumentation & Sensors,41112211
+INST,Process Instrumentation,I-FLW,Flow Measurement,I-ORF,Orifice Plate Carrier Assembly (SS316 / Monel),Instrumentation & Sensors,41112501
+ELEC,Electrical Power Distribution,E-SWG,Medium Voltage Switchgear,E-VCB,Vacuum Circuit Breaker 11 kV 1250A (IEC 62271),Electrical Distribution,39121601
+ELEC,Electrical Power Distribution,E-TRF,Distribution Transformer,E-OLT,On-Load Tap Changer (OLTC) Diverter Switch,Transformers & Power,39121002
+ELEC,Electrical Power Distribution,E-CBL,Power & Control Cables,E-ARM,HT XLPE Armoured Power Cable 3C x 185 sqmm,Electrical Wiring,26121629
+
