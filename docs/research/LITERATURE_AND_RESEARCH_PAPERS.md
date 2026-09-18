@@ -72,4 +72,14 @@ The resulting architecture combines the strengths of modern academic advances wi
 | **Domain Safety** | Deterministic Engineering Gate Checkers | Enforces non-negotiable physical constraints (metallurgy, pressure, voltage) |
 | **Taxonomy Mapping** | Hierarchical 4-Tier UNSPSC Classifier | Maps unstructured items into the national standard codification system |
 | **Graph Resolution** | NetworkX Connected Components & Transitive Closure | Groups pairwise matches into unified multi-CPSE clusters |
+| Academic Paradigm | Selected Algorithm / Technique | Production / Enterprise ML Equivalent | Role in unifAI Platform |
+|---|---|---|---|
+| **Representation Learning** | Transformer Embeddings (`all-MiniLM-L6-v2`) | `bge-small-en-v1.5` / `all-MiniLM-L6-v2` via ONNX Runtime / TensorRT | Captures synonymy and word permutation ("HEX BOLT" = "HEXAGONAL BOLT") |
+| **Efficient Blocking** | DeepBlocker + HNSW Vector Search (pgvector) | PostgreSQL `pgvector` (`halfvec` 16-bit) / Qdrant / Milvus / FAISS | Scales candidate retrieval from \(O(N^2)\) to \(O(\log N)\) |
+| **Fuzzy String Metrics** | RapidFuzz Token-Sort Ratio & Levenshtein Distance | `RapidFuzz` C-extension / SymSpell / PostgreSQL `pg_trgm` | Captures catalog typos, punctuation, and hyphenation differences |
+| **Domain Safety** | Deterministic Engineering Gate Checkers | Deterministic Rule Parsers (Regex / Trie) + Hard Invalidation Gates | Enforces non-negotiable physical constraints (metallurgy, pressure, voltage) |
+| **Pairwise Match Scoring** | 3-factor heuristic (`Text 50% + Spec 35% + UoM 15%`) | **XGBoost / LightGBM Classifier + SHAP Explainability** | Calibrated match probability + audit explanations for CVC/CAG |
+| **Taxonomy Mapping** | Hierarchical 4-Tier UNSPSC Classifier | **Hierarchical LightGBM / FastText / DistilBERT** | Maps unstructured items into the national standard codification system |
+| **Graph Resolution** | NetworkX Connected Components & Transitive Closure | **HDBSCAN / Agglomerative Clustering** / GraphX | Groups pairwise matches into unified multi-CPSE clusters (CNMC) |
+| **Data Quality & Audit** | Statistical Range Checks | **Isolation Forest / Local Outlier Factor (LOF)** | Flags rogue pricing, corrupted catalog specs, and procurement anomalies |
 
