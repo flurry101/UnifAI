@@ -1,0 +1,63 @@
+{
+    "generation_timestamp": "2026-09-18T22:52:53.141173",
+    "synthetic_data_stats": {
+        "canonical_materials": 50,
+        "material_renderings": 329,
+        "total_relationships": 459,
+        "relationship_distribution": {
+            "DISTINCT": 199,
+            "EQUIVALENT": 164,
+            "VARIANT_OF": 59,
+            "IDENTICAL": 37
+        },
+        "hard_negatives": 59,
+        "missing_attribute_counts": {
+            "material_id": 0,
+            "cpse_id": 0,
+            "canonical_id": 0,
+            "material_code": 0,
+            "description_original": 0,
+            "base_uom": 0,
+            "source_system": 0,
+            "source_record_id": 0,
+            "source_file": 0,
+            "source_row": 0,
+            "ingestion_timestamp": 0,
+            "processing_version": 0,
+            "source_type": 0
+        }
+    },
+    "real_data_stats": {
+        "development_subset_records": 1000,
+        "missing_attribute_counts": {
+            "description_original": 0,
+            "base_uom": 603,
+            "material_code": 1000,
+            "cpse_id": 1000,
+            "description_normalized": 0,
+            "normalized_uom": 1000,
+            "commodity_class": 856,
+            "material": 978,
+            "grade": 1000,
+            "standard": 1000,
+            "nominal_size": 901,
+            "size_unit": 1000,
+            "pressure_class": 998,
+            "schedule": 1000,
+            "voltage": 1000,
+            "cores": 1000,
+            "cross_section": 994,
+            "cross_section_unit": 994,
+            "conductor": 1000,
+            "type": 1000,
+            "thread": 1000,
+            "source_type": 0,
+            "source_system": 0,
+            "source_record_id": 0,
+            "source_file": 0,
+            "source_row": 0,
+            "ingestion_timestamp": 0,
+            "processing_version": 0
+        }
+    }
+}

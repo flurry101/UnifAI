@@ -1,0 +1,23 @@
+{
+    "version": "2.0",
+    "description": "UnifAI SIH 2026 Dataset V2",
+    "schema_type": "Unified",
+    "files": {
+        "synthetic": [
+            "canonical_material.csv",
+            "material_master.csv",
+            "ground_truth_relationships.csv",
+            "counterfactual_pairs.csv",
+            "pair_evidence.csv"
+        ],
+        "real_public": [
+            "real_cpse_materials.csv"
+        ]
+    },
+    "notes": [
+        "Synthetic data generated with hard negatives and counterfactuals.",
+        "Real public data sampled from the 21K corpus for testing.",
+        "Both datasets follow the unified preprocessing schema."
+    ],
+    "generation_date": "2026-09-18T22:52:53.150540"
+}

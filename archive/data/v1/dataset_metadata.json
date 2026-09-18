@@ -1,0 +1,43 @@
+{
+    "generation_seed": 202609,
+    "version": "1.0",
+    "counts_per_relation_type": {
+        "IDENTICAL": 40,
+        "DISTINCT": 35,
+        "EQUIVALENT": 25,
+        "VARIANT_OF": 25,
+        "UNDETERMINED": 10
+    },
+    "counts_per_conflict_tier": {
+        "none": 75,
+        "near_miss_standard": 24,
+        "near_miss_dimension": 22,
+        "near_miss_grade": 11,
+        "near_miss_pressure": 3
+    },
+    "counts_per_class": {
+        "Valve": 10,
+        "Pipe": 10,
+        "Bolt": 10,
+        "Cable": 10
+    },
+    "train_test_split_sizes": {
+        "train": 25,
+        "test": 15
+    },
+    "field_descriptions": {
+        "canonical_id": "Hidden ground truth ID, stripped before inference.",
+        "material_id": "Unique identifier for CPSE material rendering.",
+        "description": "Industrial material description.",
+        "base_uom": "Unit of measurement."
+    },
+    "SAP_field_mapping_note": "material_code -> MATNR, description -> MAKTX, material_group -> MATKL, base_uom -> MEINS, plant -> WERKS",
+    "notes": [
+        "synthetic prototype",
+        "not official Government data",
+        "not confidential CPSE data",
+        "not a literal SAP export",
+        "modeled on SAP material-master concepts and CPSE procurement scenarios"
+    ],
+    "generation_date": "2026-09-18T19:37:00.943790"
+}

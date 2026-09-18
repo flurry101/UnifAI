@@ -1,0 +1,41 @@
+canonical_id,commodity_class,canonical_description,canonical_uom,type,body_material,pressure_class,nominal_size,end_connection,standard,material,grade,nominal_diameter,schedule,length,diameter,thread,conductor,cores,cross_section,voltage,insulation
+CAN-001,Valve,Gate Valve DN100 Carbon Steel Class 150,EA,Gate Valve,Carbon Steel,Class 150,DN100,Flanged,ASME B16.34,,,,,,,,,,,,
+CAN-002,Valve,Gate Valve DN100 Carbon Steel Class 300,EA,Gate Valve,Carbon Steel,Class 300,DN100,Flanged,ASME B16.34,,,,,,,,,,,,
+CAN-003,Valve,Globe Valve DN50 Stainless Steel Class 150,EA,Globe Valve,Stainless Steel,Class 150,DN50,Flanged,ASME B16.34,,,,,,,,,,,,
+CAN-004,Valve,Globe Valve DN80 Stainless Steel Class 150,EA,Globe Valve,Stainless Steel,Class 150,DN80,Flanged,ASME B16.34,,,,,,,,,,,,
+CAN-005,Valve,Ball Valve DN25 Brass PN16,EA,Ball Valve,Brass,PN16,DN25,Threaded,ISO 7,,,,,,,,,,,,
+CAN-006,Valve,Butterfly Valve DN150 Cast Iron PN10,EA,Butterfly Valve,Cast Iron,PN10,DN150,Wafer,API 609,,,,,,,,,,,,
+CAN-007,Valve,Check Valve DN100 Carbon Steel Class 600,EA,Check Valve,Carbon Steel,Class 600,DN100,Flanged,API 594,,,,,,,,,,,,
+CAN-008,Valve,Ball Valve DN50 Stainless Steel Class 150,EA,Ball Valve,Stainless Steel,Class 150,DN50,Flanged,API 6D,,,,,,,,,,,,
+CAN-009,Valve,Gate Valve DN200 Alloy Steel Class 900,EA,Gate Valve,Alloy Steel,Class 900,DN200,Butt Weld,ASME B16.34,,,,,,,,,,,,
+CAN-010,Valve,Globe Valve DN100 Carbon Steel Class 300,EA,Globe Valve,Carbon Steel,Class 300,DN100,Flanged,ASME B16.34,,,,,,,,,,,,
+CAN-011,Pipe,Carbon Steel DN100 API 5L Gr B SCH40,M,,,,,,API 5L,Carbon Steel,API 5L Gr B,DN100,SCH40,6m,,,,,,,
+CAN-012,Pipe,Carbon Steel DN100 API 5L Gr B SCH80,M,,,,,,API 5L,Carbon Steel,API 5L Gr B,DN100,SCH80,6m,,,,,,,
+CAN-013,Pipe,Stainless Steel DN50 TP304 SCH10S,M,,,,,,ASTM A312,Stainless Steel,TP304,DN50,SCH10S,6m,,,,,,,
+CAN-014,Pipe,Stainless Steel DN50 TP316L SCH10S,M,,,,,,ASTM A312,Stainless Steel,TP316L,DN50,SCH10S,6m,,,,,,,
+CAN-015,Pipe,Alloy Steel DN150 P11 SCH160,M,,,,,,ASTM A335,Alloy Steel,P11,DN150,SCH160,12m,,,,,,,
+CAN-016,Pipe,HDPE DN110 PE100 SDR11,M,,,,,,ISO 4427,HDPE,PE100,DN110,SDR11,12m,,,,,,,
+CAN-017,Pipe,Carbon Steel DN200 ASTM A106 Gr B SCH40,M,,,,,,ASTM A106,Carbon Steel,ASTM A106 Gr B,DN200,SCH40,6m,,,,,,,
+CAN-018,Pipe,Stainless Steel DN100 TP316L SCH40S,M,,,,,,ASTM A312,Stainless Steel,TP316L,DN100,SCH40S,6m,,,,,,,
+CAN-019,Pipe,Galvanized Steel DN50 Grade B SCH40,M,,,,,,ASTM A53,Galvanized Steel,Grade B,DN50,SCH40,6m,,,,,,,
+CAN-020,Pipe,PVC DN110 PVC-U PN16,M,,,,,,ISO 1452,PVC,PVC-U,DN110,PN16,6m,,,,,,,
+CAN-021,Bolt,Hex Head M12 Carbon Steel 8.8 Coarse,EA,Hex Head,,,,,ISO 4014,Carbon Steel,8.8,,,50mm,M12,Coarse,,,,,
+CAN-022,Bolt,Hex Head M12 Carbon Steel 8.8 Fine,EA,Hex Head,,,,,ISO 4014,Carbon Steel,8.8,,,50mm,M12,Fine,,,,,
+CAN-023,Bolt,Hex Head M20 Carbon Steel 8.8 Coarse,EA,Hex Head,,,,,ISO 4014,Carbon Steel,8.8,,,100mm,M20,Coarse,,,,,
+CAN-024,Bolt,Hex Head M20 Carbon Steel 10.9 Coarse,EA,Hex Head,,,,,ISO 4014,Carbon Steel,10.9,,,100mm,M20,Coarse,,,,,
+CAN-025,Bolt,Stud Bolt 1/2 inch Alloy Steel B7 UNC,EA,Stud Bolt,,,,,ASTM A193,Alloy Steel,B7,,,100mm,1/2 inch,UNC,,,,,
+CAN-026,Bolt,Stud Bolt 1/2 inch Stainless Steel B8 UNC,EA,Stud Bolt,,,,,ASTM A193,Stainless Steel,B8,,,100mm,1/2 inch,UNC,,,,,
+CAN-027,Bolt,Anchor Bolt M24 Carbon Steel 4.6 Coarse,EA,Anchor Bolt,,,,,DIN 529,Carbon Steel,4.6,,,300mm,M24,Coarse,,,,,
+CAN-028,Bolt,Hex Head M10 Stainless Steel A2-70 Coarse,EA,Hex Head,,,,,ISO 4017,Stainless Steel,A2-70,,,40mm,M10,Coarse,,,,,
+CAN-029,Bolt,U-Bolt M12 Galvanized Steel 4.8 Coarse,EA,U-Bolt,,,,,DIN 3570,Galvanized Steel,4.8,,,150mm,M12,Coarse,,,,,
+CAN-030,Bolt,Socket Head Cap M16 Alloy Steel 12.9 Coarse,EA,Socket Head Cap,,,,,ISO 4762,Alloy Steel,12.9,,,80mm,M16,Coarse,,,,,
+CAN-031,Cable,Power Cable 2.5 sq.mm 4 Core Copper 1.1 kV,M,Power Cable,,,,,IEC 60502,,,,,,,,Copper,4 Core,2.5 sq.mm,1.1 kV,XLPE
+CAN-032,Cable,Power Cable 2.5 sq.mm 4 Core Copper 3.3 kV,M,Power Cable,,,,,IEC 60502,,,,,,,,Copper,4 Core,2.5 sq.mm,3.3 kV,XLPE
+CAN-033,Cable,Control Cable 1.5 sq.mm 12 Core Copper 1.1 kV,M,Control Cable,,,,,IEC 60227,,,,,,,,Copper,12 Core,1.5 sq.mm,1.1 kV,PVC
+CAN-034,Cable,Control Cable 2.5 sq.mm 12 Core Copper 1.1 kV,M,Control Cable,,,,,IEC 60227,,,,,,,,Copper,12 Core,2.5 sq.mm,1.1 kV,PVC
+CAN-035,Cable,Power Cable 240 sq.mm 3 Core Aluminium 11 kV,M,Power Cable,,,,,IEC 60502,,,,,,,,Aluminium,3 Core,240 sq.mm,11 kV,XLPE
+CAN-036,Cable,Power Cable 240 sq.mm 3.5 Core Aluminium 11 kV,M,Power Cable,,,,,IEC 60502,,,,,,,,Aluminium,3.5 Core,240 sq.mm,11 kV,XLPE
+CAN-037,Cable,Instrumentation Cable 1.0 sq.mm 10 Pair Copper 500 V,M,Instrumentation Cable,,,,,BS 5308,,,,,,,,Copper,10 Pair,1.0 sq.mm,500 V,PE
+CAN-038,Cable,Data Cable AWG 23 4 Pair Copper Low Voltage,M,Data Cable,,,,,Cat6A,,,,,,,,Copper,4 Pair,AWG 23,Low Voltage,LSZH
+CAN-039,Cable,Power Cable 630 sq.mm 1 Core Copper 33 kV,M,Power Cable,,,,,IEC 60502,,,,,,,,Copper,1 Core,630 sq.mm,33 kV,XLPE
+CAN-040,Cable,Flexible Cable 4.0 sq.mm 5 Core Copper 450/750 V,M,Flexible Cable,,,,,IEC 60245,,,,,,,,Copper,5 Core,4.0 sq.mm,450/750 V,Rubber

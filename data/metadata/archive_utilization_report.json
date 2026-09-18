@@ -1,0 +1,149 @@
+[
+    {
+        "dataset": "archive/data\\benchmark\\cpcl_procurement_proxy.csv",
+        "status": "ARCHIVE_ONLY",
+        "recommended_use": "Keep for historical provenance.",
+        "reason": "V1 benchmark does not support the exact V2 architecture.",
+        "new_architecture_stage": "Archive"
+    },
+    {
+        "dataset": "archive/data\\benchmark\\cpse_cross_sector_comprehensive_benchmark.csv",
+        "status": "ARCHIVE_ONLY",
+        "recommended_use": "Keep for historical provenance.",
+        "reason": "V1 benchmark does not support the exact V2 architecture.",
+        "new_architecture_stage": "Archive"
+    },
+    {
+        "dataset": "archive/data\\benchmark\\cpse_cross_sector_groundtruth_benchmark.csv",
+        "status": "ARCHIVE_ONLY",
+        "recommended_use": "Keep for historical provenance.",
+        "reason": "V1 benchmark does not support the exact V2 architecture.",
+        "new_architecture_stage": "Archive"
+    },
+    {
+        "dataset": "archive/data\\benchmark\\cpse_real_world_provenance_benchmark.csv",
+        "status": "ARCHIVE_ONLY",
+        "recommended_use": "Keep for historical provenance.",
+        "reason": "V1 benchmark does not support the exact V2 architecture.",
+        "new_architecture_stage": "Archive"
+    },
+    {
+        "dataset": "archive/data\\benchmark\\cross_cpse_materials_sample.csv",
+        "status": "ARCHIVE_ONLY",
+        "recommended_use": "Keep for historical provenance.",
+        "reason": "V1 benchmark does not support the exact V2 architecture.",
+        "new_architecture_stage": "Archive"
+    },
+    {
+        "dataset": "archive/data\\benchmark\\labelled_duplicate_benchmark.csv",
+        "status": "ARCHIVE_ONLY",
+        "recommended_use": "Keep for historical provenance.",
+        "reason": "V1 benchmark does not support the exact V2 architecture.",
+        "new_architecture_stage": "Archive"
+    },
+    {
+        "dataset": "archive/data\\benchmark\\national_master_schema_sample.csv",
+        "status": "ARCHIVE_ONLY",
+        "recommended_use": "Keep for historical provenance.",
+        "reason": "V1 benchmark does not support the exact V2 architecture.",
+        "new_architecture_stage": "Archive"
+    },
+    {
+        "dataset": "archive/data\\benchmark\\piping_catalog_sample.jsonl",
+        "status": "ARCHIVE_ONLY",
+        "recommended_use": "Keep for historical provenance.",
+        "reason": "V1 benchmark does not support the exact V2 architecture.",
+        "new_architecture_stage": "Archive"
+    },
+    {
+        "dataset": "archive/data\\corpus\\bhel_tenders.csv",
+        "status": "PROCESSING_INPUT",
+        "recommended_use": "Use for normalization, attribute extraction, and realistic domain patterns.",
+        "reason": "Contains ~21K real material descriptions from CPSEs.",
+        "new_architecture_stage": "Normalization & Retrieval"
+    },
+    {
+        "dataset": "archive/data\\corpus\\coal_india_tenders.csv",
+        "status": "PROCESSING_INPUT",
+        "recommended_use": "Use for normalization, attribute extraction, and realistic domain patterns.",
+        "reason": "Contains ~21K real material descriptions from CPSEs.",
+        "new_architecture_stage": "Normalization & Retrieval"
+    },
+    {
+        "dataset": "archive/data\\corpus\\cppp_tender_items.csv",
+        "status": "PROCESSING_INPUT",
+        "recommended_use": "Use for normalization, attribute extraction, and realistic domain patterns.",
+        "reason": "Contains ~21K real material descriptions from CPSEs.",
+        "new_architecture_stage": "Normalization & Retrieval"
+    },
+    {
+        "dataset": "archive/data\\corpus\\cpse_material_corpus.csv",
+        "status": "PROCESSING_INPUT",
+        "recommended_use": "Use for normalization, attribute extraction, and realistic domain patterns.",
+        "reason": "Contains ~21K real material descriptions from CPSEs.",
+        "new_architecture_stage": "Normalization & Retrieval"
+    },
+    {
+        "dataset": "archive/data\\corpus\\gem_catalog_items.csv",
+        "status": "PROCESSING_INPUT",
+        "recommended_use": "Use for normalization, attribute extraction, and realistic domain patterns.",
+        "reason": "Contains ~21K real material descriptions from CPSEs.",
+        "new_architecture_stage": "Normalization & Retrieval"
+    },
+    {
+        "dataset": "archive/data\\corpus\\sail_tenders.csv",
+        "status": "PROCESSING_INPUT",
+        "recommended_use": "Use for normalization, attribute extraction, and realistic domain patterns.",
+        "reason": "Contains ~21K real material descriptions from CPSEs.",
+        "new_architecture_stage": "Normalization & Retrieval"
+    },
+    {
+        "dataset": "archive/data\\erp_mocks\\maximo_asset_export.csv",
+        "status": "REFERENCE",
+        "recommended_use": "Use to design synthetic SAP/ERP schema fields.",
+        "reason": "Demonstrates realistic enterprise object structures (MATMAS).",
+        "new_architecture_stage": "Synthetic Benchmark Schema"
+    },
+    {
+        "dataset": "archive/data\\erp_mocks\\oracle_fusion_export.csv",
+        "status": "REFERENCE",
+        "recommended_use": "Use to design synthetic SAP/ERP schema fields.",
+        "reason": "Demonstrates realistic enterprise object structures (MATMAS).",
+        "new_architecture_stage": "Synthetic Benchmark Schema"
+    },
+    {
+        "dataset": "archive/data\\erp_mocks\\sap_ecc_mara_export.csv",
+        "status": "REFERENCE",
+        "recommended_use": "Use to design synthetic SAP/ERP schema fields.",
+        "reason": "Demonstrates realistic enterprise object structures (MATMAS).",
+        "new_architecture_stage": "Synthetic Benchmark Schema"
+    },
+    {
+        "dataset": "archive/data\\erp_mocks\\sap_matmas05_sample.xml",
+        "status": "REFERENCE",
+        "recommended_use": "Use to design synthetic SAP/ERP schema fields.",
+        "reason": "Demonstrates realistic enterprise object structures (MATMAS).",
+        "new_architecture_stage": "Synthetic Benchmark Schema"
+    },
+    {
+        "dataset": "archive/data\\erp_mocks\\sap_s4hana_odata_response.json",
+        "status": "REFERENCE",
+        "recommended_use": "Use to design synthetic SAP/ERP schema fields.",
+        "reason": "Demonstrates realistic enterprise object structures (MATMAS).",
+        "new_architecture_stage": "Synthetic Benchmark Schema"
+    },
+    {
+        "dataset": "archive/data\\reference\\cppp_product_categories.csv",
+        "status": "REFERENCE",
+        "recommended_use": "Use for standardizing attributes during normalization.",
+        "reason": "Valuable taxonomy and dimension mappings.",
+        "new_architecture_stage": "Normalization"
+    },
+    {
+        "dataset": "archive/data\\reference\\ireps_unified_pl_directory.csv",
+        "status": "REFERENCE",
+        "recommended_use": "Use for standardizing attributes during normalization.",
+        "reason": "Valuable taxonomy and dimension mappings.",
+        "new_architecture_stage": "Normalization"
+    }
+]

@@ -1,0 +1,386 @@
+[
+    {
+        "filename": "cpcl_procurement_proxy.csv",
+        "location": "archive/data\\benchmark\\cpcl_procurement_proxy.csv",
+        "format": "csv",
+        "approximate_size_bytes": 680,
+        "classification": "LABELLED_BENCHMARK",
+        "row_count": 3,
+        "columns": [
+            "org",
+            "code",
+            "description",
+            "plant",
+            "event_year",
+            "entity_key",
+            "erp_system",
+            "family"
+        ]
+    },
+    {
+        "filename": "cpse_cross_sector_comprehensive_benchmark.csv",
+        "location": "archive/data\\benchmark\\cpse_cross_sector_comprehensive_benchmark.csv",
+        "format": "csv",
+        "approximate_size_bytes": 70109,
+        "classification": "LABELLED_BENCHMARK",
+        "row_count": 521,
+        "columns": [
+            "groundtruth_cluster_id",
+            "cpse_name",
+            "cpse_material_code",
+            "raw_material_description",
+            "unit_of_measure",
+            "match_label",
+            "item_category",
+            "target_unspsc_code",
+            "conflict_reason"
+        ]
+    },
+    {
+        "filename": "cpse_cross_sector_groundtruth_benchmark.csv",
+        "location": "archive/data\\benchmark\\cpse_cross_sector_groundtruth_benchmark.csv",
+        "format": "csv",
+        "approximate_size_bytes": 4689,
+        "classification": "LABELLED_BENCHMARK",
+        "row_count": 29,
+        "columns": [
+            "groundtruth_cluster_id",
+            "cpse_name",
+            "cpse_material_code",
+            "raw_material_description",
+            "unit_of_measure",
+            "match_label",
+            "material_grade",
+            "dimensions_size",
+            "pressure_rating_spec",
+            "item_category",
+            "target_unspsc_code"
+        ]
+    },
+    {
+        "filename": "cpse_real_world_provenance_benchmark.csv",
+        "location": "archive/data\\benchmark\\cpse_real_world_provenance_benchmark.csv",
+        "format": "csv",
+        "approximate_size_bytes": 106992,
+        "classification": "LABELLED_BENCHMARK",
+        "row_count": 481,
+        "columns": [
+            "cluster_id",
+            "canonical_material_name",
+            "target_unspsc",
+            "organization",
+            "source_portal",
+            "tender_reference",
+            "tender_id",
+            "raw_published_description",
+            "description_kind",
+            "quantity",
+            "unit",
+            "provenance_doc_url",
+            "is_genuine_public_data"
+        ]
+    },
+    {
+        "filename": "cross_cpse_materials_sample.csv",
+        "location": "archive/data\\benchmark\\cross_cpse_materials_sample.csv",
+        "format": "csv",
+        "approximate_size_bytes": 414,
+        "classification": "LABELLED_BENCHMARK",
+        "row_count": 8,
+        "columns": [
+            "cpse",
+            "material_code",
+            "description",
+            "unit"
+        ]
+    },
+    {
+        "filename": "labelled_duplicate_benchmark.csv",
+        "location": "archive/data\\benchmark\\labelled_duplicate_benchmark.csv",
+        "format": "csv",
+        "approximate_size_bytes": 612,
+        "classification": "LABELLED_BENCHMARK",
+        "row_count": 5,
+        "columns": [
+            "row_key",
+            "query",
+            "expected_code",
+            "label",
+            "plant",
+            "event_year",
+            "entity_key",
+            "split"
+        ]
+    },
+    {
+        "filename": "national_master_schema_sample.csv",
+        "location": "archive/data\\benchmark\\national_master_schema_sample.csv",
+        "format": "csv",
+        "approximate_size_bytes": 483,
+        "classification": "LABELLED_BENCHMARK",
+        "row_count": 2,
+        "columns": [
+            "national_material_code",
+            "standardized_description",
+            "category",
+            "material",
+            "diameter_mm",
+            "length_mm",
+            "size_mm",
+            "pressure_rating_psi",
+            "connection_type",
+            "bearing_number",
+            "seal_type",
+            "wall_thickness_mm",
+            "pipe_type",
+            "cpse_mappings",
+            "source_group",
+            "member_count",
+            "status"
+        ]
+    },
+    {
+        "filename": "piping_catalog_sample.jsonl",
+        "location": "archive/data\\benchmark\\piping_catalog_sample.jsonl",
+        "format": "jsonl",
+        "approximate_size_bytes": 631,
+        "classification": "LABELLED_BENCHMARK",
+        "row_count": "N/A (not CSV)",
+        "columns": []
+    },
+    {
+        "filename": "bhel_tenders.csv",
+        "location": "archive/data\\corpus\\bhel_tenders.csv",
+        "format": "csv",
+        "approximate_size_bytes": 8311,
+        "classification": "REAL_PUBLIC_SOURCE",
+        "row_count": 20,
+        "columns": [
+            "tender_id",
+            "organization",
+            "manufacturing_unit",
+            "location",
+            "category",
+            "description",
+            "uom",
+            "quantity",
+            "source_portal",
+            "source_url"
+        ]
+    },
+    {
+        "filename": "coal_india_tenders.csv",
+        "location": "archive/data\\corpus\\coal_india_tenders.csv",
+        "format": "csv",
+        "approximate_size_bytes": 9152,
+        "classification": "REAL_PUBLIC_SOURCE",
+        "row_count": 25,
+        "columns": [
+            "tender_id",
+            "organization",
+            "subsidiary_or_unit",
+            "location",
+            "category",
+            "description",
+            "uom",
+            "quantity",
+            "source_portal",
+            "source_url"
+        ]
+    },
+    {
+        "filename": "cppp_tender_items.csv",
+        "location": "archive/data\\corpus\\cppp_tender_items.csv",
+        "format": "csv",
+        "approximate_size_bytes": 4750,
+        "classification": "REAL_PUBLIC_SOURCE",
+        "row_count": 23,
+        "columns": [
+            "org",
+            "tender_ref",
+            "category",
+            "description",
+            "location",
+            "uom",
+            "quantity"
+        ]
+    },
+    {
+        "filename": "cpse_material_corpus.csv",
+        "location": "archive/data\\corpus\\cpse_material_corpus.csv",
+        "format": "csv",
+        "approximate_size_bytes": 6278770,
+        "classification": "REAL_PUBLIC_SOURCE",
+        "row_count": 21513,
+        "columns": [
+            "corpus_id",
+            "organization",
+            "source_system",
+            "source_section",
+            "tender_reference",
+            "tender_id",
+            "description",
+            "description_kind",
+            "item_type_hint",
+            "quantity",
+            "unit",
+            "location",
+            "product_category",
+            "document_url",
+            "source_url"
+        ]
+    },
+    {
+        "filename": "gem_catalog_items.csv",
+        "location": "archive/data\\corpus\\gem_catalog_items.csv",
+        "format": "csv",
+        "approximate_size_bytes": 7178,
+        "classification": "REAL_PUBLIC_SOURCE",
+        "row_count": 44,
+        "columns": [
+            "gem_item_code",
+            "source_portal",
+            "category_id",
+            "category_name",
+            "unspsc_code",
+            "item_description",
+            "standard_uom",
+            "target_sector"
+        ]
+    },
+    {
+        "filename": "sail_tenders.csv",
+        "location": "archive/data\\corpus\\sail_tenders.csv",
+        "format": "csv",
+        "approximate_size_bytes": 6976,
+        "classification": "REAL_PUBLIC_SOURCE",
+        "row_count": 20,
+        "columns": [
+            "tender_id",
+            "organization",
+            "plant_unit",
+            "location",
+            "category",
+            "description",
+            "uom",
+            "quantity",
+            "source_portal",
+            "source_url"
+        ]
+    },
+    {
+        "filename": "maximo_asset_export.csv",
+        "location": "archive/data\\erp_mocks\\maximo_asset_export.csv",
+        "format": "csv",
+        "approximate_size_bytes": 8759,
+        "classification": "ERP_MOCK",
+        "row_count": 60,
+        "columns": [
+            "ITEMNUM",
+            "DESCRIPTION",
+            "ITEMSETID",
+            "ITEMTYPE",
+            "ORDERUNIT",
+            "ISSUEUNIT",
+            "COMMODITYGROUP",
+            "COMMODITY",
+            "STATUS",
+            "ROTATING",
+            "SITEID",
+            "LOCATION",
+            "CURBAL",
+            "UNITCOST",
+            "NATIONAL_ID"
+        ]
+    },
+    {
+        "filename": "oracle_fusion_export.csv",
+        "location": "archive/data\\erp_mocks\\oracle_fusion_export.csv",
+        "format": "csv",
+        "approximate_size_bytes": 8853,
+        "classification": "ERP_MOCK",
+        "row_count": 60,
+        "columns": [
+            "ITEM_NUMBER",
+            "ITEM_DESCRIPTION",
+            "ORGANIZATION_CODE",
+            "PRIMARY_UOM_CODE",
+            "SECONDARY_UOM_CODE",
+            "ITEM_CLASS_NAME",
+            "ITEM_TYPE",
+            "ITEM_STATUS",
+            "UNIT_COST",
+            "GLOBAL_ATTRIBUTE1"
+        ]
+    },
+    {
+        "filename": "sap_ecc_mara_export.csv",
+        "location": "archive/data\\erp_mocks\\sap_ecc_mara_export.csv",
+        "format": "csv",
+        "approximate_size_bytes": 7117,
+        "classification": "ERP_MOCK",
+        "row_count": 60,
+        "columns": [
+            "MATNR",
+            "MAKTX",
+            "MEINS",
+            "BSTME",
+            "MATKL",
+            "MTART",
+            "WERKS",
+            "LGORT",
+            "BKLAS",
+            "VPRSV",
+            "VERPR",
+            "STPRS",
+            "EXTWG"
+        ]
+    },
+    {
+        "filename": "sap_matmas05_sample.xml",
+        "location": "archive/data\\erp_mocks\\sap_matmas05_sample.xml",
+        "format": "xml",
+        "approximate_size_bytes": 2544,
+        "classification": "ERP_MOCK",
+        "row_count": "N/A (not CSV)",
+        "columns": []
+    },
+    {
+        "filename": "sap_s4hana_odata_response.json",
+        "location": "archive/data\\erp_mocks\\sap_s4hana_odata_response.json",
+        "format": "json",
+        "approximate_size_bytes": 5056,
+        "classification": "ERP_MOCK",
+        "row_count": "N/A (not CSV)",
+        "columns": []
+    },
+    {
+        "filename": "cppp_product_categories.csv",
+        "location": "archive/data\\reference\\cppp_product_categories.csv",
+        "format": "csv",
+        "approximate_size_bytes": 3950,
+        "classification": "REFERENCE_DATA",
+        "row_count": 94,
+        "columns": [
+            "select_name",
+            "value",
+            "label"
+        ]
+    },
+    {
+        "filename": "ireps_unified_pl_directory.csv",
+        "location": "archive/data\\reference\\ireps_unified_pl_directory.csv",
+        "format": "csv",
+        "approximate_size_bytes": 7042,
+        "classification": "REFERENCE_DATA",
+        "row_count": 47,
+        "columns": [
+            "pl_no",
+            "main_group",
+            "group_name",
+            "description",
+            "uom",
+            "standard_spec"
+        ]
+    }
+]

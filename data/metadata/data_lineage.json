@@ -1,0 +1,25 @@
+{
+    "real_corpus_lineage": {
+        "source_dataset": "archive/data/corpus/cpse_material_corpus.csv",
+        "processing_stages": [
+            "raw description",
+            "normalized_materials",
+            "extracted_attributes",
+            "fingerprints",
+            "retrieval_corpus"
+        ],
+        "benchmark_usage": "Used for hard-negative inspiration and domain patterns."
+    },
+    "synthetic_benchmark_lineage": {
+        "source_dataset": "Controlled synthetic generation (scripts/dataset/generate_sih2026_dataset.py)",
+        "processing_stages": [
+            "synthetic_canonical_materials",
+            "synthetic_material_master",
+            "normalized_materials",
+            "extracted_attributes",
+            "fingerprints",
+            "labelled_pairs"
+        ],
+        "benchmark_usage": "Supervised pair validation and ML ranking ground truth."
+    }
+}
