@@ -1,0 +1,91 @@
+{
+  "SAP_S4HANA_MARA": {
+    "system_name": "SAP S/4HANA & ECC (MM Module)",
+    "description": "Standard SAP enterprise material master export integrating MARA, MAKT, MARC, and MBEW tables",
+    "mappings": {
+      "material_code": "MATNR",
+      "description": "MAKTX",
+      "unit_of_measure": "MEINS",
+      "material_group": "MATKL",
+      "material_type": "MTART",
+      "plant_code": "WERKS",
+      "storage_location": "LGORT",
+      "valuation_class": "BKLAS",
+      "unit_cost": "VERPR",
+      "external_national_code": "EXTWG"
+    }
+  },
+  "ORACLE_FUSION": {
+    "system_name": "Oracle Fusion Cloud SCM / Inventory",
+    "description": "Standard Oracle Item Master export from EGP_SYSTEM_ITEMS_B / TL and MTL_PARAMETERS",
+    "mappings": {
+      "material_code": "ITEM_NUMBER",
+      "description": "ITEM_DESCRIPTION",
+      "unit_of_measure": "PRIMARY_UOM_CODE",
+      "material_group": "ITEM_CLASS_NAME",
+      "material_type": "ITEM_TYPE",
+      "plant_code": "ORGANIZATION_CODE",
+      "unit_cost": "UNIT_COST",
+      "status": "ITEM_STATUS",
+      "external_national_code": "GLOBAL_ATTRIBUTE1"
+    }
+  },
+  "IBM_MAXIMO": {
+    "system_name": "IBM Maximo Asset Management",
+    "description": "Standard Maximo inventory catalog export integrating ITEM and INVENTORY tables",
+    "mappings": {
+      "material_code": "ITEMNUM",
+      "description": "DESCRIPTION",
+      "unit_of_measure": "ORDERUNIT",
+      "material_group": "COMMODITYGROUP",
+      "material_type": "COMMODITY",
+      "plant_code": "SITEID",
+      "storage_location": "LOCATION",
+      "stock_balance": "CURBAL",
+      "unit_cost": "UNITCOST",
+      "status": "STATUS",
+      "external_national_code": "NATIONAL_ID"
+    }
+  },
+  "SAP_S4HANA_ODATA": {
+    "system_name": "SAP S/4HANA Cloud (OData API_PRODUCT_SRV)",
+    "description": "Enterprise RESTful OData API payload representing A_Product entities with navigation properties",
+    "mappings": {
+      "material_code": "Product",
+      "description": "to_Description/results/0/ProductDescription",
+      "unit_of_measure": "BaseUnit",
+      "material_group": "ProductGroup",
+      "material_type": "ProductType",
+      "plant_code": "to_Plant/results/0/Plant",
+      "unit_cost": "to_Valuation/results/0/MovingAveragePrice",
+      "valuation_class": "to_Valuation/results/0/ValuationClass"
+    }
+  },
+  "SAP_IDOC_MATMAS": {
+    "system_name": "SAP NetWeaver / PI IDoc (MATMAS05)",
+    "description": "Enterprise EDI IDoc XML representing material master segments E1MARAM, E1MAKTM, E1MARCM, E1MBEWM",
+    "mappings": {
+      "material_code": "MATNR",
+      "description": "E1MAKTM/MAKTX",
+      "unit_of_measure": "MEINS",
+      "material_group": "MATKL",
+      "material_type": "MTART",
+      "plant_code": "E1MARCM/WERKS",
+      "valuation_class": "E1MBEWM/BKLAS",
+      "unit_cost": "E1MBEWM/VERPR"
+    }
+  },
+  "GENERIC_CPSE": {
+    "system_name": "Generic CPSE / GeM / Tender Export",
+    "description": "Standard spreadsheet export used across Indian public tenders and e-tendering portals",
+    "mappings": {
+      "material_code": "material_code",
+      "description": "description",
+      "unit_of_measure": "unit",
+      "material_group": "category",
+      "material_type": "type",
+      "plant_code": "location",
+      "external_national_code": "cnmc_code"
+    }
+  }
+}

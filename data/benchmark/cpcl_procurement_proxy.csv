@@ -1,0 +1,4 @@
+org,code,description,plant,event_year,entity_key,erp_system,family
+CPCL,4957084984,"Plug Vlv Jkt A216 Wcb Fl 150 8x6 In; jacketed plug valve; flanged B16.5 RF; bolted bonnet; gear operated; BS 5353; VMS 552323",Manali Refinery,2026,CPCL-JACKETED-PLUG-VALVE-A216-WCB-150-8X6,public_GeM_tender,valve
+CPCL,4957084985,"Ball Vlv Trunnion Mounted A105 Fl 300 4 In; full bore flanged B16.5 RF; fire safe API 607; API 6D",Manali Refinery,2026,CPCL-BALL-VALVE-A105-300-4IN,public_GeM_tender,valve
+CPCL,4957084986,"Pipe Smls ASTM A106 Gr B Sch 80 6 In; bevelled ends ASME B36.10; refinery hydrocracker feed",Manali Refinery,2026,CPCL-SEAMLESS-PIPE-A106-SCH80-6IN,public_GeM_tender,piping

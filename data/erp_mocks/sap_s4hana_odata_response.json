@@ -1,0 +1,191 @@
+{
+  "d": {
+    "results": [
+      {
+        "Product": "0000000010045891",
+        "ProductType": "ERSA",
+        "BaseUnit": "EA",
+        "ProductGroup": "VAL-01",
+        "GrossWeight": "14.500",
+        "WeightUnit": "KG",
+        "to_Description": {
+          "results": [
+            {
+              "Language": "EN",
+              "ProductDescription": "VLV BALL 2\" CL150 RF CS FLGD ASTM A216 WCB"
+            }
+          ]
+        },
+        "to_Plant": {
+          "results": [
+            {
+              "Plant": "1001",
+              "PurchasingGroup": "001",
+              "MRPController": "010",
+              "PlannedDeliveryTime": "30"
+            }
+          ]
+        },
+        "to_Valuation": {
+          "results": [
+            {
+              "ValuationArea": "1001",
+              "ValuationClass": "3040",
+              "PriceControl": "V",
+              "MovingAveragePrice": "1250.50",
+              "Currency": "INR"
+            }
+          ]
+        }
+      },
+      {
+        "Product": "0000000010045892",
+        "ProductType": "ERSA",
+        "BaseUnit": "EA",
+        "ProductGroup": "VAL-01",
+        "GrossWeight": "22.000",
+        "WeightUnit": "KG",
+        "to_Description": {
+          "results": [
+            {
+              "Language": "EN",
+              "ProductDescription": "VLV BALL 3\" CL150 RF CS FLGD ASTM A216 WCB"
+            }
+          ]
+        },
+        "to_Plant": {
+          "results": [
+            {
+              "Plant": "1001",
+              "PurchasingGroup": "001",
+              "MRPController": "010",
+              "PlannedDeliveryTime": "30"
+            }
+          ]
+        },
+        "to_Valuation": {
+          "results": [
+            {
+              "ValuationArea": "1001",
+              "ValuationClass": "3040",
+              "PriceControl": "V",
+              "MovingAveragePrice": "2501.00",
+              "Currency": "INR"
+            }
+          ]
+        }
+      },
+      {
+        "Product": "0000000010045901",
+        "ProductType": "ROH",
+        "BaseUnit": "MTR",
+        "ProductGroup": "PIP-01",
+        "GrossWeight": "5.430",
+        "WeightUnit": "KG",
+        "to_Description": {
+          "results": [
+            {
+              "Language": "EN",
+              "ProductDescription": "PIPE SEAMLESS 2\" SCH 40 ASTM A106 GR B"
+            }
+          ]
+        },
+        "to_Plant": {
+          "results": [
+            {
+              "Plant": "1002",
+              "PurchasingGroup": "002",
+              "MRPController": "020",
+              "PlannedDeliveryTime": "15"
+            }
+          ]
+        },
+        "to_Valuation": {
+          "results": [
+            {
+              "ValuationArea": "1002",
+              "ValuationClass": "3000",
+              "PriceControl": "V",
+              "MovingAveragePrice": "13755.50",
+              "Currency": "INR"
+            }
+          ]
+        }
+      },
+      {
+        "Product": "0000000010045926",
+        "ProductType": "ROH",
+        "BaseUnit": "MTR",
+        "ProductGroup": "CBL-01",
+        "GrossWeight": "3.800",
+        "WeightUnit": "KG",
+        "to_Description": {
+          "results": [
+            {
+              "Language": "EN",
+              "ProductDescription": "CBL HT XLPE 3C X 240 SQMM 11KV AL ARMOURED IS 7098 P2"
+            }
+          ]
+        },
+        "to_Plant": {
+          "results": [
+            {
+              "Plant": "1001",
+              "PurchasingGroup": "003",
+              "MRPController": "030",
+              "PlannedDeliveryTime": "45"
+            }
+          ]
+        },
+        "to_Valuation": {
+          "results": [
+            {
+              "ValuationArea": "1001",
+              "ValuationClass": "3000",
+              "PriceControl": "V",
+              "MovingAveragePrice": "45018.00",
+              "Currency": "INR"
+            }
+          ]
+        }
+      },
+      {
+        "Product": "0000000010045934",
+        "ProductType": "ERSA",
+        "BaseUnit": "NOS",
+        "ProductGroup": "PMP-01",
+        "GrossWeight": "280.000",
+        "WeightUnit": "KG",
+        "to_Description": {
+          "results": [
+            {
+              "Language": "EN",
+              "ProductDescription": "PUMP CENTRIFUGAL 50 M3/HR 60M HEAD 37KW MOTOR"
+            }
+          ]
+        },
+        "to_Plant": {
+          "results": [
+            {
+              "Plant": "1002",
+              "PurchasingGroup": "004",
+              "MRPController": "040",
+              "PlannedDeliveryTime": "60"
+            }
+          ]
+        },
+        "to_Valuation": {
+          "results": [
+            {
+              "ValuationArea": "1002",
+              "ValuationClass": "3040",
+              "PriceControl": "V",
+              "MovingAveragePrice": "55022.00",
+              "Currency": "INR"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

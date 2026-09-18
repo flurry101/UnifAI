@@ -1,0 +1,7 @@
+row_key,query,expected_code,label,plant,event_year,entity_key,split
+b001,"SS GATE VALVE 2 IN PN16 FLG",CPCL-VLV-04182,exact_duplicate,Manali Refinery,2025,gate-valve-ss50-pn16,plant_test
+b002,"GATE VLV SS316 DN50 PN16 FLANGED",SAIL-VALVE-G50-16,near_duplicate,Bhilai Steel Plant,2025,gate-valve-ss50-pn16,plant_test
+b003,"VALVE GATE 50MM SS PN25 FLG",NTPC-VLV-3307,exact_duplicate,Ramagundam STPS,2024,gate-valve-ss50-pn25,time_test
+b004,"CARBON STEEL GATE VALVE DN50 PN16",IOCL-VLV-2201,exact_duplicate,Panipat Refinery,2023,gate-valve-cs50-pn16,train
+b005,"SS GATE VALVE 2 IN PN18 FLG",,conflict,Manal
+
