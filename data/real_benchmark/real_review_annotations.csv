@@ -1,0 +1,3 @@
+pair_id,query_id,candidate_id,review_status,review_relation,reviewer_id,created_at,updated_at,review_evidence_types,review_notes
+M005423_M004646,M005423,M004646,REVIEWED,DISTINCT,123,2026-09-19T13:30:43.738907+00:00,2026-09-19T13:30:43.738907+00:00,OTHER,"these are distinct, location-specific civil roadwork contracts, not equivalent stock materials."""
+M018845_M003722,M018845,M003722,REVIEWED,IDENTICAL,123 ,2026-09-19T13:42:07.964950+00:00,2026-09-19T13:42:07.964950+00:00,EXACT_TECHNICAL_MATCH,"these are distinct, location-specific civil roadwork contracts, not equivalent stock materials."""

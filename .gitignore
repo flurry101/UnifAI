@@ -1,12 +1,24 @@
+# Environment and Secrets
 .env
 .venv/
 venv/
 __pycache__/
 *.pyc
+
+# ML/AI Models & Caches
 .ipynb_checkpoints/
 models/
 checkpoints/
-
 .bis/
 .vscode/
 docs/.md/
+.cache/
+huggingface/
+.huggingface/
+outputs/
+archive/
+artifacts/
+
+# Do NOT ignore the trained matching model artifact (we want to deploy this)
+!artifacts/matching_model/
+!artifacts/matching_model/*

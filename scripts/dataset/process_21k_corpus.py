@@ -8,6 +8,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 
 from src.ingestion.unified_schema import UnifiedMaterialRecord, Provenance
 from src.preprocessing.pipeline import PreprocessingPipeline
+from src.extraction.engine import ExtractionEngine
 
 CORPUS_PATH = "archive/data/corpus/cpse_material_corpus.csv"
 OUT_DEV_SET = "data/real_public/real_cpse_materials.csv"
@@ -21,6 +22,7 @@ def process_corpus():
         return
         
     pipeline = PreprocessingPipeline()
+    engine = ExtractionEngine()
     records = []
     
     # We will process all records to get vocabulary/patterns
@@ -46,12 +48,13 @@ def process_corpus():
         
         record = UnifiedMaterialRecord(
             provenance=prov,
-            description_original=str(row.get('description', '')),
-            base_uom=str(row.get('unit', '')),
+            original_description=str(row.get('description', '')),
+            canonical_uom=str(row.get('unit', '')),
         )
         
         # Pass through pipeline
         processed_record = pipeline.process_record(record)
+        processed_record = engine.process(processed_record)
         records.append(processed_record.to_dict())
         
     # Full processed DataFrame
@@ -59,7 +62,7 @@ def process_corpus():
     
     # Extract patterns (e.g. UOMs, common tokens) - just simulating pattern extraction
     print("\n--- Extracted Patterns ---")
-    uoms = df_processed['base_uom'].value_counts().head(10).to_dict()
+    uoms = df_processed['canonical_uom'].value_counts().head(10).to_dict()
     print("Top UOMs:", uoms)
     
     classes = df_processed['commodity_class'].value_counts().to_dict()
