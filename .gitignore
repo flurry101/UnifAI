@@ -22,3 +22,4 @@ artifacts/
 # Do NOT ignore the trained matching model artifact (we want to deploy this)
 !artifacts/matching_model/
 !artifacts/matching_model/*
+

@@ -1,0 +1,343 @@
+{
+  "sector": "Heavy Engineering",
+  "companies": {
+    "BHEL": {
+      "full_name": "Bharat Heavy Electricals Limited",
+      "manufacturing_units": [
+        {
+          "unit_name": "Heavy Electricals Plant (HEP)",
+          "location": "Bhopal",
+          "state": "Madhya Pradesh",
+          "lat": 23.256,
+          "lon": 77.411,
+          "category": "Main Plant - Motors, Transformers, Switchgear"
+        },
+        {
+          "unit_name": "Heavy Power Equipment Plant (HPEP)",
+          "location": "Ramachandrapuram, Hyderabad",
+          "state": "Telangana",
+          "lat": 17.535,
+          "lon": 78.285,
+          "category": "Main Plant - Gas Turbines, Compressors, Pumps, Oil Rigs"
+        },
+        {
+          "unit_name": "High Pressure Boiler Plant (HPBP)",
+          "location": "Tiruchirappalli",
+          "state": "Tamil Nadu",
+          "lat": 10.789,
+          "lon": 78.707,
+          "category": "Main Plant - Utility & Industrial Boilers, Valves"
+        },
+        {
+          "unit_name": "Seamless Steel Tube Plant (SSTP)",
+          "location": "Tiruchirappalli",
+          "state": "Tamil Nadu",
+          "lat": 10.789,
+          "lon": 78.707,
+          "category": "Ancillary - Seamless Tubes for Boilers"
+        },
+        {
+          "unit_name": "Heavy Electrical Equipment Plant (HEEP)",
+          "location": "Haridwar",
+          "state": "Uttarakhand",
+          "lat": 29.946,
+          "lon": 78.165,
+          "category": "Main Plant - Turbo-generators, Large Motors, Excitation Systems"
+        },
+        {
+          "unit_name": "Central Foundry Forge Plant (CFFP)",
+          "location": "Haridwar",
+          "state": "Uttarakhand",
+          "lat": 29.946,
+          "lon": 78.165,
+          "category": "Ancillary - Castings & Forgings for Power Equipment"
+        },
+        {
+          "unit_name": "Transformer Plant (TP)",
+          "location": "Jhansi",
+          "state": "Uttar Pradesh",
+          "lat": 25.448,
+          "lon": 78.569,
+          "category": "Main Plant - Power & Distribution Transformers"
+        },
+        {
+          "unit_name": "Electronics Division (EDN)",
+          "location": "Bengaluru (Mysore Road)",
+          "state": "Karnataka",
+          "lat": 12.935,
+          "lon": 77.525,
+          "category": "Main Plant - Control & Instrumentation, Solar Inverters, Defence Electronics"
+        },
+        {
+          "unit_name": "Industrial Valves Plant (IVP)",
+          "location": "Goindwal Sahib",
+          "state": "Punjab",
+          "lat": 31.37,
+          "lon": 75.15,
+          "category": "Main Plant - High-pressure Valves for Power & Oil & Gas"
+        },
+        {
+          "unit_name": "Boiler Auxiliaries Plant (BAP)",
+          "location": "Ranipet",
+          "state": "Tamil Nadu",
+          "lat": 12.932,
+          "lon": 79.281,
+          "category": "Main Plant - Fans, Air Preheaters, Electrostatic Precipitators"
+        },
+        {
+          "unit_name": "Component Fabrication Plant (CFP)",
+          "location": "Rudrapur",
+          "state": "Uttarakhand",
+          "lat": 28.973,
+          "lon": 79.391,
+          "category": "Ancillary - Fabricated Components for Boilers & Piping"
+        },
+        {
+          "unit_name": "Insulator Plant (IP)",
+          "location": "Jagdishpur (Amethi)",
+          "state": "Uttar Pradesh",
+          "lat": 26.784,
+          "lon": 80.553,
+          "category": "Main Plant - Porcelain & Composite Insulators"
+        },
+        {
+          "unit_name": "Piping Centre (PC)",
+          "location": "Thirumayam",
+          "state": "Tamil Nadu",
+          "lat": 10.229,
+          "lon": 78.623,
+          "category": "Specialised Unit - Power Piping & Header Fabrication"
+        },
+        {
+          "unit_name": "Ceramic Business Unit (CBU)",
+          "location": "Bengaluru (Electronics City)",
+          "state": "Karnataka",
+          "lat": 12.85,
+          "lon": 77.665,
+          "category": "Ancillary - Advanced Ceramics & Refractories"
+        },
+        {
+          "unit_name": "Industrial Systems Group (ISG)",
+          "location": "Bengaluru (Peenya)",
+          "state": "Karnataka",
+          "lat": 13.025,
+          "lon": 77.525,
+          "category": "Engineering Office - Customised Industrial Systems"
+        },
+        {
+          "unit_name": "Solar Business Division (SBD)",
+          "location": "Bengaluru (EDN Campus)",
+          "state": "Karnataka",
+          "lat": 12.935,
+          "lon": 77.525,
+          "category": "Strategic Division - Solar Cell & Module Mfg, EPC"
+        }
+      ],
+      "note_on_older_hyderabad_coordinate": "The coordinate 17.4200N, 78.4800E found in older directories for 'BHEL Hyderabad' denotes a city-centre location or a marketing office; the heavy power equipment plant is at Ramachandrapuram (17.535N, 78.285E).",
+      "power_sector_service_centres": [
+        {
+          "service_centre": "PSSC - Northern Region",
+          "location": "Noida, Sector 6",
+          "state": "Uttar Pradesh",
+          "lat": 28.579,
+          "lon": 77.321
+        },
+        {
+          "service_centre": "PSSC - Western Region",
+          "location": "Nagpur",
+          "state": "Maharashtra",
+          "lat": 21.145,
+          "lon": 79.088
+        },
+        {
+          "service_centre": "PSSC - Southern Region",
+          "location": "Secunderabad",
+          "state": "Telangana",
+          "lat": 17.447,
+          "lon": 78.496
+        },
+        {
+          "service_centre": "PSSC - Eastern Region",
+          "location": "Bhubaneswar",
+          "state": "Odisha",
+          "lat": 20.296,
+          "lon": 85.825
+        },
+        {
+          "service_centre": "PSSC - Central Region",
+          "location": "Patna",
+          "state": "Bihar",
+          "lat": 25.615,
+          "lon": 85.131
+        }
+      ],
+      "regional_offices": [
+        {
+          "regional_office": "Northern Region (NR)",
+          "location": "Noida, Uttar Pradesh",
+          "state": "Uttar Pradesh",
+          "lat": 28.583,
+          "lon": 77.333
+        },
+        {
+          "regional_office": "Western Region (WR)",
+          "location": "Andheri (E), Mumbai",
+          "state": "Maharashtra",
+          "lat": 19.113,
+          "lon": 72.873
+        },
+        {
+          "regional_office": "Southern Region (SR)",
+          "location": "Chennai",
+          "state": "Tamil Nadu",
+          "lat": 13.083,
+          "lon": 80.274
+        },
+        {
+          "regional_office": "Eastern Region (ER)",
+          "location": "Salt Lake, Kolkata",
+          "state": "West Bengal",
+          "lat": 22.568,
+          "lon": 88.407
+        }
+      ]
+    },
+    "BEL": {
+      "full_name": "Bharat Electronics Limited",
+      "manufacturing_units": [
+        {
+          "unit": "BEL-Bengaluru Complex (Jalahalli & other locations)",
+          "location": "Bengaluru",
+          "state": "Karnataka",
+          "lat": 13.035,
+          "lon": 77.541,
+          "key_sbus_products": "Radar & Systems, Communication & Network Centric Systems, Electronic Warfare, Missile Systems, Tank Electronics, Components"
+        },
+        {
+          "unit": "BEL-Pune",
+          "location": "Pashan, Pune",
+          "state": "Maharashtra",
+          "lat": 18.532,
+          "lon": 73.848,
+          "key_sbus_products": "Naval Systems (Sonars, Combat Management Systems), Underwater Electronics"
+        },
+        {
+          "unit": "BEL-Ghaziabad",
+          "location": "Sahibabad, Ghaziabad",
+          "state": "Uttar Pradesh",
+          "lat": 28.672,
+          "lon": 77.329,
+          "key_sbus_products": "Electro-Optics (Night Vision Devices, Thermal Imagers), Fire Control Systems"
+        },
+        {
+          "unit": "BEL-Chennai",
+          "location": "Guindy Industrial Estate, Chennai",
+          "state": "Tamil Nadu",
+          "lat": 13.013,
+          "lon": 80.21,
+          "key_sbus_products": "Radar Sub-systems, Power Amplifiers, Microwave Components"
+        },
+        {
+          "unit": "BEL-Hyderabad",
+          "location": "Nacharam, Hyderabad",
+          "state": "Telangana",
+          "lat": 17.452,
+          "lon": 78.561,
+          "key_sbus_products": "Electronic Warfare Systems, Missile System Electronics, Laser-based Systems"
+        },
+        {
+          "unit": "BEL-Panchkula",
+          "location": "Industrial Area Phase 1, Panchkula",
+          "state": "Haryana",
+          "lat": 30.691,
+          "lon": 76.854,
+          "key_sbus_products": "Opto-Electronic Products, Image Intensifier Tubes, Laser Range Finders"
+        },
+        {
+          "unit": "BEL-Kotdwara",
+          "location": "Kotdwara",
+          "state": "Uttarakhand",
+          "lat": 29.743,
+          "lon": 78.521,
+          "key_sbus_products": "Components (Printed Circuit Boards, Hybrid Microcircuits, Crystals, SAW Filters)"
+        },
+        {
+          "unit": "BEL-Navi Mumbai",
+          "location": "Taloja MIDC, Navi Mumbai",
+          "state": "Maharashtra",
+          "lat": 19.082,
+          "lon": 73.093,
+          "key_sbus_products": "Simulators, Training Aids, Turnkey Solutions for Defence Communication Networks"
+        },
+        {
+          "unit": "BEL-Machilipatnam",
+          "location": "Machilipatnam",
+          "state": "Andhra Pradesh",
+          "lat": 16.176,
+          "lon": 81.128,
+          "key_sbus_products": "Electro-Mechanical Components, Antennae, Waveguides"
+        }
+      ],
+      "note": "Coordinates approximate; the Bengaluru Complex spans Jalahalli (Corporate Office) and satellite locations such as Krishnarajapuram, which is part of this complex and not a separate unit.",
+      "regional_customer_service_centres": [
+        {
+          "rcsc": "RCSC - Delhi",
+          "location": "Delhi",
+          "state": "Delhi",
+          "lat": 28.613,
+          "lon": 77.229
+        },
+        {
+          "rcsc": "RCSC - Mumbai",
+          "location": "Mumbai",
+          "state": "Maharashtra",
+          "lat": 19.076,
+          "lon": 72.877
+        },
+        {
+          "rcsc": "RCSC - Kolkata",
+          "location": "Kolkata (Fort William area)",
+          "state": "West Bengal",
+          "lat": 22.543,
+          "lon": 88.318
+        },
+        {
+          "rcsc": "RCSC - Chennai",
+          "location": "Chennai",
+          "state": "Tamil Nadu",
+          "lat": 13.082,
+          "lon": 80.275
+        },
+        {
+          "rcsc": "RCSC - Bengaluru",
+          "location": "Bengaluru (Jalahalli)",
+          "state": "Karnataka",
+          "lat": 13.036,
+          "lon": 77.54
+        },
+        {
+          "rcsc": "RCSC - Hyderabad",
+          "location": "Hyderabad (Balanagar)",
+          "state": "Telangana",
+          "lat": 17.474,
+          "lon": 78.453
+        },
+        {
+          "rcsc": "RCSC - Pune",
+          "location": "Pune (Pashan)",
+          "state": "Maharashtra",
+          "lat": 18.533,
+          "lon": 73.847
+        }
+      ],
+      "additional_field_office_cities_mentioned_not_tabulated": [
+        "Dehradun",
+        "Jodhpur",
+        "Visakhapatnam",
+        "Kochi",
+        "Port Blair",
+        "Leh"
+      ]
+    }
+  }
+}

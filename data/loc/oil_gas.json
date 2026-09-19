@@ -1,0 +1,672 @@
+{
+  "sector": "Oil & Gas",
+  "companies": {
+    "ONGC": {
+      "full_name": "Oil and Natural Gas Corporation Limited",
+      "western_offshore": [
+        {
+          "id": "ONGC_MUMBAI_HIGH_NORTH",
+          "lat": 19.4167,
+          "lon": 71.3333,
+          "state": "Maharashtra (offshore, approx.)"
+        },
+        {
+          "id": "ONGC_BASSEIN_SATELLITE",
+          "lat": 19.185,
+          "lon": 71.7083,
+          "state": "Maharashtra (offshore, approx.)"
+        },
+        {
+          "id": "ONGC_NEELAM_HEERA",
+          "lat": 19.25,
+          "lon": 71.5,
+          "state": "Maharashtra (offshore, approx.)"
+        },
+        {
+          "id": "ONGC_HAZIRA_PLANT",
+          "lat": 21.1167,
+          "lon": 72.65,
+          "state": "Gujarat"
+        },
+        {
+          "id": "ONGC_URAN_TERMINAL",
+          "lat": 18.88,
+          "lon": 72.95,
+          "state": "Maharashtra"
+        }
+      ],
+      "western_onshore_cambay_basin": [
+        {
+          "id": "ONGC_AHMEDABAD_ASSET",
+          "lat": 23.0225,
+          "lon": 72.5714,
+          "state": "Gujarat"
+        },
+        {
+          "id": "ONGC_MEHSANA_ASSET",
+          "lat": 23.6,
+          "lon": 72.4,
+          "state": "Gujarat"
+        },
+        {
+          "id": "ONGC_ANKLESHWAR_ASSET",
+          "lat": 21.6,
+          "lon": 73.0,
+          "state": "Gujarat"
+        },
+        {
+          "id": "ONGC_KALOL_ASSET",
+          "lat": 23.25,
+          "lon": 72.5,
+          "state": "Gujarat"
+        },
+        {
+          "id": "ONGC_NAVSARI_ASSET",
+          "lat": 20.95,
+          "lon": 72.9333,
+          "state": "Gujarat"
+        },
+        {
+          "id": "ONGC_SANAND",
+          "lat": 22.9833,
+          "lon": 72.3833,
+          "state": "Gujarat"
+        },
+        {
+          "id": "ONGC_VASNA",
+          "lat": 22.7167,
+          "lon": 72.7167,
+          "state": "Gujarat"
+        }
+      ],
+      "eastern_offshore_kg_basin": [
+        {
+          "id": "ONGC_KAKINADA_SHORE_BASE",
+          "lat": 16.9833,
+          "lon": 82.2333,
+          "state": "Andhra Pradesh"
+        },
+        {
+          "id": "ONGC_RAJAHMUNDRY_ASSET",
+          "lat": 17.0,
+          "lon": 81.7833,
+          "state": "Andhra Pradesh"
+        },
+        {
+          "id": "ONGC_G1_DEEPWATER",
+          "lat": 16.45,
+          "lon": 82.2,
+          "state": "Andhra Pradesh (offshore, approx.)"
+        }
+      ],
+      "assam_arakan_northeastern_fields": [
+        {
+          "id": "ONGC_SIVASAGAR",
+          "lat": 26.9833,
+          "lon": 94.6333,
+          "state": "Assam"
+        },
+        {
+          "id": "ONGC_NAZIRA",
+          "lat": 26.9167,
+          "lon": 94.7333,
+          "state": "Assam"
+        },
+        {
+          "id": "ONGC_JORHAT",
+          "lat": 26.75,
+          "lon": 94.2167,
+          "state": "Assam"
+        },
+        {
+          "id": "ONGC_LAKWA",
+          "lat": 26.9167,
+          "lon": 94.7,
+          "state": "Assam"
+        }
+      ],
+      "exploration_offices": [
+        {
+          "id": "ONGC_DEHRADUN_OFFICE",
+          "lat": 30.3165,
+          "lon": 78.0322,
+          "state": "Uttarakhand"
+        },
+        {
+          "id": "ONGC_KOLKATA_OFFICE",
+          "lat": null,
+          "lon": null,
+          "state": "West Bengal",
+          "note": "coordinates not specified in narrative text"
+        },
+        {
+          "id": "ONGC_CHENNAI_OFFICE",
+          "lat": null,
+          "lon": null,
+          "state": "Tamil Nadu",
+          "note": "coordinates not specified in narrative text"
+        }
+      ]
+    },
+    "IOCL": {
+      "full_name": "Indian Oil Corporation Limited",
+      "refineries": [
+        {
+          "id": "IOCL_PANIPAT",
+          "lat": 29.3909,
+          "lon": 76.9635,
+          "state": "Haryana"
+        },
+        {
+          "id": "IOCL_MATHURA",
+          "lat": 27.4192,
+          "lon": 77.6737,
+          "state": "Uttar Pradesh"
+        },
+        {
+          "id": "IOCL_BARAUNI",
+          "lat": 25.4759,
+          "lon": 85.9941,
+          "state": "Bihar"
+        },
+        {
+          "id": "IOCL_KOYALI",
+          "location_note": "Vadodara",
+          "lat": 22.3072,
+          "lon": 73.1812,
+          "state": "Gujarat"
+        },
+        {
+          "id": "IOCL_HALDIA",
+          "lat": 22.0668,
+          "lon": 88.0698,
+          "state": "West Bengal"
+        },
+        {
+          "id": "IOCL_GUWAHATI",
+          "lat": 26.1445,
+          "lon": 91.7362,
+          "state": "Assam"
+        },
+        {
+          "id": "IOCL_DIGBOI",
+          "lat": 27.3833,
+          "lon": 95.6333,
+          "state": "Assam"
+        },
+        {
+          "id": "IOCL_PARADIP",
+          "lat": 20.2497,
+          "lon": 86.6219,
+          "state": "Odisha"
+        },
+        {
+          "id": "IOCL_BONGAIGAON",
+          "lat": 26.4763,
+          "lon": 90.5647,
+          "state": "Assam"
+        }
+      ],
+      "cross_country_pipelines": [
+        {
+          "id": "IOCL_PANIPAT_PIPELINE_TERMINAL",
+          "lat": 29.34,
+          "lon": 76.97,
+          "state": "Haryana"
+        },
+        {
+          "id": "IOCL_SILIGURI_POL_TERMINAL",
+          "lat": 26.7271,
+          "lon": 88.3953,
+          "state": "West Bengal"
+        },
+        {
+          "id": "IOCL_ALLENSAHEB_PIPEHEAD",
+          "route_note": "Salaya-Mathura",
+          "lat": 22.7,
+          "lon": 70.1,
+          "state": "Gujarat"
+        },
+        {
+          "id": "IOCL_RAMAN_MANDI",
+          "route_note": "Bhatinda-Jammu line",
+          "lat": 30.1,
+          "lon": 74.95,
+          "state": "Punjab"
+        },
+        {
+          "id": "IOCL_KANPUR_POL_TERMINAL",
+          "lat": 26.4499,
+          "lon": 80.3319,
+          "state": "Uttar Pradesh"
+        }
+      ],
+      "marketing_terminals_depots": [
+        {
+          "id": "IOCL_CHENNAI_TERMINAL",
+          "lat": 13.0827,
+          "lon": 80.2707,
+          "state": "Tamil Nadu"
+        },
+        {
+          "id": "IOCL_MUMBAI_TERMINAL",
+          "lat": 19.076,
+          "lon": 72.8777,
+          "state": "Maharashtra"
+        },
+        {
+          "id": "IOCL_KOLKATA_TERMINAL",
+          "lat": 22.5726,
+          "lon": 88.3639,
+          "state": "West Bengal"
+        },
+        {
+          "id": "IOCL_DELHI_BADARPUR",
+          "lat": 28.5,
+          "lon": 77.3,
+          "state": "Delhi"
+        },
+        {
+          "id": "IOCL_BANGALORE_WHITE_FIELD",
+          "lat": 12.9716,
+          "lon": 77.5946,
+          "state": "Karnataka"
+        },
+        {
+          "id": "IOCL_LUCKNOW_DEPOT",
+          "lat": 26.8467,
+          "lon": 80.9462,
+          "state": "Uttar Pradesh"
+        },
+        {
+          "id": "IOCL_PATNA_DEPOT",
+          "lat": 25.5941,
+          "lon": 85.1376,
+          "state": "Bihar"
+        },
+        {
+          "id": "IOCL_BHOPAL_DEPOT",
+          "lat": 23.2599,
+          "lon": 77.4126,
+          "state": "Madhya Pradesh"
+        }
+      ]
+    },
+    "GAIL": {
+      "full_name": "GAIL (India) Limited",
+      "gas_processing_petrochemical_complexes": [
+        {
+          "id": "GAIL_PATA_COMPLEX",
+          "lat": 25.97,
+          "lon": 78.05,
+          "state": "Uttar Pradesh"
+        },
+        {
+          "id": "GAIL_VAGHODIA_PLANT",
+          "lat": 22.35,
+          "lon": 73.4,
+          "state": "Gujarat"
+        },
+        {
+          "id": "GAIL_GANDHAR_PLANT",
+          "lat": 22.0,
+          "lon": 72.75,
+          "state": "Gujarat"
+        },
+        {
+          "id": "GAIL_VIJAIPUR_GP",
+          "lat": 24.5,
+          "lon": 78.2,
+          "state": "Madhya Pradesh"
+        },
+        {
+          "id": "GAIL_USAR_COMPLEX",
+          "lat": 18.55,
+          "lon": 73.15,
+          "state": "Maharashtra"
+        }
+      ],
+      "compressor_stations_pipeline_junctions": [
+        {
+          "id": "GAIL_JHABUA_STATION",
+          "trunkline": "HVJ trunkline",
+          "lat": 22.7667,
+          "lon": 74.6,
+          "state": "Madhya Pradesh"
+        },
+        {
+          "id": "GAIL_KAILARAS_STATION",
+          "lat": 26.3167,
+          "lon": 77.6167,
+          "state": "Madhya Pradesh"
+        },
+        {
+          "id": "GAIL_PUNE_COMPRESSOR",
+          "lat": 18.5204,
+          "lon": 73.8567,
+          "state": "Maharashtra"
+        },
+        {
+          "id": "GAIL_KISHANGARH_STATION",
+          "lat": 26.5833,
+          "lon": 74.8667,
+          "state": "Rajasthan"
+        },
+        {
+          "id": "GAIL_JAGDISHPUR_HUB",
+          "lat": 26.4667,
+          "lon": 81.2833,
+          "state": "Uttar Pradesh"
+        },
+        {
+          "id": "GAIL_BHOPAL_TERMINAL",
+          "lat": 23.2599,
+          "lon": 77.4126,
+          "state": "Madhya Pradesh"
+        },
+        {
+          "id": "GAIL_BHARATPUR_STATION",
+          "lat": 27.2167,
+          "lon": 77.5,
+          "state": "Rajasthan"
+        }
+      ],
+      "city_gas_distribution_cgd_anchors": [
+        {
+          "id": "GAIL_CGD_INDORE",
+          "lat": 22.7196,
+          "lon": 75.8577,
+          "state": "Madhya Pradesh"
+        },
+        {
+          "id": "GAIL_CGD_LUCKNOW",
+          "lat": 26.8467,
+          "lon": 80.9462,
+          "state": "Uttar Pradesh"
+        },
+        {
+          "id": "GAIL_CGD_PUNE",
+          "lat": 18.5204,
+          "lon": 73.8567,
+          "state": "Maharashtra"
+        }
+      ]
+    },
+    "HPCL": {
+      "full_name": "Hindustan Petroleum Corporation Limited",
+      "refineries": [
+        {
+          "id": "HPCL_MUMBAI_REFINERY",
+          "lat": 19.0229,
+          "lon": 72.858,
+          "state": "Maharashtra"
+        },
+        {
+          "id": "HPCL_VISAKH_REFINERY",
+          "lat": 17.6868,
+          "lon": 83.2185,
+          "state": "Andhra Pradesh"
+        },
+        {
+          "id": "HPCL_JOINT_REFINERY_BATHINDA",
+          "note": "HMEL - 49% stake",
+          "lat": 30.21,
+          "lon": 74.95,
+          "state": "Punjab"
+        }
+      ],
+      "lpg_bottling_plants": [
+        {
+          "id": "HPCL_LPG_PIPLANI",
+          "lat": 23.25,
+          "lon": 72.5,
+          "state": "Gujarat"
+        },
+        {
+          "id": "HPCL_LPG_NERAL",
+          "lat": 18.95,
+          "lon": 73.2,
+          "state": "Maharashtra"
+        },
+        {
+          "id": "HPCL_LPG_CHENNAI",
+          "lat": 13.0827,
+          "lon": 80.2707,
+          "state": "Tamil Nadu"
+        },
+        {
+          "id": "HPCL_LPG_KOLKATA",
+          "lat": 22.5726,
+          "lon": 88.3639,
+          "state": "West Bengal"
+        },
+        {
+          "id": "HPCL_LPG_SANAND",
+          "lat": 22.9833,
+          "lon": 72.3833,
+          "state": "Gujarat"
+        },
+        {
+          "id": "HPCL_LPG_HYDERABAD",
+          "lat": 17.385,
+          "lon": 78.4867,
+          "state": "Telangana"
+        }
+      ],
+      "fuel_depots_terminals": [
+        {
+          "id": "HPCL_MAHUL_DEPOT",
+          "lat": 19.0118,
+          "lon": 72.8926,
+          "state": "Maharashtra"
+        },
+        {
+          "id": "HPCL_MUNDRA_DEPOT",
+          "lat": 22.8333,
+          "lon": 69.7167,
+          "state": "Gujarat"
+        },
+        {
+          "id": "HPCL_GOA_DEPOT",
+          "lat": 15.4909,
+          "lon": 73.8278,
+          "state": "Goa"
+        },
+        {
+          "id": "HPCL_KOCHI_DEPOT",
+          "lat": 9.9312,
+          "lon": 76.2673,
+          "state": "Kerala"
+        },
+        {
+          "id": "HPCL_VISAKH_TERMINAL",
+          "lat": 17.73,
+          "lon": 83.3,
+          "state": "Andhra Pradesh"
+        },
+        {
+          "id": "HPCL_HALDIA_DEPOT",
+          "lat": 22.0668,
+          "lon": 88.0698,
+          "state": "West Bengal"
+        }
+      ],
+      "aviation_fuel_stations": [
+        {
+          "id": "HPCL_AVIATION_MUMBAI",
+          "lat": 19.0896,
+          "lon": 72.8656,
+          "state": "Maharashtra"
+        },
+        {
+          "id": "HPCL_AVIATION_DELHI",
+          "lat": 28.5562,
+          "lon": 77.1,
+          "state": "Delhi"
+        },
+        {
+          "id": "HPCL_AVIATION_BANGALORE",
+          "lat": 13.1986,
+          "lon": 77.7066,
+          "state": "Karnataka"
+        },
+        {
+          "id": "HPCL_AVIATION_HYDERABAD",
+          "lat": 17.2403,
+          "lon": 78.4294,
+          "state": "Telangana"
+        }
+      ]
+    },
+    "BPCL": {
+      "full_name": "Bharat Petroleum Corporation Limited",
+      "refineries": [
+        {
+          "id": "BPCL_MUMBAI_REFINERY",
+          "lat": 19.015,
+          "lon": 72.851,
+          "state": "Maharashtra"
+        },
+        {
+          "id": "BPCL_KOCHI_REFINERY",
+          "lat": 9.9312,
+          "lon": 76.2673,
+          "state": "Kerala"
+        },
+        {
+          "id": "BPCL_BINA_REFINERY",
+          "note": "BORL, 62.5% stake",
+          "lat": 24.1833,
+          "lon": 78.2,
+          "state": "Madhya Pradesh"
+        }
+      ],
+      "lpg_bottling_plants": [
+        {
+          "id": "BPCL_LPG_SURAT",
+          "lat": 21.1702,
+          "lon": 72.8311,
+          "state": "Gujarat"
+        },
+        {
+          "id": "BPCL_LPG_NASHIK",
+          "lat": 19.9975,
+          "lon": 73.7898,
+          "state": "Maharashtra"
+        },
+        {
+          "id": "BPCL_LPG_CHENNAI",
+          "lat": 13.0827,
+          "lon": 80.2707,
+          "state": "Tamil Nadu"
+        },
+        {
+          "id": "BPCL_LPG_ASANSOL",
+          "lat": 23.6833,
+          "lon": 86.9833,
+          "state": "West Bengal"
+        },
+        {
+          "id": "BPCL_LPG_HYDERABAD",
+          "lat": 17.385,
+          "lon": 78.4867,
+          "state": "Telangana"
+        }
+      ],
+      "major_depots_terminals": [
+        {
+          "id": "BPCL_MAHUL_DEPOT",
+          "lat": 19.0118,
+          "lon": 72.8926,
+          "state": "Maharashtra"
+        },
+        {
+          "id": "BPCL_KANDLA_DEPOT",
+          "lat": 23.0333,
+          "lon": 70.2167,
+          "state": "Gujarat"
+        },
+        {
+          "id": "BPCL_CHENNAI_TERMINAL",
+          "lat": 13.0827,
+          "lon": 80.2707,
+          "state": "Tamil Nadu"
+        },
+        {
+          "id": "BPCL_VISAKH_TERMINAL",
+          "lat": 17.6868,
+          "lon": 83.2185,
+          "state": "Andhra Pradesh"
+        },
+        {
+          "id": "BPCL_HALDIA_DEPOT",
+          "lat": 22.0668,
+          "lon": 88.0698,
+          "state": "West Bengal"
+        },
+        {
+          "id": "BPCL_KOLKATA_DEPOT",
+          "lat": 22.5726,
+          "lon": 88.3639,
+          "state": "West Bengal"
+        },
+        {
+          "id": "BPCL_BHUBANESWAR_DEPOT",
+          "lat": 20.2961,
+          "lon": 85.8245,
+          "state": "Odisha"
+        }
+      ],
+      "aviation_fuel_stations": [
+        {
+          "id": "BPCL_AVIATION_MUMBAI",
+          "lat": 19.0896,
+          "lon": 72.8656,
+          "state": "Maharashtra"
+        },
+        {
+          "id": "BPCL_AVIATION_DELHI",
+          "lat": 28.5562,
+          "lon": 77.1,
+          "state": "Delhi"
+        },
+        {
+          "id": "BPCL_AVIATION_BANGALORE",
+          "lat": 13.1986,
+          "lon": 77.7066,
+          "state": "Karnataka"
+        }
+      ]
+    },
+    "CPCL": {
+      "full_name": "Chennai Petroleum Corporation Limited",
+      "refineries_storage": [
+        {
+          "id": "CPCL_MANALI_REFINERY",
+          "lat": 13.1667,
+          "lon": 80.2833,
+          "state": "Tamil Nadu"
+        },
+        {
+          "id": "CPCL_NAGAPATTINAM_REFINERY",
+          "note": "CBR - Cauvery Basin Refinery",
+          "lat": 10.77,
+          "lon": 79.84,
+          "state": "Tamil Nadu"
+        },
+        {
+          "id": "CPCL_CRUDE_OIL_TERMINAL_ENNORE",
+          "lat": 13.25,
+          "lon": 80.35,
+          "state": "Tamil Nadu"
+        },
+        {
+          "id": "CPCL_STORAGE_VALLUR",
+          "lat": 13.2833,
+          "lon": 80.2833,
+          "state": "Tamil Nadu"
+        }
+      ]
+    }
+  }
+}

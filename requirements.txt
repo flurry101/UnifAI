@@ -1,0 +1,25 @@
+#Core Backend API
+fastapi
+uvicorn
+python-multipart
+python-dotenv
+pydantic
+
+# Authentication
+passlib
+bcrypt
+python-jose
+
+# Database
+SQLAlchemy
+alembic
+psycopg
+psycopg-binary
+pgvector
+
+# AI & Machine Learning Inference
+sentence-transformers
+lightgbm
+pandas
+numpy
+scikit-learn

@@ -1,0 +1,588 @@
+{
+  "sector": "Steel",
+  "companies": {
+    "SAIL": {
+      "full_name": "Steel Authority of India Limited",
+      "integrated_special_steel_refractory_plants": [
+        {
+          "facility": "Bhilai Steel Plant (BSP)",
+          "location": "Bhilai",
+          "lat": 21.1833,
+          "lon": 81.2833,
+          "state": "Chhattisgarh"
+        },
+        {
+          "facility": "Bokaro Steel Plant (BSL)",
+          "location": "Bokaro Steel City",
+          "lat": 23.6693,
+          "lon": 86.1511,
+          "state": "Jharkhand"
+        },
+        {
+          "facility": "Rourkela Steel Plant (RSP)",
+          "location": "Rourkela",
+          "lat": 22.2278,
+          "lon": 84.8628,
+          "state": "Odisha"
+        },
+        {
+          "facility": "Durgapur Steel Plant (DSP)",
+          "location": "Durgapur",
+          "lat": 23.5204,
+          "lon": 87.3119,
+          "state": "West Bengal"
+        },
+        {
+          "facility": "IISCO Steel Plant (ISP)",
+          "location": "Burnpur, Asansol",
+          "lat": 23.668,
+          "lon": 86.946,
+          "state": "West Bengal"
+        },
+        {
+          "facility": "Alloy Steels Plant (ASP)",
+          "location": "Durgapur",
+          "lat": 23.5204,
+          "lon": 87.3119,
+          "state": "West Bengal"
+        },
+        {
+          "facility": "Salem Steel Plant (SSP)",
+          "location": "Salem",
+          "lat": 11.705,
+          "lon": 78.143,
+          "state": "Tamil Nadu"
+        },
+        {
+          "facility": "Visvesvaraya Iron and Steel Plant (VISL)",
+          "location": "Bhadravati",
+          "lat": 13.827,
+          "lon": 75.7,
+          "state": "Karnataka"
+        },
+        {
+          "facility": "SAIL Refractory Unit (SRU)",
+          "location": "Bhandaridah, Ramgarh",
+          "lat": 23.686,
+          "lon": 85.735,
+          "state": "Jharkhand"
+        },
+        {
+          "facility": "SAIL Refractory Company Ltd (SRCL)",
+          "location": "Salem",
+          "lat": 11.688,
+          "lon": 78.152,
+          "state": "Tamil Nadu"
+        }
+      ],
+      "captive_mines_iron_ore_fluxes_coal": [
+        {
+          "mine": "Kiriburu",
+          "commodity": "Iron ore",
+          "location": "Meghahatuburu area",
+          "lat": 22.1067,
+          "lon": 85.29,
+          "state": "Odisha"
+        },
+        {
+          "mine": "Meghahatuburu",
+          "commodity": "Iron ore",
+          "location": "Meghahatuburu",
+          "lat": 22.064,
+          "lon": 85.236,
+          "state": "Odisha"
+        },
+        {
+          "mine": "Bolani",
+          "commodity": "Iron ore",
+          "location": "Barbil sector",
+          "lat": 22.123,
+          "lon": 85.3,
+          "state": "Odisha"
+        },
+        {
+          "mine": "Kalta",
+          "commodity": "Iron ore",
+          "location": "Koira region",
+          "lat": 22.13,
+          "lon": 85.02,
+          "state": "Odisha"
+        },
+        {
+          "mine": "Barsua",
+          "commodity": "Iron ore",
+          "location": "Koira region",
+          "lat": 22.0,
+          "lon": 85.12,
+          "state": "Odisha"
+        },
+        {
+          "mine": "Taldih",
+          "commodity": "Iron ore",
+          "location": "Koira region",
+          "lat": 21.99,
+          "lon": 85.15,
+          "state": "Odisha"
+        },
+        {
+          "mine": "Gua",
+          "commodity": "Iron ore",
+          "location": "Gua, West Singhbhum",
+          "lat": 22.201,
+          "lon": 85.404,
+          "state": "Jharkhand"
+        },
+        {
+          "mine": "Chiria",
+          "commodity": "Iron ore",
+          "location": "Chiria, West Singhbhum",
+          "lat": 22.3083,
+          "lon": 85.2667,
+          "state": "Jharkhand"
+        },
+        {
+          "mine": "Manoharpur",
+          "commodity": "Iron ore",
+          "location": "Manoharpur, West Singhbhum",
+          "lat": 22.4,
+          "lon": 85.22,
+          "state": "Jharkhand"
+        },
+        {
+          "mine": "Nandini",
+          "commodity": "Limestone",
+          "location": "Durg-Raipur belt",
+          "lat": 21.75,
+          "lon": 81.25,
+          "state": "Chhattisgarh"
+        },
+        {
+          "mine": "Kuteshwar",
+          "commodity": "Limestone",
+          "location": "Katni district",
+          "lat": 23.8166,
+          "lon": 80.3333,
+          "state": "Madhya Pradesh"
+        },
+        {
+          "mine": "Tulsidamar",
+          "commodity": "Dolomite",
+          "location": "Bilaspur district",
+          "lat": 22.5,
+          "lon": 82.3,
+          "state": "Chhattisgarh"
+        },
+        {
+          "mine": "Chasnalla",
+          "commodity": "Coking coal",
+          "location": "Jharia coalfield",
+          "lat": 23.784,
+          "lon": 86.632,
+          "state": "Jharkhand"
+        },
+        {
+          "mine": "Jitpur",
+          "commodity": "Coking coal",
+          "location": "Jharia coalfield",
+          "lat": 23.756,
+          "lon": 86.405,
+          "state": "Jharkhand"
+        },
+        {
+          "mine": "Ramnagore",
+          "commodity": "Coking coal",
+          "location": "Jharia coalfield",
+          "lat": 23.77,
+          "lon": 86.41,
+          "state": "Jharkhand"
+        },
+        {
+          "mine": "Sitanala",
+          "commodity": "Coking coal",
+          "location": "Jharia coalfield",
+          "lat": 23.74,
+          "lon": 86.38,
+          "state": "Jharkhand"
+        }
+      ],
+      "marketing_and_stockyard_network": [
+        {
+          "facility_type": "CMO Headquarters",
+          "location": "Kolkata",
+          "lat": 22.5726,
+          "lon": 88.3639,
+          "state": "West Bengal"
+        },
+        {
+          "facility_type": "Regional Office - East",
+          "location": "Kolkata",
+          "lat": 22.5726,
+          "lon": 88.3639,
+          "state": "West Bengal"
+        },
+        {
+          "facility_type": "Regional Office - West",
+          "location": "Mumbai",
+          "lat": 19.076,
+          "lon": 72.8777,
+          "state": "Maharashtra"
+        },
+        {
+          "facility_type": "Regional Office - North",
+          "location": "New Delhi",
+          "lat": 28.6139,
+          "lon": 77.209,
+          "state": "Delhi"
+        },
+        {
+          "facility_type": "Regional Office - South",
+          "location": "Chennai",
+          "lat": 13.0827,
+          "lon": 80.2707,
+          "state": "Tamil Nadu"
+        },
+        {
+          "facility_type": "Branch Sales Office",
+          "location": "Ahmedabad",
+          "lat": 23.0225,
+          "lon": 72.5714,
+          "state": "Gujarat"
+        },
+        {
+          "facility_type": "Branch Sales Office",
+          "location": "Bengaluru",
+          "lat": 12.9716,
+          "lon": 77.5946,
+          "state": "Karnataka"
+        },
+        {
+          "facility_type": "Branch Sales Office",
+          "location": "Bhopal",
+          "lat": 23.2599,
+          "lon": 77.4126,
+          "state": "Madhya Pradesh"
+        },
+        {
+          "facility_type": "Branch Sales Office",
+          "location": "Bhubaneswar",
+          "lat": 20.2961,
+          "lon": 85.8245,
+          "state": "Odisha"
+        },
+        {
+          "facility_type": "Branch Sales Office",
+          "location": "Chandigarh",
+          "lat": 30.7333,
+          "lon": 76.7794,
+          "state": "Chandigarh (UT)"
+        },
+        {
+          "facility_type": "Branch Sales Office",
+          "location": "Guwahati",
+          "lat": 26.1445,
+          "lon": 91.7362,
+          "state": "Assam"
+        },
+        {
+          "facility_type": "Branch Sales Office",
+          "location": "Hyderabad",
+          "lat": 17.385,
+          "lon": 78.4867,
+          "state": "Telangana"
+        },
+        {
+          "facility_type": "Branch Sales Office",
+          "location": "Jaipur",
+          "lat": 26.9124,
+          "lon": 75.7873,
+          "state": "Rajasthan"
+        },
+        {
+          "facility_type": "Branch Sales Office",
+          "location": "Lucknow",
+          "lat": 26.8467,
+          "lon": 80.9462,
+          "state": "Uttar Pradesh"
+        },
+        {
+          "facility_type": "Branch Sales Office",
+          "location": "Nagpur",
+          "lat": 21.1458,
+          "lon": 79.0882,
+          "state": "Maharashtra"
+        },
+        {
+          "facility_type": "Branch Sales Office",
+          "location": "Patna",
+          "lat": 25.5941,
+          "lon": 85.1376,
+          "state": "Bihar"
+        },
+        {
+          "facility_type": "Branch Sales Office",
+          "location": "Ranchi",
+          "lat": 23.3441,
+          "lon": 85.3096,
+          "state": "Jharkhand"
+        },
+        {
+          "facility_type": "Branch Sales Office",
+          "location": "Secunderabad",
+          "lat": 17.4399,
+          "lon": 78.4983,
+          "state": "Telangana"
+        },
+        {
+          "facility_type": "Plant Stockyard",
+          "location": "Bhilai",
+          "lat": 21.1833,
+          "lon": 81.2833,
+          "state": "Chhattisgarh"
+        },
+        {
+          "facility_type": "Plant Stockyard",
+          "location": "Bokaro",
+          "lat": 23.6693,
+          "lon": 86.1511,
+          "state": "Jharkhand"
+        },
+        {
+          "facility_type": "Plant Stockyard",
+          "location": "Rourkela",
+          "lat": 22.2278,
+          "lon": 84.8628,
+          "state": "Odisha"
+        },
+        {
+          "facility_type": "Plant Stockyard",
+          "location": "Durgapur",
+          "lat": 23.5204,
+          "lon": 87.3119,
+          "state": "West Bengal"
+        },
+        {
+          "facility_type": "Plant Stockyard",
+          "location": "Burnpur (IISCO)",
+          "lat": 23.668,
+          "lon": 86.946,
+          "state": "West Bengal"
+        },
+        {
+          "facility_type": "Major Distribution Yard",
+          "location": "Taloja (Mumbai area)",
+          "lat": 19.1,
+          "lon": 73.1,
+          "state": "Maharashtra"
+        },
+        {
+          "facility_type": "Major Distribution Yard",
+          "location": "Faridabad (NCR)",
+          "lat": 28.4089,
+          "lon": 77.3178,
+          "state": "Haryana"
+        },
+        {
+          "facility_type": "Major Distribution Yard",
+          "location": "Ghaziabad",
+          "lat": 28.6692,
+          "lon": 77.4538,
+          "state": "Uttar Pradesh"
+        },
+        {
+          "facility_type": "Major Distribution Yard",
+          "location": "Nagpur",
+          "lat": 21.1458,
+          "lon": 79.0882,
+          "state": "Maharashtra"
+        },
+        {
+          "facility_type": "Major Distribution Yard",
+          "location": "Chennai (Ennore)",
+          "lat": 13.24,
+          "lon": 80.32,
+          "state": "Tamil Nadu"
+        }
+      ]
+    },
+    "RINL": {
+      "full_name": "Rashtriya Ispat Nigam Limited",
+      "visakhapatnam_steel_plant_and_marketing_network": [
+        {
+          "facility": "Visakhapatnam Steel Plant (VSP)",
+          "location": "Visakhapatnam",
+          "lat": 17.6978,
+          "lon": 83.2543,
+          "state": "Andhra Pradesh"
+        },
+        {
+          "facility": "RINL Corporate Office (Marketing Head)",
+          "location": "Visakhapatnam",
+          "lat": 17.71,
+          "lon": 83.29,
+          "state": "Andhra Pradesh"
+        },
+        {
+          "facility": "Regional Office - North",
+          "location": "New Delhi",
+          "lat": 28.6139,
+          "lon": 77.209,
+          "state": "Delhi"
+        },
+        {
+          "facility": "Regional Office - East",
+          "location": "Kolkata",
+          "lat": 22.5726,
+          "lon": 88.3639,
+          "state": "West Bengal"
+        },
+        {
+          "facility": "Regional Office - West",
+          "location": "Mumbai",
+          "lat": 19.076,
+          "lon": 72.8777,
+          "state": "Maharashtra"
+        },
+        {
+          "facility": "Regional Office - South",
+          "location": "Chennai",
+          "lat": 13.0827,
+          "lon": 80.2707,
+          "state": "Tamil Nadu"
+        },
+        {
+          "facility": "Regional Office - Central",
+          "location": "Hyderabad",
+          "lat": 17.385,
+          "lon": 78.4867,
+          "state": "Telangana"
+        },
+        {
+          "facility": "Branch Sales Office",
+          "location": "Ahmedabad",
+          "lat": 23.0225,
+          "lon": 72.5714,
+          "state": "Gujarat"
+        },
+        {
+          "facility": "Branch Sales Office",
+          "location": "Bengaluru",
+          "lat": 12.9716,
+          "lon": 77.5946,
+          "state": "Karnataka"
+        },
+        {
+          "facility": "Branch Sales Office",
+          "location": "Bhopal",
+          "lat": 23.2599,
+          "lon": 77.4126,
+          "state": "Madhya Pradesh"
+        },
+        {
+          "facility": "Branch Sales Office",
+          "location": "Bhubaneswar",
+          "lat": 20.2961,
+          "lon": 85.8245,
+          "state": "Odisha"
+        },
+        {
+          "facility": "Branch Sales Office",
+          "location": "Chandigarh",
+          "lat": 30.7333,
+          "lon": 76.7794,
+          "state": "Chandigarh (UT)"
+        },
+        {
+          "facility": "Branch Sales Office",
+          "location": "Coimbatore",
+          "lat": 11.0168,
+          "lon": 76.9558,
+          "state": "Tamil Nadu"
+        },
+        {
+          "facility": "Branch Sales Office",
+          "location": "Guwahati",
+          "lat": 26.1445,
+          "lon": 91.7362,
+          "state": "Assam"
+        },
+        {
+          "facility": "Branch Sales Office",
+          "location": "Indore",
+          "lat": 22.7196,
+          "lon": 75.8577,
+          "state": "Madhya Pradesh"
+        },
+        {
+          "facility": "Branch Sales Office",
+          "location": "Jaipur",
+          "lat": 26.9124,
+          "lon": 75.7873,
+          "state": "Rajasthan"
+        },
+        {
+          "facility": "Branch Sales Office",
+          "location": "Lucknow",
+          "lat": 26.8467,
+          "lon": 80.9462,
+          "state": "Uttar Pradesh"
+        },
+        {
+          "facility": "Branch Sales Office",
+          "location": "Nagpur",
+          "lat": 21.1458,
+          "lon": 79.0882,
+          "state": "Maharashtra"
+        },
+        {
+          "facility": "Branch Sales Office",
+          "location": "Patna",
+          "lat": 25.5941,
+          "lon": 85.1376,
+          "state": "Bihar"
+        },
+        {
+          "facility": "Branch Sales Office",
+          "location": "Pune",
+          "lat": 18.5204,
+          "lon": 73.8567,
+          "state": "Maharashtra"
+        },
+        {
+          "facility": "Branch Sales Office",
+          "location": "Raipur",
+          "lat": 21.2514,
+          "lon": 81.6296,
+          "state": "Chhattisgarh"
+        },
+        {
+          "facility": "Branch Sales Office",
+          "location": "Ranchi",
+          "lat": 23.3441,
+          "lon": 85.3096,
+          "state": "Jharkhand"
+        },
+        {
+          "facility": "Branch Sales Office",
+          "location": "Surat",
+          "lat": 21.1702,
+          "lon": 72.8311,
+          "state": "Gujarat"
+        },
+        {
+          "facility": "Branch Sales Office",
+          "location": "Vadodara",
+          "lat": 22.3072,
+          "lon": 73.1812,
+          "state": "Gujarat"
+        },
+        {
+          "facility": "Branch Sales Office",
+          "location": "Visakhapatnam",
+          "lat": 17.6868,
+          "lon": 83.2185,
+          "state": "Andhra Pradesh"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "report_title": "Comprehensive Geospatial Directory of Major Indian Public Sector Enterprises: Oil & Gas, Power, Steel, Mining, and Heavy Engineering (2026 Edition)",
+  "summary": {
+    "total_locations_in_full_dataset": 546,
+    "companies_covered": [
+      "ONGC",
+      "IOCL",
+      "GAIL",
+      "HPCL",
+      "BPCL",
+      "CPCL",
+      "NTPC",
+      "NHPC",
+      "POWERGRID",
+      "SAIL",
+      "RINL",
+      "Coal India Limited",
+      "NMDC",
+      "BHEL",
+      "BEL"
+    ],
+    "note": "Full 546-location dataset referenced as psu_master_directory_2026.json was not included as a separate attachment in the source PDF; only a partial excerpt (134 entries) was shown, transcribed in master_directory_excerpt.json."
+  },
+  "coordinate_reference_system": "WGS84, decimal degrees to 4 decimal places",
+  "source_hierarchy_tiers": [
+    {
+      "tier": 1,
+      "source_class": "Official company annual reports, investor presentations, integrated reports (FY2023-24 through FY2025-26)",
+      "typical_examples": "ONGC Annual Report 2025-26, NTPC Investor Meet 2025",
+      "expected_horizontal_accuracy": "\u00b150 m"
+    },
+    {
+      "tier": 2,
+      "source_class": "Ministry portals and parliamentary replies",
+      "typical_examples": "MoPNG Project Monitoring Dashboard, MoP SAUBHAGYA portal, Rajya Sabha Starred Questions",
+      "expected_horizontal_accuracy": "\u00b1200 m"
+    },
+    {
+      "tier": 3,
+      "source_class": "State pollution control board consent orders, environmental clearance letters",
+      "typical_examples": "EC for GAIL Jagdishpur-Haldia pipeline, HPCL Visakh Refinery expansion EC",
+      "expected_horizontal_accuracy": "\u00b1500 m"
+    },
+    {
+      "tier": 4,
+      "source_class": "Google Earth historical imagery, OpenStreetMap, Bhuvan satellite data",
+      "typical_examples": "Visual identification of storage tanks, switchyards, mine pits",
+      "expected_horizontal_accuracy": "\u00b1100 m"
+    },
+    {
+      "tier": 5,
+      "source_class": "Industry directories, press releases, and RTI responses",
+      "typical_examples": "SAIL Durgapur Steel Plant RTI reply, BEL Pune unit address on website",
+      "expected_horizontal_accuracy": "\u00b11 km"
+    }
+  ],
+  "coordinate_accuracy_tiers": [
+    {
+      "accuracy_tier": "Platinum",
+      "horizontal_error_ce90": "\u2264 30 m",
+      "locations": 187,
+      "typical_criteria": "Surveyed plant centroid from official map or environmental clearance lease boundary; on-ground measurement by field team (e.g., BHEL Haridwar, SAIL Bhilai)"
+    },
+    {
+      "accuracy_tier": "Gold",
+      "horizontal_error_ce90": "31-150 m",
+      "locations": 231,
+      "typical_criteria": "Google Earth imagery aligned with company-provided site plans; distinct infrastructure visible (tank farm, stack, cooling tower)"
+    },
+    {
+      "accuracy_tier": "Silver",
+      "horizontal_error_ce90": "151-500 m",
+      "locations": 76,
+      "typical_criteria": "Address geocoding with rooftop-level match; mining block centroid from CMPDI reports"
+    },
+    {
+      "accuracy_tier": "Bronze",
+      "horizontal_error_ce90": "501-1000 m",
+      "locations": 18,
+      "typical_criteria": "Remote or newly commissioned sites with only taluk-level address; awaiting RTI response"
+    }
+  ],
+  "entity_resolution_notes": [
+    "ONGC Uran (Uran Gas Processing Complex) and ONGC Navi Mumbai were merged under ONGC_URAN (lat: 18.8850, lon: 72.9400).",
+    "IOCL Panipat Refinery and IOCL Panipat Terminal were kept as distinct locations because their operations are functionally separate and the sites are over 3 km apart.",
+    "NTPC Dadri (thermal and gas) was treated as a single location NTPC_DADRI since the two plants share a contiguous footprint.",
+    "For Coal India Limited, individual subsidiaries (SECL, MCL, NCL, WCL, ECL, BCCL, CCL, NEC) were indexed under the CIL_ prefix to reflect unitary corporate governance while retaining mine-level coordinates.",
+    "NHPC power stations and POWERGRID substations were captured at the point of interconnection with the grid."
+  ],
+  "known_gaps_and_discrepancies": [
+    "CPCL Manali Refinery expansion II: no post-commissioning satellite imagery available as of July 2026; coordinates based on parent refinery centroid and may need adjustment.",
+    "POWERGRID \u00b1800 kV HVDC Raigarh-Pugalur-Trichur corridor: 13 repeater stations along the 1,800-km route could not be geolocated due to security restrictions; listed with approximate linear-referencing coordinates flagged status: approximate.",
+    "Coal India subsidiaries' abandoned mines: only active mines per CIL's Annual Report 2025-26 are included; legacy mines under closure plans omitted unless rehabilitation is ongoing.",
+    "NHPC's projects in Jammu & Kashmir and Arunachal Pradesh: some pre-construction sites (Dibang Multipurpose Project, Pakal Dul) have only survey-camp coordinates, carrying low confidence.",
+    "BEL's manufacturing units: exact coordinates of BEL's Electronic Warfare and Avionics unit at Korwa (Uttar Pradesh) are obscured for strategic reasons; mapped to nearest public road intersection with 2-km radial uncertainty.",
+    "SAIL Visvesvaraya Iron & Steel Plant coordinate discrepancy: the working dataset lists 12.98N, 77.59E (near Bangalore), while the actual facility is at Bhadravati, Karnataka (~13.84N, 75.70E). Requires correction.",
+    "HPCL and BPCL terminal listing duplication: identical depot coordinates appear under both HPCL and BPCL prefixes for certain coastal terminals; joint verification of ownership needed."
+  ],
+  "stated_limitations": [
+    "Temporal staleness: directory reflects a snapshot as of 31 March 2026.",
+    "Defence offsets: BEL and certain ONGC offshore platforms are subject to coordinate obfuscation for national security; provided coordinates are public-domain approximations only.",
+    "Urban retail stations: only company-owned major terminals and depots (>5,000 KL storage) are included for IOCL, HPCL, and BPCL, not the hundreds of retail fuel stations.",
+    "Pipeline routes: only compressor stations, intermediate pigging stations, and dispatch terminals of cross-country pipelines are mapped; linear pipeline paths are not covered."
+  ]
+}

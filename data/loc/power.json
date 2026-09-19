@@ -1,0 +1,772 @@
+{
+  "sector": "Power",
+  "companies": {
+    "NTPC": {
+      "full_name": "NTPC Limited",
+      "coal_fired_thermal_power_stations": [
+        {
+          "station": "Vindhyachal STPS",
+          "lat": 24.145,
+          "lon": 81.041,
+          "state": "Madhya Pradesh",
+          "capacity_mw": 4760
+        },
+        {
+          "station": "Sipat STPS",
+          "lat": 22.0545,
+          "lon": 82.2931,
+          "state": "Chhattisgarh",
+          "capacity_mw": 2980
+        },
+        {
+          "station": "Korba STPS",
+          "lat": 22.3667,
+          "lon": 82.6833,
+          "state": "Chhattisgarh",
+          "capacity_mw": 2600
+        },
+        {
+          "station": "Ramagundam STPS",
+          "lat": 18.7667,
+          "lon": 79.45,
+          "state": "Telangana",
+          "capacity_mw": 2600
+        },
+        {
+          "station": "Talcher Kaniha",
+          "lat": 21.1167,
+          "lon": 85.0667,
+          "state": "Odisha",
+          "capacity_mw": 3000
+        },
+        {
+          "station": "Farakka STPS",
+          "lat": 24.8,
+          "lon": 87.9167,
+          "state": "West Bengal",
+          "capacity_mw": 2100
+        },
+        {
+          "station": "Kahalgaon STPS",
+          "lat": 25.2736,
+          "lon": 87.2236,
+          "state": "Bihar",
+          "capacity_mw": 2340
+        },
+        {
+          "station": "Rihand STPS",
+          "lat": 24.2028,
+          "lon": 82.7928,
+          "state": "Uttar Pradesh",
+          "capacity_mw": 3000
+        },
+        {
+          "station": "Singrauli STPS",
+          "lat": 24.18,
+          "lon": 82.808,
+          "state": "Uttar Pradesh",
+          "capacity_mw": 2000
+        },
+        {
+          "station": "Dadri (Coal)",
+          "lat": 28.5667,
+          "lon": 77.6,
+          "state": "Uttar Pradesh",
+          "capacity_mw": 1820
+        },
+        {
+          "station": "Unchahar STPS",
+          "lat": 25.9,
+          "lon": 81.2833,
+          "state": "Uttar Pradesh",
+          "capacity_mw": 1050
+        },
+        {
+          "station": "Barh STPS",
+          "lat": 25.4833,
+          "lon": 85.7167,
+          "state": "Bihar",
+          "capacity_mw": 3300
+        },
+        {
+          "station": "Simhadri STPS",
+          "lat": 17.6833,
+          "lon": 83.2,
+          "state": "Andhra Pradesh",
+          "capacity_mw": 2000
+        },
+        {
+          "station": "Kudgi STPS",
+          "lat": 16.75,
+          "lon": 76.0333,
+          "state": "Karnataka",
+          "capacity_mw": 2400
+        },
+        {
+          "station": "Solapur STPS",
+          "lat": 17.65,
+          "lon": 76.0,
+          "state": "Maharashtra",
+          "capacity_mw": 1320
+        },
+        {
+          "station": "Mouda STPS",
+          "lat": 21.2,
+          "lon": 79.7167,
+          "state": "Maharashtra",
+          "capacity_mw": 2320
+        },
+        {
+          "station": "Lara STPS",
+          "lat": 21.85,
+          "lon": 83.35,
+          "state": "Chhattisgarh",
+          "capacity_mw": 1600
+        },
+        {
+          "station": "Gadarwara STPS",
+          "lat": 23.0333,
+          "lon": 78.85,
+          "state": "Madhya Pradesh",
+          "capacity_mw": "1600 (part commissioned)"
+        },
+        {
+          "station": "Tanda STPS",
+          "lat": 26.55,
+          "lon": 82.65,
+          "state": "Uttar Pradesh",
+          "capacity_mw": 1760
+        },
+        {
+          "station": "North Karanpura",
+          "lat": 23.9,
+          "lon": 85.0333,
+          "state": "Jharkhand",
+          "capacity_mw": 1980
+        },
+        {
+          "station": "Telangana STPS",
+          "lat": 18.9667,
+          "lon": 79.95,
+          "state": "Telangana",
+          "capacity_mw": 1600
+        },
+        {
+          "station": "Patratu STPS (JV)",
+          "lat": 23.6333,
+          "lon": 85.3167,
+          "state": "Jharkhand",
+          "capacity_mw": 800
+        }
+      ],
+      "gas_based_power_stations": [
+        {
+          "station": "Auraiya GPS",
+          "lat": 26.5333,
+          "lon": 79.5,
+          "state": "Uttar Pradesh",
+          "fuel": "Gas",
+          "capacity_mw": 652
+        },
+        {
+          "station": "Anta GPS",
+          "lat": 25.2,
+          "lon": 76.2667,
+          "state": "Rajasthan",
+          "fuel": "Gas",
+          "capacity_mw": 413
+        },
+        {
+          "station": "Kawas GPS",
+          "lat": 21.1833,
+          "lon": 72.7,
+          "state": "Gujarat",
+          "fuel": "Gas",
+          "capacity_mw": 645
+        },
+        {
+          "station": "Dadri GPS",
+          "lat": 28.5667,
+          "lon": 77.6,
+          "state": "Uttar Pradesh",
+          "fuel": "Gas",
+          "capacity_mw": 817
+        },
+        {
+          "station": "Jhanor-Gandhar GPS",
+          "lat": 21.7833,
+          "lon": 73.0,
+          "state": "Gujarat",
+          "fuel": "Gas",
+          "capacity_mw": 648
+        },
+        {
+          "station": "Faridabad GPS",
+          "lat": 28.4167,
+          "lon": 77.3167,
+          "state": "Haryana",
+          "fuel": "Gas",
+          "capacity_mw": 430
+        },
+        {
+          "station": "Rajiv Gandhi CCPP, Kayamkulam",
+          "lat": 9.1667,
+          "lon": 76.5,
+          "state": "Kerala",
+          "fuel": "Gas/RLNG",
+          "capacity_mw": 350
+        }
+      ],
+      "hydro_and_solar_projects": [
+        {
+          "project": "Koldam HPS",
+          "lat": 31.3833,
+          "lon": 76.8,
+          "state": "Himachal Pradesh",
+          "type": "Hydro (800 MW)",
+          "status": "Operational"
+        },
+        {
+          "project": "Tapovan Vishnugad HPS",
+          "lat": 30.5167,
+          "lon": 79.65,
+          "state": "Uttarakhand",
+          "type": "Hydro (520 MW)",
+          "status": "Under Construction"
+        },
+        {
+          "project": "Lata Tapovan HPS",
+          "lat": 30.5167,
+          "lon": 79.65,
+          "state": "Uttarakhand",
+          "type": "Hydro (171 MW)",
+          "status": "Under Construction"
+        },
+        {
+          "project": "Singrauli Solar",
+          "lat": 24.18,
+          "lon": 82.808,
+          "state": "Uttar Pradesh",
+          "type": "Solar (50 MW)",
+          "status": "Operational"
+        },
+        {
+          "project": "Nokh Solar",
+          "lat": 27.7,
+          "lon": 72.3,
+          "state": "Rajasthan",
+          "type": "Solar (735 MW)",
+          "status": "Part-commissioned"
+        },
+        {
+          "project": "Ramagundam Floating Solar",
+          "lat": 18.7667,
+          "lon": 79.45,
+          "state": "Telangana",
+          "type": "Solar (100 MW)",
+          "status": "Operational"
+        }
+      ],
+      "regional_headquarters": [
+        {
+          "region": "Northern Region HQ",
+          "location": "Lucknow",
+          "lat": 26.85,
+          "lon": 80.95,
+          "state": "Uttar Pradesh"
+        },
+        {
+          "region": "Southern Region HQ",
+          "location": "Secunderabad (Hyderabad)",
+          "lat": 17.45,
+          "lon": 78.5,
+          "state": "Telangana"
+        },
+        {
+          "region": "Western Region-I HQ",
+          "location": "Mumbai",
+          "lat": 19.076,
+          "lon": 72.8777,
+          "state": "Maharashtra"
+        },
+        {
+          "region": "Western Region-II HQ",
+          "location": "Raipur",
+          "lat": 21.25,
+          "lon": 81.63,
+          "state": "Chhattisgarh"
+        },
+        {
+          "region": "Eastern Region-I HQ",
+          "location": "Kolkata",
+          "lat": 22.5726,
+          "lon": 88.3639,
+          "state": "West Bengal"
+        },
+        {
+          "region": "Eastern Region-II HQ",
+          "location": "Patna",
+          "lat": 25.6,
+          "lon": 85.12,
+          "state": "Bihar"
+        },
+        {
+          "region": "NCR HQ",
+          "location": "Noida",
+          "lat": 28.5355,
+          "lon": 77.391,
+          "state": "Uttar Pradesh"
+        }
+      ]
+    },
+    "NHPC": {
+      "full_name": "NHPC Limited",
+      "key_hydroelectric_projects": [
+        {
+          "project": "Baira Siul HEP",
+          "lat": 32.8167,
+          "lon": 76.3667,
+          "state_river": "Himachal Pradesh / Ravi",
+          "capacity_mw": 180,
+          "status": "Operational"
+        },
+        {
+          "project": "Chamera-I",
+          "lat": 32.6167,
+          "lon": 76.0333,
+          "state_river": "Himachal Pradesh / Ravi",
+          "capacity_mw": 540,
+          "status": "Operational"
+        },
+        {
+          "project": "Chamera-II",
+          "lat": 32.6,
+          "lon": 76.0667,
+          "state_river": "Himachal Pradesh / Ravi",
+          "capacity_mw": 300,
+          "status": "Operational"
+        },
+        {
+          "project": "Chamera-III",
+          "lat": 32.5833,
+          "lon": 76.1333,
+          "state_river": "Himachal Pradesh / Ravi",
+          "capacity_mw": 231,
+          "status": "Operational"
+        },
+        {
+          "project": "Parbati-III",
+          "lat": 31.55,
+          "lon": 77.1333,
+          "state_river": "Himachal Pradesh / Sainj",
+          "capacity_mw": 520,
+          "status": "Operational"
+        },
+        {
+          "project": "Dulhasti HEP",
+          "lat": 33.0333,
+          "lon": 75.8167,
+          "state_river": "Jammu & Kashmir / Chenab",
+          "capacity_mw": 390,
+          "status": "Operational"
+        },
+        {
+          "project": "Uri-I",
+          "lat": 34.4583,
+          "lon": 74.0333,
+          "state_river": "Jammu & Kashmir / Jhelum",
+          "capacity_mw": 480,
+          "status": "Operational"
+        },
+        {
+          "project": "Uri-II",
+          "lat": 34.4083,
+          "lon": 74.2,
+          "state_river": "Jammu & Kashmir / Jhelum",
+          "capacity_mw": 240,
+          "status": "Operational"
+        },
+        {
+          "project": "Kishanganga HEP",
+          "lat": 34.4,
+          "lon": 74.0833,
+          "state_river": "Jammu & Kashmir / Kishanganga",
+          "capacity_mw": 330,
+          "status": "Operational"
+        },
+        {
+          "project": "Nimoo Bazgo HEP",
+          "lat": 34.15,
+          "lon": 77.3667,
+          "state_river": "Ladakh / Indus",
+          "capacity_mw": 45,
+          "status": "Operational"
+        },
+        {
+          "project": "Chutak HEP",
+          "lat": 34.2,
+          "lon": 76.7167,
+          "state_river": "Ladakh / Suru",
+          "capacity_mw": 44,
+          "status": "Operational"
+        },
+        {
+          "project": "Sewa-II HEP",
+          "lat": 32.8,
+          "lon": 75.7333,
+          "state_river": "Jammu & Kashmir / Sewa",
+          "capacity_mw": 120,
+          "status": "Operational"
+        },
+        {
+          "project": "Teesta-V HEP",
+          "lat": 27.0333,
+          "lon": 88.4,
+          "state_river": "Sikkim / Teesta",
+          "capacity_mw": 510,
+          "status": "Operational"
+        },
+        {
+          "project": "TLDP-III",
+          "lat": 27.0667,
+          "lon": 88.4833,
+          "state_river": "West Bengal / Teesta",
+          "capacity_mw": 132,
+          "status": "Operational"
+        },
+        {
+          "project": "Rangit HEP",
+          "lat": 27.2667,
+          "lon": 88.3167,
+          "state_river": "Sikkim / Rangit",
+          "capacity_mw": 60,
+          "status": "Operational"
+        },
+        {
+          "project": "Tanakpur HEP",
+          "lat": 29.0667,
+          "lon": 80.1,
+          "state_river": "Uttarakhand / Sharda",
+          "capacity_mw": 120,
+          "status": "Operational (with UJVNL)"
+        },
+        {
+          "project": "Subansiri Lower",
+          "lat": 27.6333,
+          "lon": 94.0333,
+          "state_river": "Arunachal Pradesh / Subansiri",
+          "capacity_mw": 2000,
+          "status": "Under Construction"
+        },
+        {
+          "project": "Dhauliganga-II",
+          "lat": 30.3,
+          "lon": 79.7167,
+          "state_river": "Uttarakhand / Dhauliganga",
+          "capacity_mw": 280,
+          "status": "Under Construction"
+        },
+        {
+          "project": "Pakal Dul HEP",
+          "lat": 33.3333,
+          "lon": 75.8167,
+          "state_river": "Jammu & Kashmir / Marusudar",
+          "capacity_mw": 1000,
+          "status": "Under Construction"
+        },
+        {
+          "project": "Dibang Multipurpose",
+          "lat": 28.3,
+          "lon": 95.1833,
+          "state_river": "Arunachal Pradesh / Dibang",
+          "capacity_mw": 2880,
+          "status": "Planned"
+        }
+      ],
+      "corporate_and_regional_offices": [
+        {
+          "office": "Corporate Office",
+          "location": "Faridabad",
+          "lat": 28.4089,
+          "lon": 77.3178,
+          "state": "Haryana"
+        },
+        {
+          "office": "Regional Office - Jammu",
+          "location": "Jammu",
+          "lat": 32.7333,
+          "lon": 74.8667,
+          "state": "Jammu & Kashmir"
+        },
+        {
+          "office": "Regional Office - Shimla",
+          "location": "Shimla",
+          "lat": 31.1048,
+          "lon": 77.1734,
+          "state": "Himachal Pradesh"
+        },
+        {
+          "office": "Regional Office - Dehradun",
+          "location": "Dehradun",
+          "lat": 30.3165,
+          "lon": 78.0322,
+          "state": "Uttarakhand"
+        },
+        {
+          "office": "Regional Office - Siliguri",
+          "location": "Siliguri",
+          "lat": 26.7271,
+          "lon": 88.3953,
+          "state": "West Bengal"
+        },
+        {
+          "office": "Regional Office - Itanagar",
+          "location": "Itanagar",
+          "lat": 27.0844,
+          "lon": 93.6053,
+          "state": "Arunachal Pradesh"
+        }
+      ]
+    },
+    "POWERGRID": {
+      "full_name": "Power Grid Corporation of India Limited",
+      "key_substations_hvdc_terminals": [
+        {
+          "station": "Bhiwadi S/S",
+          "lat": 28.2076,
+          "lon": 76.848,
+          "state": "Haryana",
+          "voltage_levels": "765/400 kV",
+          "strategic_role": "Northern hub, HVDC interconnection to Agra"
+        },
+        {
+          "station": "Jaipur (Heerapura) S/S",
+          "lat": 26.9278,
+          "lon": 75.758,
+          "state": "Rajasthan",
+          "voltage_levels": "765/400 kV",
+          "strategic_role": "Renewable integration (solar zones)"
+        },
+        {
+          "station": "Gwalior S/S",
+          "lat": 26.2183,
+          "lon": 78.1828,
+          "state": "Madhya Pradesh",
+          "voltage_levels": "765/400 kV",
+          "strategic_role": "Inter-regional transfer"
+        },
+        {
+          "station": "Raipur S/S",
+          "lat": 21.2497,
+          "lon": 81.6349,
+          "state": "Chhattisgarh",
+          "voltage_levels": "765/400 kV",
+          "strategic_role": "Link to Western coal generation"
+        },
+        {
+          "station": "Wardha S/S",
+          "lat": 20.7453,
+          "lon": 78.6022,
+          "state": "Maharashtra",
+          "voltage_levels": "765/400 kV",
+          "strategic_role": "Central India hub"
+        },
+        {
+          "station": "Pune-Saswad S/S",
+          "lat": 18.4937,
+          "lon": 74.0249,
+          "state": "Maharashtra",
+          "voltage_levels": "765/400 kV",
+          "strategic_role": "Mumbai-Pune corridor"
+        },
+        {
+          "station": "Aurangabad S/S",
+          "lat": 19.8762,
+          "lon": 75.3433,
+          "state": "Maharashtra",
+          "voltage_levels": "765/400 kV",
+          "strategic_role": "Renewable evacuation (Marathwada)"
+        },
+        {
+          "station": "Bhuj S/S",
+          "lat": 23.242,
+          "lon": 69.6669,
+          "state": "Gujarat",
+          "voltage_levels": "400 kV",
+          "strategic_role": "Connectivity to Kutch renewables"
+        },
+        {
+          "station": "Kolar HVDC",
+          "lat": 13.1367,
+          "lon": 78.1331,
+          "state": "Karnataka",
+          "voltage_levels": "\u00b1500 kV HVDC",
+          "strategic_role": "Inter-regional link (South-West)"
+        },
+        {
+          "station": "Ballia HVDC",
+          "lat": 25.7619,
+          "lon": 84.1563,
+          "state": "Bihar",
+          "voltage_levels": "\u00b1800 kV HVDC",
+          "strategic_role": "Eastern-Northern link"
+        },
+        {
+          "station": "Bishwanath Chariali S/S",
+          "lat": 26.7333,
+          "lon": 93.1694,
+          "state": "Assam",
+          "voltage_levels": "400 kV",
+          "strategic_role": "North Eastern Grid connectivity"
+        },
+        {
+          "station": "Muzaffarpur S/S",
+          "lat": 26.1209,
+          "lon": 85.3647,
+          "state": "Bihar",
+          "voltage_levels": "400/220 kV",
+          "strategic_role": "Feeder to Nepal (Muzaffarpur-Dhalkebar)"
+        },
+        {
+          "station": "Moga S/S",
+          "lat": 30.8165,
+          "lon": 75.1718,
+          "state": "Punjab",
+          "voltage_levels": "400 kV",
+          "strategic_role": "Green energy corridor (Punjab solar)"
+        },
+        {
+          "station": "Sriperumbudur HVDC",
+          "lat": 12.9667,
+          "lon": 79.9667,
+          "state": "Tamil Nadu",
+          "voltage_levels": "\u00b1500 kV HVDC",
+          "strategic_role": "Inter-regional (Southern-Western)"
+        },
+        {
+          "station": "Bhadrawati S/S",
+          "lat": 19.9,
+          "lon": 79.1167,
+          "state": "Maharashtra",
+          "voltage_levels": "765/400 kV",
+          "strategic_role": "Central transmission hub"
+        },
+        {
+          "station": "Jeypore S/S",
+          "lat": 18.8667,
+          "lon": 82.5667,
+          "state": "Odisha",
+          "voltage_levels": "765 kV",
+          "strategic_role": "Evacuation from Mahanadi basin"
+        },
+        {
+          "station": "Angul HVDC",
+          "lat": 20.8333,
+          "lon": 85.1,
+          "state": "Odisha",
+          "voltage_levels": "\u00b1800 kV HVDC",
+          "strategic_role": "Bulk power from Odisha to South"
+        },
+        {
+          "station": "Champa-Kurukshetra HVDC",
+          "location": "Kurukshetra",
+          "lat": 30.0,
+          "lon": 76.75,
+          "state": "Haryana",
+          "voltage_levels": "\u00b1800 kV HVDC",
+          "strategic_role": "Largest multi-terminal HVDC (under commissioning)"
+        }
+      ],
+      "regional_zonal_offices_grid_control_centres": [
+        {
+          "office": "Corporate Centre",
+          "location": "Gurugram",
+          "lat": 28.4595,
+          "lon": 77.0266,
+          "state": "Haryana",
+          "function": "Headquarters"
+        },
+        {
+          "office": "Northern Region HQ / RLDC",
+          "location": "New Delhi (Katwaria Sarai)",
+          "lat": 28.543,
+          "lon": 77.1958,
+          "state": "Delhi",
+          "function": "Regional Load Despatch Centre"
+        },
+        {
+          "office": "Western Region HQ / RLDC",
+          "location": "Mumbai",
+          "lat": 19.0222,
+          "lon": 72.8565,
+          "state": "Maharashtra",
+          "function": "WR Load Despatch"
+        },
+        {
+          "office": "Southern Region HQ / RLDC",
+          "location": "Bengaluru",
+          "lat": 12.9516,
+          "lon": 77.6385,
+          "state": "Karnataka",
+          "function": "SR Load Despatch"
+        },
+        {
+          "office": "Eastern Region HQ / RLDC",
+          "location": "Kolkata",
+          "lat": 22.5347,
+          "lon": 88.3734,
+          "state": "West Bengal",
+          "function": "ER Load Despatch"
+        },
+        {
+          "office": "North Eastern Region HQ / RLDC",
+          "location": "Shillong",
+          "lat": 25.5788,
+          "lon": 91.8933,
+          "state": "Meghalaya",
+          "function": "NER Load Despatch"
+        },
+        {
+          "office": "Northern Region-II Office",
+          "location": "Jammu",
+          "lat": 32.7266,
+          "lon": 74.857,
+          "state": "Jammu & Kashmir",
+          "function": "Project implementation (Kashmir)"
+        },
+        {
+          "office": "Odisha Zone Office",
+          "location": "Bhubaneswar",
+          "lat": 20.2961,
+          "lon": 85.8245,
+          "state": "Odisha",
+          "function": "Eastern transmission projects"
+        },
+        {
+          "office": "Gujarat Zone Office",
+          "location": "Vadodara",
+          "lat": 22.3072,
+          "lon": 73.1812,
+          "state": "Gujarat",
+          "function": "Western transmission & renewables"
+        },
+        {
+          "office": "Rajasthan Zone Office",
+          "location": "Jaipur",
+          "lat": 26.9124,
+          "lon": 75.7873,
+          "state": "Rajasthan",
+          "function": "Solar park integration"
+        },
+        {
+          "office": "Tamil Nadu Zone Office",
+          "location": "Chennai",
+          "lat": 13.0827,
+          "lon": 80.2707,
+          "state": "Tamil Nadu",
+          "function": "Southern grid strengthening"
+        }
+      ]
+    }
+  }
+}

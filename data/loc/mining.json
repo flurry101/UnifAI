@@ -1,0 +1,551 @@
+{
+  "sector": "Mining",
+  "companies": {
+    "Coal India Limited": {
+      "abbreviation": "CIL",
+      "subsidiaries_overview": [
+        {
+          "subsidiary": "Eastern Coalfields Limited (ECL)",
+          "headquarters": "Sanctoria, West Bengal",
+          "major_coalfields_key_mines": "Raniganj Coalfield (Jhanjra, Khottadih, Kajora, Jambad, Kunustoria, Sripur, Satgram, Sodepur, Salanpur areas); Mugma Coalfield; Rajmahal Coalfield (Lalmatia OCP)",
+          "washeries_processing": "Chitra-Sanctoria, Sripur, Dhenkanal, Patherdih, Madhuband washeries",
+          "regional_area_offices": "Asansol, Bankola, Pandaveswar, Mugma, Rajmahal",
+          "primary_states": "West Bengal, Jharkhand"
+        },
+        {
+          "subsidiary": "Bharat Coking Coal Limited (BCCL)",
+          "headquarters": "Dhanbad, Jharkhand",
+          "major_coalfields_key_mines": "Jharia Coalfield (Block-II, Govindpur, Katras, Barora, Kusunda, Lodna, Sijua, Pootkee-Bulliary, Bastacolla, Western Jharia areas); East Jharia Coalfield (merged collieries)",
+          "washeries_processing": "Dugda, Bhojudih, Patherdih, Mahuda, Moonidih washeries; Moonidih Coal Bed Methane pilot plant",
+          "regional_area_offices": "Dhanbad HQ, Govindpur, Katras, Kusunda, Sijua",
+          "primary_states": "Jharkhand"
+        },
+        {
+          "subsidiary": "Central Coalfields Limited (CCL)",
+          "headquarters": "Ranchi, Jharkhand",
+          "major_coalfields_key_mines": "North Karanpura (Ray, Dakra, Ashoka); South Karanpura (Argada, Sirka); East Bokaro (Dhori, Kathara, Govindpur); West Bokaro (Tapin, Giddi); Ramgarh (Rajrappa); Giridih; Hutar coalfields",
+          "washeries_processing": "Kathara, Rajrappa, Kedla, Argada, Piparwar, Karo washeries",
+          "regional_area_offices": "Ranchi HQ, Bokaro & Kargali, Hazaribagh, Giridih, Ramgarh, Palamu, North Karanpura, Barka-Sayal",
+          "primary_states": "Jharkhand"
+        },
+        {
+          "subsidiary": "Northern Coalfields Limited (NCL)",
+          "headquarters": "Singrauli, Madhya Pradesh",
+          "major_coalfields_key_mines": "Singrauli Coalfield (Nigahi, Jayant, Bina, Kakri, Dudhichua, Khadia, Amlohri, Jhingurda, Block B, Gorbi)",
+          "washeries_processing": "Dudhichua, Jayant, Nigahi coal handling plants; Krishnashila CHP-Silo",
+          "regional_area_offices": "Singrauli HQ, Jayant, Nigahi, Dudhichua, Amlohri, Khadia",
+          "primary_states": "Madhya Pradesh, Uttar Pradesh"
+        },
+        {
+          "subsidiary": "Western Coalfields Limited (WCL)",
+          "headquarters": "Nagpur, Maharashtra",
+          "major_coalfields_key_mines": "Wardha Valley (Tadali, Majri, Naigaon, Sasti); Kamptee (Kamptee Deep, Inder); Umrer (Umrer OCP, Makardhokra); Pench-Kanhan; Pathakhera (Pathakhera, Shobhapur); Ballarpur; Mohan Sarni coalfields",
+          "washeries_processing": "Ghonsa, Bhatadi, Umrer, Silewara, Satpura, Gandhi Sagar washeries",
+          "regional_area_offices": "Nagpur HQ, Chandrapur, Ballarpur, Wani, Umrer, Wardha, Pench-Kanhan",
+          "primary_states": "Maharashtra, Madhya Pradesh"
+        },
+        {
+          "subsidiary": "South Eastern Coalfields Limited (SECL)",
+          "headquarters": "Bilaspur, Chhattisgarh",
+          "major_coalfields_key_mines": "Korba (Gevra, Dipka, Kusmunda - megaprojects); Mand-Raigarh (Bijuria, Bhupdeopur, Jampali); Hasdeo-Arand; Johilla; Sohagpur (Birsinghpur OCP); Chirimiri; Baikunthpur; Korar coalfields",
+          "washeries_processing": "Gidi, Bhelwaghat, Manikpur; Dipka Coal Handling Plant; Gevra CHP",
+          "regional_area_offices": "Bilaspur HQ, Korba, Raigarh, Hasdeo, Baikunthpur, Sohagpur, Chirimiri",
+          "primary_states": "Chhattisgarh, Madhya Pradesh"
+        },
+        {
+          "subsidiary": "Mahanadi Coalfields Limited (MCL)",
+          "headquarters": "Sambalpur, Odisha",
+          "major_coalfields_key_mines": "Talcher (Bhubaneswari, Ananta, Hingula, Kaniha, Jagannath, Bharatpur); Ib Valley (Samaleswari, Lajkura, Lilari, Belpahar, Lakhanpur)",
+          "washeries_processing": "Hingula, Jagannath, Ananta, Basundhara washeries; Talcher integrated CHPs",
+          "regional_area_offices": "Sambalpur HQ, Talcher, Ib Valley, Angul, Jharsuguda, Basundhara-Garjanbahal",
+          "primary_states": "Odisha"
+        },
+        {
+          "subsidiary": "North Eastern Coalfields (NEC)",
+          "headquarters": "Margherita, Assam",
+          "major_coalfields_key_mines": "Makum Coalfield (Tikak, Ledo, Tipong collieries); Dilli-Jeypore Coalfield",
+          "washeries_processing": "Tikak Washery; Ledo CHP",
+          "regional_area_offices": "Margherita HQ",
+          "primary_states": "Assam"
+        },
+        {
+          "subsidiary": "Central Mine Planning & Design Institute (CMPDI)",
+          "headquarters": "Ranchi",
+          "major_coalfields_key_mines": "Exploration, planning, and environmental services; regional institutes in Asansol, Dhanbad, Nagpur, Bilaspur, Sambalpur, Singrauli",
+          "washeries_processing": "N/A (Technical services subsidiary)",
+          "regional_area_offices": "Ranchi HQ + 7 Regional Institutes",
+          "primary_states": "Pan-India"
+        }
+      ],
+      "selected_major_collieries_and_plants": [
+        {
+          "id": "CIL_GEVRA_MINE",
+          "lat": 22.35,
+          "lon": 82.7,
+          "state": "Chhattisgarh"
+        },
+        {
+          "id": "CIL_DIPKA_MINE",
+          "lat": 22.3,
+          "lon": 82.65,
+          "state": "Chhattisgarh"
+        },
+        {
+          "id": "CIL_KUSMUNDA_MINE",
+          "lat": 22.32,
+          "lon": 82.72,
+          "state": "Chhattisgarh"
+        },
+        {
+          "id": "CIL_NIGAHI_MINE",
+          "lat": 24.15,
+          "lon": 82.65,
+          "state": "Madhya Pradesh"
+        },
+        {
+          "id": "CIL_JAYANT_MINE",
+          "lat": 24.1,
+          "lon": 82.68,
+          "state": "Madhya Pradesh"
+        },
+        {
+          "id": "CIL_DUDHICHUA_MINE",
+          "lat": 24.05,
+          "lon": 82.6,
+          "state": "Madhya Pradesh"
+        },
+        {
+          "id": "CIL_LALMATIA_OCP",
+          "lat": 24.95,
+          "lon": 87.45,
+          "state": "Jharkhand"
+        },
+        {
+          "id": "CIL_BHUBANESWARI_OCP",
+          "lat": 20.95,
+          "lon": 85.2,
+          "state": "Odisha"
+        },
+        {
+          "id": "CIL_ANANTA_OCP",
+          "lat": 20.85,
+          "lon": 85.1,
+          "state": "Odisha"
+        },
+        {
+          "id": "CIL_HINGULA_OCP",
+          "lat": 20.9,
+          "lon": 85.4,
+          "state": "Odisha"
+        },
+        {
+          "id": "CIL_SAMALESWARI_OCP",
+          "lat": 21.8,
+          "lon": 83.95,
+          "state": "Odisha"
+        },
+        {
+          "id": "CIL_LAJKURA_OCP",
+          "lat": 21.85,
+          "lon": 83.9,
+          "state": "Odisha"
+        },
+        {
+          "id": "CIL_MOONIDIH_WASHERY",
+          "lat": 23.75,
+          "lon": 86.35,
+          "state": "Jharkhand"
+        },
+        {
+          "id": "CIL_DUGDA_WASHERY",
+          "lat": 23.75,
+          "lon": 85.95,
+          "state": "Jharkhand"
+        },
+        {
+          "id": "CIL_KATHARA_WASHERY",
+          "lat": 23.75,
+          "lon": 85.8,
+          "state": "Jharkhand"
+        },
+        {
+          "id": "CIL_PIPARWAR_WASHERY",
+          "lat": 23.7,
+          "lon": 84.9,
+          "state": "Jharkhand"
+        },
+        {
+          "id": "CIL_KEDLA_WASHERY",
+          "lat": 23.7,
+          "lon": 85.6,
+          "state": "Jharkhand"
+        },
+        {
+          "id": "CIL_RAJMAHAL_OCP",
+          "lat": 24.95,
+          "lon": 87.45,
+          "state": "Jharkhand"
+        },
+        {
+          "id": "CIL_TIKAK_COLLIERY",
+          "lat": 27.3,
+          "lon": 95.7,
+          "state": "Assam"
+        },
+        {
+          "id": "CIL_JHANJRA_MINE",
+          "lat": 23.7,
+          "lon": 87.15,
+          "state": "West Bengal"
+        },
+        {
+          "id": "CIL_PATHERDIH_WASHERY",
+          "lat": 23.72,
+          "lon": 86.38,
+          "state": "Jharkhand"
+        },
+        {
+          "id": "CIL_NCL_KRISHNASHILA",
+          "lat": 24.02,
+          "lon": 82.55,
+          "state": "Uttar Pradesh"
+        },
+        {
+          "id": "CIL_BINA_MINE",
+          "lat": 24.12,
+          "lon": 82.58,
+          "state": "Uttar Pradesh"
+        }
+      ],
+      "supplementary_reference_list": [
+        {
+          "id": "CIL_JAGANNATH_OCP",
+          "lat": 20.87,
+          "lon": 85.3,
+          "state": "Odisha"
+        },
+        {
+          "id": "CIL_KANIHA_OCP",
+          "lat": 20.98,
+          "lon": 85.35,
+          "state": "Odisha"
+        },
+        {
+          "id": "CIL_BHARATPUR_OCP",
+          "lat": 20.86,
+          "lon": 85.25,
+          "state": "Odisha"
+        },
+        {
+          "id": "CIL_LILARI_OCP",
+          "lat": 21.83,
+          "lon": 83.87,
+          "state": "Odisha"
+        },
+        {
+          "id": "CIL_BELPAHAR_OCP",
+          "lat": 21.81,
+          "lon": 83.89,
+          "state": "Odisha"
+        },
+        {
+          "id": "CIL_BIRSINGHPUR_OCP",
+          "lat": 23.35,
+          "lon": 81.15,
+          "state": "Madhya Pradesh"
+        },
+        {
+          "id": "CIL_JAMBAD_UG",
+          "lat": 23.68,
+          "lon": 87.18,
+          "state": "West Bengal"
+        },
+        {
+          "id": "CIL_KUNUSTORIA_OCP",
+          "lat": 23.7,
+          "lon": 87.21,
+          "state": "West Bengal"
+        },
+        {
+          "id": "CIL_KHOTTADIH_OCP",
+          "lat": 23.71,
+          "lon": 87.2,
+          "state": "West Bengal"
+        },
+        {
+          "id": "CIL_SONEPUR_BAZARI_OCP",
+          "lat": 23.7,
+          "lon": 87.25,
+          "state": "West Bengal"
+        },
+        {
+          "id": "CIL_MONDA_OCP",
+          "lat": 19.25,
+          "lon": 79.4,
+          "state": "Maharashtra"
+        },
+        {
+          "id": "CIL_GHUGGUS_OCP",
+          "lat": 19.97,
+          "lon": 79.12,
+          "state": "Maharashtra"
+        },
+        {
+          "id": "CIL_MAKARDHOKRA_OCP",
+          "lat": 20.6,
+          "lon": 79.3,
+          "state": "Maharashtra"
+        },
+        {
+          "id": "CIL_UMRER_OCP",
+          "lat": 20.85,
+          "lon": 79.35,
+          "state": "Maharashtra"
+        },
+        {
+          "id": "NMDC_DEPOSIT14_CRUSHING",
+          "lat": 18.71,
+          "lon": 81.22,
+          "state": "Chhattisgarh"
+        },
+        {
+          "id": "NMDC_DEPOSIT11C_LOADING",
+          "lat": 18.73,
+          "lon": 81.26,
+          "state": "Chhattisgarh"
+        },
+        {
+          "id": "NMDC_KIRANDUL_RAILWAY_SIDING",
+          "lat": 18.64,
+          "lon": 81.26,
+          "state": "Chhattisgarh"
+        },
+        {
+          "id": "NMDC_VIZAG_ORE_HANDLING",
+          "lat": 17.69,
+          "lon": 83.21,
+          "state": "Andhra Pradesh"
+        },
+        {
+          "id": "NMDC_PANNA_DIAMOND_TAILING",
+          "lat": 24.74,
+          "lon": 80.21,
+          "state": "Madhya Pradesh"
+        }
+      ]
+    },
+    "NMDC": {
+      "full_name": "NMDC Limited",
+      "mining_projects_and_units": [
+        {
+          "project": "Bailadila Deposit-14",
+          "mineral": "Iron Ore (Fe 65%+)",
+          "facility_type": "Mechanized opencast mine",
+          "lat": 18.7,
+          "lon": 81.2,
+          "state": "Chhattisgarh"
+        },
+        {
+          "project": "Bailadila Deposit-11C",
+          "mineral": "Iron Ore (Fe 65%+)",
+          "facility_type": "Mechanized opencast mine",
+          "lat": 18.72,
+          "lon": 81.25,
+          "state": "Chhattisgarh"
+        },
+        {
+          "project": "Bailadila Deposit-5/10/11A",
+          "mineral": "Iron Ore (Fe 64%+)",
+          "facility_type": "Open cast mine complex",
+          "lat": 18.68,
+          "lon": 81.23,
+          "state": "Chhattisgarh"
+        },
+        {
+          "project": "Bailadila Deposit-4 (Kumaraswamy)",
+          "mineral": "Iron Ore (Fe 67%+)",
+          "facility_type": "Open cast mine",
+          "lat": 18.65,
+          "lon": 81.27,
+          "state": "Chhattisgarh"
+        },
+        {
+          "project": "Bailadila Deposit-13",
+          "mineral": "Iron Ore",
+          "facility_type": "Proposed depth expansion",
+          "lat": 18.71,
+          "lon": 81.21,
+          "state": "Chhattisgarh"
+        },
+        {
+          "project": "Donimalai Iron Ore Mine",
+          "mineral": "Iron Ore (Fe 62-64%)",
+          "facility_type": "Mechanized opencast",
+          "lat": 15.2,
+          "lon": 76.55,
+          "state": "Karnataka"
+        },
+        {
+          "project": "Kumaraswamy Iron Ore Mine",
+          "mineral": "Iron Ore (Fe 66-68%)",
+          "facility_type": "Mechanized opencast",
+          "lat": 15.18,
+          "lon": 76.57,
+          "state": "Karnataka"
+        },
+        {
+          "project": "Panna Diamond Mining Project",
+          "mineral": "Diamond",
+          "facility_type": "Alluvial & pipe, mechanized opencast",
+          "lat": 24.73,
+          "lon": 80.18,
+          "state": "Madhya Pradesh"
+        },
+        {
+          "project": "Majhgawan Pipe Mine (Panna)",
+          "mineral": "Diamond",
+          "facility_type": "Primary pipe mine",
+          "lat": 24.75,
+          "lon": 80.2,
+          "state": "Madhya Pradesh"
+        },
+        {
+          "project": "NMDC Pellet Plant - Donimalai",
+          "mineral": "Iron Ore Pellets",
+          "facility_type": "1.2 MTPA pelletizing unit",
+          "lat": 15.2,
+          "lon": 76.55,
+          "state": "Karnataka"
+        },
+        {
+          "project": "NMDC Integrated Steel Plant (Nagarnar)",
+          "mineral": "HR Coils / Steel",
+          "facility_type": "3 MTPA greenfield ISP (now NMDC Steel Ltd)",
+          "lat": 19.08,
+          "lon": 82.05,
+          "state": "Chhattisgarh"
+        },
+        {
+          "project": "NMDC Sinter Plant - Donimalai",
+          "mineral": "Sinter",
+          "facility_type": "Iron Ore Sintering",
+          "lat": 15.2,
+          "lon": 76.56,
+          "state": "Karnataka"
+        },
+        {
+          "project": "NMDC R&D Centre - Hyderabad",
+          "mineral": "Minerals research",
+          "facility_type": "Advanced mineral processing & characterization",
+          "lat": 17.45,
+          "lon": 78.38,
+          "state": "Telangana"
+        },
+        {
+          "project": "NMDC Diamond Processing Plant - Panna",
+          "mineral": "Diamond recovery",
+          "facility_type": "Dense media separation, X-ray sorting",
+          "lat": 24.74,
+          "lon": 80.19,
+          "state": "Madhya Pradesh"
+        },
+        {
+          "project": "NMDC Regional Office - Hyderabad (Corporate HQ)",
+          "mineral": "Administration",
+          "facility_type": "Registered office & central control",
+          "lat": 17.43,
+          "lon": 78.43,
+          "state": "Telangana"
+        },
+        {
+          "project": "NMDC Regional Office - Bengaluru",
+          "mineral": "Marketing & liaison",
+          "facility_type": "Karnataka-Goa cluster coordination",
+          "lat": 12.97,
+          "lon": 77.59,
+          "state": "Karnataka"
+        },
+        {
+          "project": "NMDC Regional Office - Kolkata",
+          "mineral": "Marketing & logistics",
+          "facility_type": "Eastern cluster logistics desk",
+          "lat": 22.57,
+          "lon": 88.36,
+          "state": "West Bengal"
+        },
+        {
+          "project": "NMDC Regional Office - Mumbai",
+          "mineral": "Marketing & finances",
+          "facility_type": "Western cluster coordination",
+          "lat": 19.08,
+          "lon": 72.88,
+          "state": "Maharashtra"
+        },
+        {
+          "project": "NMDC Regional Office - Visakhapatnam",
+          "mineral": "Port logistics & export",
+          "facility_type": "Vizag port iron ore handling",
+          "lat": 17.69,
+          "lon": 83.21,
+          "state": "Andhra Pradesh"
+        },
+        {
+          "project": "NMDC Regional Office - New Delhi",
+          "mineral": "Policy & liaison",
+          "facility_type": "Ministry coordination & corporate affairs",
+          "lat": 28.61,
+          "lon": 77.23,
+          "state": "Delhi"
+        },
+        {
+          "project": "Bacheli Deposit (Bailadila Sector)",
+          "mineral": "Iron Ore (Lump & Fines)",
+          "facility_type": "Operating mines cluster",
+          "lat": 18.73,
+          "lon": 81.25,
+          "state": "Chhattisgarh"
+        },
+        {
+          "project": "Kirandul Complex (Bailadila)",
+          "mineral": "Iron Ore (Fines)",
+          "facility_type": "Rail loading & crushing plant",
+          "lat": 18.64,
+          "lon": 81.25,
+          "state": "Chhattisgarh"
+        },
+        {
+          "project": "NMDC Legacy Iron Mines - Maharashtra",
+          "mineral": "Iron Ore",
+          "facility_type": "Closed / discontinued operations",
+          "lat": 20.75,
+          "lon": 79.52,
+          "state": "Maharashtra"
+        },
+        {
+          "project": "NMDC Exploration Camp - Mount Abu",
+          "mineral": "Strategic minerals",
+          "facility_type": "Reconnaissance for tungsten, base metals",
+          "lat": 24.59,
+          "lon": 72.71,
+          "state": "Rajasthan"
+        },
+        {
+          "project": "NMDC Exploration Camp - Sandur",
+          "mineral": "Manganese & iron ore",
+          "facility_type": "Reconnaissance & sampling camp",
+          "lat": 15.15,
+          "lon": 76.55,
+          "state": "Karnataka"
+        },
+        {
+          "project": "NMDC Ltd. - Tokisud North Coal Block",
+          "mineral": "Coal",
+          "facility_type": "Underground coal block, leased in Jharkhand",
+          "lat": 23.8,
+          "lon": 85.5,
+          "state": "Jharkhand"
+        }
+      ]
+    }
+  }
+}
