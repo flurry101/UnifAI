@@ -8,6 +8,7 @@ from app.models import CnmcRegistry
 router = APIRouter()
 
 @router.get("/", response_model=List[CnmcResponse])
+@router.get("/catalog", response_model=List[CnmcResponse])
 def list_cnmc(db: Session = Depends(get_db)):
     return db.query(CnmcRegistry).all()
 
@@ -17,4 +18,3 @@ def get_cnmc_details(cnmc_id: str, db: Session = Depends(get_db)):
     if not cnmc:
         raise HTTPException(status_code=404, detail="CNMC not found")
     return cnmc
-
