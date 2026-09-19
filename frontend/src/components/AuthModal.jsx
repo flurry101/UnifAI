@@ -268,38 +268,6 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }) {
             </RawButton>
           </form>
 
-          {/* Quick 1-click test credentials strip */}
-          {mode === 'login' && (
-            <div className="mt-6 pt-4 border-t-2 border-raw-black">
-              <span className="font-headline text-[10px] text-[#555555] uppercase block mb-2 tracking-wider">
-                ONE-CLICK SEEDED CREDENTIALS:
-              </span>
-              <div className="grid grid-cols-3 gap-2 font-mono text-xs">
-                <button
-                  type="button"
-                  onClick={() => handleQuickLogin('user', 'cpse_user', 'password123')}
-                  className="p-1.5 border-2 border-raw-black bg-raw-sunken text-center hover:bg-raw-black hover:text-raw-white font-bold"
-                >
-                  USER
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleQuickLogin('reviewer', 'reviewer', 'password123')}
-                  className="p-1.5 border-2 border-raw-black bg-raw-sunken text-center hover:bg-raw-black hover:text-raw-white font-bold"
-                >
-                  REVIEWER
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleQuickLogin('admin', 'admin', 'password123')}
-                  className="p-1.5 border-2 border-raw-black bg-raw-sunken text-center hover:bg-raw-black hover:text-raw-white font-bold"
-                >
-                  ADMIN
-                </button>
-              </div>
-            </div>
-          )}
-
         </RawCard>
       </div>
     </div>
