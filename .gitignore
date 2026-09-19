@@ -23,3 +23,5 @@ artifacts/
 !artifacts/matching_model/
 !artifacts/matching_model/*
 
+# Skills
+docs/skills/*.md
