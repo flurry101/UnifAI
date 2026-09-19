@@ -6,6 +6,13 @@ venv/
 __pycache__/
 *.pyc
 
+# Frontend dependencies and build output
+node_modules/
+dist/
+build/
+coverage/
+.vite/
+
 # ML/AI Models & Caches
 .ipynb_checkpoints/
 models/
