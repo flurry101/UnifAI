@@ -4,15 +4,18 @@ import RawButton from '../components/RawButton';
 import RawInput from '../components/RawInput';
 import StatusChip from '../components/StatusChip';
 import { fetchPendingReviews, submitReviewDecision } from '../api/governance';
+import { useAuth } from '../context/AuthContext';
 
 export default function ReviewerView() {
+  const { session } = useAuth();
+  const canSubmitDecisions = !!session.token && (session.role === 'TECHNICAL_REVIEWER' || session.role === 'NATIONAL_ADMIN');
+
   const [proposals, setProposals] = useState([]);
   const [selectedIdx, setSelectedIdx] = useState(0);
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [actionSuccess, setActionSuccess] = useState(null);
 
-  // Form State
   const [chosenRelation, setChosenRelation] = useState('EQUIVALENT');
   const [reviewerNotes, setReviewerNotes] = useState('');
   const [selectedEvidence, setSelectedEvidence] = useState(['DIMENSION_MATCH', 'TECHNICAL_CONFLICT']);
@@ -59,6 +62,11 @@ export default function ReviewerView() {
   };
 
   const handleSubmitDecision = async (action) => {
+    if (!canSubmitDecisions) {
+      alert('Security Notice: You must be authenticated as TECHNICAL_REVIEWER or NATIONAL_ADMIN to submit governance decisions.');
+      return;
+    }
+
     const current = proposals[selectedIdx];
     if (!current) return;
 
@@ -72,8 +80,7 @@ export default function ReviewerView() {
       });
 
       setActionSuccess(`Decision [${action}] recorded for ${current.id}. Updated status: ${action === 'APPROVE' ? 'APPROVED' : 'REJECTED'}.`);
-      
-      // Update local state queue
+
       setProposals((prev) =>
         prev.map((p, i) =>
           i === selectedIdx
@@ -92,9 +99,9 @@ export default function ReviewerView() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-      
+
       {/* Title */}
-      <div className="border-b-3 border-raw-black pb-4 mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <div className="border-b-3 border-raw-black pb-4 mb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
           <div className="flex items-center gap-3">
             <h1 className="font-headline text-3xl md:text-4xl text-raw-black">
@@ -105,10 +112,25 @@ export default function ReviewerView() {
             </span>
           </div>
           <p className="font-body text-sm text-[#444444] mt-1">
-            DUAL-HUMAN GOVERNANCE, CONFLICT ARBITRATION & GROUND TRUTH VALIDATION
+            DUAL-HUMAN GOVERNANCE, CONFLICT ARBITRATION &amp; GROUND TRUTH VALIDATION
           </p>
         </div>
       </div>
+
+      {/* Security Gating Alert */}
+      {!canSubmitDecisions && (
+        <div className="mb-6 p-3 bg-raw-sunken border-2 border-raw-black flex flex-wrap items-center justify-between gap-2">
+          <div className="flex items-center gap-2">
+            <span className="bg-raw-error text-raw-white px-2 py-0.5 font-mono text-xs font-bold uppercase">
+              READ-ONLY AUDIT MODE
+            </span>
+            <span className="font-mono text-xs text-raw-black">
+              Review queue is in <strong>READ-ONLY</strong> mode for unauthenticated or non-reviewer accounts. Sign in as <strong>TECHNICAL_REVIEWER</strong> to record binding governance decisions.
+            </span>
+          </div>
+          <span className="font-mono text-[10px] text-[#555] uppercase font-bold">MUTATION GATED</span>
+        </div>
+      )}
 
       {loading ? (
         <div className="p-8 border-3 border-raw-black font-mono text-center">
@@ -120,7 +142,7 @@ export default function ReviewerView() {
         </div>
       ) : (
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-          
+
           {/* Queue Sidebar (1 col) */}
           <div className="lg:col-span-1">
             <RawCard className="p-4">
@@ -130,7 +152,7 @@ export default function ReviewerView() {
                   {proposals.length} PAIRS
                 </span>
               </div>
-              
+
               <div className="space-y-2">
                 {proposals.map((item, idx) => {
                   const isSelected = idx === selectedIdx;
@@ -167,7 +189,7 @@ export default function ReviewerView() {
           <div className="lg:col-span-3">
             {activeProposal && (
               <div className="space-y-6">
-                
+
                 {/* Conflict Warning Banner if present */}
                 {activeProposal.technical_conflict && (
                   <div className="border-3 border-raw-error bg-[#FFF5F5] p-4 text-raw-black font-mono">
@@ -271,7 +293,7 @@ export default function ReviewerView() {
                   )}
 
                   <div className="space-y-4">
-                    {/* Relationship Override Radio Buttons */}
+                    {/* Relationship Override */}
                     <div>
                       <label className="font-headline text-xs text-raw-black uppercase block mb-2">
                         ASSERT FINAL RELATIONSHIP:
@@ -346,17 +368,17 @@ export default function ReviewerView() {
                         variant="destructive"
                         size="medium"
                         onClick={() => handleSubmitDecision('REJECT')}
-                        disabled={submitting}
+                        disabled={submitting || !canSubmitDecisions}
                       >
-                        REJECT CANDIDATE LINKAGE ✗
+                        {!canSubmitDecisions ? 'REJECT (READ-ONLY)' : 'REJECT CANDIDATE LINKAGE ✗'}
                       </RawButton>
                       <RawButton
                         variant="primary"
                         size="medium"
                         onClick={() => handleSubmitDecision('APPROVE')}
-                        disabled={submitting}
+                        disabled={submitting || !canSubmitDecisions}
                       >
-                        APPROVE AND COMMIT TO CNMC ✓
+                        {!canSubmitDecisions ? 'APPROVE (READ-ONLY)' : 'APPROVE AND COMMIT TO CNMC ✓'}
                       </RawButton>
                     </div>
                   </div>
@@ -372,4 +394,3 @@ export default function ReviewerView() {
     </div>
   );
 }
-

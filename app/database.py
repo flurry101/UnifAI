@@ -38,6 +38,19 @@ except Exception as e:
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
+def _migrate_columns():
+    try:
+        with engine.begin() as conn:
+            for col, col_type in [("email", "TEXT"), ("auth_provider", "TEXT DEFAULT 'local'"), ("avatar_url", "TEXT")]:
+                try:
+                    conn.exec_driver_sql(f"ALTER TABLE users ADD COLUMN {col} {col_type};")
+                except Exception:
+                    pass
+    except Exception:
+        pass
+
+_migrate_columns()
+
 Base = declarative_base()
 
 def get_db():

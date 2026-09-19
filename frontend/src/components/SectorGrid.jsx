@@ -5,31 +5,26 @@ const SECTORS = [
   {
     code: 'SEC-01',
     name: 'OIL & GAS',
-    primaryMaterials: 'ASME B16.5 FLANGES, API 6D VALVES, API 5L LINE PIPES',
     leadCpse: 'ONGC, IOCL, GAIL, BPCL, HPCL',
   },
   {
     code: 'SEC-02',
     name: 'POWER',
-    primaryMaterials: 'SA213 BOILER TUBES, TRANSFORMER BUSHINGS, TURBINE BLADES',
     leadCpse: 'NTPC, POWERGRID, NHPC',
   },
   {
     code: 'SEC-03',
     name: 'STEEL',
-    primaryMaterials: 'REFRACTORY BRICKS, CONTINUOUS CASTING NOZZLES, FERRO-ALLOYS',
     leadCpse: 'SAIL, RINL',
   },
   {
     code: 'SEC-04',
     name: 'MINING',
-    primaryMaterials: 'HEAVY EARTHMOVING SPARES, CRUSHER JAWS, CONVEYOR BELTING',
     leadCpse: 'COAL INDIA, NMDC, MOIL',
   },
   {
     code: 'SEC-05',
     name: 'HEAVY ENGINEERING',
-    primaryMaterials: 'PRESSURE VESSEL PLATES (SA516), CNC TOOLING, FORGINGS',
     leadCpse: 'BHEL, BEML, HEC',
   },
 ];
@@ -61,12 +56,9 @@ export default function SectorGrid() {
                   MANDATED
                 </span>
               </div>
-              <h3 className="font-headline text-lg md:text-xl text-raw-black mb-2">
+              <h3 className="font-headline text-lg md:text-xl text-raw-black mb-3">
                 {sector.name}
               </h3>
-              <p className="font-mono text-xs text-[#333333] mb-4 leading-relaxed">
-                {sector.primaryMaterials}
-              </p>
             </div>
             <div className="pt-3 border-t-1 border-raw-black text-[11px] font-body text-[#555555]">
               <strong className="text-raw-black">KEY CPSES:</strong> {sector.leadCpse}
@@ -77,4 +69,3 @@ export default function SectorGrid() {
     </section>
   );
 }
-

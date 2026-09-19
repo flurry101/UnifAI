@@ -29,6 +29,10 @@ class User(Base):
     cpse_id = Column(String, ForeignKey("cpse_tenant.id"), nullable=False)
     username = Column(String, unique=True, index=True, nullable=False)
     hashed_password = Column(String, nullable=False)
+    email = Column(String, unique=True, index=True, nullable=True)
+    hashed_password = Column(String, nullable=True)
+    auth_provider = Column(String, default="local") # "local" or "google"
+    avatar_url = Column(String, nullable=True)
     role = Column(
         SQLEnum('CPSE_USER', 'TECHNICAL_REVIEWER', 'CPSE_ADMIN', 'NATIONAL_ADMIN', 'AUDITOR', name="user_role_enum"),
         nullable=False

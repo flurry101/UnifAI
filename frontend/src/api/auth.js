@@ -31,9 +31,9 @@ export const PERSONAS = {
   }
 };
 
-export async function loginWithCredentials(username, password) {
+export async function loginWithCredentials(usernameOrEmail, password) {
   const formData = new URLSearchParams();
-  formData.append('username', username);
+  formData.append('username', usernameOrEmail);
   formData.append('password', password);
 
   try {
@@ -47,8 +47,11 @@ export async function loginWithCredentials(username, password) {
 
     if (data.access_token) {
       localStorage.setItem('unifai_token', data.access_token);
-      localStorage.setItem('unifai_username', username);
-      return { success: true, token: data.access_token };
+      localStorage.setItem('unifai_username', data.username || usernameOrEmail);
+      if (data.email) localStorage.setItem('unifai_email', data.email);
+      if (data.avatar_url) localStorage.setItem('unifai_avatar', data.avatar_url);
+      if (data.role) localStorage.setItem('unifai_role', data.role);
+      return { success: true, token: data.access_token, user: data };
     }
     return { success: false, error: 'Token missing in response' };
   } catch (err) {
@@ -56,12 +59,13 @@ export async function loginWithCredentials(username, password) {
   }
 }
 
-export async function registerUser({ username, password, role, cpse_id }) {
+export async function registerUser({ username, email, password, role, cpse_id }) {
   try {
     const data = await apiFetch('/api/v1/auth/register', {
       method: 'POST',
       body: {
         username,
+        email: email || undefined,
         password,
         role,
         cpse_id,
@@ -70,12 +74,77 @@ export async function registerUser({ username, password, role, cpse_id }) {
 
     if (data.access_token) {
       localStorage.setItem('unifai_token', data.access_token);
-      localStorage.setItem('unifai_username', username);
-      return { success: true, token: data.access_token };
+      localStorage.setItem('unifai_username', data.username || username);
+      if (data.email) localStorage.setItem('unifai_email', data.email);
+      if (data.role) localStorage.setItem('unifai_role', data.role);
+      return { success: true, token: data.access_token, user: data };
     }
     return { success: false, error: 'Token missing in response' };
   } catch (err) {
     return { success: false, error: err.message };
+  }
+}
+
+export async function loginWithGoogle({ email, name, avatar_url, role = 'CPSE_USER', cpse_id = 'IOCL', id_token = null }) {
+  try {
+    const data = await apiFetch('/api/v1/auth/google', {
+      method: 'POST',
+      body: {
+        id_token,
+        email,
+        name,
+        avatar_url,
+        role,
+        cpse_id,
+      },
+    });
+
+    if (data.access_token) {
+      localStorage.setItem('unifai_token', data.access_token);
+      localStorage.setItem('unifai_username', data.username || email.split('@')[0]);
+      localStorage.setItem('unifai_email', data.email || email);
+      if (data.avatar_url) localStorage.setItem('unifai_avatar', data.avatar_url);
+      if (data.role) localStorage.setItem('unifai_role', data.role);
+      return { success: true, token: data.access_token, user: data };
+    }
+    return { success: false, error: 'Token missing in Google auth response' };
+  } catch (err) {
+    return { success: false, error: err.message };
+  }
+}
+
+export async function exchangeGoogleCode({ code, redirectUri, role = 'CPSE_USER', cpseId = 'IOCL' }) {
+  try {
+    const data = await apiFetch('/api/v1/auth/google/exchange', {
+      method: 'POST',
+      body: {
+        code,
+        redirect_uri: redirectUri,
+        role,
+        cpse_id: cpseId,
+      },
+    });
+
+    if (data.access_token) {
+      localStorage.setItem('unifai_token', data.access_token);
+      localStorage.setItem('unifai_username', data.username || 'google_user');
+      if (data.email) localStorage.setItem('unifai_email', data.email);
+      if (data.avatar_url) localStorage.setItem('unifai_avatar', data.avatar_url);
+      if (data.role) localStorage.setItem('unifai_role', data.role);
+      return { success: true, token: data.access_token, user: data };
+    }
+    return { success: false, error: 'Token missing in Google code exchange response' };
+  } catch (err) {
+    return { success: false, error: err.message };
+  }
+}
+
+export async function getGoogleOAuthUrl(redirectUri = null) {
+  try {
+    const query = redirectUri ? `?redirect_uri=${encodeURIComponent(redirectUri)}` : '';
+    return await apiFetch(`/api/v1/auth/google/url${query}`);
+  } catch (err) {
+    return { configured: false, error: err.message };
   }
 }
 
@@ -130,5 +199,19 @@ export function clearSession() {
   localStorage.removeItem('unifai_token');
   localStorage.removeItem('unifai_username');
   localStorage.removeItem('unifai_active_persona');
+}
+
+export async function getUserProfile() {
+  try {
+    const token = localStorage.getItem('unifai_token');
+    if (!token) return null;
+    return await apiFetch('/api/v1/auth/me', {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+  } catch (err) {
+    return null;
+  }
 }
 

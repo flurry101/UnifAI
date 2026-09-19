@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { PERSONAS, getCurrentSession, saveSession, clearSession, loginWithCredentials as apiLogin, registerUser as apiRegister } from '../api/auth';
+import { PERSONAS, getCurrentSession, saveSession, clearSession, loginWithCredentials as apiLogin, registerUser as apiRegister, loginWithGoogle, exchangeGoogleCode } from '../api/auth';
 import { checkBackendHealth } from '../api/client';
 
 const AuthContext = createContext(null);
@@ -23,6 +23,9 @@ export function AuthProvider({ children }) {
       token: current.token,
       username: current.username,
       role: current.role || 'CPSE_USER',
+      email: localStorage.getItem('unifai_email') || null,
+      avatar_url: localStorage.getItem('unifai_avatar') || null,
+      isAuthenticated: !!current.token,
     });
 
     const verifyHealth = async () => {
@@ -59,6 +62,8 @@ export function AuthProvider({ children }) {
         token: res.token,
         username: username,
         role: current.role,
+        email: res.user?.email || null,
+        avatar_url: res.user?.avatar_url || null,
         isAuthenticated: true,
       });
       return { success: true };
@@ -66,8 +71,8 @@ export function AuthProvider({ children }) {
     return { success: false, error: res.error };
   };
 
-  const register = async ({ username, password, role, cpse_id }) => {
-    const res = await apiRegister({ username, password, role, cpse_id });
+  const register = async ({ username, email, password, role, cpse_id }) => {
+    const res = await apiRegister({ username, email, password, role, cpse_id });
     if (res.success) {
       const current = getCurrentSession();
       let detectedPersona = 'user';
@@ -78,6 +83,51 @@ export function AuthProvider({ children }) {
         token: res.token,
         username: username,
         role: current.role,
+        email: res.user?.email || email || null,
+        isAuthenticated: true,
+      });
+      return { success: true };
+    }
+    return { success: false, error: res.error };
+  };
+
+  const googleLogin = async (payload) => {
+    const res = await loginWithGoogle(payload);
+    if (res.success) {
+      const current = getCurrentSession();
+      let detectedPersona = 'user';
+      if (current.role === 'TECHNICAL_REVIEWER') detectedPersona = 'reviewer';
+      else if (current.role === 'NATIONAL_ADMIN') detectedPersona = 'admin';
+      setActivePersona(detectedPersona);
+      setSession({
+        token: res.token,
+        username: res.user?.username || payload.email.split('@')[0],
+        email: res.user?.email || payload.email,
+        role: current.role,
+        auth_provider: 'google',
+        avatar_url: res.user?.avatar_url || payload.avatar_url,
+        isAuthenticated: true,
+      });
+      return { success: true };
+    }
+    return { success: false, error: res.error };
+  };
+
+  const exchangeOAuthCode = async ({ code, redirectUri, role, cpseId }) => {
+    const res = await exchangeGoogleCode({ code, redirectUri, role, cpseId });
+    if (res.success) {
+      const current = getCurrentSession();
+      let detectedPersona = 'user';
+      if (current.role === 'TECHNICAL_REVIEWER') detectedPersona = 'reviewer';
+      else if (current.role === 'NATIONAL_ADMIN') detectedPersona = 'admin';
+      setActivePersona(detectedPersona);
+      setSession({
+        token: res.token,
+        username: res.user?.username || 'google_user',
+        email: res.user?.email || null,
+        role: current.role,
+        auth_provider: 'google',
+        avatar_url: res.user?.avatar_url || null,
         isAuthenticated: true,
       });
       return { success: true };
@@ -87,11 +137,18 @@ export function AuthProvider({ children }) {
 
   const logout = () => {
     clearSession();
+    localStorage.removeItem('unifai_email');
+    localStorage.removeItem('unifai_avatar');
+    localStorage.removeItem('unifai_role');
+    localStorage.removeItem('unifai_pending_role');
+    localStorage.removeItem('unifai_pending_cpse');
     setActivePersona('user');
     setSession({
       token: null,
       username: 'cpse_user',
+      email: null,
       role: 'CPSE_USER',
+      isAuthenticated: false,
     });
   };
 
@@ -111,6 +168,8 @@ export function AuthProvider({ children }) {
         switchPersona,
         login,
         register,
+        googleLogin,
+        exchangeOAuthCode,
         logout,
       }}
     >
@@ -126,4 +185,3 @@ export function useAuth() {
   }
   return context;
 }
-

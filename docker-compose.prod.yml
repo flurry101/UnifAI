@@ -1,0 +1,55 @@
+version: "3.9"
+
+# ============================================================
+# PRODUCTION OVERRIDE — PostgreSQL + pgvector
+# Usage: docker compose -f docker-compose.yml -f docker-compose.prod.yml up
+#
+# For Render: each service is deployed independently.
+# This file documents the full topology; use render.yaml for Render deploys.
+# ============================================================
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: unifai-postgres
+    restart: unless-stopped
+    env_file:
+      - .env.prod
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-unifai}
+      POSTGRES_USER: ${POSTGRES_USER:-unifai}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/migrations:/docker-entrypoint-initdb.d:ro
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-unifai} -d ${POSTGRES_DB:-unifai}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - unifai-network
+
+  backend:
+    env_file:
+      - .env.prod
+    environment:
+      # Overrides the SQLite DATABASE_URL set in docker-compose.yml
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-unifai}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-unifai}
+      USE_LOCAL_PIPELINE: ${USE_LOCAL_PIPELINE:-1}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      # Remove the local SQLite volume mount in prod; keep artifacts
+      - ./artifacts:/app/artifacts:ro
+
+  frontend:
+    env_file:
+      - .env.prod
+
+volumes:
+  postgres_data:
+

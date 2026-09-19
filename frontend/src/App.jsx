@@ -3,6 +3,7 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import AuthModal from './components/AuthModal';
+import OAuthCallback from './components/OAuthCallback';
 import LandingView from './views/LandingView';
 import UserView from './views/UserView';
 import ReviewerView from './views/ReviewerView';
@@ -13,6 +14,8 @@ function AppContent() {
   const [currentView, setCurrentView] = useState('landing');
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [authModalMode, setAuthModalMode] = useState('login');
+
+  const isOAuthCallback = window.location.pathname.startsWith('/auth/google/callback');
 
   const handleViewChange = (viewName) => {
     setCurrentView(viewName);
@@ -35,15 +38,21 @@ function AppContent() {
 
       {/* Main Content Area */}
       <main className="flex-1">
-        {currentView === 'landing' && (
-          <LandingView
-            onSelectView={handleViewChange}
-            onOpenAuthModal={handleOpenAuthModal}
-          />
+        {isOAuthCallback ? (
+          <OAuthCallback onComplete={() => handleViewChange(activePersona || 'user')} />
+        ) : (
+          <>
+            {currentView === 'landing' && (
+              <LandingView
+                onSelectView={handleViewChange}
+                onOpenAuthModal={handleOpenAuthModal}
+              />
+            )}
+            {currentView === 'user' && <UserView />}
+            {currentView === 'reviewer' && <ReviewerView />}
+            {currentView === 'admin' && <AdminView />}
+          </>
         )}
-        {currentView === 'user' && <UserView />}
-        {currentView === 'reviewer' && <ReviewerView />}
-        {currentView === 'admin' && <AdminView />}
       </main>
 
       {/* Mandatory Brutalist Footer */}

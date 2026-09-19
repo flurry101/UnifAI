@@ -3,8 +3,12 @@ import RawCard from '../components/RawCard';
 import RawButton from '../components/RawButton';
 import StatusChip from '../components/StatusChip';
 import { fetchCnmcCatalog } from '../api/cnmc';
+import { useAuth } from '../context/AuthContext';
 
 export default function AdminView({ onOpenRbacModal }) {
+  const { session } = useAuth();
+  const isAdmin = !!session.token && session.role === 'NATIONAL_ADMIN';
+
   const [catalog, setCatalog] = useState([]);
   const [selectedCnmc, setSelectedCnmc] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -39,9 +43,9 @@ export default function AdminView({ onOpenRbacModal }) {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-      
+
       {/* View Header */}
-      <div className="border-b-3 border-raw-black pb-4 mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <div className="border-b-3 border-raw-black pb-4 mb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
           <div className="flex items-center gap-3">
             <h1 className="font-headline text-3xl md:text-4xl text-raw-black">
@@ -52,12 +56,27 @@ export default function AdminView({ onOpenRbacModal }) {
             </span>
           </div>
           <p className="font-body text-sm text-[#444444] mt-1">
-            COMMON NATIONAL MATERIAL CATALOG (CNMC) MASTER REGISTRY & CROSS-CPSE LINKAGES
+            COMMON NATIONAL MATERIAL CATALOG (CNMC) MASTER REGISTRY &amp; CROSS-CPSE LINKAGES
           </p>
         </div>
       </div>
 
-      {/* Catalog Metric Strip (Derived from real registry records) */}
+      {/* Read-Only Restriction Banner */}
+      {!isAdmin && (
+        <div className="mb-6 p-3 bg-raw-sunken border-2 border-raw-black flex flex-wrap items-center justify-between gap-2">
+          <div className="flex items-center gap-2">
+            <span className="bg-raw-black text-raw-white px-2 py-0.5 font-mono text-xs font-bold uppercase">
+              READ-ONLY REGISTRY VIEW
+            </span>
+            <span className="font-mono text-xs text-raw-black">
+              Viewing national CNMC catalog in <strong>READ-ONLY</strong> mode ({session.role || 'GUEST'}). Master catalog modifications are restricted to <strong>NATIONAL_ADMIN</strong> accounts.
+            </span>
+          </div>
+          <span className="font-mono text-[10px] text-[#555] uppercase font-bold">READ-ONLY RESTRICTION</span>
+        </div>
+      )}
+
+      {/* Catalog Metric Strip */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 font-mono text-xs">
         <RawCard className="p-4 bg-raw-sunken">
           <span className="text-[#666666] block font-bold">TOTAL CNMC CODES</span>
@@ -87,7 +106,7 @@ export default function AdminView({ onOpenRbacModal }) {
 
       {/* Filter and Table */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        
+
         {/* CNMC Table (2 cols) */}
         <div className="lg:col-span-2">
           <RawCard elevated>
@@ -257,4 +276,3 @@ export default function AdminView({ onOpenRbacModal }) {
     </div>
   );
 }
-

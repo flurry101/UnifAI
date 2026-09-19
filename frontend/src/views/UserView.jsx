@@ -4,8 +4,12 @@ import RawButton from '../components/RawButton';
 import RawInput from '../components/RawInput';
 import StatusChip from '../components/StatusChip';
 import { SAMPLE_MATERIALS, fetchMaterialById, triggerAiMatch } from '../api/materials';
+import { useAuth } from '../context/AuthContext';
 
 export default function UserView() {
+  const { session, activePersona } = useAuth();
+  const isReadOnlyRole = !session.token || session.role === 'TECHNICAL_REVIEWER' || session.role === 'NATIONAL_ADMIN' || activePersona === 'reviewer' || activePersona === 'admin';
+
   const [searchId, setSearchId] = useState(SAMPLE_MATERIALS[0].material_id);
   const [selectedMaterial, setSelectedMaterial] = useState(SAMPLE_MATERIALS[0]);
   const [loadingMaterial, setLoadingMaterial] = useState(false);
@@ -13,7 +17,6 @@ export default function UserView() {
   const [matchResults, setMatchResults] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
 
-  // Load initial material
   useEffect(() => {
     handleLookup(SAMPLE_MATERIALS[0].material_id);
   }, []);
@@ -36,7 +39,7 @@ export default function UserView() {
   };
 
   const handleRunAiMatch = async () => {
-    if (!selectedMaterial) return;
+    if (!selectedMaterial || isReadOnlyRole) return;
     setMatchingLoading(true);
     setErrorMsg(null);
 
@@ -52,9 +55,9 @@ export default function UserView() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-      
+
       {/* View Title Bar */}
-      <div className="border-b-3 border-raw-black pb-4 mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <div className="border-b-3 border-raw-black pb-4 mb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
           <div className="flex items-center gap-3">
             <h1 className="font-headline text-3xl md:text-4xl text-raw-black">
@@ -65,10 +68,25 @@ export default function UserView() {
             </span>
           </div>
           <p className="font-body text-sm text-[#444444] mt-1">
-            LOCAL MATERIAL INGESTION, SPECIFICATION INSPECTOR & AI CANDIDATE RETRIEVAL
+            LOCAL MATERIAL INGESTION, SPECIFICATION INSPECTOR &amp; AI CANDIDATE RETRIEVAL
           </p>
         </div>
       </div>
+
+      {/* Read-Only Security Mode Banner */}
+      {isReadOnlyRole && (
+        <div className="mb-6 p-3 bg-raw-sunken border-2 border-raw-black flex flex-wrap items-center justify-between gap-2">
+          <div className="flex items-center gap-2">
+            <span className="bg-raw-black text-raw-white px-2 py-0.5 font-mono text-xs font-bold uppercase">
+              SECURITY AUDIT VIEW
+            </span>
+            <span className="font-mono text-xs text-raw-black">
+              Active persona is <strong>{session.role || 'GUEST'}</strong>. Material catalog is in <strong>READ-ONLY</strong> mode for oversight security.
+            </span>
+          </div>
+          <span className="font-mono text-[10px] text-[#555] uppercase font-bold">MUTATIONS RESTRICTED</span>
+        </div>
+      )}
 
       {/* Preset Quick Selectors */}
       <div className="mb-6">
@@ -128,7 +146,7 @@ export default function UserView() {
       {/* Active Material Card */}
       {selectedMaterial && (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-          
+
           {/* Main Specs (2 cols) */}
           <div className="lg:col-span-2">
             <RawCard elevated className="h-full flex flex-col justify-between">
@@ -163,7 +181,6 @@ export default function UserView() {
                   </div>
                 </div>
 
-                {/* Extracted Attributes if present */}
                 {selectedMaterial.specifications && (
                   <div className="mb-6">
                     <span className="font-headline text-xs text-[#555555] uppercase block mb-2">
@@ -187,10 +204,14 @@ export default function UserView() {
                   variant="primary"
                   size="large"
                   onClick={handleRunAiMatch}
-                  disabled={matchingLoading}
+                  disabled={matchingLoading || isReadOnlyRole}
                   className="w-full"
                 >
-                  {matchingLoading ? 'RUNNING AI PIPELINE (LANES 5→8)...' : '▶ EXECUTE AI HARMONIZATION PIPELINE'}
+                  {isReadOnlyRole
+                    ? '▶ PIPELINE EXECUTION (RESTRICTED TO CPSE USERS)'
+                    : matchingLoading
+                    ? 'RUNNING AI PIPELINE (LANES 5→8)...'
+                    : '▶ EXECUTE AI HARMONIZATION PIPELINE'}
                 </RawButton>
               </div>
             </RawCard>
@@ -208,7 +229,7 @@ export default function UserView() {
                     <strong>LANE 5:</strong> Qwen3-0.6B Embedding (1024-dim) vector cosine retrieval over 21k CPSE corpus.
                   </li>
                   <li className="p-2 border-1 border-raw-black bg-raw-white">
-                    <strong>LANE 6:</strong> 42-feature lexical, syntactic & dimensional conflict extractor.
+                    <strong>LANE 6:</strong> 42-feature lexical, syntactic &amp; dimensional conflict extractor.
                   </li>
                   <li className="p-2 border-1 border-raw-black bg-raw-white">
                     <strong>LANE 7:</strong> LightGBM multi-class relationship classifier.
@@ -282,7 +303,6 @@ export default function UserView() {
                       {proposal.candidate_description || 'Material specification matches query geometry.'}
                     </div>
 
-                    {/* Multi-class probabilities */}
                     {proposal.lane7_probabilities && (
                       <div className="mb-4">
                         <span className="font-headline text-[10px] text-[#555555] uppercase block mb-1">
@@ -301,7 +321,6 @@ export default function UserView() {
                       </div>
                     )}
 
-                    {/* Lane 8 Routing */}
                     <div className="p-2 border-1 border-raw-black bg-[#FAFAFA] font-mono text-xs flex items-center justify-between mb-4">
                       <span>DECISION ROUTING:</span>
                       <span className={`font-bold ${proposal.decision_status === 'REVIEW' ? 'text-raw-warning' : 'text-raw-success'}`}>
@@ -326,4 +345,3 @@ export default function UserView() {
     </div>
   );
 }
-
