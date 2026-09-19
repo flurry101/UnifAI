@@ -2,7 +2,7 @@
 
 ## AI-Driven Standardization & Harmonization of Material Codes Across CPSEs
 
-**Problem ID:** SIH26099  
+**Problem:** SIH2026
 **Sponsoring Ministry:** Ministry of Petroleum & Natural Gas (MoPNG)  
 **Sponsoring CPSE / Department:** Chennai Petroleum Corporation Limited (CPCL) / Indian Oil Corporation Limited (IOCL)  
 **Target Sectors:** Oil & Gas, Power, Steel, Mining, Heavy Engineering  
