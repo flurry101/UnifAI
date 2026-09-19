@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import RedirectResponse
 from .api import auth, materials, matches, governance, cnmc
 
 app = FastAPI(
@@ -22,6 +23,10 @@ app.include_router(materials.router, prefix="/api/v1/materials", tags=["Material
 app.include_router(matches.router, prefix="/api/v1/materials", tags=["Matching"])
 app.include_router(governance.router, prefix="/api/v1/reviews", tags=["Governance"])
 app.include_router(cnmc.router, prefix="/api/v1/cnmc", tags=["CNMC"])
+
+@app.get("/", include_in_schema=False)
+def root():
+    return RedirectResponse(url="/docs")
 
 @app.get("/health", tags=["System"])
 def health_check():
