@@ -220,7 +220,7 @@ The problem statement notes that *"the same material may be assigned different m
 
 ### B. The Rosetta Stone for Cross-Sector Functional Equivalence (Pillars 1 & 2)
 
-**The Problem in PS 26099:**  
+**The Problem:**  
 CPSEs across diverse sectors (Oil & Gas, Power, Steel, Mining, Heavy Engineering) procure functionally equivalent goods but speak completely different engineering dialects:
 - **Oil & Gas CPSEs (IOCL, ONGC, CPCL, GAIL):** Inherited American petrochemical engineering specifications (**ASTM, ASME, API, ANSI**)—e.g., `ASTM A106 Gr B` pipes, `ASME B16.5` flanges, `API 600` gate valves, `ASTM A193 B7` stud bolts.
 - **Power, Steel & Heavy Engineering CPSEs (NTPC, SAIL, BHEL, Coal India):** Predominantly design and procure under **Indian Standards (IS)** and British/German specifications (**BS / DIN / ISO**)—e.g., `IS 1239 / IS 3589` pipes, `IS 6392` flanges, `IS 2062` structural steel, `IS 1367` fasteners.
