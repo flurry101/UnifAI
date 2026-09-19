@@ -55,14 +55,6 @@ export default function AdminView({ onOpenRbacModal }) {
             COMMON NATIONAL MATERIAL CATALOG (CNMC) MASTER REGISTRY & CROSS-CPSE LINKAGES
           </p>
         </div>
-        <div className="flex items-center gap-3">
-          <RawButton variant="secondary" size="small" onClick={onOpenRbacModal}>
-            VIEW RBAC SECURITY AUDIT
-          </RawButton>
-          <div className="font-mono text-xs text-[#333333] border-1 border-raw-black p-2 bg-raw-sunken">
-            ENDPOINT: <code className="font-bold">GET /api/v1/cnmc/</code>
-          </div>
-        </div>
       </div>
 
       {/* Catalog Metric Strip (Derived from real registry records) */}

@@ -1,6 +1,6 @@
 """
-Streamlit Human Annotation UI for UnifAI SIH26099
-Human Governance Layer
+Streamlit Human Annotation UI for UnifAI Platform
+Ground Truth Dataset Creation for CPSE Material Standardization
 """
 
 import os
@@ -204,7 +204,7 @@ def main():
     
     # Critical Safety Warning
     if bool(row.get('technical_conflict', False)):
-        st.error("🚨 TECHNICAL CONFLICT DETECTED. Review attributes carefully.")
+        st.error("TECHNICAL CONFLICT DETECTED. Review attributes carefully.")
         
     st.markdown("---")
     

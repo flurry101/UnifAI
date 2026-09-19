@@ -56,6 +56,29 @@ export async function loginWithCredentials(username, password) {
   }
 }
 
+export async function registerUser({ username, password, role, cpse_id }) {
+  try {
+    const data = await apiFetch('/api/v1/auth/register', {
+      method: 'POST',
+      body: {
+        username,
+        password,
+        role,
+        cpse_id,
+      },
+    });
+
+    if (data.access_token) {
+      localStorage.setItem('unifai_token', data.access_token);
+      localStorage.setItem('unifai_username', username);
+      return { success: true, token: data.access_token };
+    }
+    return { success: false, error: 'Token missing in response' };
+  } catch (err) {
+    return { success: false, error: err.message };
+  }
+}
+
 // Decode base64url JWT payload
 export function parseJwt(token) {
   try {

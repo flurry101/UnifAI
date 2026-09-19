@@ -3,8 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from .api import auth, materials, matches, governance, cnmc
 
 app = FastAPI(
-    title="UnifAI CPSE Harmonization API",
-    description="API for the SIH26099 UnifAI Harmonization Product",
+    title="UnifAI CPSE Harmonization Platform",
+    description="Unified Enterprise Material Standardization and Harmonization Platform for CPSEs",
     version="1.0.0"
 )
 

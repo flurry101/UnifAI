@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { PERSONAS, getCurrentSession, saveSession, clearSession, loginWithCredentials as apiLogin } from '../api/auth';
+import { PERSONAS, getCurrentSession, saveSession, clearSession, loginWithCredentials as apiLogin, registerUser as apiRegister } from '../api/auth';
 import { checkBackendHealth } from '../api/client';
 
 const AuthContext = createContext(null);
@@ -51,10 +51,34 @@ export function AuthProvider({ children }) {
     const res = await apiLogin(username, password);
     if (res.success) {
       const current = getCurrentSession();
+      let detectedPersona = 'user';
+      if (current.role === 'TECHNICAL_REVIEWER') detectedPersona = 'reviewer';
+      else if (current.role === 'NATIONAL_ADMIN') detectedPersona = 'admin';
+      setActivePersona(detectedPersona);
       setSession({
         token: res.token,
         username: username,
         role: current.role,
+        isAuthenticated: true,
+      });
+      return { success: true };
+    }
+    return { success: false, error: res.error };
+  };
+
+  const register = async ({ username, password, role, cpse_id }) => {
+    const res = await apiRegister({ username, password, role, cpse_id });
+    if (res.success) {
+      const current = getCurrentSession();
+      let detectedPersona = 'user';
+      if (current.role === 'TECHNICAL_REVIEWER') detectedPersona = 'reviewer';
+      else if (current.role === 'NATIONAL_ADMIN') detectedPersona = 'admin';
+      setActivePersona(detectedPersona);
+      setSession({
+        token: res.token,
+        username: username,
+        role: current.role,
+        isAuthenticated: true,
       });
       return { success: true };
     }
@@ -86,6 +110,7 @@ export function AuthProvider({ children }) {
         health,
         switchPersona,
         login,
+        register,
         logout,
       }}
     >

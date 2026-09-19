@@ -2,20 +2,26 @@ import React, { useState } from 'react';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import RbacStatusModal from './components/RbacStatusModal';
+import AuthModal from './components/AuthModal';
 import LandingView from './views/LandingView';
 import UserView from './views/UserView';
 import ReviewerView from './views/ReviewerView';
 import AdminView from './views/AdminView';
 
 function AppContent() {
-  const { activePersona } = useAuth();
+  const { session, activePersona } = useAuth();
   const [currentView, setCurrentView] = useState('landing');
-  const [isRbacModalOpen, setIsRbacModalOpen] = useState(false);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [authModalMode, setAuthModalMode] = useState('login');
 
   const handleViewChange = (viewName) => {
     setCurrentView(viewName);
     window.scrollTo({ top: 0, behavior: 'instant' });
+  };
+
+  const handleOpenAuthModal = (mode = 'login') => {
+    setAuthModalMode(mode);
+    setIsAuthModalOpen(true);
   };
 
   return (
@@ -24,28 +30,36 @@ function AppContent() {
       <Header
         currentView={currentView}
         onViewChange={handleViewChange}
-        onOpenRbacModal={() => setIsRbacModalOpen(true)}
+        onOpenAuthModal={handleOpenAuthModal}
       />
 
       {/* Main Content Area */}
       <main className="flex-1">
         {currentView === 'landing' && (
-          <LandingView onSelectView={handleViewChange} />
+          <LandingView
+            onSelectView={handleViewChange}
+            onOpenAuthModal={handleOpenAuthModal}
+          />
         )}
         {currentView === 'user' && <UserView />}
         {currentView === 'reviewer' && <ReviewerView />}
-        {currentView === 'admin' && (
-          <AdminView onOpenRbacModal={() => setIsRbacModalOpen(true)} />
-        )}
+        {currentView === 'admin' && <AdminView />}
       </main>
 
       {/* Mandatory Brutalist Footer */}
       <Footer />
 
-      {/* RBAC Security Inspection Modal */}
-      <RbacStatusModal
-        isOpen={isRbacModalOpen}
-        onClose={() => setIsRbacModalOpen(false)}
+      {/* Traditional Authentication Modal (Sign In & Sign Up) */}
+      <AuthModal
+        isOpen={isAuthModalOpen}
+        initialMode={authModalMode}
+        onClose={() => {
+          setIsAuthModalOpen(false);
+          // If signed in, switch to their authorized persona view
+          if (session.token) {
+            handleViewChange(activePersona);
+          }
+        }}
       />
     </div>
   );
@@ -58,4 +72,3 @@ export default function App() {
     </AuthProvider>
   );
 }
-

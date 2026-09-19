@@ -61,6 +61,15 @@ export const SAMPLE_MATERIALS = [
   }
 ];
 
+export async function searchMaterials(query, limit = 10) {
+  try {
+    const data = await apiFetch(`/api/v1/materials?search=${encodeURIComponent(query)}&limit=${limit}`);
+    return data;
+  } catch (err) {
+    return [];
+  }
+}
+
 export async function fetchMaterialById(materialId) {
   try {
     const data = await apiFetch(`/api/v1/materials/${encodeURIComponent(materialId)}`);

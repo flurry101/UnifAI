@@ -25,3 +25,12 @@ artifacts/
 
 # Skills
 docs/skills/*.md
+
+# Databases & SQLite
+*.db
+*.sqlite
+*.sqlite3
+database/*.db
+database/*.sqlite
+database/*.sqlite3
+!database/.gitkeep

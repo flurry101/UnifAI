@@ -3,21 +3,21 @@ import { useAuth } from '../context/AuthContext';
 import StatusChip from './StatusChip';
 import RawButton from './RawButton';
 
-export default function Header({ onOpenRbacModal, currentView, onViewChange }) {
-  const { activePersona, switchPersona, health } = useAuth();
+export default function Header({ currentView, onViewChange, onOpenAuthModal }) {
+  const { session, logout, activePersona, switchPersona, health } = useAuth();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const personas = [
-    { id: 'user', label: 'USER' },
-    { id: 'reviewer', label: 'REVIEWER' },
-    { id: 'admin', label: 'ADMIN' },
-  ];
+  const getRoleLabel = () => {
+    if (activePersona === 'reviewer') return 'REVIEWER';
+    if (activePersona === 'admin') return 'ADMIN';
+    return 'USER';
+  };
 
   return (
     <header className="border-b-3 border-raw-black bg-raw-white sticky top-0 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-3">
         
-        {/* Corner Logo */}
+        {/* Corner Logo (no black box border around image) */}
         <div className="flex items-center gap-3">
           <a
             href="#landing"
@@ -30,7 +30,7 @@ export default function Header({ onOpenRbacModal, currentView, onViewChange }) {
             <img
               src="/assets/favicon.png"
               alt="unifAI Logo"
-              className="w-9 h-9 border-2 border-raw-black object-contain bg-raw-white"
+              className="w-9 h-9 object-contain bg-transparent"
             />
             <span className="font-headline text-2xl tracking-tighter text-raw-black group-hover:bg-raw-black group-hover:text-raw-white px-1">
               unifAI
@@ -43,40 +43,62 @@ export default function Header({ onOpenRbacModal, currentView, onViewChange }) {
               label={health.online ? 'SYSTEM ONLINE' : 'BACKEND OFFLINE'}
               status={health.online ? 'active' : 'warning'}
             />
-            <button
-              onClick={onOpenRbacModal}
-              className="font-mono text-xs uppercase underline hover:bg-raw-black hover:text-raw-white px-1"
-              title="Inspect backend RBAC security and role mapping"
-            >
-              [RBAC AUDIT]
-            </button>
           </div>
         </div>
 
-        {/* Desktop Role Switcher / Navigation */}
-        <div className="hidden md:flex items-center gap-2">
-          <span className="font-mono text-xs uppercase font-bold text-[#555555] mr-1">
-            VIEW AS:
-          </span>
-          {personas.map((p) => {
-            const isActive = activePersona === p.id && currentView !== 'landing';
-            return (
+        {/* Desktop Navigation & Authentication Controls */}
+        <div className="hidden md:flex items-center gap-3">
+          
+          {session.token ? (
+            <div className="flex items-center gap-3">
+              {/* Active Workspace Link */}
               <button
-                key={p.id}
-                onClick={() => {
-                  switchPersona(p.id);
-                  onViewChange(p.id);
-                }}
-                className={`font-headline text-xs uppercase px-3 py-1.5 border-2 border-raw-black tracking-widest transition-none ${
-                  isActive
+                onClick={() => onViewChange(activePersona)}
+                className={`font-headline text-xs uppercase px-3 py-1.5 border-2 border-raw-black tracking-wider transition-none ${
+                  currentView === activePersona
                     ? 'bg-raw-black text-raw-white'
                     : 'bg-raw-white text-raw-black hover:bg-raw-black hover:text-raw-white'
                 }`}
               >
-                {p.label}
+                OPEN {getRoleLabel()} WORKSPACE →
               </button>
-            );
-          })}
+
+              {/* User Identity Pill */}
+              <div className="font-mono text-xs border-2 border-raw-black px-2.5 py-1 bg-raw-sunken flex items-center gap-1.5">
+                <span className="font-bold text-raw-black">{session.username}</span>
+                <span className="bg-raw-black text-raw-white px-1 text-[10px] font-bold">
+                  {getRoleLabel()}
+                </span>
+              </div>
+
+              {/* Sign Out Button */}
+              <button
+                onClick={() => {
+                  logout();
+                  onViewChange('landing');
+                }}
+                className="font-headline text-xs uppercase px-3 py-1.5 border-2 border-raw-black bg-raw-white text-raw-black hover:bg-raw-black hover:text-raw-white tracking-wider"
+              >
+                SIGN OUT
+              </button>
+            </div>
+          ) : (
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => onOpenAuthModal('login')}
+                className="font-headline text-xs uppercase px-4 py-1.5 border-2 border-raw-black bg-raw-white text-raw-black hover:bg-raw-black hover:text-raw-white tracking-wider"
+              >
+                SIGN IN
+              </button>
+              <button
+                onClick={() => onOpenAuthModal('register')}
+                className="font-headline text-xs uppercase px-4 py-1.5 border-2 border-raw-black bg-raw-black text-raw-white hover:bg-raw-white hover:text-raw-black tracking-wider"
+              >
+                REGISTER
+              </button>
+            </div>
+          )}
+
         </div>
 
         {/* Mobile Toggle Button */}
@@ -85,7 +107,7 @@ export default function Header({ onOpenRbacModal, currentView, onViewChange }) {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="border-2 border-raw-black px-2.5 py-1 font-headline text-xs uppercase bg-raw-white text-raw-black"
           >
-            {mobileMenuOpen ? 'CLOSE ✕' : 'ROLES ☰'}
+            {mobileMenuOpen ? 'CLOSE ✕' : 'MENU ☰'}
           </button>
         </div>
       </div>
@@ -98,41 +120,60 @@ export default function Header({ onOpenRbacModal, currentView, onViewChange }) {
               label={health.online ? 'SYSTEM ONLINE' : 'BACKEND OFFLINE'}
               status={health.online ? 'active' : 'warning'}
             />
-            <button
-              onClick={() => {
-                onOpenRbacModal();
-                setMobileMenuOpen(false);
-              }}
-              className="font-mono text-xs underline font-bold"
-            >
-              [INSPECT RBAC]
-            </button>
           </div>
-          <div className="font-mono text-xs font-bold text-raw-black mt-2">
-            SWITCH STAKEHOLDER VIEW:
-          </div>
-          <div className="grid grid-cols-3 gap-2">
-            {personas.map((p) => (
+
+          {session.token ? (
+            <div className="space-y-2 mt-2">
+              <div className="font-mono text-xs p-2 bg-raw-white border-1 border-raw-black flex justify-between">
+                <span>USER: <strong>{session.username}</strong></span>
+                <span className="bg-raw-black text-raw-white px-1 text-[10px] font-bold">
+                  {getRoleLabel()}
+                </span>
+              </div>
               <button
-                key={p.id}
                 onClick={() => {
-                  switchPersona(p.id);
-                  onViewChange(p.id);
+                  onViewChange(activePersona);
                   setMobileMenuOpen(false);
                 }}
-                className={`font-headline text-xs uppercase py-2 border-2 border-raw-black text-center ${
-                  activePersona === p.id && currentView !== 'landing'
-                    ? 'bg-raw-black text-raw-white'
-                    : 'bg-raw-white text-raw-black'
-                }`}
+                className="w-full font-headline text-xs uppercase py-2 border-2 border-raw-black bg-raw-black text-raw-white text-center"
               >
-                {p.label}
+                OPEN {getRoleLabel()} WORKSPACE
               </button>
-            ))}
-          </div>
+              <button
+                onClick={() => {
+                  logout();
+                  onViewChange('landing');
+                  setMobileMenuOpen(false);
+                }}
+                className="w-full font-headline text-xs uppercase py-2 border-2 border-raw-black bg-raw-white text-raw-black text-center"
+              >
+                SIGN OUT
+              </button>
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 gap-2 mt-2">
+              <button
+                onClick={() => {
+                  onOpenAuthModal('login');
+                  setMobileMenuOpen(false);
+                }}
+                className="font-headline text-xs uppercase py-2 border-2 border-raw-black bg-raw-white text-raw-black text-center"
+              >
+                SIGN IN
+              </button>
+              <button
+                onClick={() => {
+                  onOpenAuthModal('register');
+                  setMobileMenuOpen(false);
+                }}
+                className="font-headline text-xs uppercase py-2 border-2 border-raw-black bg-raw-black text-raw-white text-center"
+              >
+                REGISTER
+              </button>
+            </div>
+          )}
         </div>
       )}
     </header>
   );
 }
-

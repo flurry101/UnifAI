@@ -108,9 +108,6 @@ export default function ReviewerView() {
             DUAL-HUMAN GOVERNANCE, CONFLICT ARBITRATION & GROUND TRUTH VALIDATION
           </p>
         </div>
-        <div className="font-mono text-xs text-[#333333] border-1 border-raw-black p-2 bg-raw-sunken">
-          ENDPOINT: <code className="font-bold">POST /api/v1/reviews/&#123;id&#125;/decision</code>
-        </div>
       </div>
 
       {loading ? (

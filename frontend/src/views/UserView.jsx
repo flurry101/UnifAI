@@ -68,9 +68,6 @@ export default function UserView() {
             LOCAL MATERIAL INGESTION, SPECIFICATION INSPECTOR & AI CANDIDATE RETRIEVAL
           </p>
         </div>
-        <div className="font-mono text-xs text-[#333333] border-1 border-raw-black p-2 bg-raw-sunken">
-          ENDPOINT: <code className="font-bold">POST /api/v1/materials/&#123;id&#125;/matches</code>
-        </div>
       </div>
 
       {/* Preset Quick Selectors */}
@@ -106,8 +103,8 @@ export default function UserView() {
               label="QUERY MATERIAL ID / SYSTEM CODE"
               value={searchId}
               onChange={(e) => setSearchId(e.target.value)}
-              placeholder="e.g. MAT-IOCL-CYL-14KG or 1236/1231"
-              helperText="Searches local CPSE ERP and Lane 5 Vector Retrieval store."
+              placeholder="e.g. MAT-IOCL-CYL-14KG, MAT-IOCL-, or 1236/1231"
+              helperText="Query by enterprise material code, ID prefix (e.g. MAT-IOCL-), or commodity description."
             />
           </div>
           <RawButton
