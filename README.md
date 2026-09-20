@@ -67,7 +67,7 @@ The development of unifAI was guided by:
 
 ## Getting Started & Deployment
 
-For complete end-to-end configuration, database setups (SQLite, local PostgreSQL + `pgvector`, and Supabase), ML model initialization, and air-gapped enterprise production deployment, please refer to the **[System Setup & Deployment Guide (SETUP.md)](SETUP.md)**.
+For complete end-to-end configuration, database setups (SQLite, local PostgreSQL + `pgvector`, and Supabase), ML model initialization, and air-gapped  production deployment, please refer to the **[System Setup](SETUP.md)**.
 
 ---
 
