@@ -33,7 +33,7 @@ The development of unifAI was guided by:
 * Analysis of Data Sources:
   * Multi-Sector CPSE Corpus (23,457 records): Oil & Gas, Power, Mining, Steel, and Heavy Engineering procurement data.
   * National Procurement Portals: CPPP, GeM, and Indian Railways/IREPS commodity directories.
-  * ERP Systems: SAP ECC/S4HANA, Oracle Fusion, and IBM Maximo master schemas.
+  * ERP Systems: SAP ECC/S4HANA, SAP XML IDocs, Oracle Fusion, and IBM Maximo master schemas.
   * Standards & Taxonomies: BIS, UNSPSC, ISO 14224, and international engineering standard crosswalks.
 * Review of research literature related to contrastive representation learning, entity resolution in enterprise ERPs, and automated taxonomy classification.
 
@@ -41,10 +41,10 @@ The development of unifAI was guided by:
 
 ## Key Features
 
-* **Neuro-Symbolic Matching**: Combines semantic embeddings with deterministic engineering rule filters for high recall and zero false merges.
-* **Deterministic Safety Gates**: Hard validation on critical technical parameters (pressure class, metallurgy, dimensions) to avoid safety hazards.
-* **Non-Destructive Mapping**: Retains native CPSE part numbers through relational crosswalks without breaking legacy records.
-* **Tiered Human-in-the-Loop Governance**: Confidence-based automated routing with side-by-side attribute explainability for cataloguers and auditors for vigilance.
+* **Neuro-Symbolic AI & Engineering Safety Gates**: Combines semantic embeddings with deterministic physical vetoes (pressure class, metallurgy, voltage etc.), preventing hazardous false merges that purely probabilistic AI causes.
+* **Deterministic CNMC Generation**: Synthesizes structured, un-hallucinated Common National Material Codes (`CNMC-[UNSPSC]-[STANDARD]-[HASH]`), establishing a single engineering language across CPSEs for joint tendering and spend visibility.
+* **Legacy ERP & Geographic Stock Mapping**: Maintains non-destructive bi-directional code mapping to preserve native SAP/Oracle IDs. integrated with an inter-plant inventory map to locate and aid in planning to transfer equivalent surplus stock across nearby CPSE facilities.
+* **Explainable Vigilance Auditing**: Replaces black-box AI with attribute-level diffs and immutable cryptographic audit trails, ensuring full compliance with CVC and CAG public procurement guidelines.
 
 ---
 
@@ -62,6 +62,12 @@ The development of unifAI was guided by:
 - **ML & NLP Engine**: LightGBM, sentence-transformers (all-MiniLM-L6-v2 / bge-small), RapidFuzz token matching.
 - **Enterprise ERP Reference**: SAP RFC/BAPI (BAPI_MATERIAL_SAVEDATA), MATMAS05 IDocs, S/4HANA OData, and Oracle/Maximo CSV exports.
 - **Deployment**: Sovereign, containerized Docker microservices deployable on air-gapped CPSE intranets.
+
+---
+
+## Getting Started & Deployment
+
+For complete end-to-end configuration, database setups (SQLite, local PostgreSQL + `pgvector`, and Supabase), ML model initialization, and air-gapped enterprise production deployment, please refer to the **[System Setup & Deployment Guide (SETUP.md)](SETUP.md)**.
 
 ---
 
