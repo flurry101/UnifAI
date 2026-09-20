@@ -255,11 +255,15 @@ def _upsert_google_user(
             db.add(tenant)
             db.commit()
 
+        # First registered user automatically becomes NATIONAL_ADMIN (platform seed)
+        is_first_user = db.query(User).count() == 0
+        effective_role = "NATIONAL_ADMIN" if is_first_user else (role or "CPSE_USER")
+
         user = User(
             username=candidate_username,
             email=email,
             hashed_password=None,
-            role=role or "CPSE_USER",
+            role=effective_role,
             cpse_id=cpse,
             auth_provider=provider,
             avatar_url=avatar_url

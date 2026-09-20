@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import RawCard from '../components/RawCard';
 import RawButton from '../components/RawButton';
 import StatusChip from '../components/StatusChip';
+import AdminUserManager from '../components/AdminUserManager';
 import { fetchCnmcCatalog } from '../api/cnmc';
 import { useAuth } from '../context/AuthContext';
 
@@ -272,6 +273,13 @@ export default function AdminView({ onOpenRbacModal }) {
         </div>
 
       </div>
+
+      {/* User Management — visible to NATIONAL_ADMIN and CPSE_ADMIN */}
+      {(session.role === 'NATIONAL_ADMIN' || session.role === 'CPSE_ADMIN') && (
+        <div className="mt-8">
+          <AdminUserManager currentUserRole={session.role} />
+        </div>
+      )}
 
     </div>
   );

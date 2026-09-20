@@ -1,0 +1,130 @@
+"""
+Admin endpoints for user management.
+
+Access control:
+  - NATIONAL_ADMIN : full access (list all users, set any role)
+  - CPSE_ADMIN     : can list users in their CPSE, promote to non-admin roles only
+"""
+
+import logging
+from typing import List, Optional
+from fastapi import APIRouter, Depends, HTTPException, status
+from pydantic import BaseModel
+from sqlalchemy.orm import Session
+
+from app.database import get_db
+from app.models import User
+from app.api.auth import get_current_user
+
+logger = logging.getLogger(__name__)
+router = APIRouter()
+
+VALID_ROLES = {"CPSE_USER", "TECHNICAL_REVIEWER", "CPSE_ADMIN", "NATIONAL_ADMIN", "AUDITOR"}
+ADMIN_ONLY_ROLES = {"CPSE_ADMIN", "NATIONAL_ADMIN"}
+
+# ── Helpers ─────────────────────────────────────────────────────────────────────
+
+def _require_admin(current_user: User) -> User:
+    if current_user.role not in ("NATIONAL_ADMIN", "CPSE_ADMIN"):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Admin access required.",
+        )
+    return current_user
+
+
+# ── Schemas ──────────────────────────────────────────────────────────────────────
+
+class UserSummary(BaseModel):
+    id: int
+    username: str
+    email: Optional[str]
+    role: str
+    cpse_id: Optional[str]
+    auth_provider: Optional[str]
+    avatar_url: Optional[str]
+
+    class Config:
+        from_attributes = True
+
+
+class RoleUpdateRequest(BaseModel):
+    role: str
+
+
+# ── Endpoints ────────────────────────────────────────────────────────────────────
+
+@router.get("/users", response_model=List[UserSummary])
+def list_users(
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    """
+    List all registered users.
+    NATIONAL_ADMIN sees everyone; CPSE_ADMIN sees only their CPSE.
+    """
+    _require_admin(current_user)
+    query = db.query(User)
+    if current_user.role == "CPSE_ADMIN":
+        query = query.filter(User.cpse_id == current_user.cpse_id)
+    return query.order_by(User.id).all()
+
+
+@router.patch("/users/{user_id}/role", response_model=UserSummary)
+def update_user_role(
+    user_id: int,
+    req: RoleUpdateRequest,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    """
+    Change a user's role.
+    - NATIONAL_ADMIN can assign any role to any user.
+    - CPSE_ADMIN can only assign non-admin roles within their CPSE.
+    """
+    _require_admin(current_user)
+
+    new_role = req.role.upper().strip()
+    if new_role not in VALID_ROLES:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Invalid role '{new_role}'. Valid roles: {sorted(VALID_ROLES)}",
+        )
+
+    target = db.query(User).filter(User.id == user_id).first()
+    if not target:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found.")
+
+    # CPSE_ADMIN scope checks
+    if current_user.role == "CPSE_ADMIN":
+        if target.cpse_id != current_user.cpse_id:
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail="You can only manage users within your own CPSE.",
+            )
+        if new_role in ADMIN_ONLY_ROLES:
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail="CPSE_ADMIN cannot assign admin-level roles. Only NATIONAL_ADMIN can do that.",
+            )
+
+    # Prevent removing the last NATIONAL_ADMIN
+    if target.role == "NATIONAL_ADMIN" and new_role != "NATIONAL_ADMIN":
+        remaining_admins = db.query(User).filter(
+            User.role == "NATIONAL_ADMIN", User.id != user_id
+        ).count()
+        if remaining_admins == 0:
+            raise HTTPException(
+                status_code=status.HTTP_409_CONFLICT,
+                detail="Cannot remove the last NATIONAL_ADMIN. Promote another user first.",
+            )
+
+    logger.info(
+        "Role change: user=%s changed %s (%s) → %s",
+        current_user.username, target.username, target.role, new_role,
+    )
+    target.role = new_role
+    db.commit()
+    db.refresh(target)
+    return target
+
