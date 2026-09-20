@@ -8,6 +8,7 @@ import LandingView from './views/LandingView';
 import UserView from './views/UserView';
 import ReviewerView from './views/ReviewerView';
 import AdminView from './views/AdminView';
+import AuditorView from './views/AuditorView';
 
 function AppContent() {
   const { session, activePersona } = useAuth();
@@ -51,6 +52,7 @@ function AppContent() {
             {currentView === 'user' && <UserView />}
             {currentView === 'reviewer' && <ReviewerView />}
             {currentView === 'admin' && <AdminView />}
+            {currentView === 'auditor' && <AuditorView />}
           </>
         )}
       </main>

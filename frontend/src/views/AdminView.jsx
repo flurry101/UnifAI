@@ -62,21 +62,6 @@ export default function AdminView({ onOpenRbacModal }) {
         </div>
       </div>
 
-      {/* Read-Only Restriction Banner */}
-      {!isAdmin && (
-        <div className="mb-6 p-3 bg-raw-sunken border-2 border-raw-black flex flex-wrap items-center justify-between gap-2">
-          <div className="flex items-center gap-2">
-            <span className="bg-raw-black text-raw-white px-2 py-0.5 font-mono text-xs font-bold uppercase">
-              READ-ONLY REGISTRY VIEW
-            </span>
-            <span className="font-mono text-xs text-raw-black">
-              Viewing national CNMC catalog in <strong>READ-ONLY</strong> mode ({session.role || 'GUEST'}). Master catalog modifications are restricted to <strong>NATIONAL_ADMIN</strong> accounts.
-            </span>
-          </div>
-          <span className="font-mono text-[10px] text-[#555] uppercase font-bold">READ-ONLY RESTRICTION</span>
-        </div>
-      )}
-
       {/* Catalog Metric Strip */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 font-mono text-xs">
         <RawCard className="p-4 bg-raw-sunken">

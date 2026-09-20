@@ -65,8 +65,6 @@ def list_users(
     """
     _require_admin(current_user)
     query = db.query(User)
-    if current_user.role == "CPSE_ADMIN":
-        query = query.filter(User.cpse_id == current_user.cpse_id)
     return query.order_by(User.id).all()
 
 
@@ -79,8 +77,7 @@ async def update_user_role(
 ):
     """
     Change a user's role.
-    - NATIONAL_ADMIN can assign any role to any user.
-    - CPSE_ADMIN can only assign non-admin roles within their CPSE.
+    - CPSE_ADMIN and NATIONAL_ADMIN can assign any role to any user.
     """
     _require_admin(current_user)
 
@@ -94,19 +91,6 @@ async def update_user_role(
     target = db.query(User).filter(User.id == user_id).first()
     if not target:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found.")
-
-    # CPSE_ADMIN scope checks
-    if current_user.role == "CPSE_ADMIN":
-        if target.cpse_id != current_user.cpse_id:
-            raise HTTPException(
-                status_code=status.HTTP_403_FORBIDDEN,
-                detail="You can only manage users within your own CPSE.",
-            )
-        if new_role in ADMIN_ONLY_ROLES:
-            raise HTTPException(
-                status_code=status.HTTP_403_FORBIDDEN,
-                detail="CPSE_ADMIN cannot assign admin-level roles. Only NATIONAL_ADMIN can do that.",
-            )
 
     # Prevent removing the last NATIONAL_ADMIN
     if target.role == "NATIONAL_ADMIN" and new_role != "NATIONAL_ADMIN":

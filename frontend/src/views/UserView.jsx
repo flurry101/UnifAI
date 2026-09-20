@@ -7,8 +7,7 @@ import { SAMPLE_MATERIALS, fetchMaterialById, triggerAiMatch } from '../api/mate
 import { useAuth } from '../context/AuthContext';
 
 export default function UserView() {
-  const { session, activePersona } = useAuth();
-  const isReadOnlyRole = !session.token || session.role === 'TECHNICAL_REVIEWER' || session.role === 'NATIONAL_ADMIN' || activePersona === 'reviewer' || activePersona === 'admin';
+  const { session } = useAuth();
 
   const [searchId, setSearchId] = useState(SAMPLE_MATERIALS[0].material_id);
   const [selectedMaterial, setSelectedMaterial] = useState(SAMPLE_MATERIALS[0]);
@@ -39,7 +38,7 @@ export default function UserView() {
   };
 
   const handleRunAiMatch = async () => {
-    if (!selectedMaterial || isReadOnlyRole) return;
+    if (!selectedMaterial) return;
     setMatchingLoading(true);
     setErrorMsg(null);
 
@@ -72,21 +71,6 @@ export default function UserView() {
           </p>
         </div>
       </div>
-
-      {/* Read-Only Security Mode Banner */}
-      {isReadOnlyRole && (
-        <div className="mb-6 p-3 bg-raw-sunken border-2 border-raw-black flex flex-wrap items-center justify-between gap-2">
-          <div className="flex items-center gap-2">
-            <span className="bg-raw-black text-raw-white px-2 py-0.5 font-mono text-xs font-bold uppercase">
-              SECURITY AUDIT VIEW
-            </span>
-            <span className="font-mono text-xs text-raw-black">
-              Active persona is <strong>{session.role || 'GUEST'}</strong>. Material catalog is in <strong>READ-ONLY</strong> mode for oversight security.
-            </span>
-          </div>
-          <span className="font-mono text-[10px] text-[#555] uppercase font-bold">MUTATIONS RESTRICTED</span>
-        </div>
-      )}
 
       {/* Preset Quick Selectors */}
       <div className="mb-6">
@@ -204,12 +188,10 @@ export default function UserView() {
                   variant="primary"
                   size="large"
                   onClick={handleRunAiMatch}
-                  disabled={matchingLoading || isReadOnlyRole}
+                  disabled={matchingLoading}
                   className="w-full"
                 >
-                  {isReadOnlyRole
-                    ? '▶ PIPELINE EXECUTION (RESTRICTED TO CPSE USERS)'
-                    : matchingLoading
+                  {matchingLoading
                     ? 'RUNNING AI PIPELINE (LANES 5→8)...'
                     : '▶ EXECUTE AI HARMONIZATION PIPELINE'}
                 </RawButton>

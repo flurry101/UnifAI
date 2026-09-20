@@ -22,7 +22,7 @@ def submit_decision(
     proposal_id: str, 
     request: GovernanceDecisionRequest,
     db: Session = Depends(get_db),
-    user: TokenData = Depends(require_role(["REVIEWER", "TECHNICAL_REVIEWER", "NATIONAL_ADMIN", "ADMIN"]))
+    user: TokenData = Depends(require_role(["REVIEWER", "TECHNICAL_REVIEWER", "NATIONAL_ADMIN", "ADMIN", "CPSE_ADMIN"]))
 ):
     try:
         updated_proposal = record_human_decision(
@@ -35,4 +35,28 @@ def submit_decision(
         return updated_proposal
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
+
+
+@router.get("/audit-logs")
+def get_audit_logs(
+    limit: int = 100,
+    db: Session = Depends(get_db),
+    user: TokenData = Depends(require_role(["CPSE_ADMIN", "NATIONAL_ADMIN", "ADMIN", "AUDITOR", "TECHNICAL_REVIEWER", "REVIEWER"]))
+):
+    from app.models import AuditLog
+    logs = db.query(AuditLog).order_by(AuditLog.timestamp.desc()).limit(limit).all()
+    return [
+        {
+            "id": log.id,
+            "entity_name": log.entity_name,
+            "entity_id": log.entity_id,
+            "actor_id": log.actor_id or "AI_SYSTEM",
+            "action": log.action,
+            "previous_state": log.previous_state,
+            "new_state": log.new_state,
+            "timestamp": log.timestamp.isoformat() if log.timestamp else None,
+        }
+        for log in logs
+    ]
+
 

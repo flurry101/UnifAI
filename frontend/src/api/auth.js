@@ -45,13 +45,72 @@ export const PERSONAS = {
   ADMIN: {
     id: 'admin',
     role: 'NATIONAL_ADMIN',
-    displayTitle: 'ADMIN',
+    displayTitle: 'NATIONAL ADMIN',
     badge: 'NATIONAL ADMIN',
+    tagline: 'Common National Material Catalog (CNMC) Registry & Harmonization',
     description: 'Manage global CNMC catalog, view cross-CPSE lineage, and inspect RBAC security audit.',
     defaultUsername: 'admin',
     cpse: 'NATIONAL HARMONIZATION CELL',
-  }
+  },
+  AUDITOR: {
+    id: 'auditor',
+    role: 'AUDITOR',
+    displayTitle: 'AUDITOR',
+    badge: 'REGULATORY AUDITOR',
+    tagline: 'Immutable Regulatory Audit Trail & Governance Compliance',
+    description: 'Inspect real-time decision logs, model reasoning trails, and verify compliance with national procurement standards.',
+    defaultUsername: 'auditor',
+    cpse: 'CAG / REGULATORY OVERSIGHT',
+  },
+  CPSE_ADMIN: {
+    id: 'admin',
+    role: 'CPSE_ADMIN',
+    displayTitle: 'CPSE ADMIN',
+    badge: 'ENTERPRISE & SYSTEM ADMIN',
+    tagline: 'Full Cross-Workspace Authority & User Administration',
+    description: 'Full administrative control across all CPSE workspaces, user role provisioning, and cross-enterprise harmonization.',
+    defaultUsername: 'cpse_admin',
+    cpse: 'CENTRAL ENTERPRISE COMMAND',
+  },
 };
+
+export function getAccessibleWorkspaces(role) {
+  // CPSE_ADMIN (The super admin / first user): Can access and switch between ALL workspaces
+  if (role === 'CPSE_ADMIN') {
+    return [
+      { id: 'user', label: 'CPSE USER', shortLabel: 'USER', tagline: 'Local Material Catalog' },
+      { id: 'reviewer', label: 'TECHNICAL REVIEWER', shortLabel: 'REVIEWER', tagline: 'Conflict Resolution' },
+      { id: 'admin', label: 'NATIONAL ADMIN', shortLabel: 'NATL ADMIN', tagline: 'CNMC Master Registry & Users' },
+      { id: 'auditor', label: 'AUDITOR', shortLabel: 'AUDITOR', tagline: 'Audit Trail & Compliance' },
+    ];
+  }
+  // NATIONAL_ADMIN: Can see auditor, cpse_user, technical_reviewer views (+ admin)
+  if (role === 'NATIONAL_ADMIN') {
+    return [
+      { id: 'admin', label: 'NATIONAL ADMIN', shortLabel: 'NATL ADMIN', tagline: 'CNMC Master Registry' },
+      { id: 'auditor', label: 'AUDITOR', shortLabel: 'AUDITOR', tagline: 'Audit Trail & Compliance' },
+      { id: 'reviewer', label: 'TECHNICAL REVIEWER', shortLabel: 'REVIEWER', tagline: 'Conflict Resolution' },
+      { id: 'user', label: 'CPSE USER', shortLabel: 'USER', tagline: 'Local Material Catalog' },
+    ];
+  }
+  // TECHNICAL_REVIEWER: Can see cpse_user and their own view only
+  if (role === 'TECHNICAL_REVIEWER') {
+    return [
+      { id: 'reviewer', label: 'TECHNICAL REVIEWER', shortLabel: 'REVIEWER', tagline: 'Conflict Resolution' },
+      { id: 'user', label: 'CPSE USER', shortLabel: 'USER', tagline: 'Local Material Catalog' },
+    ];
+  }
+  // AUDITOR: auditor view only
+  if (role === 'AUDITOR') {
+    return [
+      { id: 'auditor', label: 'AUDITOR', shortLabel: 'AUDITOR', tagline: 'Audit Trail & Compliance' },
+    ];
+  }
+  // CPSE_USER: user view only
+  return [
+    { id: 'user', label: 'CPSE USER', shortLabel: 'USER', tagline: 'Local Material Catalog' },
+  ];
+}
 
 export async function loginWithCredentials(usernameOrEmail, password) {
   const formData = new URLSearchParams();

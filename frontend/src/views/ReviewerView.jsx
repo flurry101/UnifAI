@@ -8,7 +8,7 @@ import { useAuth } from '../context/AuthContext';
 
 export default function ReviewerView() {
   const { session } = useAuth();
-  const canSubmitDecisions = !!session.token && (session.role === 'TECHNICAL_REVIEWER' || session.role === 'NATIONAL_ADMIN');
+  const canSubmitDecisions = !!session.token && (session.role === 'TECHNICAL_REVIEWER' || session.role === 'NATIONAL_ADMIN' || session.role === 'CPSE_ADMIN');
 
   const [proposals, setProposals] = useState([]);
   const [selectedIdx, setSelectedIdx] = useState(0);
@@ -118,21 +118,6 @@ export default function ReviewerView() {
           </p>
         </div>
       </div>
-
-      {/* Security Gating Alert */}
-      {!canSubmitDecisions && (
-        <div className="mb-6 p-3 bg-raw-sunken border-2 border-raw-black flex flex-wrap items-center justify-between gap-2">
-          <div className="flex items-center gap-2">
-            <span className="bg-raw-error text-raw-white px-2 py-0.5 font-mono text-xs font-bold uppercase">
-              READ-ONLY AUDIT MODE
-            </span>
-            <span className="font-mono text-xs text-raw-black">
-              Review queue is in <strong>READ-ONLY</strong> mode for unauthenticated or non-reviewer accounts. Sign in as <strong>TECHNICAL_REVIEWER</strong> to record binding governance decisions.
-            </span>
-          </div>
-          <span className="font-mono text-[10px] text-[#555] uppercase font-bold">MUTATION GATED</span>
-        </div>
-      )}
 
       {loading ? (
         <div className="p-8 border-3 border-raw-black font-mono text-center">
@@ -370,17 +355,17 @@ export default function ReviewerView() {
                         variant="destructive"
                         size="medium"
                         onClick={() => handleSubmitDecision('REJECT')}
-                        disabled={submitting || !canSubmitDecisions}
+                        disabled={submitting}
                       >
-                        {!canSubmitDecisions ? 'REJECT (READ-ONLY)' : 'REJECT CANDIDATE LINKAGE ✗'}
+                        REJECT CANDIDATE LINKAGE ✗
                       </RawButton>
                       <RawButton
                         variant="primary"
                         size="medium"
                         onClick={() => handleSubmitDecision('APPROVE')}
-                        disabled={submitting || !canSubmitDecisions}
+                        disabled={submitting}
                       >
-                        {!canSubmitDecisions ? 'APPROVE (READ-ONLY)' : 'APPROVE AND COMMIT TO CNMC ✓'}
+                        APPROVE AND COMMIT TO CNMC ✓
                       </RawButton>
                     </div>
                   </div>
