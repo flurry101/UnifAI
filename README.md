@@ -50,7 +50,7 @@ The development of unifAI was guided by:
 
 ## System Workflow
 
-<img width="1440" height="1075" alt="image" src="assets/system-workflow.png">
+<img width="1440" height="1075" alt="image" src="assets/sys-workflow.png">
 
 ---
 
