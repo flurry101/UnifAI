@@ -51,23 +51,58 @@ export default function Header({ currentView, onViewChange, onOpenAuthModal }) {
           
           {session.token ? (
             <div className="flex items-center gap-3">
-              {/* Active Workspace Link */}
-              <button
-                onClick={() => onViewChange(activePersona)}
-                className={`font-headline text-xs uppercase px-3 py-1.5 border-2 border-raw-black tracking-wider transition-none ${
-                  currentView === activePersona
-                    ? 'bg-raw-black text-raw-white'
-                    : 'bg-raw-white text-raw-black hover:bg-raw-black hover:text-raw-white'
-                }`}
-              >
-                OPEN {getRoleLabel()} WORKSPACE →
-              </button>
+              {/* Workspace Navigation Links */}
+              {session.role === 'NATIONAL_ADMIN' ? (
+                <div className="flex items-center border-2 border-raw-black">
+                  <button
+                    onClick={() => onViewChange('admin')}
+                    className={`font-headline text-xs uppercase px-2.5 py-1 tracking-wider transition-none ${
+                      currentView === 'admin'
+                        ? 'bg-raw-black text-raw-white font-bold'
+                        : 'bg-raw-white text-raw-black hover:bg-raw-black hover:text-raw-white'
+                    }`}
+                  >
+                    ADMIN WORKSPACE
+                  </button>
+                  <button
+                    onClick={() => onViewChange('reviewer')}
+                    className={`font-headline text-xs uppercase px-2.5 py-1 border-l-2 border-raw-black tracking-wider transition-none ${
+                      currentView === 'reviewer'
+                        ? 'bg-raw-black text-raw-white font-bold'
+                        : 'bg-raw-white text-raw-black hover:bg-raw-black hover:text-raw-white'
+                    }`}
+                  >
+                    REVIEWER
+                  </button>
+                  <button
+                    onClick={() => onViewChange('user')}
+                    className={`font-headline text-xs uppercase px-2.5 py-1 border-l-2 border-raw-black tracking-wider transition-none ${
+                      currentView === 'user'
+                        ? 'bg-raw-black text-raw-white font-bold'
+                        : 'bg-raw-white text-raw-black hover:bg-raw-black hover:text-raw-white'
+                    }`}
+                  >
+                    USER
+                  </button>
+                </div>
+              ) : (
+                <button
+                  onClick={() => onViewChange(activePersona)}
+                  className={`font-headline text-xs uppercase px-3 py-1.5 border-2 border-raw-black tracking-wider transition-none ${
+                    currentView === activePersona
+                      ? 'bg-raw-black text-raw-white'
+                      : 'bg-raw-white text-raw-black hover:bg-raw-black hover:text-raw-white'
+                  }`}
+                >
+                  OPEN {getRoleLabel()} WORKSPACE →
+                </button>
+              )}
 
               {/* User Identity Pill */}
               <div className="font-mono text-xs border-2 border-raw-black px-2.5 py-1 bg-raw-sunken flex items-center gap-1.5">
                 <span className="font-bold text-raw-black">{session.username}</span>
                 <span className="bg-raw-black text-raw-white px-1 text-[10px] font-bold">
-                  {getRoleLabel()}
+                  {session.role || getRoleLabel()}
                 </span>
               </div>
 
@@ -127,18 +162,56 @@ export default function Header({ currentView, onViewChange, onOpenAuthModal }) {
               <div className="font-mono text-xs p-2 bg-raw-white border-1 border-raw-black flex justify-between">
                 <span>USER: <strong>{session.username}</strong></span>
                 <span className="bg-raw-black text-raw-white px-1 text-[10px] font-bold">
-                  {getRoleLabel()}
+                  {session.role || getRoleLabel()}
                 </span>
               </div>
-              <button
-                onClick={() => {
-                  onViewChange(activePersona);
-                  setMobileMenuOpen(false);
-                }}
-                className="w-full font-headline text-xs uppercase py-2 border-2 border-raw-black bg-raw-black text-raw-white text-center"
-              >
-                OPEN {getRoleLabel()} WORKSPACE
-              </button>
+              {session.role === 'NATIONAL_ADMIN' ? (
+                <div className="flex flex-col gap-1.5">
+                  <button
+                    onClick={() => {
+                      onViewChange('admin');
+                      setMobileMenuOpen(false);
+                    }}
+                    className={`w-full font-headline text-xs uppercase py-2 border-2 border-raw-black ${
+                      currentView === 'admin' ? 'bg-raw-black text-raw-white' : 'bg-raw-white text-raw-black'
+                    }`}
+                  >
+                    ADMIN WORKSPACE
+                  </button>
+                  <button
+                    onClick={() => {
+                      onViewChange('reviewer');
+                      setMobileMenuOpen(false);
+                    }}
+                    className={`w-full font-headline text-xs uppercase py-2 border-2 border-raw-black ${
+                      currentView === 'reviewer' ? 'bg-raw-black text-raw-white' : 'bg-raw-white text-raw-black'
+                    }`}
+                  >
+                    REVIEWER WORKSPACE
+                  </button>
+                  <button
+                    onClick={() => {
+                      onViewChange('user');
+                      setMobileMenuOpen(false);
+                    }}
+                    className={`w-full font-headline text-xs uppercase py-2 border-2 border-raw-black ${
+                      currentView === 'user' ? 'bg-raw-black text-raw-white' : 'bg-raw-white text-raw-black'
+                    }`}
+                  >
+                    USER WORKSPACE
+                  </button>
+                </div>
+              ) : (
+                <button
+                  onClick={() => {
+                    onViewChange(activePersona);
+                    setMobileMenuOpen(false);
+                  }}
+                  className="w-full font-headline text-xs uppercase py-2 border-2 border-raw-black bg-raw-black text-raw-white text-center"
+                >
+                  OPEN {getRoleLabel()} WORKSPACE
+                </button>
+              )}
               <button
                 onClick={() => {
                   logout();

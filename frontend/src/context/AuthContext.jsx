@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { PERSONAS, getCurrentSession, saveSession, clearSession, loginWithCredentials as apiLogin, registerUser as apiRegister, exchangeGoogleCode, exchangeSupabaseToken, probeCookieSession } from '../api/auth';
+import { PERSONAS, getCurrentSession, saveSession, clearSession, loginWithCredentials as apiLogin, registerUser as apiRegister, exchangeGoogleCode, exchangeSupabaseToken, probeCookieSession, getUserProfile } from '../api/auth';
 import { checkBackendHealth } from '../api/client';
 
 const AuthContext = createContext(null);
@@ -23,15 +23,37 @@ export function AuthProvider({ children }) {
     }
     const initialSession = {
       token: current.token,
-      username: current.username,
+      username: current.username || (current.token ? 'authenticated_user' : 'cpse_user'),
       role: current.role || 'CPSE_USER',
-      email: null,
-      avatar_url: null,
+      email: typeof window !== 'undefined' ? window.localStorage.getItem('unifai_email') : null,
+      avatar_url: typeof window !== 'undefined' ? window.localStorage.getItem('unifai_avatar') : null,
       isAuthenticated: current.token ? true : null,
     };
     setSession(initialSession);
 
-    if (!current.token) {
+    if (current.token) {
+      // Validate token and fetch up-to-date role/profile from backend
+      getUserProfile().then((profile) => {
+        if (cancelled || !profile) return;
+        const role = profile.role || current.role || 'CPSE_USER';
+        const persona = role === 'NATIONAL_ADMIN' ? 'admin' : (role === 'TECHNICAL_REVIEWER' ? 'reviewer' : 'user');
+        setActivePersona(persona);
+        setSession({
+          token: current.token,
+          username: profile.username || current.username,
+          role,
+          email: profile.email,
+          avatar_url: profile.avatar_url,
+          isAuthenticated: true,
+        });
+        if (typeof window !== 'undefined') {
+          window.localStorage.setItem('unifai_role', role);
+          window.localStorage.setItem('unifai_active_persona', persona);
+          if (profile.username) window.localStorage.setItem('unifai_username', profile.username);
+          if (profile.email) window.localStorage.setItem('unifai_email', profile.email);
+        }
+      });
+    } else {
       probeCookieSession().then(result => {
         if (cancelled || getCurrentSession().token) return;
         if (result.status === 'authenticated') {
@@ -138,20 +160,26 @@ export function AuthProvider({ children }) {
   const exchangeSupabaseSession = async (supabaseToken) => {
     const res = await exchangeSupabaseToken({ supabaseToken });
     if (res.success) {
-      const current = getCurrentSession();
-      let detectedPersona = 'user';
-      if (current.role === 'TECHNICAL_REVIEWER') detectedPersona = 'reviewer';
-      else if (current.role === 'NATIONAL_ADMIN') detectedPersona = 'admin';
+      const user = res.user;
+      const effectiveRole = user?.role || 'CPSE_USER';
+      const detectedPersona = effectiveRole === 'NATIONAL_ADMIN' ? 'admin' : (effectiveRole === 'TECHNICAL_REVIEWER' ? 'reviewer' : 'user');
       setActivePersona(detectedPersona);
       setSession({
         token: res.token,
-        username: res.user?.username || 'google_user',
-        email: res.user?.email || null,
-        role: current.role,
+        username: user?.username || 'google_user',
+        email: user?.email || null,
+        role: effectiveRole,
         auth_provider: 'google',
-        avatar_url: res.user?.avatar_url || null,
+        avatar_url: user?.avatar_url || null,
         isAuthenticated: true,
       });
+      if (typeof window !== 'undefined') {
+        window.localStorage.setItem('unifai_role', effectiveRole);
+        window.localStorage.setItem('unifai_active_persona', detectedPersona);
+        if (user?.username) window.localStorage.setItem('unifai_username', user.username);
+        if (user?.email) window.localStorage.setItem('unifai_email', user.email);
+        if (user?.avatar_url) window.localStorage.setItem('unifai_avatar', user.avatar_url);
+      }
       return { success: true, persona: detectedPersona };
     }
     return { success: false, error: res.error };

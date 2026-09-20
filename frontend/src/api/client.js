@@ -7,7 +7,11 @@ export function setAccessToken(token) {
 }
 
 export function getAccessToken() {
-  return accessToken;
+  if (accessToken) return accessToken;
+  if (typeof window !== 'undefined') {
+    return window.localStorage.getItem('unifai_token') || null;
+  }
+  return null;
 }
 
 const getBaseUrl = () => {

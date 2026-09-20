@@ -2,7 +2,24 @@
 import { apiFetch, getAccessToken, setAccessToken } from './client';
 
 function storeSession(data) {
-  setAccessToken(data.access_token);
+  if (data && data.access_token) {
+    setAccessToken(data.access_token);
+    if (typeof window !== 'undefined') {
+      window.localStorage.setItem('unifai_token', data.access_token);
+      if (data.role) {
+        window.localStorage.setItem('unifai_role', data.role);
+      }
+      if (data.username) {
+        window.localStorage.setItem('unifai_username', data.username);
+      }
+      if (data.email) {
+        window.localStorage.setItem('unifai_email', data.email);
+      }
+      if (data.avatar_url) {
+        window.localStorage.setItem('unifai_avatar', data.avatar_url);
+      }
+    }
+  }
   return data;
 }
 
@@ -156,34 +173,60 @@ export function parseJwt(token) {
 
 export function getCurrentSession() {
   const token = getAccessToken();
-  const savedPersonaId = localStorage.getItem('unifai_active_persona') || 'user';
+  const savedPersonaId = typeof window !== 'undefined' ? (window.localStorage.getItem('unifai_active_persona') || 'user') : 'user';
+  const savedRole = typeof window !== 'undefined' ? window.localStorage.getItem('unifai_role') : null;
+  const savedUsername = typeof window !== 'undefined' ? window.localStorage.getItem('unifai_username') : null;
 
-  let role = 'CPSE_USER';
+  let role = savedRole || 'CPSE_USER';
   if (token) {
     const payload = parseJwt(token);
-    if (payload && payload.role) {
-      role = payload.role;
+    if (payload) {
+      const appRole = payload.app_metadata?.unifai_role || payload.app_metadata?.role;
+      if (appRole && appRole !== 'authenticated') {
+        role = appRole;
+      } else if (payload.role && payload.role !== 'authenticated') {
+        role = payload.role;
+      }
     }
+  }
+
+  let personaId = savedPersonaId;
+  if (role === 'NATIONAL_ADMIN') {
+    personaId = 'admin';
+  } else if (role === 'TECHNICAL_REVIEWER') {
+    personaId = 'reviewer';
   }
 
   return {
     token,
-    username: null,
-    personaId: savedPersonaId,
+    username: savedUsername,
+    personaId,
     role,
   };
 }
 
 export function saveSession(personaKey, token = null) {
   const persona = PERSONAS[personaKey] || PERSONAS.USER;
-  localStorage.setItem('unifai_active_persona', persona.id);
+  if (typeof window !== 'undefined') {
+    window.localStorage.setItem('unifai_active_persona', persona.id);
+  }
   if (token) {
     setAccessToken(token);
+    if (typeof window !== 'undefined') {
+      window.localStorage.setItem('unifai_token', token);
+    }
   }
 }
 
 export function clearSession() {
-  localStorage.removeItem('unifai_active_persona');
+  if (typeof window !== 'undefined') {
+    window.localStorage.removeItem('unifai_active_persona');
+    window.localStorage.removeItem('unifai_token');
+    window.localStorage.removeItem('unifai_role');
+    window.localStorage.removeItem('unifai_username');
+    window.localStorage.removeItem('unifai_email');
+    window.localStorage.removeItem('unifai_avatar');
+  }
   setAccessToken(null);
 }
 

@@ -36,7 +36,7 @@ def _require_admin(current_user: User) -> User:
 # ── Schemas ──────────────────────────────────────────────────────────────────────
 
 class UserSummary(BaseModel):
-    id: int
+    id: str
     username: str
     email: Optional[str]
     role: str
@@ -71,8 +71,8 @@ def list_users(
 
 
 @router.patch("/users/{user_id}/role", response_model=UserSummary)
-def update_user_role(
-    user_id: int,
+async def update_user_role(
+    user_id: str,
     req: RoleUpdateRequest,
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db),
@@ -126,5 +126,14 @@ def update_user_role(
     target.role = new_role
     db.commit()
     db.refresh(target)
+
+    # Sync role to Supabase Auth if the user has an email
+    if target.email:
+        try:
+            from app.core.supabase_admin import sync_role_to_supabase_user
+            await sync_role_to_supabase_user(target.email, new_role)
+        except Exception as e:
+            logger.warning("Could not sync role to Supabase Auth: %s", e)
+
     return target
 

@@ -26,6 +26,7 @@ GOOGLE_REDIRECT_URI = os.getenv("GOOGLE_REDIRECT_URI", "http://localhost:5173/au
 SSO_LOGIN_CALLBACK_URL = os.getenv("SSO_LOGIN_CALLBACK_URL", "http://localhost:5173/auth/google/callback")
 SUPABASE_URL = os.getenv("SUPABASE_URL", "")
 SUPABASE_ANON_KEY = os.getenv("SUPABASE_ANON_KEY", "")
+SUPABASE_JWT_SECRET = os.getenv("SUPABASE_JWT_SECRET", "")
 OAUTH_STATE_COOKIE = "unifai_oauth_state"
 OAUTH_STATE_TTL_SECONDS = 10 * 60
 
@@ -97,7 +98,8 @@ def _consume_oauth_state(response: Response, redirect_uri: str) -> None:
 
 def get_current_user(request: Request, token: Optional[str] = Depends(oauth2_scheme), db: Session = Depends(get_db)) -> User:
     """
-    Synapse-style JWT token validation and current user retrieval dependency.
+    Validates either direct Supabase access tokens (via SUPABASE_JWT_SECRET)
+    or local UnifAI JWT tokens (via SECRET_KEY), and retrieves the User.
     """
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
@@ -107,6 +109,55 @@ def get_current_user(request: Request, token: Optional[str] = Depends(oauth2_sch
     token = token or request.cookies.get("unifai_session")
     if not token:
         raise credentials_exception
+
+    # 1. Try decoding as a Supabase JWT if SUPABASE_JWT_SECRET is configured
+    if SUPABASE_JWT_SECRET:
+        try:
+            payload = jwt.decode(token, SUPABASE_JWT_SECRET, algorithms=["HS256"], options={"verify_aud": False})
+            email = payload.get("email")
+            sub = payload.get("sub")
+            if email or sub:
+                user = None
+                if email:
+                    user = db.query(User).filter(User.email.ilike(email.strip())).first()
+                if not user and sub:
+                    identity = db.query(ExternalIdentity).filter(
+                        ExternalIdentity.provider == "supabase",
+                        ExternalIdentity.external_id == sub,
+                    ).first()
+                    if identity:
+                        user = identity.user
+
+                if not user:
+                    app_meta = payload.get("app_metadata") or {}
+                    user_meta = payload.get("user_metadata") or {}
+                    token_role = app_meta.get("unifai_role") or app_meta.get("role") or "CPSE_USER"
+                    name = user_meta.get("full_name") or user_meta.get("name")
+                    avatar = user_meta.get("avatar_url") or user_meta.get("picture")
+                    user = _upsert_google_user(
+                        db=db,
+                        email=email or f"{sub}@supabase.local",
+                        name=name,
+                        avatar_url=avatar,
+                        role=token_role,
+                        cpse_id="IOCL",
+                        google_subject=sub,
+                        provider="supabase",
+                    )
+                else:
+                    if sub:
+                        identity = db.query(ExternalIdentity).filter(
+                            ExternalIdentity.provider == "supabase",
+                            ExternalIdentity.external_id == sub,
+                        ).first()
+                        if not identity:
+                            db.add(ExternalIdentity(provider="supabase", external_id=sub, user_id=user.id))
+                            db.commit()
+                return user
+        except JWTError:
+            pass
+
+    # 2. Try decoding with UnifAI internal SECRET_KEY
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         username: str = payload.get("sub")
