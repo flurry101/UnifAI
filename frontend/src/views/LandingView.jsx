@@ -49,6 +49,32 @@ export default function LandingView({ onSelectView, onOpenAuthModal }) {
         </div>
       </div>
 
+      {/* INTER-CPSE GEO-RADAR SPOTLIGHT BANNER */}
+      <div className="border-3 border-raw-black p-6 bg-raw-sunken mb-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div>
+          <div className="flex items-center gap-2 mb-1">
+            <span className="bg-raw-black text-raw-white font-headline text-[11px] px-2 py-0.5 tracking-wider uppercase">
+              NEW GEOSPATIAL FEATURE
+            </span>
+            <span className="font-mono text-xs font-bold text-emerald-700">
+              ● 383 UNITS GEOCODED
+            </span>
+          </div>
+          <h2 className="font-headline text-2xl uppercase tracking-tight font-black">
+            [CPSE GEO-RADAR] Inter-Enterprise Spares Network
+          </h2>
+          <p className="font-mono text-xs text-gray-700 mt-1 max-w-2xl">
+            Why wait <strong>9 months for foreign import replenishment</strong> when an identical CNMC-standardized valve or turbine spare is sitting idle in a sister CPSE warehouse 40 km away? Explore 383 plants across 15 CPSEs on the interactive MapLibre + Deck.gl network.
+          </p>
+        </div>
+        <button
+          onClick={() => onSelectView('georadar')}
+          className="font-headline text-sm uppercase px-6 py-3 border-3 border-raw-black bg-raw-white text-raw-black hover:bg-raw-black hover:text-raw-white tracking-widest font-bold whitespace-nowrap shadow-sm transition-none"
+        >
+          LAUNCH GEO-RADAR 🗺️ →
+        </button>
+      </div>
+
       {/* TARGET SECTORS SECTION */}
       <SectorGrid />
 

@@ -46,6 +46,19 @@ export default function Header({ currentView, onViewChange, onOpenAuthModal }) {
 
         {/* Desktop Navigation & Authentication Controls */}
         <div className="hidden md:flex items-center gap-3">
+          {/* CPSE Geo-Radar Access Button */}
+          <button
+            onClick={() => onViewChange('georadar')}
+            className={`font-headline text-xs uppercase px-3 py-1.5 border-2 border-raw-black tracking-wider flex items-center gap-1.5 transition-none ${
+              currentView === 'georadar'
+                ? 'bg-raw-black text-raw-white font-bold'
+                : 'bg-raw-white text-raw-black hover:bg-raw-black hover:text-raw-white'
+            }`}
+            title="Inter-CPSE Geospatial Spares Radar"
+          >
+            <span>📍</span>
+            <span>CPSE GEO-RADAR</span>
+          </button>
           {session.token ? (
             <div className="flex items-center gap-3">
               {/* Workspace Switcher Bar */}
@@ -160,6 +173,22 @@ export default function Header({ currentView, onViewChange, onOpenAuthModal }) {
               status={health.online ? 'active' : 'warning'}
             />
           </div>
+
+          {/* Mobile CPSE Geo-Radar Access */}
+          <button
+            onClick={() => {
+              onViewChange('georadar');
+              setMobileMenuOpen(false);
+            }}
+            className={`w-full font-headline text-xs uppercase py-2 border-2 border-raw-black tracking-wider flex items-center justify-center gap-1.5 transition-none ${
+              currentView === 'georadar'
+                ? 'bg-raw-black text-raw-white font-bold'
+                : 'bg-raw-white text-raw-black'
+            }`}
+          >
+            <span>📍</span>
+            <span>OPEN CPSE GEO-RADAR</span>
+          </button>
 
           {session.token ? (
             <div className="space-y-2 mt-2">

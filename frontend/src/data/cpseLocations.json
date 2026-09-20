@@ -1,0 +1,8428 @@
+[
+  {
+    "id": "Heavy Electricals Plant (HEP)",
+    "name": "Heavy Electricals Plant (HEP)",
+    "company": "BHEL",
+    "sector": "Heavy Engineering",
+    "psu_tier": "Maharatna",
+    "type_label": "HYDRO POWER",
+    "full_type_tag": "[MAHARATNA \u2022 HYDRO POWER]",
+    "category": "Main Plant - Motors, Transformers, Switchgear",
+    "capacity": "",
+    "state": "Madhya Pradesh",
+    "coordinates": [
+      77.411,
+      23.256
+    ],
+    "color": [
+      16,
+      185,
+      129
+    ],
+    "hex": "#10B981"
+  },
+  {
+    "id": "Heavy Power Equipment Plant (HPEP)",
+    "name": "Heavy Power Equipment Plant (HPEP)",
+    "company": "BHEL",
+    "sector": "Heavy Engineering",
+    "psu_tier": "Maharatna",
+    "type_label": "GAS PIPELINE HUB",
+    "full_type_tag": "[MAHARATNA \u2022 GAS PIPELINE HUB]",
+    "category": "Main Plant - Gas Turbines, Compressors, Pumps, Oil Rigs",
+    "capacity": "",
+    "state": "Telangana",
+    "coordinates": [
+      78.285,
+      17.535
+    ],
+    "color": [
+      16,
+      185,
+      129
+    ],
+    "hex": "#10B981"
+  },
+  {
+    "id": "High Pressure Boiler Plant (HPBP)",
+    "name": "High Pressure Boiler Plant (HPBP)",
+    "company": "BHEL",
+    "sector": "Heavy Engineering",
+    "psu_tier": "Maharatna",
+    "type_label": "OFFSHORE DRILLING",
+    "full_type_tag": "[MAHARATNA \u2022 OFFSHORE DRILLING]",
+    "category": "Main Plant - Utility & Industrial Boilers, Valves",
+    "capacity": "",
+    "state": "Tamil Nadu",
+    "coordinates": [
+      78.707,
+      10.789
+    ],
+    "color": [
+      16,
+      185,
+      129
+    ],
+    "hex": "#10B981"
+  },
+  {
+    "id": "Seamless Steel Tube Plant (SSTP)",
+    "name": "Seamless Steel Tube Plant (SSTP)",
+    "company": "BHEL",
+    "sector": "Heavy Engineering",
+    "psu_tier": "Maharatna",
+    "type_label": "HEAVY ENGINEERING",
+    "full_type_tag": "[MAHARATNA \u2022 HEAVY ENGINEERING]",
+    "category": "Ancillary - Seamless Tubes for Boilers",
+    "capacity": "",
+    "state": "Tamil Nadu",
+    "coordinates": [
+      78.707,
+      10.789
+    ],
+    "color": [
+      16,
+      185,
+      129
+    ],
+    "hex": "#10B981"
+  },
+  {
+    "id": "Heavy Electrical Equipment Plant (HEEP)",
+    "name": "Heavy Electrical Equipment Plant (HEEP)",
+    "company": "BHEL",
+    "sector": "Heavy Engineering",
+    "psu_tier": "Maharatna",
+    "type_label": "HEAVY ENGINEERING",
+    "full_type_tag": "[MAHARATNA \u2022 HEAVY ENGINEERING]",
+    "category": "Main Plant - Turbo-generators, Large Motors, Excitation Systems",
+    "capacity": "",
+    "state": "Uttarakhand",
+    "coordinates": [
+      78.165,
+      29.946
+    ],
+    "color": [
+      16,
+      185,
+      129
+    ],
+    "hex": "#10B981"
+  },
+  {
+    "id": "Central Foundry Forge Plant (CFFP)",
+    "name": "Central Foundry Forge Plant (CFFP)",
+    "company": "BHEL",
+    "sector": "Heavy Engineering",
+    "psu_tier": "Maharatna",
+    "type_label": "HEAVY ENGINEERING",
+    "full_type_tag": "[MAHARATNA \u2022 HEAVY ENGINEERING]",
+    "category": "Ancillary - Castings & Forgings for Power Equipment",
+    "capacity": "",
+    "state": "Uttarakhand",
+    "coordinates": [
+      78.165,
+      29.946
+    ],
+    "color": [
+      16,
+      185,
+      129
+    ],
+    "hex": "#10B981"
+  },
+  {
+    "id": "Transformer Plant (TP)",
+    "name": "Transformer Plant (TP)",
+    "company": "BHEL",
+    "sector": "Heavy Engineering",
+    "psu_tier": "Maharatna",
+    "type_label": "HEAVY ENGINEERING",
+    "full_type_tag": "[MAHARATNA \u2022 HEAVY ENGINEERING]",
+    "category": "Main Plant - Power & Distribution Transformers",
+    "capacity": "",
+    "state": "Uttar Pradesh",
+    "coordinates": [
+      78.569,
+      25.448
+    ],
+    "color": [
+      16,
+      185,
+      129
+    ],
+    "hex": "#10B981"
+  },
+  {
+    "id": "Electronics Division (EDN)",
+    "name": "Electronics Division (EDN)",
+    "company": "BHEL",
+    "sector": "Heavy Engineering",
+    "psu_tier": "Maharatna",
+    "type_label": "SOLAR PARK",
+    "full_type_tag": "[MAHARATNA \u2022 SOLAR PARK]",
+    "category": "Main Plant - Control & Instrumentation, Solar Inverters, Defence Electronics",
+    "capacity": "",
+    "state": "Karnataka",
+    "coordinates": [
+      77.525,
+      12.935
+    ],
+    "color": [
+      16,
+      185,
+      129
+    ],
+    "hex": "#10B981"
+  },
+  {
+    "id": "Industrial Valves Plant (IVP)",
+    "name": "Industrial Valves Plant (IVP)",
+    "company": "BHEL",
+    "sector": "Heavy Engineering",
+    "psu_tier": "Maharatna",
+    "type_label": "HEAVY ENGINEERING",
+    "full_type_tag": "[MAHARATNA \u2022 HEAVY ENGINEERING]",
+    "category": "Main Plant - High-pressure Valves for Power & Oil & Gas",
+    "capacity": "",
+    "state": "Punjab",
+    "coordinates": [
+      75.15,
+      31.37
+    ],
+    "color": [
+      16,
+      185,
+      129
+    ],
+    "hex": "#10B981"
+  },
+  {
+    "id": "Boiler Auxiliaries Plant (BAP)",
+    "name": "Boiler Auxiliaries Plant (BAP)",
+    "company": "BHEL",
+    "sector": "Heavy Engineering",
+    "psu_tier": "Maharatna",
+    "type_label": "HEAVY ENGINEERING",
+    "full_type_tag": "[MAHARATNA \u2022 HEAVY ENGINEERING]",
+    "category": "Main Plant - Fans, Air Preheaters, Electrostatic Precipitators",
+    "capacity": "",
+    "state": "Tamil Nadu",
+    "coordinates": [
+      79.281,
+      12.932
+    ],
+    "color": [
+      16,
+      185,
+      129
+    ],
+    "hex": "#10B981"
+  },
+  {
+    "id": "Component Fabrication Plant (CFP)",
+    "name": "Component Fabrication Plant (CFP)",
+    "company": "BHEL",
+    "sector": "Heavy Engineering",
+    "psu_tier": "Maharatna",
+    "type_label": "HEAVY ENGINEERING",
+    "full_type_tag": "[MAHARATNA \u2022 HEAVY ENGINEERING]",
+    "category": "Ancillary - Fabricated Components for Boilers & Piping",
+    "capacity": "",
+    "state": "Uttarakhand",
+    "coordinates": [
+      79.391,
+      28.973
+    ],
+    "color": [
+      16,
+      185,
+      129
+    ],
+    "hex": "#10B981"
+  },
+  {
+    "id": "Insulator Plant (IP)",
+    "name": "Insulator Plant (IP)",
+    "company": "BHEL",
+    "sector": "Heavy Engineering",
+    "psu_tier": "Maharatna",
+    "type_label": "HEAVY ENGINEERING",
+    "full_type_tag": "[MAHARATNA \u2022 HEAVY ENGINEERING]",
+    "category": "Main Plant - Porcelain & Composite Insulators",
+    "capacity": "",
+    "state": "Uttar Pradesh",
+    "coordinates": [
+      80.553,
+      26.784
+    ],
+    "color": [
+      16,
+      185,
+      129
+    ],
+    "hex": "#10B981"
+  },
+  {
+    "id": "Piping Centre (PC)",
+    "name": "Piping Centre (PC)",
+    "company": "BHEL",
+    "sector": "Heavy Engineering",
+    "psu_tier": "Maharatna",
+    "type_label": "HEAVY MFG",
+    "full_type_tag": "[MAHARATNA \u2022 HEAVY MFG]",
+    "category": "Specialised Unit - Power Piping & Header Fabrication",
+    "capacity": "",
+    "state": "Tamil Nadu",
+    "coordinates": [
+      78.623,
+      10.229
+    ],
+    "color": [
+      16,
+      185,
+      129
+    ],
+    "hex": "#10B981"
+  },
+  {
+    "id": "Ceramic Business Unit (CBU)",
+    "name": "Ceramic Business Unit (CBU)",
+    "company": "BHEL",
+    "sector": "Heavy Engineering",
+    "psu_tier": "Maharatna",
+    "type_label": "HEAVY ENGINEERING",
+    "full_type_tag": "[MAHARATNA \u2022 HEAVY ENGINEERING]",
+    "category": "Ancillary - Advanced Ceramics & Refractories",
+    "capacity": "",
+    "state": "Karnataka",
+    "coordinates": [
+      77.665,
+      12.85
+    ],
+    "color": [
+      16,
+      185,
+      129
+    ],
+    "hex": "#10B981"
+  },
+  {
+    "id": "Industrial Systems Group (ISG)",
+    "name": "Industrial Systems Group (ISG)",
+    "company": "BHEL",
+    "sector": "Heavy Engineering",
+    "psu_tier": "Maharatna",
+    "type_label": "HEAVY ENGINEERING",
+    "full_type_tag": "[MAHARATNA \u2022 HEAVY ENGINEERING]",
+    "category": "Engineering Office - Customised Industrial Systems",
+    "capacity": "",
+    "state": "Karnataka",
+    "coordinates": [
+      77.525,
+      13.025
+    ],
+    "color": [
+      16,
+      185,
+      129
+    ],
+    "hex": "#10B981"
+  },
+  {
+    "id": "Solar Business Division (SBD)",
+    "name": "Solar Business Division (SBD)",
+    "company": "BHEL",
+    "sector": "Heavy Engineering",
+    "psu_tier": "Maharatna",
+    "type_label": "SOLAR PARK",
+    "full_type_tag": "[MAHARATNA \u2022 SOLAR PARK]",
+    "category": "Strategic Division - Solar Cell & Module Mfg, EPC",
+    "capacity": "",
+    "state": "Karnataka",
+    "coordinates": [
+      77.525,
+      12.935
+    ],
+    "color": [
+      16,
+      185,
+      129
+    ],
+    "hex": "#10B981"
+  },
+  {
+    "id": "BHEL_17",
+    "name": "BHEL_17",
+    "company": "BHEL",
+    "sector": "Heavy Engineering",
+    "psu_tier": "Maharatna",
+    "type_label": "HEAVY ENGINEERING",
+    "full_type_tag": "[MAHARATNA \u2022 HEAVY ENGINEERING]",
+    "category": "Power Sector Service Centres",
+    "capacity": "",
+    "state": "Uttar Pradesh",
+    "coordinates": [
+      77.321,
+      28.579
+    ],
+    "color": [
+      16,
+      185,
+      129
+    ],
+    "hex": "#10B981"
+  },
+  {
+    "id": "BHEL_18",
+    "name": "BHEL_18",
+    "company": "BHEL",
+    "sector": "Heavy Engineering",
+    "psu_tier": "Maharatna",
+    "type_label": "HEAVY ENGINEERING",
+    "full_type_tag": "[MAHARATNA \u2022 HEAVY ENGINEERING]",
+    "category": "Power Sector Service Centres",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      79.088,
+      21.145
+    ],
+    "color": [
+      16,
+      185,
+      129
+    ],
+    "hex": "#10B981"
+  },
+  {
+    "id": "BHEL_19",
+    "name": "BHEL_19",
+    "company": "BHEL",
+    "sector": "Heavy Engineering",
+    "psu_tier": "Maharatna",
+    "type_label": "HEAVY ENGINEERING",
+    "full_type_tag": "[MAHARATNA \u2022 HEAVY ENGINEERING]",
+    "category": "Power Sector Service Centres",
+    "capacity": "",
+    "state": "Telangana",
+    "coordinates": [
+      78.496,
+      17.447
+    ],
+    "color": [
+      16,
+      185,
+      129
+    ],
+    "hex": "#10B981"
+  },
+  {
+    "id": "BHEL_20",
+    "name": "BHEL_20",
+    "company": "BHEL",
+    "sector": "Heavy Engineering",
+    "psu_tier": "Maharatna",
+    "type_label": "HEAVY ENGINEERING",
+    "full_type_tag": "[MAHARATNA \u2022 HEAVY ENGINEERING]",
+    "category": "Power Sector Service Centres",
+    "capacity": "",
+    "state": "Odisha",
+    "coordinates": [
+      85.825,
+      20.296
+    ],
+    "color": [
+      16,
+      185,
+      129
+    ],
+    "hex": "#10B981"
+  },
+  {
+    "id": "BHEL_21",
+    "name": "BHEL_21",
+    "company": "BHEL",
+    "sector": "Heavy Engineering",
+    "psu_tier": "Maharatna",
+    "type_label": "HEAVY ENGINEERING",
+    "full_type_tag": "[MAHARATNA \u2022 HEAVY ENGINEERING]",
+    "category": "Power Sector Service Centres",
+    "capacity": "",
+    "state": "Bihar",
+    "coordinates": [
+      85.131,
+      25.615
+    ],
+    "color": [
+      16,
+      185,
+      129
+    ],
+    "hex": "#10B981"
+  },
+  {
+    "id": "BHEL_22",
+    "name": "BHEL_22",
+    "company": "BHEL",
+    "sector": "Heavy Engineering",
+    "psu_tier": "Maharatna",
+    "type_label": "HEAVY ENGINEERING",
+    "full_type_tag": "[MAHARATNA \u2022 HEAVY ENGINEERING]",
+    "category": "Regional Offices",
+    "capacity": "",
+    "state": "Uttar Pradesh",
+    "coordinates": [
+      77.333,
+      28.583
+    ],
+    "color": [
+      16,
+      185,
+      129
+    ],
+    "hex": "#10B981"
+  },
+  {
+    "id": "BHEL_23",
+    "name": "BHEL_23",
+    "company": "BHEL",
+    "sector": "Heavy Engineering",
+    "psu_tier": "Maharatna",
+    "type_label": "HEAVY ENGINEERING",
+    "full_type_tag": "[MAHARATNA \u2022 HEAVY ENGINEERING]",
+    "category": "Regional Offices",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      72.873,
+      19.113
+    ],
+    "color": [
+      16,
+      185,
+      129
+    ],
+    "hex": "#10B981"
+  },
+  {
+    "id": "BHEL_24",
+    "name": "BHEL_24",
+    "company": "BHEL",
+    "sector": "Heavy Engineering",
+    "psu_tier": "Maharatna",
+    "type_label": "HEAVY ENGINEERING",
+    "full_type_tag": "[MAHARATNA \u2022 HEAVY ENGINEERING]",
+    "category": "Regional Offices",
+    "capacity": "",
+    "state": "Tamil Nadu",
+    "coordinates": [
+      80.274,
+      13.083
+    ],
+    "color": [
+      16,
+      185,
+      129
+    ],
+    "hex": "#10B981"
+  },
+  {
+    "id": "BHEL_25",
+    "name": "BHEL_25",
+    "company": "BHEL",
+    "sector": "Heavy Engineering",
+    "psu_tier": "Maharatna",
+    "type_label": "HEAVY ENGINEERING",
+    "full_type_tag": "[MAHARATNA \u2022 HEAVY ENGINEERING]",
+    "category": "Regional Offices",
+    "capacity": "",
+    "state": "West Bengal",
+    "coordinates": [
+      88.407,
+      22.568
+    ],
+    "color": [
+      16,
+      185,
+      129
+    ],
+    "hex": "#10B981"
+  },
+  {
+    "id": "BEL_26",
+    "name": "BEL_26",
+    "company": "BEL",
+    "sector": "Heavy Engineering / Defense",
+    "psu_tier": "Navratna",
+    "type_label": "DEFENSE / ELECTRONICS",
+    "full_type_tag": "[NAVRATNA \u2022 DEFENSE / ELECTRONICS]",
+    "category": "Manufacturing Units",
+    "capacity": "",
+    "state": "Karnataka",
+    "coordinates": [
+      77.541,
+      13.035
+    ],
+    "color": [
+      5,
+      150,
+      105
+    ],
+    "hex": "#059669"
+  },
+  {
+    "id": "BEL_27",
+    "name": "BEL_27",
+    "company": "BEL",
+    "sector": "Heavy Engineering / Defense",
+    "psu_tier": "Navratna",
+    "type_label": "DEFENSE / ELECTRONICS",
+    "full_type_tag": "[NAVRATNA \u2022 DEFENSE / ELECTRONICS]",
+    "category": "Manufacturing Units",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      73.848,
+      18.532
+    ],
+    "color": [
+      5,
+      150,
+      105
+    ],
+    "hex": "#059669"
+  },
+  {
+    "id": "BEL_28",
+    "name": "BEL_28",
+    "company": "BEL",
+    "sector": "Heavy Engineering / Defense",
+    "psu_tier": "Navratna",
+    "type_label": "DEFENSE / ELECTRONICS",
+    "full_type_tag": "[NAVRATNA \u2022 DEFENSE / ELECTRONICS]",
+    "category": "Manufacturing Units",
+    "capacity": "",
+    "state": "Uttar Pradesh",
+    "coordinates": [
+      77.329,
+      28.672
+    ],
+    "color": [
+      5,
+      150,
+      105
+    ],
+    "hex": "#059669"
+  },
+  {
+    "id": "BEL_29",
+    "name": "BEL_29",
+    "company": "BEL",
+    "sector": "Heavy Engineering / Defense",
+    "psu_tier": "Navratna",
+    "type_label": "DEFENSE / ELECTRONICS",
+    "full_type_tag": "[NAVRATNA \u2022 DEFENSE / ELECTRONICS]",
+    "category": "Manufacturing Units",
+    "capacity": "",
+    "state": "Tamil Nadu",
+    "coordinates": [
+      80.21,
+      13.013
+    ],
+    "color": [
+      5,
+      150,
+      105
+    ],
+    "hex": "#059669"
+  },
+  {
+    "id": "BEL_30",
+    "name": "BEL_30",
+    "company": "BEL",
+    "sector": "Heavy Engineering / Defense",
+    "psu_tier": "Navratna",
+    "type_label": "DEFENSE / ELECTRONICS",
+    "full_type_tag": "[NAVRATNA \u2022 DEFENSE / ELECTRONICS]",
+    "category": "Manufacturing Units",
+    "capacity": "",
+    "state": "Telangana",
+    "coordinates": [
+      78.561,
+      17.452
+    ],
+    "color": [
+      5,
+      150,
+      105
+    ],
+    "hex": "#059669"
+  },
+  {
+    "id": "BEL_31",
+    "name": "BEL_31",
+    "company": "BEL",
+    "sector": "Heavy Engineering / Defense",
+    "psu_tier": "Navratna",
+    "type_label": "DEFENSE / ELECTRONICS",
+    "full_type_tag": "[NAVRATNA \u2022 DEFENSE / ELECTRONICS]",
+    "category": "Manufacturing Units",
+    "capacity": "",
+    "state": "Haryana",
+    "coordinates": [
+      76.854,
+      30.691
+    ],
+    "color": [
+      5,
+      150,
+      105
+    ],
+    "hex": "#059669"
+  },
+  {
+    "id": "BEL_32",
+    "name": "BEL_32",
+    "company": "BEL",
+    "sector": "Heavy Engineering / Defense",
+    "psu_tier": "Navratna",
+    "type_label": "DEFENSE / ELECTRONICS",
+    "full_type_tag": "[NAVRATNA \u2022 DEFENSE / ELECTRONICS]",
+    "category": "Manufacturing Units",
+    "capacity": "",
+    "state": "Uttarakhand",
+    "coordinates": [
+      78.521,
+      29.743
+    ],
+    "color": [
+      5,
+      150,
+      105
+    ],
+    "hex": "#059669"
+  },
+  {
+    "id": "BEL_33",
+    "name": "BEL_33",
+    "company": "BEL",
+    "sector": "Heavy Engineering / Defense",
+    "psu_tier": "Navratna",
+    "type_label": "DEFENSE / ELECTRONICS",
+    "full_type_tag": "[NAVRATNA \u2022 DEFENSE / ELECTRONICS]",
+    "category": "Manufacturing Units",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      73.093,
+      19.082
+    ],
+    "color": [
+      5,
+      150,
+      105
+    ],
+    "hex": "#059669"
+  },
+  {
+    "id": "BEL_34",
+    "name": "BEL_34",
+    "company": "BEL",
+    "sector": "Heavy Engineering / Defense",
+    "psu_tier": "Navratna",
+    "type_label": "DEFENSE / ELECTRONICS",
+    "full_type_tag": "[NAVRATNA \u2022 DEFENSE / ELECTRONICS]",
+    "category": "Manufacturing Units",
+    "capacity": "",
+    "state": "Andhra Pradesh",
+    "coordinates": [
+      81.128,
+      16.176
+    ],
+    "color": [
+      5,
+      150,
+      105
+    ],
+    "hex": "#059669"
+  },
+  {
+    "id": "BEL_35",
+    "name": "BEL_35",
+    "company": "BEL",
+    "sector": "Heavy Engineering / Defense",
+    "psu_tier": "Navratna",
+    "type_label": "DEFENSE / ELECTRONICS",
+    "full_type_tag": "[NAVRATNA \u2022 DEFENSE / ELECTRONICS]",
+    "category": "Regional Customer Service Centres",
+    "capacity": "",
+    "state": "Delhi",
+    "coordinates": [
+      77.229,
+      28.613
+    ],
+    "color": [
+      5,
+      150,
+      105
+    ],
+    "hex": "#059669"
+  },
+  {
+    "id": "BEL_36",
+    "name": "BEL_36",
+    "company": "BEL",
+    "sector": "Heavy Engineering / Defense",
+    "psu_tier": "Navratna",
+    "type_label": "DEFENSE / ELECTRONICS",
+    "full_type_tag": "[NAVRATNA \u2022 DEFENSE / ELECTRONICS]",
+    "category": "Regional Customer Service Centres",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      72.877,
+      19.076
+    ],
+    "color": [
+      5,
+      150,
+      105
+    ],
+    "hex": "#059669"
+  },
+  {
+    "id": "BEL_37",
+    "name": "BEL_37",
+    "company": "BEL",
+    "sector": "Heavy Engineering / Defense",
+    "psu_tier": "Navratna",
+    "type_label": "DEFENSE / ELECTRONICS",
+    "full_type_tag": "[NAVRATNA \u2022 DEFENSE / ELECTRONICS]",
+    "category": "Regional Customer Service Centres",
+    "capacity": "",
+    "state": "West Bengal",
+    "coordinates": [
+      88.318,
+      22.543
+    ],
+    "color": [
+      5,
+      150,
+      105
+    ],
+    "hex": "#059669"
+  },
+  {
+    "id": "BEL_38",
+    "name": "BEL_38",
+    "company": "BEL",
+    "sector": "Heavy Engineering / Defense",
+    "psu_tier": "Navratna",
+    "type_label": "DEFENSE / ELECTRONICS",
+    "full_type_tag": "[NAVRATNA \u2022 DEFENSE / ELECTRONICS]",
+    "category": "Regional Customer Service Centres",
+    "capacity": "",
+    "state": "Tamil Nadu",
+    "coordinates": [
+      80.275,
+      13.082
+    ],
+    "color": [
+      5,
+      150,
+      105
+    ],
+    "hex": "#059669"
+  },
+  {
+    "id": "BEL_39",
+    "name": "BEL_39",
+    "company": "BEL",
+    "sector": "Heavy Engineering / Defense",
+    "psu_tier": "Navratna",
+    "type_label": "DEFENSE / ELECTRONICS",
+    "full_type_tag": "[NAVRATNA \u2022 DEFENSE / ELECTRONICS]",
+    "category": "Regional Customer Service Centres",
+    "capacity": "",
+    "state": "Karnataka",
+    "coordinates": [
+      77.54,
+      13.036
+    ],
+    "color": [
+      5,
+      150,
+      105
+    ],
+    "hex": "#059669"
+  },
+  {
+    "id": "BEL_40",
+    "name": "BEL_40",
+    "company": "BEL",
+    "sector": "Heavy Engineering / Defense",
+    "psu_tier": "Navratna",
+    "type_label": "DEFENSE / ELECTRONICS",
+    "full_type_tag": "[NAVRATNA \u2022 DEFENSE / ELECTRONICS]",
+    "category": "Regional Customer Service Centres",
+    "capacity": "",
+    "state": "Telangana",
+    "coordinates": [
+      78.453,
+      17.474
+    ],
+    "color": [
+      5,
+      150,
+      105
+    ],
+    "hex": "#059669"
+  },
+  {
+    "id": "BEL_41",
+    "name": "BEL_41",
+    "company": "BEL",
+    "sector": "Heavy Engineering / Defense",
+    "psu_tier": "Navratna",
+    "type_label": "DEFENSE / ELECTRONICS",
+    "full_type_tag": "[NAVRATNA \u2022 DEFENSE / ELECTRONICS]",
+    "category": "Regional Customer Service Centres",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      73.847,
+      18.533
+    ],
+    "color": [
+      5,
+      150,
+      105
+    ],
+    "hex": "#059669"
+  },
+  {
+    "id": "CIL_GEVRA_MINE",
+    "name": "CIL_GEVRA_MINE",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "MINING / COAL",
+    "full_type_tag": "[MAHARATNA \u2022 MINING / COAL]",
+    "category": "Selected Major Collieries And Plants",
+    "capacity": "",
+    "state": "Chhattisgarh",
+    "coordinates": [
+      82.7,
+      22.35
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_DIPKA_MINE",
+    "name": "CIL_DIPKA_MINE",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "MINING / COAL",
+    "full_type_tag": "[MAHARATNA \u2022 MINING / COAL]",
+    "category": "Selected Major Collieries And Plants",
+    "capacity": "",
+    "state": "Chhattisgarh",
+    "coordinates": [
+      82.65,
+      22.3
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_KUSMUNDA_MINE",
+    "name": "CIL_KUSMUNDA_MINE",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "MINING / COAL",
+    "full_type_tag": "[MAHARATNA \u2022 MINING / COAL]",
+    "category": "Selected Major Collieries And Plants",
+    "capacity": "",
+    "state": "Chhattisgarh",
+    "coordinates": [
+      82.72,
+      22.32
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_NIGAHI_MINE",
+    "name": "CIL_NIGAHI_MINE",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "MINING / COAL",
+    "full_type_tag": "[MAHARATNA \u2022 MINING / COAL]",
+    "category": "Selected Major Collieries And Plants",
+    "capacity": "",
+    "state": "Madhya Pradesh",
+    "coordinates": [
+      82.65,
+      24.15
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_JAYANT_MINE",
+    "name": "CIL_JAYANT_MINE",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "MINING / COAL",
+    "full_type_tag": "[MAHARATNA \u2022 MINING / COAL]",
+    "category": "Selected Major Collieries And Plants",
+    "capacity": "",
+    "state": "Madhya Pradesh",
+    "coordinates": [
+      82.68,
+      24.1
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_DUDHICHUA_MINE",
+    "name": "CIL_DUDHICHUA_MINE",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "MINING / COAL",
+    "full_type_tag": "[MAHARATNA \u2022 MINING / COAL]",
+    "category": "Selected Major Collieries And Plants",
+    "capacity": "",
+    "state": "Madhya Pradesh",
+    "coordinates": [
+      82.6,
+      24.05
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_LALMATIA_OCP",
+    "name": "CIL_LALMATIA_OCP",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Selected Major Collieries And Plants",
+    "capacity": "",
+    "state": "Jharkhand",
+    "coordinates": [
+      87.45,
+      24.95
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_BHUBANESWARI_OCP",
+    "name": "CIL_BHUBANESWARI_OCP",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Selected Major Collieries And Plants",
+    "capacity": "",
+    "state": "Odisha",
+    "coordinates": [
+      85.2,
+      20.95
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_ANANTA_OCP",
+    "name": "CIL_ANANTA_OCP",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Selected Major Collieries And Plants",
+    "capacity": "",
+    "state": "Odisha",
+    "coordinates": [
+      85.1,
+      20.85
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_HINGULA_OCP",
+    "name": "CIL_HINGULA_OCP",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Selected Major Collieries And Plants",
+    "capacity": "",
+    "state": "Odisha",
+    "coordinates": [
+      85.4,
+      20.9
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_SAMALESWARI_OCP",
+    "name": "CIL_SAMALESWARI_OCP",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Selected Major Collieries And Plants",
+    "capacity": "",
+    "state": "Odisha",
+    "coordinates": [
+      83.95,
+      21.8
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_LAJKURA_OCP",
+    "name": "CIL_LAJKURA_OCP",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Selected Major Collieries And Plants",
+    "capacity": "",
+    "state": "Odisha",
+    "coordinates": [
+      83.9,
+      21.85
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_MOONIDIH_WASHERY",
+    "name": "CIL_MOONIDIH_WASHERY",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "MINING / COAL",
+    "full_type_tag": "[MAHARATNA \u2022 MINING / COAL]",
+    "category": "Selected Major Collieries And Plants",
+    "capacity": "",
+    "state": "Jharkhand",
+    "coordinates": [
+      86.35,
+      23.75
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_DUGDA_WASHERY",
+    "name": "CIL_DUGDA_WASHERY",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "MINING / COAL",
+    "full_type_tag": "[MAHARATNA \u2022 MINING / COAL]",
+    "category": "Selected Major Collieries And Plants",
+    "capacity": "",
+    "state": "Jharkhand",
+    "coordinates": [
+      85.95,
+      23.75
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_KATHARA_WASHERY",
+    "name": "CIL_KATHARA_WASHERY",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "MINING / COAL",
+    "full_type_tag": "[MAHARATNA \u2022 MINING / COAL]",
+    "category": "Selected Major Collieries And Plants",
+    "capacity": "",
+    "state": "Jharkhand",
+    "coordinates": [
+      85.8,
+      23.75
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_PIPARWAR_WASHERY",
+    "name": "CIL_PIPARWAR_WASHERY",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "MINING / COAL",
+    "full_type_tag": "[MAHARATNA \u2022 MINING / COAL]",
+    "category": "Selected Major Collieries And Plants",
+    "capacity": "",
+    "state": "Jharkhand",
+    "coordinates": [
+      84.9,
+      23.7
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_KEDLA_WASHERY",
+    "name": "CIL_KEDLA_WASHERY",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "MINING / COAL",
+    "full_type_tag": "[MAHARATNA \u2022 MINING / COAL]",
+    "category": "Selected Major Collieries And Plants",
+    "capacity": "",
+    "state": "Jharkhand",
+    "coordinates": [
+      85.6,
+      23.7
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_RAJMAHAL_OCP",
+    "name": "CIL_RAJMAHAL_OCP",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Selected Major Collieries And Plants",
+    "capacity": "",
+    "state": "Jharkhand",
+    "coordinates": [
+      87.45,
+      24.95
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_TIKAK_COLLIERY",
+    "name": "CIL_TIKAK_COLLIERY",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "MINING / COAL",
+    "full_type_tag": "[MAHARATNA \u2022 MINING / COAL]",
+    "category": "Selected Major Collieries And Plants",
+    "capacity": "",
+    "state": "Assam",
+    "coordinates": [
+      95.7,
+      27.3
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_JHANJRA_MINE",
+    "name": "CIL_JHANJRA_MINE",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "MINING / COAL",
+    "full_type_tag": "[MAHARATNA \u2022 MINING / COAL]",
+    "category": "Selected Major Collieries And Plants",
+    "capacity": "",
+    "state": "West Bengal",
+    "coordinates": [
+      87.15,
+      23.7
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_PATHERDIH_WASHERY",
+    "name": "CIL_PATHERDIH_WASHERY",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "MINING / COAL",
+    "full_type_tag": "[MAHARATNA \u2022 MINING / COAL]",
+    "category": "Selected Major Collieries And Plants",
+    "capacity": "",
+    "state": "Jharkhand",
+    "coordinates": [
+      86.38,
+      23.72
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_NCL_KRISHNASHILA",
+    "name": "CIL_NCL_KRISHNASHILA",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "MINING / COAL",
+    "full_type_tag": "[MAHARATNA \u2022 MINING / COAL]",
+    "category": "Selected Major Collieries And Plants",
+    "capacity": "",
+    "state": "Uttar Pradesh",
+    "coordinates": [
+      82.55,
+      24.02
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_BINA_MINE",
+    "name": "CIL_BINA_MINE",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "MINING / COAL",
+    "full_type_tag": "[MAHARATNA \u2022 MINING / COAL]",
+    "category": "Selected Major Collieries And Plants",
+    "capacity": "",
+    "state": "Uttar Pradesh",
+    "coordinates": [
+      82.58,
+      24.12
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_JAGANNATH_OCP",
+    "name": "CIL_JAGANNATH_OCP",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Supplementary Reference List",
+    "capacity": "",
+    "state": "Odisha",
+    "coordinates": [
+      85.3,
+      20.87
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_KANIHA_OCP",
+    "name": "CIL_KANIHA_OCP",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Supplementary Reference List",
+    "capacity": "",
+    "state": "Odisha",
+    "coordinates": [
+      85.35,
+      20.98
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_BHARATPUR_OCP",
+    "name": "CIL_BHARATPUR_OCP",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Supplementary Reference List",
+    "capacity": "",
+    "state": "Odisha",
+    "coordinates": [
+      85.25,
+      20.86
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_LILARI_OCP",
+    "name": "CIL_LILARI_OCP",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Supplementary Reference List",
+    "capacity": "",
+    "state": "Odisha",
+    "coordinates": [
+      83.87,
+      21.83
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_BELPAHAR_OCP",
+    "name": "CIL_BELPAHAR_OCP",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Supplementary Reference List",
+    "capacity": "",
+    "state": "Odisha",
+    "coordinates": [
+      83.89,
+      21.81
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_BIRSINGHPUR_OCP",
+    "name": "CIL_BIRSINGHPUR_OCP",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Supplementary Reference List",
+    "capacity": "",
+    "state": "Madhya Pradesh",
+    "coordinates": [
+      81.15,
+      23.35
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_JAMBAD_UG",
+    "name": "CIL_JAMBAD_UG",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "MINING / COAL",
+    "full_type_tag": "[MAHARATNA \u2022 MINING / COAL]",
+    "category": "Supplementary Reference List",
+    "capacity": "",
+    "state": "West Bengal",
+    "coordinates": [
+      87.18,
+      23.68
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_KUNUSTORIA_OCP",
+    "name": "CIL_KUNUSTORIA_OCP",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Supplementary Reference List",
+    "capacity": "",
+    "state": "West Bengal",
+    "coordinates": [
+      87.21,
+      23.7
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_KHOTTADIH_OCP",
+    "name": "CIL_KHOTTADIH_OCP",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Supplementary Reference List",
+    "capacity": "",
+    "state": "West Bengal",
+    "coordinates": [
+      87.2,
+      23.71
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_SONEPUR_BAZARI_OCP",
+    "name": "CIL_SONEPUR_BAZARI_OCP",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Supplementary Reference List",
+    "capacity": "",
+    "state": "West Bengal",
+    "coordinates": [
+      87.25,
+      23.7
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_MONDA_OCP",
+    "name": "CIL_MONDA_OCP",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Supplementary Reference List",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      79.4,
+      19.25
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_GHUGGUS_OCP",
+    "name": "CIL_GHUGGUS_OCP",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Supplementary Reference List",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      79.12,
+      19.97
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_MAKARDHOKRA_OCP",
+    "name": "CIL_MAKARDHOKRA_OCP",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Supplementary Reference List",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      79.3,
+      20.6
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "CIL_UMRER_OCP",
+    "name": "CIL_UMRER_OCP",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Supplementary Reference List",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      79.35,
+      20.85
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "NMDC_DEPOSIT14_CRUSHING",
+    "name": "NMDC_DEPOSIT14_CRUSHING",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "MINING / COAL",
+    "full_type_tag": "[MAHARATNA \u2022 MINING / COAL]",
+    "category": "Supplementary Reference List",
+    "capacity": "",
+    "state": "Chhattisgarh",
+    "coordinates": [
+      81.22,
+      18.71
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "NMDC_DEPOSIT11C_LOADING",
+    "name": "NMDC_DEPOSIT11C_LOADING",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "MINING / COAL",
+    "full_type_tag": "[MAHARATNA \u2022 MINING / COAL]",
+    "category": "Supplementary Reference List",
+    "capacity": "",
+    "state": "Chhattisgarh",
+    "coordinates": [
+      81.26,
+      18.73
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "NMDC_KIRANDUL_RAILWAY_SIDING",
+    "name": "NMDC_KIRANDUL_RAILWAY_SIDING",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "MINING / COAL",
+    "full_type_tag": "[MAHARATNA \u2022 MINING / COAL]",
+    "category": "Supplementary Reference List",
+    "capacity": "",
+    "state": "Chhattisgarh",
+    "coordinates": [
+      81.26,
+      18.64
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "NMDC_VIZAG_ORE_HANDLING",
+    "name": "NMDC_VIZAG_ORE_HANDLING",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "MINING / COAL",
+    "full_type_tag": "[MAHARATNA \u2022 MINING / COAL]",
+    "category": "Supplementary Reference List",
+    "capacity": "",
+    "state": "Andhra Pradesh",
+    "coordinates": [
+      83.21,
+      17.69
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "NMDC_PANNA_DIAMOND_TAILING",
+    "name": "NMDC_PANNA_DIAMOND_TAILING",
+    "company": "Coal India Limited",
+    "sector": "Mining",
+    "psu_tier": "Maharatna",
+    "type_label": "MINING / COAL",
+    "full_type_tag": "[MAHARATNA \u2022 MINING / COAL]",
+    "category": "Supplementary Reference List",
+    "capacity": "",
+    "state": "Madhya Pradesh",
+    "coordinates": [
+      80.21,
+      24.74
+    ],
+    "color": [
+      107,
+      114,
+      128
+    ],
+    "hex": "#6B7280"
+  },
+  {
+    "id": "NMDC_84",
+    "name": "NMDC_84",
+    "company": "NMDC",
+    "sector": "Mining",
+    "psu_tier": "Navratna",
+    "type_label": "MINING / IRON ORE",
+    "full_type_tag": "[NAVRATNA \u2022 MINING / IRON ORE]",
+    "category": "Mining Projects And Units",
+    "capacity": "",
+    "state": "Chhattisgarh",
+    "coordinates": [
+      81.2,
+      18.7
+    ],
+    "color": [
+      75,
+      85,
+      99
+    ],
+    "hex": "#4B5563"
+  },
+  {
+    "id": "NMDC_85",
+    "name": "NMDC_85",
+    "company": "NMDC",
+    "sector": "Mining",
+    "psu_tier": "Navratna",
+    "type_label": "MINING / IRON ORE",
+    "full_type_tag": "[NAVRATNA \u2022 MINING / IRON ORE]",
+    "category": "Mining Projects And Units",
+    "capacity": "",
+    "state": "Chhattisgarh",
+    "coordinates": [
+      81.25,
+      18.72
+    ],
+    "color": [
+      75,
+      85,
+      99
+    ],
+    "hex": "#4B5563"
+  },
+  {
+    "id": "NMDC_86",
+    "name": "NMDC_86",
+    "company": "NMDC",
+    "sector": "Mining",
+    "psu_tier": "Navratna",
+    "type_label": "MINING / IRON ORE",
+    "full_type_tag": "[NAVRATNA \u2022 MINING / IRON ORE]",
+    "category": "Mining Projects And Units",
+    "capacity": "",
+    "state": "Chhattisgarh",
+    "coordinates": [
+      81.23,
+      18.68
+    ],
+    "color": [
+      75,
+      85,
+      99
+    ],
+    "hex": "#4B5563"
+  },
+  {
+    "id": "NMDC_87",
+    "name": "NMDC_87",
+    "company": "NMDC",
+    "sector": "Mining",
+    "psu_tier": "Navratna",
+    "type_label": "MINING / IRON ORE",
+    "full_type_tag": "[NAVRATNA \u2022 MINING / IRON ORE]",
+    "category": "Mining Projects And Units",
+    "capacity": "",
+    "state": "Chhattisgarh",
+    "coordinates": [
+      81.27,
+      18.65
+    ],
+    "color": [
+      75,
+      85,
+      99
+    ],
+    "hex": "#4B5563"
+  },
+  {
+    "id": "NMDC_88",
+    "name": "NMDC_88",
+    "company": "NMDC",
+    "sector": "Mining",
+    "psu_tier": "Navratna",
+    "type_label": "MINING / IRON ORE",
+    "full_type_tag": "[NAVRATNA \u2022 MINING / IRON ORE]",
+    "category": "Mining Projects And Units",
+    "capacity": "",
+    "state": "Chhattisgarh",
+    "coordinates": [
+      81.21,
+      18.71
+    ],
+    "color": [
+      75,
+      85,
+      99
+    ],
+    "hex": "#4B5563"
+  },
+  {
+    "id": "NMDC_89",
+    "name": "NMDC_89",
+    "company": "NMDC",
+    "sector": "Mining",
+    "psu_tier": "Navratna",
+    "type_label": "MINING / IRON ORE",
+    "full_type_tag": "[NAVRATNA \u2022 MINING / IRON ORE]",
+    "category": "Mining Projects And Units",
+    "capacity": "",
+    "state": "Karnataka",
+    "coordinates": [
+      76.55,
+      15.2
+    ],
+    "color": [
+      75,
+      85,
+      99
+    ],
+    "hex": "#4B5563"
+  },
+  {
+    "id": "NMDC_90",
+    "name": "NMDC_90",
+    "company": "NMDC",
+    "sector": "Mining",
+    "psu_tier": "Navratna",
+    "type_label": "MINING / IRON ORE",
+    "full_type_tag": "[NAVRATNA \u2022 MINING / IRON ORE]",
+    "category": "Mining Projects And Units",
+    "capacity": "",
+    "state": "Karnataka",
+    "coordinates": [
+      76.57,
+      15.18
+    ],
+    "color": [
+      75,
+      85,
+      99
+    ],
+    "hex": "#4B5563"
+  },
+  {
+    "id": "NMDC_91",
+    "name": "NMDC_91",
+    "company": "NMDC",
+    "sector": "Mining",
+    "psu_tier": "Navratna",
+    "type_label": "MINING / IRON ORE",
+    "full_type_tag": "[NAVRATNA \u2022 MINING / IRON ORE]",
+    "category": "Mining Projects And Units",
+    "capacity": "",
+    "state": "Madhya Pradesh",
+    "coordinates": [
+      80.18,
+      24.73
+    ],
+    "color": [
+      75,
+      85,
+      99
+    ],
+    "hex": "#4B5563"
+  },
+  {
+    "id": "NMDC_92",
+    "name": "NMDC_92",
+    "company": "NMDC",
+    "sector": "Mining",
+    "psu_tier": "Navratna",
+    "type_label": "MINING / IRON ORE",
+    "full_type_tag": "[NAVRATNA \u2022 MINING / IRON ORE]",
+    "category": "Mining Projects And Units",
+    "capacity": "",
+    "state": "Madhya Pradesh",
+    "coordinates": [
+      80.2,
+      24.75
+    ],
+    "color": [
+      75,
+      85,
+      99
+    ],
+    "hex": "#4B5563"
+  },
+  {
+    "id": "NMDC_93",
+    "name": "NMDC_93",
+    "company": "NMDC",
+    "sector": "Mining",
+    "psu_tier": "Navratna",
+    "type_label": "MINING / IRON ORE",
+    "full_type_tag": "[NAVRATNA \u2022 MINING / IRON ORE]",
+    "category": "Mining Projects And Units",
+    "capacity": "",
+    "state": "Karnataka",
+    "coordinates": [
+      76.55,
+      15.2
+    ],
+    "color": [
+      75,
+      85,
+      99
+    ],
+    "hex": "#4B5563"
+  },
+  {
+    "id": "NMDC_94",
+    "name": "NMDC_94",
+    "company": "NMDC",
+    "sector": "Mining",
+    "psu_tier": "Navratna",
+    "type_label": "MINING / IRON ORE",
+    "full_type_tag": "[NAVRATNA \u2022 MINING / IRON ORE]",
+    "category": "Mining Projects And Units",
+    "capacity": "",
+    "state": "Chhattisgarh",
+    "coordinates": [
+      82.05,
+      19.08
+    ],
+    "color": [
+      75,
+      85,
+      99
+    ],
+    "hex": "#4B5563"
+  },
+  {
+    "id": "NMDC_95",
+    "name": "NMDC_95",
+    "company": "NMDC",
+    "sector": "Mining",
+    "psu_tier": "Navratna",
+    "type_label": "MINING / IRON ORE",
+    "full_type_tag": "[NAVRATNA \u2022 MINING / IRON ORE]",
+    "category": "Mining Projects And Units",
+    "capacity": "",
+    "state": "Karnataka",
+    "coordinates": [
+      76.56,
+      15.2
+    ],
+    "color": [
+      75,
+      85,
+      99
+    ],
+    "hex": "#4B5563"
+  },
+  {
+    "id": "NMDC_96",
+    "name": "NMDC_96",
+    "company": "NMDC",
+    "sector": "Mining",
+    "psu_tier": "Navratna",
+    "type_label": "MINING / IRON ORE",
+    "full_type_tag": "[NAVRATNA \u2022 MINING / IRON ORE]",
+    "category": "Mining Projects And Units",
+    "capacity": "",
+    "state": "Telangana",
+    "coordinates": [
+      78.38,
+      17.45
+    ],
+    "color": [
+      75,
+      85,
+      99
+    ],
+    "hex": "#4B5563"
+  },
+  {
+    "id": "NMDC_97",
+    "name": "NMDC_97",
+    "company": "NMDC",
+    "sector": "Mining",
+    "psu_tier": "Navratna",
+    "type_label": "MINING / IRON ORE",
+    "full_type_tag": "[NAVRATNA \u2022 MINING / IRON ORE]",
+    "category": "Mining Projects And Units",
+    "capacity": "",
+    "state": "Madhya Pradesh",
+    "coordinates": [
+      80.19,
+      24.74
+    ],
+    "color": [
+      75,
+      85,
+      99
+    ],
+    "hex": "#4B5563"
+  },
+  {
+    "id": "NMDC_98",
+    "name": "NMDC_98",
+    "company": "NMDC",
+    "sector": "Mining",
+    "psu_tier": "Navratna",
+    "type_label": "MINING / IRON ORE",
+    "full_type_tag": "[NAVRATNA \u2022 MINING / IRON ORE]",
+    "category": "Mining Projects And Units",
+    "capacity": "",
+    "state": "Telangana",
+    "coordinates": [
+      78.43,
+      17.43
+    ],
+    "color": [
+      75,
+      85,
+      99
+    ],
+    "hex": "#4B5563"
+  },
+  {
+    "id": "NMDC_99",
+    "name": "NMDC_99",
+    "company": "NMDC",
+    "sector": "Mining",
+    "psu_tier": "Navratna",
+    "type_label": "MINING / IRON ORE",
+    "full_type_tag": "[NAVRATNA \u2022 MINING / IRON ORE]",
+    "category": "Mining Projects And Units",
+    "capacity": "",
+    "state": "Karnataka",
+    "coordinates": [
+      77.59,
+      12.97
+    ],
+    "color": [
+      75,
+      85,
+      99
+    ],
+    "hex": "#4B5563"
+  },
+  {
+    "id": "NMDC_100",
+    "name": "NMDC_100",
+    "company": "NMDC",
+    "sector": "Mining",
+    "psu_tier": "Navratna",
+    "type_label": "MINING / IRON ORE",
+    "full_type_tag": "[NAVRATNA \u2022 MINING / IRON ORE]",
+    "category": "Mining Projects And Units",
+    "capacity": "",
+    "state": "West Bengal",
+    "coordinates": [
+      88.36,
+      22.57
+    ],
+    "color": [
+      75,
+      85,
+      99
+    ],
+    "hex": "#4B5563"
+  },
+  {
+    "id": "NMDC_101",
+    "name": "NMDC_101",
+    "company": "NMDC",
+    "sector": "Mining",
+    "psu_tier": "Navratna",
+    "type_label": "MINING / IRON ORE",
+    "full_type_tag": "[NAVRATNA \u2022 MINING / IRON ORE]",
+    "category": "Mining Projects And Units",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      72.88,
+      19.08
+    ],
+    "color": [
+      75,
+      85,
+      99
+    ],
+    "hex": "#4B5563"
+  },
+  {
+    "id": "NMDC_102",
+    "name": "NMDC_102",
+    "company": "NMDC",
+    "sector": "Mining",
+    "psu_tier": "Navratna",
+    "type_label": "MINING / IRON ORE",
+    "full_type_tag": "[NAVRATNA \u2022 MINING / IRON ORE]",
+    "category": "Mining Projects And Units",
+    "capacity": "",
+    "state": "Andhra Pradesh",
+    "coordinates": [
+      83.21,
+      17.69
+    ],
+    "color": [
+      75,
+      85,
+      99
+    ],
+    "hex": "#4B5563"
+  },
+  {
+    "id": "NMDC_103",
+    "name": "NMDC_103",
+    "company": "NMDC",
+    "sector": "Mining",
+    "psu_tier": "Navratna",
+    "type_label": "MINING / IRON ORE",
+    "full_type_tag": "[NAVRATNA \u2022 MINING / IRON ORE]",
+    "category": "Mining Projects And Units",
+    "capacity": "",
+    "state": "Delhi",
+    "coordinates": [
+      77.23,
+      28.61
+    ],
+    "color": [
+      75,
+      85,
+      99
+    ],
+    "hex": "#4B5563"
+  },
+  {
+    "id": "NMDC_104",
+    "name": "NMDC_104",
+    "company": "NMDC",
+    "sector": "Mining",
+    "psu_tier": "Navratna",
+    "type_label": "MINING / IRON ORE",
+    "full_type_tag": "[NAVRATNA \u2022 MINING / IRON ORE]",
+    "category": "Mining Projects And Units",
+    "capacity": "",
+    "state": "Chhattisgarh",
+    "coordinates": [
+      81.25,
+      18.73
+    ],
+    "color": [
+      75,
+      85,
+      99
+    ],
+    "hex": "#4B5563"
+  },
+  {
+    "id": "NMDC_105",
+    "name": "NMDC_105",
+    "company": "NMDC",
+    "sector": "Mining",
+    "psu_tier": "Navratna",
+    "type_label": "MINING / IRON ORE",
+    "full_type_tag": "[NAVRATNA \u2022 MINING / IRON ORE]",
+    "category": "Mining Projects And Units",
+    "capacity": "",
+    "state": "Chhattisgarh",
+    "coordinates": [
+      81.25,
+      18.64
+    ],
+    "color": [
+      75,
+      85,
+      99
+    ],
+    "hex": "#4B5563"
+  },
+  {
+    "id": "NMDC_106",
+    "name": "NMDC_106",
+    "company": "NMDC",
+    "sector": "Mining",
+    "psu_tier": "Navratna",
+    "type_label": "MINING / IRON ORE",
+    "full_type_tag": "[NAVRATNA \u2022 MINING / IRON ORE]",
+    "category": "Mining Projects And Units",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      79.52,
+      20.75
+    ],
+    "color": [
+      75,
+      85,
+      99
+    ],
+    "hex": "#4B5563"
+  },
+  {
+    "id": "NMDC_107",
+    "name": "NMDC_107",
+    "company": "NMDC",
+    "sector": "Mining",
+    "psu_tier": "Navratna",
+    "type_label": "MINING / IRON ORE",
+    "full_type_tag": "[NAVRATNA \u2022 MINING / IRON ORE]",
+    "category": "Mining Projects And Units",
+    "capacity": "",
+    "state": "Rajasthan",
+    "coordinates": [
+      72.71,
+      24.59
+    ],
+    "color": [
+      75,
+      85,
+      99
+    ],
+    "hex": "#4B5563"
+  },
+  {
+    "id": "NMDC_108",
+    "name": "NMDC_108",
+    "company": "NMDC",
+    "sector": "Mining",
+    "psu_tier": "Navratna",
+    "type_label": "MINING / IRON ORE",
+    "full_type_tag": "[NAVRATNA \u2022 MINING / IRON ORE]",
+    "category": "Mining Projects And Units",
+    "capacity": "",
+    "state": "Karnataka",
+    "coordinates": [
+      76.55,
+      15.15
+    ],
+    "color": [
+      75,
+      85,
+      99
+    ],
+    "hex": "#4B5563"
+  },
+  {
+    "id": "NMDC_109",
+    "name": "NMDC_109",
+    "company": "NMDC",
+    "sector": "Mining",
+    "psu_tier": "Navratna",
+    "type_label": "MINING / IRON ORE",
+    "full_type_tag": "[NAVRATNA \u2022 MINING / IRON ORE]",
+    "category": "Mining Projects And Units",
+    "capacity": "",
+    "state": "Jharkhand",
+    "coordinates": [
+      85.5,
+      23.8
+    ],
+    "color": [
+      75,
+      85,
+      99
+    ],
+    "hex": "#4B5563"
+  },
+  {
+    "id": "ONGC_MUMBAI_HIGH_NORTH",
+    "name": "ONGC_MUMBAI_HIGH_NORTH",
+    "company": "ONGC",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OFFSHORE DRILLING",
+    "full_type_tag": "[MAHARATNA \u2022 OFFSHORE DRILLING]",
+    "category": "Western Offshore",
+    "capacity": "",
+    "state": "Maharashtra (offshore, approx.)",
+    "coordinates": [
+      71.3333,
+      19.4167
+    ],
+    "color": [
+      239,
+      68,
+      68
+    ],
+    "hex": "#EF4444"
+  },
+  {
+    "id": "ONGC_BASSEIN_SATELLITE",
+    "name": "ONGC_BASSEIN_SATELLITE",
+    "company": "ONGC",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OFFSHORE DRILLING",
+    "full_type_tag": "[MAHARATNA \u2022 OFFSHORE DRILLING]",
+    "category": "Western Offshore",
+    "capacity": "",
+    "state": "Maharashtra (offshore, approx.)",
+    "coordinates": [
+      71.7083,
+      19.185
+    ],
+    "color": [
+      239,
+      68,
+      68
+    ],
+    "hex": "#EF4444"
+  },
+  {
+    "id": "ONGC_NEELAM_HEERA",
+    "name": "ONGC_NEELAM_HEERA",
+    "company": "ONGC",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OFFSHORE DRILLING",
+    "full_type_tag": "[MAHARATNA \u2022 OFFSHORE DRILLING]",
+    "category": "Western Offshore",
+    "capacity": "",
+    "state": "Maharashtra (offshore, approx.)",
+    "coordinates": [
+      71.5,
+      19.25
+    ],
+    "color": [
+      239,
+      68,
+      68
+    ],
+    "hex": "#EF4444"
+  },
+  {
+    "id": "ONGC_HAZIRA_PLANT",
+    "name": "ONGC_HAZIRA_PLANT",
+    "company": "ONGC",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OFFSHORE DRILLING",
+    "full_type_tag": "[MAHARATNA \u2022 OFFSHORE DRILLING]",
+    "category": "Western Offshore",
+    "capacity": "",
+    "state": "Gujarat",
+    "coordinates": [
+      72.65,
+      21.1167
+    ],
+    "color": [
+      239,
+      68,
+      68
+    ],
+    "hex": "#EF4444"
+  },
+  {
+    "id": "ONGC_URAN_TERMINAL",
+    "name": "ONGC_URAN_TERMINAL",
+    "company": "ONGC",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OFFSHORE DRILLING",
+    "full_type_tag": "[MAHARATNA \u2022 OFFSHORE DRILLING]",
+    "category": "Western Offshore",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      72.95,
+      18.88
+    ],
+    "color": [
+      239,
+      68,
+      68
+    ],
+    "hex": "#EF4444"
+  },
+  {
+    "id": "ONGC_AHMEDABAD_ASSET",
+    "name": "ONGC_AHMEDABAD_ASSET",
+    "company": "ONGC",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL & GAS",
+    "full_type_tag": "[MAHARATNA \u2022 OIL & GAS]",
+    "category": "Western Onshore Cambay Basin",
+    "capacity": "",
+    "state": "Gujarat",
+    "coordinates": [
+      72.5714,
+      23.0225
+    ],
+    "color": [
+      239,
+      68,
+      68
+    ],
+    "hex": "#EF4444"
+  },
+  {
+    "id": "ONGC_MEHSANA_ASSET",
+    "name": "ONGC_MEHSANA_ASSET",
+    "company": "ONGC",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL & GAS",
+    "full_type_tag": "[MAHARATNA \u2022 OIL & GAS]",
+    "category": "Western Onshore Cambay Basin",
+    "capacity": "",
+    "state": "Gujarat",
+    "coordinates": [
+      72.4,
+      23.6
+    ],
+    "color": [
+      239,
+      68,
+      68
+    ],
+    "hex": "#EF4444"
+  },
+  {
+    "id": "ONGC_ANKLESHWAR_ASSET",
+    "name": "ONGC_ANKLESHWAR_ASSET",
+    "company": "ONGC",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL & GAS",
+    "full_type_tag": "[MAHARATNA \u2022 OIL & GAS]",
+    "category": "Western Onshore Cambay Basin",
+    "capacity": "",
+    "state": "Gujarat",
+    "coordinates": [
+      73.0,
+      21.6
+    ],
+    "color": [
+      239,
+      68,
+      68
+    ],
+    "hex": "#EF4444"
+  },
+  {
+    "id": "ONGC_KALOL_ASSET",
+    "name": "ONGC_KALOL_ASSET",
+    "company": "ONGC",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL & GAS",
+    "full_type_tag": "[MAHARATNA \u2022 OIL & GAS]",
+    "category": "Western Onshore Cambay Basin",
+    "capacity": "",
+    "state": "Gujarat",
+    "coordinates": [
+      72.5,
+      23.25
+    ],
+    "color": [
+      239,
+      68,
+      68
+    ],
+    "hex": "#EF4444"
+  },
+  {
+    "id": "ONGC_NAVSARI_ASSET",
+    "name": "ONGC_NAVSARI_ASSET",
+    "company": "ONGC",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL & GAS",
+    "full_type_tag": "[MAHARATNA \u2022 OIL & GAS]",
+    "category": "Western Onshore Cambay Basin",
+    "capacity": "",
+    "state": "Gujarat",
+    "coordinates": [
+      72.9333,
+      20.95
+    ],
+    "color": [
+      239,
+      68,
+      68
+    ],
+    "hex": "#EF4444"
+  },
+  {
+    "id": "ONGC_SANAND",
+    "name": "ONGC_SANAND",
+    "company": "ONGC",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL & GAS",
+    "full_type_tag": "[MAHARATNA \u2022 OIL & GAS]",
+    "category": "Western Onshore Cambay Basin",
+    "capacity": "",
+    "state": "Gujarat",
+    "coordinates": [
+      72.3833,
+      22.9833
+    ],
+    "color": [
+      239,
+      68,
+      68
+    ],
+    "hex": "#EF4444"
+  },
+  {
+    "id": "ONGC_VASNA",
+    "name": "ONGC_VASNA",
+    "company": "ONGC",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL & GAS",
+    "full_type_tag": "[MAHARATNA \u2022 OIL & GAS]",
+    "category": "Western Onshore Cambay Basin",
+    "capacity": "",
+    "state": "Gujarat",
+    "coordinates": [
+      72.7167,
+      22.7167
+    ],
+    "color": [
+      239,
+      68,
+      68
+    ],
+    "hex": "#EF4444"
+  },
+  {
+    "id": "ONGC_KAKINADA_SHORE_BASE",
+    "name": "ONGC_KAKINADA_SHORE_BASE",
+    "company": "ONGC",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OFFSHORE DRILLING",
+    "full_type_tag": "[MAHARATNA \u2022 OFFSHORE DRILLING]",
+    "category": "Eastern Offshore Kg Basin",
+    "capacity": "",
+    "state": "Andhra Pradesh",
+    "coordinates": [
+      82.2333,
+      16.9833
+    ],
+    "color": [
+      239,
+      68,
+      68
+    ],
+    "hex": "#EF4444"
+  },
+  {
+    "id": "ONGC_RAJAHMUNDRY_ASSET",
+    "name": "ONGC_RAJAHMUNDRY_ASSET",
+    "company": "ONGC",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OFFSHORE DRILLING",
+    "full_type_tag": "[MAHARATNA \u2022 OFFSHORE DRILLING]",
+    "category": "Eastern Offshore Kg Basin",
+    "capacity": "",
+    "state": "Andhra Pradesh",
+    "coordinates": [
+      81.7833,
+      17.0
+    ],
+    "color": [
+      239,
+      68,
+      68
+    ],
+    "hex": "#EF4444"
+  },
+  {
+    "id": "ONGC_G1_DEEPWATER",
+    "name": "ONGC_G1_DEEPWATER",
+    "company": "ONGC",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OFFSHORE DRILLING",
+    "full_type_tag": "[MAHARATNA \u2022 OFFSHORE DRILLING]",
+    "category": "Eastern Offshore Kg Basin",
+    "capacity": "",
+    "state": "Andhra Pradesh (offshore, approx.)",
+    "coordinates": [
+      82.2,
+      16.45
+    ],
+    "color": [
+      239,
+      68,
+      68
+    ],
+    "hex": "#EF4444"
+  },
+  {
+    "id": "ONGC_SIVASAGAR",
+    "name": "ONGC_SIVASAGAR",
+    "company": "ONGC",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL & GAS",
+    "full_type_tag": "[MAHARATNA \u2022 OIL & GAS]",
+    "category": "Assam Arakan Northeastern Fields",
+    "capacity": "",
+    "state": "Assam",
+    "coordinates": [
+      94.6333,
+      26.9833
+    ],
+    "color": [
+      239,
+      68,
+      68
+    ],
+    "hex": "#EF4444"
+  },
+  {
+    "id": "ONGC_NAZIRA",
+    "name": "ONGC_NAZIRA",
+    "company": "ONGC",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL & GAS",
+    "full_type_tag": "[MAHARATNA \u2022 OIL & GAS]",
+    "category": "Assam Arakan Northeastern Fields",
+    "capacity": "",
+    "state": "Assam",
+    "coordinates": [
+      94.7333,
+      26.9167
+    ],
+    "color": [
+      239,
+      68,
+      68
+    ],
+    "hex": "#EF4444"
+  },
+  {
+    "id": "ONGC_JORHAT",
+    "name": "ONGC_JORHAT",
+    "company": "ONGC",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL & GAS",
+    "full_type_tag": "[MAHARATNA \u2022 OIL & GAS]",
+    "category": "Assam Arakan Northeastern Fields",
+    "capacity": "",
+    "state": "Assam",
+    "coordinates": [
+      94.2167,
+      26.75
+    ],
+    "color": [
+      239,
+      68,
+      68
+    ],
+    "hex": "#EF4444"
+  },
+  {
+    "id": "ONGC_LAKWA",
+    "name": "ONGC_LAKWA",
+    "company": "ONGC",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL & GAS",
+    "full_type_tag": "[MAHARATNA \u2022 OIL & GAS]",
+    "category": "Assam Arakan Northeastern Fields",
+    "capacity": "",
+    "state": "Assam",
+    "coordinates": [
+      94.7,
+      26.9167
+    ],
+    "color": [
+      239,
+      68,
+      68
+    ],
+    "hex": "#EF4444"
+  },
+  {
+    "id": "ONGC_DEHRADUN_OFFICE",
+    "name": "ONGC_DEHRADUN_OFFICE",
+    "company": "ONGC",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL & GAS",
+    "full_type_tag": "[MAHARATNA \u2022 OIL & GAS]",
+    "category": "Exploration Offices",
+    "capacity": "",
+    "state": "Uttarakhand",
+    "coordinates": [
+      78.0322,
+      30.3165
+    ],
+    "color": [
+      239,
+      68,
+      68
+    ],
+    "hex": "#EF4444"
+  },
+  {
+    "id": "IOCL_PANIPAT",
+    "name": "IOCL_PANIPAT",
+    "company": "IOCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL REFINERY",
+    "full_type_tag": "[MAHARATNA \u2022 OIL REFINERY]",
+    "category": "Refineries",
+    "capacity": "",
+    "state": "Haryana",
+    "coordinates": [
+      76.9635,
+      29.3909
+    ],
+    "color": [
+      249,
+      115,
+      22
+    ],
+    "hex": "#F97316"
+  },
+  {
+    "id": "IOCL_MATHURA",
+    "name": "IOCL_MATHURA",
+    "company": "IOCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL REFINERY",
+    "full_type_tag": "[MAHARATNA \u2022 OIL REFINERY]",
+    "category": "Refineries",
+    "capacity": "",
+    "state": "Uttar Pradesh",
+    "coordinates": [
+      77.6737,
+      27.4192
+    ],
+    "color": [
+      249,
+      115,
+      22
+    ],
+    "hex": "#F97316"
+  },
+  {
+    "id": "IOCL_BARAUNI",
+    "name": "IOCL_BARAUNI",
+    "company": "IOCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL REFINERY",
+    "full_type_tag": "[MAHARATNA \u2022 OIL REFINERY]",
+    "category": "Refineries",
+    "capacity": "",
+    "state": "Bihar",
+    "coordinates": [
+      85.9941,
+      25.4759
+    ],
+    "color": [
+      249,
+      115,
+      22
+    ],
+    "hex": "#F97316"
+  },
+  {
+    "id": "IOCL_KOYALI",
+    "name": "IOCL_KOYALI",
+    "company": "IOCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL REFINERY",
+    "full_type_tag": "[MAHARATNA \u2022 OIL REFINERY]",
+    "category": "Refineries",
+    "capacity": "",
+    "state": "Gujarat",
+    "coordinates": [
+      73.1812,
+      22.3072
+    ],
+    "color": [
+      249,
+      115,
+      22
+    ],
+    "hex": "#F97316"
+  },
+  {
+    "id": "IOCL_HALDIA",
+    "name": "IOCL_HALDIA",
+    "company": "IOCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL REFINERY",
+    "full_type_tag": "[MAHARATNA \u2022 OIL REFINERY]",
+    "category": "Refineries",
+    "capacity": "",
+    "state": "West Bengal",
+    "coordinates": [
+      88.0698,
+      22.0668
+    ],
+    "color": [
+      249,
+      115,
+      22
+    ],
+    "hex": "#F97316"
+  },
+  {
+    "id": "IOCL_GUWAHATI",
+    "name": "IOCL_GUWAHATI",
+    "company": "IOCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL REFINERY",
+    "full_type_tag": "[MAHARATNA \u2022 OIL REFINERY]",
+    "category": "Refineries",
+    "capacity": "",
+    "state": "Assam",
+    "coordinates": [
+      91.7362,
+      26.1445
+    ],
+    "color": [
+      249,
+      115,
+      22
+    ],
+    "hex": "#F97316"
+  },
+  {
+    "id": "IOCL_DIGBOI",
+    "name": "IOCL_DIGBOI",
+    "company": "IOCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL REFINERY",
+    "full_type_tag": "[MAHARATNA \u2022 OIL REFINERY]",
+    "category": "Refineries",
+    "capacity": "",
+    "state": "Assam",
+    "coordinates": [
+      95.6333,
+      27.3833
+    ],
+    "color": [
+      249,
+      115,
+      22
+    ],
+    "hex": "#F97316"
+  },
+  {
+    "id": "IOCL_PARADIP",
+    "name": "IOCL_PARADIP",
+    "company": "IOCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL REFINERY",
+    "full_type_tag": "[MAHARATNA \u2022 OIL REFINERY]",
+    "category": "Refineries",
+    "capacity": "",
+    "state": "Odisha",
+    "coordinates": [
+      86.6219,
+      20.2497
+    ],
+    "color": [
+      249,
+      115,
+      22
+    ],
+    "hex": "#F97316"
+  },
+  {
+    "id": "IOCL_BONGAIGAON",
+    "name": "IOCL_BONGAIGAON",
+    "company": "IOCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL REFINERY",
+    "full_type_tag": "[MAHARATNA \u2022 OIL REFINERY]",
+    "category": "Refineries",
+    "capacity": "",
+    "state": "Assam",
+    "coordinates": [
+      90.5647,
+      26.4763
+    ],
+    "color": [
+      249,
+      115,
+      22
+    ],
+    "hex": "#F97316"
+  },
+  {
+    "id": "IOCL_PANIPAT_PIPELINE_TERMINAL",
+    "name": "IOCL_PANIPAT_PIPELINE_TERMINAL",
+    "company": "IOCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "GAS PIPELINE HUB",
+    "full_type_tag": "[MAHARATNA \u2022 GAS PIPELINE HUB]",
+    "category": "Cross Country Pipelines",
+    "capacity": "",
+    "state": "Haryana",
+    "coordinates": [
+      76.97,
+      29.34
+    ],
+    "color": [
+      249,
+      115,
+      22
+    ],
+    "hex": "#F97316"
+  },
+  {
+    "id": "IOCL_SILIGURI_POL_TERMINAL",
+    "name": "IOCL_SILIGURI_POL_TERMINAL",
+    "company": "IOCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "GAS PIPELINE HUB",
+    "full_type_tag": "[MAHARATNA \u2022 GAS PIPELINE HUB]",
+    "category": "Cross Country Pipelines",
+    "capacity": "",
+    "state": "West Bengal",
+    "coordinates": [
+      88.3953,
+      26.7271
+    ],
+    "color": [
+      249,
+      115,
+      22
+    ],
+    "hex": "#F97316"
+  },
+  {
+    "id": "IOCL_ALLENSAHEB_PIPEHEAD",
+    "name": "IOCL_ALLENSAHEB_PIPEHEAD",
+    "company": "IOCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "GAS PIPELINE HUB",
+    "full_type_tag": "[MAHARATNA \u2022 GAS PIPELINE HUB]",
+    "category": "Cross Country Pipelines",
+    "capacity": "",
+    "state": "Gujarat",
+    "coordinates": [
+      70.1,
+      22.7
+    ],
+    "color": [
+      249,
+      115,
+      22
+    ],
+    "hex": "#F97316"
+  },
+  {
+    "id": "IOCL_RAMAN_MANDI",
+    "name": "IOCL_RAMAN_MANDI",
+    "company": "IOCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "GAS PIPELINE HUB",
+    "full_type_tag": "[MAHARATNA \u2022 GAS PIPELINE HUB]",
+    "category": "Cross Country Pipelines",
+    "capacity": "",
+    "state": "Punjab",
+    "coordinates": [
+      74.95,
+      30.1
+    ],
+    "color": [
+      249,
+      115,
+      22
+    ],
+    "hex": "#F97316"
+  },
+  {
+    "id": "IOCL_KANPUR_POL_TERMINAL",
+    "name": "IOCL_KANPUR_POL_TERMINAL",
+    "company": "IOCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "GAS PIPELINE HUB",
+    "full_type_tag": "[MAHARATNA \u2022 GAS PIPELINE HUB]",
+    "category": "Cross Country Pipelines",
+    "capacity": "",
+    "state": "Uttar Pradesh",
+    "coordinates": [
+      80.3319,
+      26.4499
+    ],
+    "color": [
+      249,
+      115,
+      22
+    ],
+    "hex": "#F97316"
+  },
+  {
+    "id": "IOCL_CHENNAI_TERMINAL",
+    "name": "IOCL_CHENNAI_TERMINAL",
+    "company": "IOCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing Terminals Depots",
+    "capacity": "",
+    "state": "Tamil Nadu",
+    "coordinates": [
+      80.2707,
+      13.0827
+    ],
+    "color": [
+      249,
+      115,
+      22
+    ],
+    "hex": "#F97316"
+  },
+  {
+    "id": "IOCL_MUMBAI_TERMINAL",
+    "name": "IOCL_MUMBAI_TERMINAL",
+    "company": "IOCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing Terminals Depots",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      72.8777,
+      19.076
+    ],
+    "color": [
+      249,
+      115,
+      22
+    ],
+    "hex": "#F97316"
+  },
+  {
+    "id": "IOCL_KOLKATA_TERMINAL",
+    "name": "IOCL_KOLKATA_TERMINAL",
+    "company": "IOCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing Terminals Depots",
+    "capacity": "",
+    "state": "West Bengal",
+    "coordinates": [
+      88.3639,
+      22.5726
+    ],
+    "color": [
+      249,
+      115,
+      22
+    ],
+    "hex": "#F97316"
+  },
+  {
+    "id": "IOCL_DELHI_BADARPUR",
+    "name": "IOCL_DELHI_BADARPUR",
+    "company": "IOCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing Terminals Depots",
+    "capacity": "",
+    "state": "Delhi",
+    "coordinates": [
+      77.3,
+      28.5
+    ],
+    "color": [
+      249,
+      115,
+      22
+    ],
+    "hex": "#F97316"
+  },
+  {
+    "id": "IOCL_BANGALORE_WHITE_FIELD",
+    "name": "IOCL_BANGALORE_WHITE_FIELD",
+    "company": "IOCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing Terminals Depots",
+    "capacity": "",
+    "state": "Karnataka",
+    "coordinates": [
+      77.5946,
+      12.9716
+    ],
+    "color": [
+      249,
+      115,
+      22
+    ],
+    "hex": "#F97316"
+  },
+  {
+    "id": "IOCL_LUCKNOW_DEPOT",
+    "name": "IOCL_LUCKNOW_DEPOT",
+    "company": "IOCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing Terminals Depots",
+    "capacity": "",
+    "state": "Uttar Pradesh",
+    "coordinates": [
+      80.9462,
+      26.8467
+    ],
+    "color": [
+      249,
+      115,
+      22
+    ],
+    "hex": "#F97316"
+  },
+  {
+    "id": "IOCL_PATNA_DEPOT",
+    "name": "IOCL_PATNA_DEPOT",
+    "company": "IOCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing Terminals Depots",
+    "capacity": "",
+    "state": "Bihar",
+    "coordinates": [
+      85.1376,
+      25.5941
+    ],
+    "color": [
+      249,
+      115,
+      22
+    ],
+    "hex": "#F97316"
+  },
+  {
+    "id": "IOCL_BHOPAL_DEPOT",
+    "name": "IOCL_BHOPAL_DEPOT",
+    "company": "IOCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing Terminals Depots",
+    "capacity": "",
+    "state": "Madhya Pradesh",
+    "coordinates": [
+      77.4126,
+      23.2599
+    ],
+    "color": [
+      249,
+      115,
+      22
+    ],
+    "hex": "#F97316"
+  },
+  {
+    "id": "GAIL_PATA_COMPLEX",
+    "name": "GAIL_PATA_COMPLEX",
+    "company": "GAIL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL WASHERY",
+    "full_type_tag": "[MAHARATNA \u2022 COAL WASHERY]",
+    "category": "Gas Processing Petrochemical Complexes",
+    "capacity": "",
+    "state": "Uttar Pradesh",
+    "coordinates": [
+      78.05,
+      25.97
+    ],
+    "color": [
+      245,
+      158,
+      11
+    ],
+    "hex": "#F59E0B"
+  },
+  {
+    "id": "GAIL_VAGHODIA_PLANT",
+    "name": "GAIL_VAGHODIA_PLANT",
+    "company": "GAIL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL WASHERY",
+    "full_type_tag": "[MAHARATNA \u2022 COAL WASHERY]",
+    "category": "Gas Processing Petrochemical Complexes",
+    "capacity": "",
+    "state": "Gujarat",
+    "coordinates": [
+      73.4,
+      22.35
+    ],
+    "color": [
+      245,
+      158,
+      11
+    ],
+    "hex": "#F59E0B"
+  },
+  {
+    "id": "GAIL_GANDHAR_PLANT",
+    "name": "GAIL_GANDHAR_PLANT",
+    "company": "GAIL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL WASHERY",
+    "full_type_tag": "[MAHARATNA \u2022 COAL WASHERY]",
+    "category": "Gas Processing Petrochemical Complexes",
+    "capacity": "",
+    "state": "Gujarat",
+    "coordinates": [
+      72.75,
+      22.0
+    ],
+    "color": [
+      245,
+      158,
+      11
+    ],
+    "hex": "#F59E0B"
+  },
+  {
+    "id": "GAIL_VIJAIPUR_GP",
+    "name": "GAIL_VIJAIPUR_GP",
+    "company": "GAIL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL WASHERY",
+    "full_type_tag": "[MAHARATNA \u2022 COAL WASHERY]",
+    "category": "Gas Processing Petrochemical Complexes",
+    "capacity": "",
+    "state": "Madhya Pradesh",
+    "coordinates": [
+      78.2,
+      24.5
+    ],
+    "color": [
+      245,
+      158,
+      11
+    ],
+    "hex": "#F59E0B"
+  },
+  {
+    "id": "GAIL_USAR_COMPLEX",
+    "name": "GAIL_USAR_COMPLEX",
+    "company": "GAIL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL WASHERY",
+    "full_type_tag": "[MAHARATNA \u2022 COAL WASHERY]",
+    "category": "Gas Processing Petrochemical Complexes",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      73.15,
+      18.55
+    ],
+    "color": [
+      245,
+      158,
+      11
+    ],
+    "hex": "#F59E0B"
+  },
+  {
+    "id": "GAIL_JHABUA_STATION",
+    "name": "GAIL_JHABUA_STATION",
+    "company": "GAIL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "GAS PIPELINE HUB",
+    "full_type_tag": "[MAHARATNA \u2022 GAS PIPELINE HUB]",
+    "category": "Compressor Stations Pipeline Junctions",
+    "capacity": "",
+    "state": "Madhya Pradesh",
+    "coordinates": [
+      74.6,
+      22.7667
+    ],
+    "color": [
+      245,
+      158,
+      11
+    ],
+    "hex": "#F59E0B"
+  },
+  {
+    "id": "GAIL_KAILARAS_STATION",
+    "name": "GAIL_KAILARAS_STATION",
+    "company": "GAIL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "GAS PIPELINE HUB",
+    "full_type_tag": "[MAHARATNA \u2022 GAS PIPELINE HUB]",
+    "category": "Compressor Stations Pipeline Junctions",
+    "capacity": "",
+    "state": "Madhya Pradesh",
+    "coordinates": [
+      77.6167,
+      26.3167
+    ],
+    "color": [
+      245,
+      158,
+      11
+    ],
+    "hex": "#F59E0B"
+  },
+  {
+    "id": "GAIL_PUNE_COMPRESSOR",
+    "name": "GAIL_PUNE_COMPRESSOR",
+    "company": "GAIL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "GAS PIPELINE HUB",
+    "full_type_tag": "[MAHARATNA \u2022 GAS PIPELINE HUB]",
+    "category": "Compressor Stations Pipeline Junctions",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      73.8567,
+      18.5204
+    ],
+    "color": [
+      245,
+      158,
+      11
+    ],
+    "hex": "#F59E0B"
+  },
+  {
+    "id": "GAIL_KISHANGARH_STATION",
+    "name": "GAIL_KISHANGARH_STATION",
+    "company": "GAIL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "GAS PIPELINE HUB",
+    "full_type_tag": "[MAHARATNA \u2022 GAS PIPELINE HUB]",
+    "category": "Compressor Stations Pipeline Junctions",
+    "capacity": "",
+    "state": "Rajasthan",
+    "coordinates": [
+      74.8667,
+      26.5833
+    ],
+    "color": [
+      245,
+      158,
+      11
+    ],
+    "hex": "#F59E0B"
+  },
+  {
+    "id": "GAIL_JAGDISHPUR_HUB",
+    "name": "GAIL_JAGDISHPUR_HUB",
+    "company": "GAIL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "GAS PIPELINE HUB",
+    "full_type_tag": "[MAHARATNA \u2022 GAS PIPELINE HUB]",
+    "category": "Compressor Stations Pipeline Junctions",
+    "capacity": "",
+    "state": "Uttar Pradesh",
+    "coordinates": [
+      81.2833,
+      26.4667
+    ],
+    "color": [
+      245,
+      158,
+      11
+    ],
+    "hex": "#F59E0B"
+  },
+  {
+    "id": "GAIL_BHOPAL_TERMINAL",
+    "name": "GAIL_BHOPAL_TERMINAL",
+    "company": "GAIL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "GAS PIPELINE HUB",
+    "full_type_tag": "[MAHARATNA \u2022 GAS PIPELINE HUB]",
+    "category": "Compressor Stations Pipeline Junctions",
+    "capacity": "",
+    "state": "Madhya Pradesh",
+    "coordinates": [
+      77.4126,
+      23.2599
+    ],
+    "color": [
+      245,
+      158,
+      11
+    ],
+    "hex": "#F59E0B"
+  },
+  {
+    "id": "GAIL_BHARATPUR_STATION",
+    "name": "GAIL_BHARATPUR_STATION",
+    "company": "GAIL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "GAS PIPELINE HUB",
+    "full_type_tag": "[MAHARATNA \u2022 GAS PIPELINE HUB]",
+    "category": "Compressor Stations Pipeline Junctions",
+    "capacity": "",
+    "state": "Rajasthan",
+    "coordinates": [
+      77.5,
+      27.2167
+    ],
+    "color": [
+      245,
+      158,
+      11
+    ],
+    "hex": "#F59E0B"
+  },
+  {
+    "id": "GAIL_CGD_INDORE",
+    "name": "GAIL_CGD_INDORE",
+    "company": "GAIL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL & GAS",
+    "full_type_tag": "[MAHARATNA \u2022 OIL & GAS]",
+    "category": "City Gas Distribution Cgd Anchors",
+    "capacity": "",
+    "state": "Madhya Pradesh",
+    "coordinates": [
+      75.8577,
+      22.7196
+    ],
+    "color": [
+      245,
+      158,
+      11
+    ],
+    "hex": "#F59E0B"
+  },
+  {
+    "id": "GAIL_CGD_LUCKNOW",
+    "name": "GAIL_CGD_LUCKNOW",
+    "company": "GAIL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL & GAS",
+    "full_type_tag": "[MAHARATNA \u2022 OIL & GAS]",
+    "category": "City Gas Distribution Cgd Anchors",
+    "capacity": "",
+    "state": "Uttar Pradesh",
+    "coordinates": [
+      80.9462,
+      26.8467
+    ],
+    "color": [
+      245,
+      158,
+      11
+    ],
+    "hex": "#F59E0B"
+  },
+  {
+    "id": "GAIL_CGD_PUNE",
+    "name": "GAIL_CGD_PUNE",
+    "company": "GAIL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL & GAS",
+    "full_type_tag": "[MAHARATNA \u2022 OIL & GAS]",
+    "category": "City Gas Distribution Cgd Anchors",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      73.8567,
+      18.5204
+    ],
+    "color": [
+      245,
+      158,
+      11
+    ],
+    "hex": "#F59E0B"
+  },
+  {
+    "id": "HPCL_MUMBAI_REFINERY",
+    "name": "HPCL_MUMBAI_REFINERY",
+    "company": "HPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL REFINERY",
+    "full_type_tag": "[MAHARATNA \u2022 OIL REFINERY]",
+    "category": "Refineries",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      72.858,
+      19.0229
+    ],
+    "color": [
+      217,
+      119,
+      6
+    ],
+    "hex": "#D97706"
+  },
+  {
+    "id": "HPCL_VISAKH_REFINERY",
+    "name": "HPCL_VISAKH_REFINERY",
+    "company": "HPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL REFINERY",
+    "full_type_tag": "[MAHARATNA \u2022 OIL REFINERY]",
+    "category": "Refineries",
+    "capacity": "",
+    "state": "Andhra Pradesh",
+    "coordinates": [
+      83.2185,
+      17.6868
+    ],
+    "color": [
+      217,
+      119,
+      6
+    ],
+    "hex": "#D97706"
+  },
+  {
+    "id": "HPCL_JOINT_REFINERY_BATHINDA",
+    "name": "HPCL_JOINT_REFINERY_BATHINDA",
+    "company": "HPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL REFINERY",
+    "full_type_tag": "[MAHARATNA \u2022 OIL REFINERY]",
+    "category": "Refineries",
+    "capacity": "",
+    "state": "Punjab",
+    "coordinates": [
+      74.95,
+      30.21
+    ],
+    "color": [
+      217,
+      119,
+      6
+    ],
+    "hex": "#D97706"
+  },
+  {
+    "id": "HPCL_LPG_PIPLANI",
+    "name": "HPCL_LPG_PIPLANI",
+    "company": "HPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "LPG BOTTLING",
+    "full_type_tag": "[MAHARATNA \u2022 LPG BOTTLING]",
+    "category": "Lpg Bottling Plants",
+    "capacity": "",
+    "state": "Gujarat",
+    "coordinates": [
+      72.5,
+      23.25
+    ],
+    "color": [
+      217,
+      119,
+      6
+    ],
+    "hex": "#D97706"
+  },
+  {
+    "id": "HPCL_LPG_NERAL",
+    "name": "HPCL_LPG_NERAL",
+    "company": "HPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "LPG BOTTLING",
+    "full_type_tag": "[MAHARATNA \u2022 LPG BOTTLING]",
+    "category": "Lpg Bottling Plants",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      73.2,
+      18.95
+    ],
+    "color": [
+      217,
+      119,
+      6
+    ],
+    "hex": "#D97706"
+  },
+  {
+    "id": "HPCL_LPG_CHENNAI",
+    "name": "HPCL_LPG_CHENNAI",
+    "company": "HPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "LPG BOTTLING",
+    "full_type_tag": "[MAHARATNA \u2022 LPG BOTTLING]",
+    "category": "Lpg Bottling Plants",
+    "capacity": "",
+    "state": "Tamil Nadu",
+    "coordinates": [
+      80.2707,
+      13.0827
+    ],
+    "color": [
+      217,
+      119,
+      6
+    ],
+    "hex": "#D97706"
+  },
+  {
+    "id": "HPCL_LPG_KOLKATA",
+    "name": "HPCL_LPG_KOLKATA",
+    "company": "HPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "LPG BOTTLING",
+    "full_type_tag": "[MAHARATNA \u2022 LPG BOTTLING]",
+    "category": "Lpg Bottling Plants",
+    "capacity": "",
+    "state": "West Bengal",
+    "coordinates": [
+      88.3639,
+      22.5726
+    ],
+    "color": [
+      217,
+      119,
+      6
+    ],
+    "hex": "#D97706"
+  },
+  {
+    "id": "HPCL_LPG_SANAND",
+    "name": "HPCL_LPG_SANAND",
+    "company": "HPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "LPG BOTTLING",
+    "full_type_tag": "[MAHARATNA \u2022 LPG BOTTLING]",
+    "category": "Lpg Bottling Plants",
+    "capacity": "",
+    "state": "Gujarat",
+    "coordinates": [
+      72.3833,
+      22.9833
+    ],
+    "color": [
+      217,
+      119,
+      6
+    ],
+    "hex": "#D97706"
+  },
+  {
+    "id": "HPCL_LPG_HYDERABAD",
+    "name": "HPCL_LPG_HYDERABAD",
+    "company": "HPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "LPG BOTTLING",
+    "full_type_tag": "[MAHARATNA \u2022 LPG BOTTLING]",
+    "category": "Lpg Bottling Plants",
+    "capacity": "",
+    "state": "Telangana",
+    "coordinates": [
+      78.4867,
+      17.385
+    ],
+    "color": [
+      217,
+      119,
+      6
+    ],
+    "hex": "#D97706"
+  },
+  {
+    "id": "HPCL_MAHUL_DEPOT",
+    "name": "HPCL_MAHUL_DEPOT",
+    "company": "HPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Fuel Depots Terminals",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      72.8926,
+      19.0118
+    ],
+    "color": [
+      217,
+      119,
+      6
+    ],
+    "hex": "#D97706"
+  },
+  {
+    "id": "HPCL_MUNDRA_DEPOT",
+    "name": "HPCL_MUNDRA_DEPOT",
+    "company": "HPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Fuel Depots Terminals",
+    "capacity": "",
+    "state": "Gujarat",
+    "coordinates": [
+      69.7167,
+      22.8333
+    ],
+    "color": [
+      217,
+      119,
+      6
+    ],
+    "hex": "#D97706"
+  },
+  {
+    "id": "HPCL_GOA_DEPOT",
+    "name": "HPCL_GOA_DEPOT",
+    "company": "HPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Fuel Depots Terminals",
+    "capacity": "",
+    "state": "Goa",
+    "coordinates": [
+      73.8278,
+      15.4909
+    ],
+    "color": [
+      217,
+      119,
+      6
+    ],
+    "hex": "#D97706"
+  },
+  {
+    "id": "HPCL_KOCHI_DEPOT",
+    "name": "HPCL_KOCHI_DEPOT",
+    "company": "HPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Fuel Depots Terminals",
+    "capacity": "",
+    "state": "Kerala",
+    "coordinates": [
+      76.2673,
+      9.9312
+    ],
+    "color": [
+      217,
+      119,
+      6
+    ],
+    "hex": "#D97706"
+  },
+  {
+    "id": "HPCL_VISAKH_TERMINAL",
+    "name": "HPCL_VISAKH_TERMINAL",
+    "company": "HPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Fuel Depots Terminals",
+    "capacity": "",
+    "state": "Andhra Pradesh",
+    "coordinates": [
+      83.3,
+      17.73
+    ],
+    "color": [
+      217,
+      119,
+      6
+    ],
+    "hex": "#D97706"
+  },
+  {
+    "id": "HPCL_HALDIA_DEPOT",
+    "name": "HPCL_HALDIA_DEPOT",
+    "company": "HPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Fuel Depots Terminals",
+    "capacity": "",
+    "state": "West Bengal",
+    "coordinates": [
+      88.0698,
+      22.0668
+    ],
+    "color": [
+      217,
+      119,
+      6
+    ],
+    "hex": "#D97706"
+  },
+  {
+    "id": "HPCL_AVIATION_MUMBAI",
+    "name": "HPCL_AVIATION_MUMBAI",
+    "company": "HPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL & GAS",
+    "full_type_tag": "[MAHARATNA \u2022 OIL & GAS]",
+    "category": "Aviation Fuel Stations",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      72.8656,
+      19.0896
+    ],
+    "color": [
+      217,
+      119,
+      6
+    ],
+    "hex": "#D97706"
+  },
+  {
+    "id": "HPCL_AVIATION_DELHI",
+    "name": "HPCL_AVIATION_DELHI",
+    "company": "HPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL & GAS",
+    "full_type_tag": "[MAHARATNA \u2022 OIL & GAS]",
+    "category": "Aviation Fuel Stations",
+    "capacity": "",
+    "state": "Delhi",
+    "coordinates": [
+      77.1,
+      28.5562
+    ],
+    "color": [
+      217,
+      119,
+      6
+    ],
+    "hex": "#D97706"
+  },
+  {
+    "id": "HPCL_AVIATION_BANGALORE",
+    "name": "HPCL_AVIATION_BANGALORE",
+    "company": "HPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL & GAS",
+    "full_type_tag": "[MAHARATNA \u2022 OIL & GAS]",
+    "category": "Aviation Fuel Stations",
+    "capacity": "",
+    "state": "Karnataka",
+    "coordinates": [
+      77.7066,
+      13.1986
+    ],
+    "color": [
+      217,
+      119,
+      6
+    ],
+    "hex": "#D97706"
+  },
+  {
+    "id": "HPCL_AVIATION_HYDERABAD",
+    "name": "HPCL_AVIATION_HYDERABAD",
+    "company": "HPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL & GAS",
+    "full_type_tag": "[MAHARATNA \u2022 OIL & GAS]",
+    "category": "Aviation Fuel Stations",
+    "capacity": "",
+    "state": "Telangana",
+    "coordinates": [
+      78.4294,
+      17.2403
+    ],
+    "color": [
+      217,
+      119,
+      6
+    ],
+    "hex": "#D97706"
+  },
+  {
+    "id": "BPCL_MUMBAI_REFINERY",
+    "name": "BPCL_MUMBAI_REFINERY",
+    "company": "BPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL REFINERY",
+    "full_type_tag": "[MAHARATNA \u2022 OIL REFINERY]",
+    "category": "Refineries",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      72.851,
+      19.015
+    ],
+    "color": [
+      202,
+      138,
+      4
+    ],
+    "hex": "#CA8A04"
+  },
+  {
+    "id": "BPCL_KOCHI_REFINERY",
+    "name": "BPCL_KOCHI_REFINERY",
+    "company": "BPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL REFINERY",
+    "full_type_tag": "[MAHARATNA \u2022 OIL REFINERY]",
+    "category": "Refineries",
+    "capacity": "",
+    "state": "Kerala",
+    "coordinates": [
+      76.2673,
+      9.9312
+    ],
+    "color": [
+      202,
+      138,
+      4
+    ],
+    "hex": "#CA8A04"
+  },
+  {
+    "id": "BPCL_BINA_REFINERY",
+    "name": "BPCL_BINA_REFINERY",
+    "company": "BPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL REFINERY",
+    "full_type_tag": "[MAHARATNA \u2022 OIL REFINERY]",
+    "category": "Refineries",
+    "capacity": "",
+    "state": "Madhya Pradesh",
+    "coordinates": [
+      78.2,
+      24.1833
+    ],
+    "color": [
+      202,
+      138,
+      4
+    ],
+    "hex": "#CA8A04"
+  },
+  {
+    "id": "BPCL_LPG_SURAT",
+    "name": "BPCL_LPG_SURAT",
+    "company": "BPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "LPG BOTTLING",
+    "full_type_tag": "[MAHARATNA \u2022 LPG BOTTLING]",
+    "category": "Lpg Bottling Plants",
+    "capacity": "",
+    "state": "Gujarat",
+    "coordinates": [
+      72.8311,
+      21.1702
+    ],
+    "color": [
+      202,
+      138,
+      4
+    ],
+    "hex": "#CA8A04"
+  },
+  {
+    "id": "BPCL_LPG_NASHIK",
+    "name": "BPCL_LPG_NASHIK",
+    "company": "BPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "LPG BOTTLING",
+    "full_type_tag": "[MAHARATNA \u2022 LPG BOTTLING]",
+    "category": "Lpg Bottling Plants",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      73.7898,
+      19.9975
+    ],
+    "color": [
+      202,
+      138,
+      4
+    ],
+    "hex": "#CA8A04"
+  },
+  {
+    "id": "BPCL_LPG_CHENNAI",
+    "name": "BPCL_LPG_CHENNAI",
+    "company": "BPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "LPG BOTTLING",
+    "full_type_tag": "[MAHARATNA \u2022 LPG BOTTLING]",
+    "category": "Lpg Bottling Plants",
+    "capacity": "",
+    "state": "Tamil Nadu",
+    "coordinates": [
+      80.2707,
+      13.0827
+    ],
+    "color": [
+      202,
+      138,
+      4
+    ],
+    "hex": "#CA8A04"
+  },
+  {
+    "id": "BPCL_LPG_ASANSOL",
+    "name": "BPCL_LPG_ASANSOL",
+    "company": "BPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "LPG BOTTLING",
+    "full_type_tag": "[MAHARATNA \u2022 LPG BOTTLING]",
+    "category": "Lpg Bottling Plants",
+    "capacity": "",
+    "state": "West Bengal",
+    "coordinates": [
+      86.9833,
+      23.6833
+    ],
+    "color": [
+      202,
+      138,
+      4
+    ],
+    "hex": "#CA8A04"
+  },
+  {
+    "id": "BPCL_LPG_HYDERABAD",
+    "name": "BPCL_LPG_HYDERABAD",
+    "company": "BPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "LPG BOTTLING",
+    "full_type_tag": "[MAHARATNA \u2022 LPG BOTTLING]",
+    "category": "Lpg Bottling Plants",
+    "capacity": "",
+    "state": "Telangana",
+    "coordinates": [
+      78.4867,
+      17.385
+    ],
+    "color": [
+      202,
+      138,
+      4
+    ],
+    "hex": "#CA8A04"
+  },
+  {
+    "id": "BPCL_MAHUL_DEPOT",
+    "name": "BPCL_MAHUL_DEPOT",
+    "company": "BPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Major Depots Terminals",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      72.8926,
+      19.0118
+    ],
+    "color": [
+      202,
+      138,
+      4
+    ],
+    "hex": "#CA8A04"
+  },
+  {
+    "id": "BPCL_KANDLA_DEPOT",
+    "name": "BPCL_KANDLA_DEPOT",
+    "company": "BPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Major Depots Terminals",
+    "capacity": "",
+    "state": "Gujarat",
+    "coordinates": [
+      70.2167,
+      23.0333
+    ],
+    "color": [
+      202,
+      138,
+      4
+    ],
+    "hex": "#CA8A04"
+  },
+  {
+    "id": "BPCL_CHENNAI_TERMINAL",
+    "name": "BPCL_CHENNAI_TERMINAL",
+    "company": "BPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Major Depots Terminals",
+    "capacity": "",
+    "state": "Tamil Nadu",
+    "coordinates": [
+      80.2707,
+      13.0827
+    ],
+    "color": [
+      202,
+      138,
+      4
+    ],
+    "hex": "#CA8A04"
+  },
+  {
+    "id": "BPCL_VISAKH_TERMINAL",
+    "name": "BPCL_VISAKH_TERMINAL",
+    "company": "BPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Major Depots Terminals",
+    "capacity": "",
+    "state": "Andhra Pradesh",
+    "coordinates": [
+      83.2185,
+      17.6868
+    ],
+    "color": [
+      202,
+      138,
+      4
+    ],
+    "hex": "#CA8A04"
+  },
+  {
+    "id": "BPCL_HALDIA_DEPOT",
+    "name": "BPCL_HALDIA_DEPOT",
+    "company": "BPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Major Depots Terminals",
+    "capacity": "",
+    "state": "West Bengal",
+    "coordinates": [
+      88.0698,
+      22.0668
+    ],
+    "color": [
+      202,
+      138,
+      4
+    ],
+    "hex": "#CA8A04"
+  },
+  {
+    "id": "BPCL_KOLKATA_DEPOT",
+    "name": "BPCL_KOLKATA_DEPOT",
+    "company": "BPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Major Depots Terminals",
+    "capacity": "",
+    "state": "West Bengal",
+    "coordinates": [
+      88.3639,
+      22.5726
+    ],
+    "color": [
+      202,
+      138,
+      4
+    ],
+    "hex": "#CA8A04"
+  },
+  {
+    "id": "BPCL_BHUBANESWAR_DEPOT",
+    "name": "BPCL_BHUBANESWAR_DEPOT",
+    "company": "BPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Major Depots Terminals",
+    "capacity": "",
+    "state": "Odisha",
+    "coordinates": [
+      85.8245,
+      20.2961
+    ],
+    "color": [
+      202,
+      138,
+      4
+    ],
+    "hex": "#CA8A04"
+  },
+  {
+    "id": "BPCL_AVIATION_MUMBAI",
+    "name": "BPCL_AVIATION_MUMBAI",
+    "company": "BPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL & GAS",
+    "full_type_tag": "[MAHARATNA \u2022 OIL & GAS]",
+    "category": "Aviation Fuel Stations",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      72.8656,
+      19.0896
+    ],
+    "color": [
+      202,
+      138,
+      4
+    ],
+    "hex": "#CA8A04"
+  },
+  {
+    "id": "BPCL_AVIATION_DELHI",
+    "name": "BPCL_AVIATION_DELHI",
+    "company": "BPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL & GAS",
+    "full_type_tag": "[MAHARATNA \u2022 OIL & GAS]",
+    "category": "Aviation Fuel Stations",
+    "capacity": "",
+    "state": "Delhi",
+    "coordinates": [
+      77.1,
+      28.5562
+    ],
+    "color": [
+      202,
+      138,
+      4
+    ],
+    "hex": "#CA8A04"
+  },
+  {
+    "id": "BPCL_AVIATION_BANGALORE",
+    "name": "BPCL_AVIATION_BANGALORE",
+    "company": "BPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL & GAS",
+    "full_type_tag": "[MAHARATNA \u2022 OIL & GAS]",
+    "category": "Aviation Fuel Stations",
+    "capacity": "",
+    "state": "Karnataka",
+    "coordinates": [
+      77.7066,
+      13.1986
+    ],
+    "color": [
+      202,
+      138,
+      4
+    ],
+    "hex": "#CA8A04"
+  },
+  {
+    "id": "CPCL_MANALI_REFINERY",
+    "name": "CPCL_MANALI_REFINERY",
+    "company": "CPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Miniratna",
+    "type_label": "OIL REFINERY",
+    "full_type_tag": "[MINIRATNA \u2022 OIL REFINERY]",
+    "category": "Refineries Storage",
+    "capacity": "",
+    "state": "Tamil Nadu",
+    "coordinates": [
+      80.2833,
+      13.1667
+    ],
+    "color": [
+      180,
+      83,
+      9
+    ],
+    "hex": "#B45309"
+  },
+  {
+    "id": "CPCL_NAGAPATTINAM_REFINERY",
+    "name": "CPCL_NAGAPATTINAM_REFINERY",
+    "company": "CPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Miniratna",
+    "type_label": "OIL REFINERY",
+    "full_type_tag": "[MINIRATNA \u2022 OIL REFINERY]",
+    "category": "Refineries Storage",
+    "capacity": "",
+    "state": "Tamil Nadu",
+    "coordinates": [
+      79.84,
+      10.77
+    ],
+    "color": [
+      180,
+      83,
+      9
+    ],
+    "hex": "#B45309"
+  },
+  {
+    "id": "CPCL_CRUDE_OIL_TERMINAL_ENNORE",
+    "name": "CPCL_CRUDE_OIL_TERMINAL_ENNORE",
+    "company": "CPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Miniratna",
+    "type_label": "OIL REFINERY",
+    "full_type_tag": "[MINIRATNA \u2022 OIL REFINERY]",
+    "category": "Refineries Storage",
+    "capacity": "",
+    "state": "Tamil Nadu",
+    "coordinates": [
+      80.35,
+      13.25
+    ],
+    "color": [
+      180,
+      83,
+      9
+    ],
+    "hex": "#B45309"
+  },
+  {
+    "id": "CPCL_STORAGE_VALLUR",
+    "name": "CPCL_STORAGE_VALLUR",
+    "company": "CPCL",
+    "sector": "Oil & Gas",
+    "psu_tier": "Miniratna",
+    "type_label": "OIL REFINERY",
+    "full_type_tag": "[MINIRATNA \u2022 OIL REFINERY]",
+    "category": "Refineries Storage",
+    "capacity": "",
+    "state": "Tamil Nadu",
+    "coordinates": [
+      80.2833,
+      13.2833
+    ],
+    "color": [
+      180,
+      83,
+      9
+    ],
+    "hex": "#B45309"
+  },
+  {
+    "id": "Vindhyachal STPS",
+    "name": "Vindhyachal STPS",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "THERMAL POWER",
+    "full_type_tag": "[MAHARATNA \u2022 THERMAL POWER]",
+    "category": "Coal Fired Thermal Power Stations",
+    "capacity": "4760",
+    "state": "Madhya Pradesh",
+    "coordinates": [
+      81.041,
+      24.145
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "Sipat STPS",
+    "name": "Sipat STPS",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "THERMAL POWER",
+    "full_type_tag": "[MAHARATNA \u2022 THERMAL POWER]",
+    "category": "Coal Fired Thermal Power Stations",
+    "capacity": "2980",
+    "state": "Chhattisgarh",
+    "coordinates": [
+      82.2931,
+      22.0545
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "Korba STPS",
+    "name": "Korba STPS",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "THERMAL POWER",
+    "full_type_tag": "[MAHARATNA \u2022 THERMAL POWER]",
+    "category": "Coal Fired Thermal Power Stations",
+    "capacity": "2600",
+    "state": "Chhattisgarh",
+    "coordinates": [
+      82.6833,
+      22.3667
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "Ramagundam STPS",
+    "name": "Ramagundam STPS",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "THERMAL POWER",
+    "full_type_tag": "[MAHARATNA \u2022 THERMAL POWER]",
+    "category": "Coal Fired Thermal Power Stations",
+    "capacity": "2600",
+    "state": "Telangana",
+    "coordinates": [
+      79.45,
+      18.7667
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "Talcher Kaniha",
+    "name": "Talcher Kaniha",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "THERMAL POWER",
+    "full_type_tag": "[MAHARATNA \u2022 THERMAL POWER]",
+    "category": "Coal Fired Thermal Power Stations",
+    "capacity": "3000",
+    "state": "Odisha",
+    "coordinates": [
+      85.0667,
+      21.1167
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "Farakka STPS",
+    "name": "Farakka STPS",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "THERMAL POWER",
+    "full_type_tag": "[MAHARATNA \u2022 THERMAL POWER]",
+    "category": "Coal Fired Thermal Power Stations",
+    "capacity": "2100",
+    "state": "West Bengal",
+    "coordinates": [
+      87.9167,
+      24.8
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "Kahalgaon STPS",
+    "name": "Kahalgaon STPS",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "THERMAL POWER",
+    "full_type_tag": "[MAHARATNA \u2022 THERMAL POWER]",
+    "category": "Coal Fired Thermal Power Stations",
+    "capacity": "2340",
+    "state": "Bihar",
+    "coordinates": [
+      87.2236,
+      25.2736
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "Rihand STPS",
+    "name": "Rihand STPS",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "THERMAL POWER",
+    "full_type_tag": "[MAHARATNA \u2022 THERMAL POWER]",
+    "category": "Coal Fired Thermal Power Stations",
+    "capacity": "3000",
+    "state": "Uttar Pradesh",
+    "coordinates": [
+      82.7928,
+      24.2028
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "Singrauli STPS",
+    "name": "Singrauli STPS",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "THERMAL POWER",
+    "full_type_tag": "[MAHARATNA \u2022 THERMAL POWER]",
+    "category": "Coal Fired Thermal Power Stations",
+    "capacity": "2000",
+    "state": "Uttar Pradesh",
+    "coordinates": [
+      82.808,
+      24.18
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "Dadri (Coal)",
+    "name": "Dadri (Coal)",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "THERMAL POWER",
+    "full_type_tag": "[MAHARATNA \u2022 THERMAL POWER]",
+    "category": "Coal Fired Thermal Power Stations",
+    "capacity": "1820",
+    "state": "Uttar Pradesh",
+    "coordinates": [
+      77.6,
+      28.5667
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "Unchahar STPS",
+    "name": "Unchahar STPS",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "THERMAL POWER",
+    "full_type_tag": "[MAHARATNA \u2022 THERMAL POWER]",
+    "category": "Coal Fired Thermal Power Stations",
+    "capacity": "1050",
+    "state": "Uttar Pradesh",
+    "coordinates": [
+      81.2833,
+      25.9
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "Barh STPS",
+    "name": "Barh STPS",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "THERMAL POWER",
+    "full_type_tag": "[MAHARATNA \u2022 THERMAL POWER]",
+    "category": "Coal Fired Thermal Power Stations",
+    "capacity": "3300",
+    "state": "Bihar",
+    "coordinates": [
+      85.7167,
+      25.4833
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "Simhadri STPS",
+    "name": "Simhadri STPS",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "THERMAL POWER",
+    "full_type_tag": "[MAHARATNA \u2022 THERMAL POWER]",
+    "category": "Coal Fired Thermal Power Stations",
+    "capacity": "2000",
+    "state": "Andhra Pradesh",
+    "coordinates": [
+      83.2,
+      17.6833
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "Kudgi STPS",
+    "name": "Kudgi STPS",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "THERMAL POWER",
+    "full_type_tag": "[MAHARATNA \u2022 THERMAL POWER]",
+    "category": "Coal Fired Thermal Power Stations",
+    "capacity": "2400",
+    "state": "Karnataka",
+    "coordinates": [
+      76.0333,
+      16.75
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "Solapur STPS",
+    "name": "Solapur STPS",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "THERMAL POWER",
+    "full_type_tag": "[MAHARATNA \u2022 THERMAL POWER]",
+    "category": "Coal Fired Thermal Power Stations",
+    "capacity": "1320",
+    "state": "Maharashtra",
+    "coordinates": [
+      76.0,
+      17.65
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "Mouda STPS",
+    "name": "Mouda STPS",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "THERMAL POWER",
+    "full_type_tag": "[MAHARATNA \u2022 THERMAL POWER]",
+    "category": "Coal Fired Thermal Power Stations",
+    "capacity": "2320",
+    "state": "Maharashtra",
+    "coordinates": [
+      79.7167,
+      21.2
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "Lara STPS",
+    "name": "Lara STPS",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "THERMAL POWER",
+    "full_type_tag": "[MAHARATNA \u2022 THERMAL POWER]",
+    "category": "Coal Fired Thermal Power Stations",
+    "capacity": "1600",
+    "state": "Chhattisgarh",
+    "coordinates": [
+      83.35,
+      21.85
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "Gadarwara STPS",
+    "name": "Gadarwara STPS",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "THERMAL POWER",
+    "full_type_tag": "[MAHARATNA \u2022 THERMAL POWER]",
+    "category": "Coal Fired Thermal Power Stations",
+    "capacity": "1600 (part commissioned)",
+    "state": "Madhya Pradesh",
+    "coordinates": [
+      78.85,
+      23.0333
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "Tanda STPS",
+    "name": "Tanda STPS",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "THERMAL POWER",
+    "full_type_tag": "[MAHARATNA \u2022 THERMAL POWER]",
+    "category": "Coal Fired Thermal Power Stations",
+    "capacity": "1760",
+    "state": "Uttar Pradesh",
+    "coordinates": [
+      82.65,
+      26.55
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "North Karanpura",
+    "name": "North Karanpura",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "THERMAL POWER",
+    "full_type_tag": "[MAHARATNA \u2022 THERMAL POWER]",
+    "category": "Coal Fired Thermal Power Stations",
+    "capacity": "1980",
+    "state": "Jharkhand",
+    "coordinates": [
+      85.0333,
+      23.9
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "Telangana STPS",
+    "name": "Telangana STPS",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "THERMAL POWER",
+    "full_type_tag": "[MAHARATNA \u2022 THERMAL POWER]",
+    "category": "Coal Fired Thermal Power Stations",
+    "capacity": "1600",
+    "state": "Telangana",
+    "coordinates": [
+      79.95,
+      18.9667
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "Patratu STPS (JV)",
+    "name": "Patratu STPS (JV)",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "THERMAL POWER",
+    "full_type_tag": "[MAHARATNA \u2022 THERMAL POWER]",
+    "category": "Coal Fired Thermal Power Stations",
+    "capacity": "800",
+    "state": "Jharkhand",
+    "coordinates": [
+      85.3167,
+      23.6333
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "Auraiya GPS",
+    "name": "Auraiya GPS",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "POWER",
+    "full_type_tag": "[MAHARATNA \u2022 POWER]",
+    "category": "Gas Based Power Stations",
+    "capacity": "652",
+    "state": "Uttar Pradesh",
+    "coordinates": [
+      79.5,
+      26.5333
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "Anta GPS",
+    "name": "Anta GPS",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "POWER",
+    "full_type_tag": "[MAHARATNA \u2022 POWER]",
+    "category": "Gas Based Power Stations",
+    "capacity": "413",
+    "state": "Rajasthan",
+    "coordinates": [
+      76.2667,
+      25.2
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "Kawas GPS",
+    "name": "Kawas GPS",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "POWER",
+    "full_type_tag": "[MAHARATNA \u2022 POWER]",
+    "category": "Gas Based Power Stations",
+    "capacity": "645",
+    "state": "Gujarat",
+    "coordinates": [
+      72.7,
+      21.1833
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "Dadri GPS",
+    "name": "Dadri GPS",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "POWER",
+    "full_type_tag": "[MAHARATNA \u2022 POWER]",
+    "category": "Gas Based Power Stations",
+    "capacity": "817",
+    "state": "Uttar Pradesh",
+    "coordinates": [
+      77.6,
+      28.5667
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "Jhanor-Gandhar GPS",
+    "name": "Jhanor-Gandhar GPS",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "POWER",
+    "full_type_tag": "[MAHARATNA \u2022 POWER]",
+    "category": "Gas Based Power Stations",
+    "capacity": "648",
+    "state": "Gujarat",
+    "coordinates": [
+      73.0,
+      21.7833
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "Faridabad GPS",
+    "name": "Faridabad GPS",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "POWER",
+    "full_type_tag": "[MAHARATNA \u2022 POWER]",
+    "category": "Gas Based Power Stations",
+    "capacity": "430",
+    "state": "Haryana",
+    "coordinates": [
+      77.3167,
+      28.4167
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "Rajiv Gandhi CCPP, Kayamkulam",
+    "name": "Rajiv Gandhi CCPP, Kayamkulam",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "POWER",
+    "full_type_tag": "[MAHARATNA \u2022 POWER]",
+    "category": "Gas Based Power Stations",
+    "capacity": "350",
+    "state": "Kerala",
+    "coordinates": [
+      76.5,
+      9.1667
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "NTPC_237",
+    "name": "NTPC_237",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "HYDRO POWER",
+    "full_type_tag": "[MAHARATNA \u2022 HYDRO POWER]",
+    "category": "Hydro And Solar Projects",
+    "capacity": "",
+    "state": "Himachal Pradesh",
+    "coordinates": [
+      76.8,
+      31.3833
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "NTPC_238",
+    "name": "NTPC_238",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "HYDRO POWER",
+    "full_type_tag": "[MAHARATNA \u2022 HYDRO POWER]",
+    "category": "Hydro And Solar Projects",
+    "capacity": "",
+    "state": "Uttarakhand",
+    "coordinates": [
+      79.65,
+      30.5167
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "NTPC_239",
+    "name": "NTPC_239",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "HYDRO POWER",
+    "full_type_tag": "[MAHARATNA \u2022 HYDRO POWER]",
+    "category": "Hydro And Solar Projects",
+    "capacity": "",
+    "state": "Uttarakhand",
+    "coordinates": [
+      79.65,
+      30.5167
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "NTPC_240",
+    "name": "NTPC_240",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "HYDRO POWER",
+    "full_type_tag": "[MAHARATNA \u2022 HYDRO POWER]",
+    "category": "Hydro And Solar Projects",
+    "capacity": "",
+    "state": "Uttar Pradesh",
+    "coordinates": [
+      82.808,
+      24.18
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "NTPC_241",
+    "name": "NTPC_241",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "HYDRO POWER",
+    "full_type_tag": "[MAHARATNA \u2022 HYDRO POWER]",
+    "category": "Hydro And Solar Projects",
+    "capacity": "",
+    "state": "Rajasthan",
+    "coordinates": [
+      72.3,
+      27.7
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "NTPC_242",
+    "name": "NTPC_242",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "HYDRO POWER",
+    "full_type_tag": "[MAHARATNA \u2022 HYDRO POWER]",
+    "category": "Hydro And Solar Projects",
+    "capacity": "",
+    "state": "Telangana",
+    "coordinates": [
+      79.45,
+      18.7667
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "NTPC_243",
+    "name": "NTPC_243",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "POWER",
+    "full_type_tag": "[MAHARATNA \u2022 POWER]",
+    "category": "Regional Headquarters",
+    "capacity": "",
+    "state": "Uttar Pradesh",
+    "coordinates": [
+      80.95,
+      26.85
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "NTPC_244",
+    "name": "NTPC_244",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "POWER",
+    "full_type_tag": "[MAHARATNA \u2022 POWER]",
+    "category": "Regional Headquarters",
+    "capacity": "",
+    "state": "Telangana",
+    "coordinates": [
+      78.5,
+      17.45
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "NTPC_245",
+    "name": "NTPC_245",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "POWER",
+    "full_type_tag": "[MAHARATNA \u2022 POWER]",
+    "category": "Regional Headquarters",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      72.8777,
+      19.076
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "NTPC_246",
+    "name": "NTPC_246",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "POWER",
+    "full_type_tag": "[MAHARATNA \u2022 POWER]",
+    "category": "Regional Headquarters",
+    "capacity": "",
+    "state": "Chhattisgarh",
+    "coordinates": [
+      81.63,
+      21.25
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "NTPC_247",
+    "name": "NTPC_247",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "POWER",
+    "full_type_tag": "[MAHARATNA \u2022 POWER]",
+    "category": "Regional Headquarters",
+    "capacity": "",
+    "state": "West Bengal",
+    "coordinates": [
+      88.3639,
+      22.5726
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "NTPC_248",
+    "name": "NTPC_248",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "POWER",
+    "full_type_tag": "[MAHARATNA \u2022 POWER]",
+    "category": "Regional Headquarters",
+    "capacity": "",
+    "state": "Bihar",
+    "coordinates": [
+      85.12,
+      25.6
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "NTPC_249",
+    "name": "NTPC_249",
+    "company": "NTPC",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "POWER",
+    "full_type_tag": "[MAHARATNA \u2022 POWER]",
+    "category": "Regional Headquarters",
+    "capacity": "",
+    "state": "Uttar Pradesh",
+    "coordinates": [
+      77.391,
+      28.5355
+    ],
+    "color": [
+      59,
+      130,
+      246
+    ],
+    "hex": "#3B82F6"
+  },
+  {
+    "id": "NHPC_250",
+    "name": "NHPC_250",
+    "company": "NHPC",
+    "sector": "Power",
+    "psu_tier": "Navratna",
+    "type_label": "HYDRO POWER",
+    "full_type_tag": "[NAVRATNA \u2022 HYDRO POWER]",
+    "category": "Key Hydroelectric Projects",
+    "capacity": "180",
+    "state": "India",
+    "coordinates": [
+      76.3667,
+      32.8167
+    ],
+    "color": [
+      14,
+      165,
+      233
+    ],
+    "hex": "#0EA5E9"
+  },
+  {
+    "id": "NHPC_251",
+    "name": "NHPC_251",
+    "company": "NHPC",
+    "sector": "Power",
+    "psu_tier": "Navratna",
+    "type_label": "HYDRO POWER",
+    "full_type_tag": "[NAVRATNA \u2022 HYDRO POWER]",
+    "category": "Key Hydroelectric Projects",
+    "capacity": "540",
+    "state": "India",
+    "coordinates": [
+      76.0333,
+      32.6167
+    ],
+    "color": [
+      14,
+      165,
+      233
+    ],
+    "hex": "#0EA5E9"
+  },
+  {
+    "id": "NHPC_252",
+    "name": "NHPC_252",
+    "company": "NHPC",
+    "sector": "Power",
+    "psu_tier": "Navratna",
+    "type_label": "HYDRO POWER",
+    "full_type_tag": "[NAVRATNA \u2022 HYDRO POWER]",
+    "category": "Key Hydroelectric Projects",
+    "capacity": "300",
+    "state": "India",
+    "coordinates": [
+      76.0667,
+      32.6
+    ],
+    "color": [
+      14,
+      165,
+      233
+    ],
+    "hex": "#0EA5E9"
+  },
+  {
+    "id": "NHPC_253",
+    "name": "NHPC_253",
+    "company": "NHPC",
+    "sector": "Power",
+    "psu_tier": "Navratna",
+    "type_label": "HYDRO POWER",
+    "full_type_tag": "[NAVRATNA \u2022 HYDRO POWER]",
+    "category": "Key Hydroelectric Projects",
+    "capacity": "231",
+    "state": "India",
+    "coordinates": [
+      76.1333,
+      32.5833
+    ],
+    "color": [
+      14,
+      165,
+      233
+    ],
+    "hex": "#0EA5E9"
+  },
+  {
+    "id": "NHPC_254",
+    "name": "NHPC_254",
+    "company": "NHPC",
+    "sector": "Power",
+    "psu_tier": "Navratna",
+    "type_label": "HYDRO POWER",
+    "full_type_tag": "[NAVRATNA \u2022 HYDRO POWER]",
+    "category": "Key Hydroelectric Projects",
+    "capacity": "520",
+    "state": "India",
+    "coordinates": [
+      77.1333,
+      31.55
+    ],
+    "color": [
+      14,
+      165,
+      233
+    ],
+    "hex": "#0EA5E9"
+  },
+  {
+    "id": "NHPC_255",
+    "name": "NHPC_255",
+    "company": "NHPC",
+    "sector": "Power",
+    "psu_tier": "Navratna",
+    "type_label": "HYDRO POWER",
+    "full_type_tag": "[NAVRATNA \u2022 HYDRO POWER]",
+    "category": "Key Hydroelectric Projects",
+    "capacity": "390",
+    "state": "India",
+    "coordinates": [
+      75.8167,
+      33.0333
+    ],
+    "color": [
+      14,
+      165,
+      233
+    ],
+    "hex": "#0EA5E9"
+  },
+  {
+    "id": "NHPC_256",
+    "name": "NHPC_256",
+    "company": "NHPC",
+    "sector": "Power",
+    "psu_tier": "Navratna",
+    "type_label": "HYDRO POWER",
+    "full_type_tag": "[NAVRATNA \u2022 HYDRO POWER]",
+    "category": "Key Hydroelectric Projects",
+    "capacity": "480",
+    "state": "India",
+    "coordinates": [
+      74.0333,
+      34.4583
+    ],
+    "color": [
+      14,
+      165,
+      233
+    ],
+    "hex": "#0EA5E9"
+  },
+  {
+    "id": "NHPC_257",
+    "name": "NHPC_257",
+    "company": "NHPC",
+    "sector": "Power",
+    "psu_tier": "Navratna",
+    "type_label": "HYDRO POWER",
+    "full_type_tag": "[NAVRATNA \u2022 HYDRO POWER]",
+    "category": "Key Hydroelectric Projects",
+    "capacity": "240",
+    "state": "India",
+    "coordinates": [
+      74.2,
+      34.4083
+    ],
+    "color": [
+      14,
+      165,
+      233
+    ],
+    "hex": "#0EA5E9"
+  },
+  {
+    "id": "NHPC_258",
+    "name": "NHPC_258",
+    "company": "NHPC",
+    "sector": "Power",
+    "psu_tier": "Navratna",
+    "type_label": "HYDRO POWER",
+    "full_type_tag": "[NAVRATNA \u2022 HYDRO POWER]",
+    "category": "Key Hydroelectric Projects",
+    "capacity": "330",
+    "state": "India",
+    "coordinates": [
+      74.0833,
+      34.4
+    ],
+    "color": [
+      14,
+      165,
+      233
+    ],
+    "hex": "#0EA5E9"
+  },
+  {
+    "id": "NHPC_259",
+    "name": "NHPC_259",
+    "company": "NHPC",
+    "sector": "Power",
+    "psu_tier": "Navratna",
+    "type_label": "HYDRO POWER",
+    "full_type_tag": "[NAVRATNA \u2022 HYDRO POWER]",
+    "category": "Key Hydroelectric Projects",
+    "capacity": "45",
+    "state": "India",
+    "coordinates": [
+      77.3667,
+      34.15
+    ],
+    "color": [
+      14,
+      165,
+      233
+    ],
+    "hex": "#0EA5E9"
+  },
+  {
+    "id": "NHPC_260",
+    "name": "NHPC_260",
+    "company": "NHPC",
+    "sector": "Power",
+    "psu_tier": "Navratna",
+    "type_label": "HYDRO POWER",
+    "full_type_tag": "[NAVRATNA \u2022 HYDRO POWER]",
+    "category": "Key Hydroelectric Projects",
+    "capacity": "44",
+    "state": "India",
+    "coordinates": [
+      76.7167,
+      34.2
+    ],
+    "color": [
+      14,
+      165,
+      233
+    ],
+    "hex": "#0EA5E9"
+  },
+  {
+    "id": "NHPC_261",
+    "name": "NHPC_261",
+    "company": "NHPC",
+    "sector": "Power",
+    "psu_tier": "Navratna",
+    "type_label": "HYDRO POWER",
+    "full_type_tag": "[NAVRATNA \u2022 HYDRO POWER]",
+    "category": "Key Hydroelectric Projects",
+    "capacity": "120",
+    "state": "India",
+    "coordinates": [
+      75.7333,
+      32.8
+    ],
+    "color": [
+      14,
+      165,
+      233
+    ],
+    "hex": "#0EA5E9"
+  },
+  {
+    "id": "NHPC_262",
+    "name": "NHPC_262",
+    "company": "NHPC",
+    "sector": "Power",
+    "psu_tier": "Navratna",
+    "type_label": "HYDRO POWER",
+    "full_type_tag": "[NAVRATNA \u2022 HYDRO POWER]",
+    "category": "Key Hydroelectric Projects",
+    "capacity": "510",
+    "state": "India",
+    "coordinates": [
+      88.4,
+      27.0333
+    ],
+    "color": [
+      14,
+      165,
+      233
+    ],
+    "hex": "#0EA5E9"
+  },
+  {
+    "id": "NHPC_263",
+    "name": "NHPC_263",
+    "company": "NHPC",
+    "sector": "Power",
+    "psu_tier": "Navratna",
+    "type_label": "HYDRO POWER",
+    "full_type_tag": "[NAVRATNA \u2022 HYDRO POWER]",
+    "category": "Key Hydroelectric Projects",
+    "capacity": "132",
+    "state": "India",
+    "coordinates": [
+      88.4833,
+      27.0667
+    ],
+    "color": [
+      14,
+      165,
+      233
+    ],
+    "hex": "#0EA5E9"
+  },
+  {
+    "id": "NHPC_264",
+    "name": "NHPC_264",
+    "company": "NHPC",
+    "sector": "Power",
+    "psu_tier": "Navratna",
+    "type_label": "HYDRO POWER",
+    "full_type_tag": "[NAVRATNA \u2022 HYDRO POWER]",
+    "category": "Key Hydroelectric Projects",
+    "capacity": "60",
+    "state": "India",
+    "coordinates": [
+      88.3167,
+      27.2667
+    ],
+    "color": [
+      14,
+      165,
+      233
+    ],
+    "hex": "#0EA5E9"
+  },
+  {
+    "id": "NHPC_265",
+    "name": "NHPC_265",
+    "company": "NHPC",
+    "sector": "Power",
+    "psu_tier": "Navratna",
+    "type_label": "HYDRO POWER",
+    "full_type_tag": "[NAVRATNA \u2022 HYDRO POWER]",
+    "category": "Key Hydroelectric Projects",
+    "capacity": "120",
+    "state": "India",
+    "coordinates": [
+      80.1,
+      29.0667
+    ],
+    "color": [
+      14,
+      165,
+      233
+    ],
+    "hex": "#0EA5E9"
+  },
+  {
+    "id": "NHPC_266",
+    "name": "NHPC_266",
+    "company": "NHPC",
+    "sector": "Power",
+    "psu_tier": "Navratna",
+    "type_label": "HYDRO POWER",
+    "full_type_tag": "[NAVRATNA \u2022 HYDRO POWER]",
+    "category": "Key Hydroelectric Projects",
+    "capacity": "2000",
+    "state": "India",
+    "coordinates": [
+      94.0333,
+      27.6333
+    ],
+    "color": [
+      14,
+      165,
+      233
+    ],
+    "hex": "#0EA5E9"
+  },
+  {
+    "id": "NHPC_267",
+    "name": "NHPC_267",
+    "company": "NHPC",
+    "sector": "Power",
+    "psu_tier": "Navratna",
+    "type_label": "HYDRO POWER",
+    "full_type_tag": "[NAVRATNA \u2022 HYDRO POWER]",
+    "category": "Key Hydroelectric Projects",
+    "capacity": "280",
+    "state": "India",
+    "coordinates": [
+      79.7167,
+      30.3
+    ],
+    "color": [
+      14,
+      165,
+      233
+    ],
+    "hex": "#0EA5E9"
+  },
+  {
+    "id": "NHPC_268",
+    "name": "NHPC_268",
+    "company": "NHPC",
+    "sector": "Power",
+    "psu_tier": "Navratna",
+    "type_label": "HYDRO POWER",
+    "full_type_tag": "[NAVRATNA \u2022 HYDRO POWER]",
+    "category": "Key Hydroelectric Projects",
+    "capacity": "1000",
+    "state": "India",
+    "coordinates": [
+      75.8167,
+      33.3333
+    ],
+    "color": [
+      14,
+      165,
+      233
+    ],
+    "hex": "#0EA5E9"
+  },
+  {
+    "id": "NHPC_269",
+    "name": "NHPC_269",
+    "company": "NHPC",
+    "sector": "Power",
+    "psu_tier": "Navratna",
+    "type_label": "HYDRO POWER",
+    "full_type_tag": "[NAVRATNA \u2022 HYDRO POWER]",
+    "category": "Key Hydroelectric Projects",
+    "capacity": "2880",
+    "state": "India",
+    "coordinates": [
+      95.1833,
+      28.3
+    ],
+    "color": [
+      14,
+      165,
+      233
+    ],
+    "hex": "#0EA5E9"
+  },
+  {
+    "id": "NHPC_270",
+    "name": "NHPC_270",
+    "company": "NHPC",
+    "sector": "Power",
+    "psu_tier": "Navratna",
+    "type_label": "POWER / HYDRO",
+    "full_type_tag": "[NAVRATNA \u2022 POWER / HYDRO]",
+    "category": "Corporate And Regional Offices",
+    "capacity": "",
+    "state": "Haryana",
+    "coordinates": [
+      77.3178,
+      28.4089
+    ],
+    "color": [
+      14,
+      165,
+      233
+    ],
+    "hex": "#0EA5E9"
+  },
+  {
+    "id": "NHPC_271",
+    "name": "NHPC_271",
+    "company": "NHPC",
+    "sector": "Power",
+    "psu_tier": "Navratna",
+    "type_label": "POWER / HYDRO",
+    "full_type_tag": "[NAVRATNA \u2022 POWER / HYDRO]",
+    "category": "Corporate And Regional Offices",
+    "capacity": "",
+    "state": "Jammu & Kashmir",
+    "coordinates": [
+      74.8667,
+      32.7333
+    ],
+    "color": [
+      14,
+      165,
+      233
+    ],
+    "hex": "#0EA5E9"
+  },
+  {
+    "id": "NHPC_272",
+    "name": "NHPC_272",
+    "company": "NHPC",
+    "sector": "Power",
+    "psu_tier": "Navratna",
+    "type_label": "POWER / HYDRO",
+    "full_type_tag": "[NAVRATNA \u2022 POWER / HYDRO]",
+    "category": "Corporate And Regional Offices",
+    "capacity": "",
+    "state": "Himachal Pradesh",
+    "coordinates": [
+      77.1734,
+      31.1048
+    ],
+    "color": [
+      14,
+      165,
+      233
+    ],
+    "hex": "#0EA5E9"
+  },
+  {
+    "id": "NHPC_273",
+    "name": "NHPC_273",
+    "company": "NHPC",
+    "sector": "Power",
+    "psu_tier": "Navratna",
+    "type_label": "POWER / HYDRO",
+    "full_type_tag": "[NAVRATNA \u2022 POWER / HYDRO]",
+    "category": "Corporate And Regional Offices",
+    "capacity": "",
+    "state": "Uttarakhand",
+    "coordinates": [
+      78.0322,
+      30.3165
+    ],
+    "color": [
+      14,
+      165,
+      233
+    ],
+    "hex": "#0EA5E9"
+  },
+  {
+    "id": "NHPC_274",
+    "name": "NHPC_274",
+    "company": "NHPC",
+    "sector": "Power",
+    "psu_tier": "Navratna",
+    "type_label": "POWER / HYDRO",
+    "full_type_tag": "[NAVRATNA \u2022 POWER / HYDRO]",
+    "category": "Corporate And Regional Offices",
+    "capacity": "",
+    "state": "West Bengal",
+    "coordinates": [
+      88.3953,
+      26.7271
+    ],
+    "color": [
+      14,
+      165,
+      233
+    ],
+    "hex": "#0EA5E9"
+  },
+  {
+    "id": "NHPC_275",
+    "name": "NHPC_275",
+    "company": "NHPC",
+    "sector": "Power",
+    "psu_tier": "Navratna",
+    "type_label": "POWER / HYDRO",
+    "full_type_tag": "[NAVRATNA \u2022 POWER / HYDRO]",
+    "category": "Corporate And Regional Offices",
+    "capacity": "",
+    "state": "Arunachal Pradesh",
+    "coordinates": [
+      93.6053,
+      27.0844
+    ],
+    "color": [
+      14,
+      165,
+      233
+    ],
+    "hex": "#0EA5E9"
+  },
+  {
+    "id": "Bhiwadi S/S",
+    "name": "Bhiwadi S/S",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Key Substations Hvdc Terminals",
+    "capacity": "",
+    "state": "Haryana",
+    "coordinates": [
+      76.848,
+      28.2076
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "Jaipur (Heerapura) S/S",
+    "name": "Jaipur (Heerapura) S/S",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Key Substations Hvdc Terminals",
+    "capacity": "",
+    "state": "Rajasthan",
+    "coordinates": [
+      75.758,
+      26.9278
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "Gwalior S/S",
+    "name": "Gwalior S/S",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Key Substations Hvdc Terminals",
+    "capacity": "",
+    "state": "Madhya Pradesh",
+    "coordinates": [
+      78.1828,
+      26.2183
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "Raipur S/S",
+    "name": "Raipur S/S",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Key Substations Hvdc Terminals",
+    "capacity": "",
+    "state": "Chhattisgarh",
+    "coordinates": [
+      81.6349,
+      21.2497
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "Wardha S/S",
+    "name": "Wardha S/S",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Key Substations Hvdc Terminals",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      78.6022,
+      20.7453
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "Pune-Saswad S/S",
+    "name": "Pune-Saswad S/S",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Key Substations Hvdc Terminals",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      74.0249,
+      18.4937
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "Aurangabad S/S",
+    "name": "Aurangabad S/S",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Key Substations Hvdc Terminals",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      75.3433,
+      19.8762
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "Bhuj S/S",
+    "name": "Bhuj S/S",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Key Substations Hvdc Terminals",
+    "capacity": "",
+    "state": "Gujarat",
+    "coordinates": [
+      69.6669,
+      23.242
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "Kolar HVDC",
+    "name": "Kolar HVDC",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Key Substations Hvdc Terminals",
+    "capacity": "",
+    "state": "Karnataka",
+    "coordinates": [
+      78.1331,
+      13.1367
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "Ballia HVDC",
+    "name": "Ballia HVDC",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Key Substations Hvdc Terminals",
+    "capacity": "",
+    "state": "Bihar",
+    "coordinates": [
+      84.1563,
+      25.7619
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "Bishwanath Chariali S/S",
+    "name": "Bishwanath Chariali S/S",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Key Substations Hvdc Terminals",
+    "capacity": "",
+    "state": "Assam",
+    "coordinates": [
+      93.1694,
+      26.7333
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "Muzaffarpur S/S",
+    "name": "Muzaffarpur S/S",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Key Substations Hvdc Terminals",
+    "capacity": "",
+    "state": "Bihar",
+    "coordinates": [
+      85.3647,
+      26.1209
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "Moga S/S",
+    "name": "Moga S/S",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Key Substations Hvdc Terminals",
+    "capacity": "",
+    "state": "Punjab",
+    "coordinates": [
+      75.1718,
+      30.8165
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "Sriperumbudur HVDC",
+    "name": "Sriperumbudur HVDC",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Key Substations Hvdc Terminals",
+    "capacity": "",
+    "state": "Tamil Nadu",
+    "coordinates": [
+      79.9667,
+      12.9667
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "Bhadrawati S/S",
+    "name": "Bhadrawati S/S",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Key Substations Hvdc Terminals",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      79.1167,
+      19.9
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "Jeypore S/S",
+    "name": "Jeypore S/S",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Key Substations Hvdc Terminals",
+    "capacity": "",
+    "state": "Odisha",
+    "coordinates": [
+      82.5667,
+      18.8667
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "Angul HVDC",
+    "name": "Angul HVDC",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Key Substations Hvdc Terminals",
+    "capacity": "",
+    "state": "Odisha",
+    "coordinates": [
+      85.1,
+      20.8333
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "Champa-Kurukshetra HVDC",
+    "name": "Champa-Kurukshetra HVDC",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Key Substations Hvdc Terminals",
+    "capacity": "",
+    "state": "Haryana",
+    "coordinates": [
+      76.75,
+      30.0
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "POWERGRID_294",
+    "name": "POWERGRID_294",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "GRID & TRANSMISSION",
+    "full_type_tag": "[MAHARATNA \u2022 GRID & TRANSMISSION]",
+    "category": "Regional Zonal Offices Grid Control Centres",
+    "capacity": "",
+    "state": "Haryana",
+    "coordinates": [
+      77.0266,
+      28.4595
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "POWERGRID_295",
+    "name": "POWERGRID_295",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "GRID & TRANSMISSION",
+    "full_type_tag": "[MAHARATNA \u2022 GRID & TRANSMISSION]",
+    "category": "Regional Zonal Offices Grid Control Centres",
+    "capacity": "",
+    "state": "Delhi",
+    "coordinates": [
+      77.1958,
+      28.543
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "POWERGRID_296",
+    "name": "POWERGRID_296",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "GRID & TRANSMISSION",
+    "full_type_tag": "[MAHARATNA \u2022 GRID & TRANSMISSION]",
+    "category": "Regional Zonal Offices Grid Control Centres",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      72.8565,
+      19.0222
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "POWERGRID_297",
+    "name": "POWERGRID_297",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "GRID & TRANSMISSION",
+    "full_type_tag": "[MAHARATNA \u2022 GRID & TRANSMISSION]",
+    "category": "Regional Zonal Offices Grid Control Centres",
+    "capacity": "",
+    "state": "Karnataka",
+    "coordinates": [
+      77.6385,
+      12.9516
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "POWERGRID_298",
+    "name": "POWERGRID_298",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "GRID & TRANSMISSION",
+    "full_type_tag": "[MAHARATNA \u2022 GRID & TRANSMISSION]",
+    "category": "Regional Zonal Offices Grid Control Centres",
+    "capacity": "",
+    "state": "West Bengal",
+    "coordinates": [
+      88.3734,
+      22.5347
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "POWERGRID_299",
+    "name": "POWERGRID_299",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "GRID & TRANSMISSION",
+    "full_type_tag": "[MAHARATNA \u2022 GRID & TRANSMISSION]",
+    "category": "Regional Zonal Offices Grid Control Centres",
+    "capacity": "",
+    "state": "Meghalaya",
+    "coordinates": [
+      91.8933,
+      25.5788
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "POWERGRID_300",
+    "name": "POWERGRID_300",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "GRID & TRANSMISSION",
+    "full_type_tag": "[MAHARATNA \u2022 GRID & TRANSMISSION]",
+    "category": "Regional Zonal Offices Grid Control Centres",
+    "capacity": "",
+    "state": "Jammu & Kashmir",
+    "coordinates": [
+      74.857,
+      32.7266
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "POWERGRID_301",
+    "name": "POWERGRID_301",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "GRID & TRANSMISSION",
+    "full_type_tag": "[MAHARATNA \u2022 GRID & TRANSMISSION]",
+    "category": "Regional Zonal Offices Grid Control Centres",
+    "capacity": "",
+    "state": "Odisha",
+    "coordinates": [
+      85.8245,
+      20.2961
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "POWERGRID_302",
+    "name": "POWERGRID_302",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "GRID & TRANSMISSION",
+    "full_type_tag": "[MAHARATNA \u2022 GRID & TRANSMISSION]",
+    "category": "Regional Zonal Offices Grid Control Centres",
+    "capacity": "",
+    "state": "Gujarat",
+    "coordinates": [
+      73.1812,
+      22.3072
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "POWERGRID_303",
+    "name": "POWERGRID_303",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "GRID & TRANSMISSION",
+    "full_type_tag": "[MAHARATNA \u2022 GRID & TRANSMISSION]",
+    "category": "Regional Zonal Offices Grid Control Centres",
+    "capacity": "",
+    "state": "Rajasthan",
+    "coordinates": [
+      75.7873,
+      26.9124
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "POWERGRID_304",
+    "name": "POWERGRID_304",
+    "company": "POWERGRID",
+    "sector": "Power",
+    "psu_tier": "Maharatna",
+    "type_label": "GRID & TRANSMISSION",
+    "full_type_tag": "[MAHARATNA \u2022 GRID & TRANSMISSION]",
+    "category": "Regional Zonal Offices Grid Control Centres",
+    "capacity": "",
+    "state": "Tamil Nadu",
+    "coordinates": [
+      80.2707,
+      13.0827
+    ],
+    "color": [
+      6,
+      182,
+      212
+    ],
+    "hex": "#06B6D4"
+  },
+  {
+    "id": "Bhilai Steel Plant (BSP)",
+    "name": "Bhilai Steel Plant (BSP)",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "STEEL PLANT",
+    "full_type_tag": "[MAHARATNA \u2022 STEEL PLANT]",
+    "category": "Integrated Special Steel Refractory Plants",
+    "capacity": "",
+    "state": "Chhattisgarh",
+    "coordinates": [
+      81.2833,
+      21.1833
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "Bokaro Steel Plant (BSL)",
+    "name": "Bokaro Steel Plant (BSL)",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "STEEL PLANT",
+    "full_type_tag": "[MAHARATNA \u2022 STEEL PLANT]",
+    "category": "Integrated Special Steel Refractory Plants",
+    "capacity": "",
+    "state": "Jharkhand",
+    "coordinates": [
+      86.1511,
+      23.6693
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "Rourkela Steel Plant (RSP)",
+    "name": "Rourkela Steel Plant (RSP)",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "STEEL PLANT",
+    "full_type_tag": "[MAHARATNA \u2022 STEEL PLANT]",
+    "category": "Integrated Special Steel Refractory Plants",
+    "capacity": "",
+    "state": "Odisha",
+    "coordinates": [
+      84.8628,
+      22.2278
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "Durgapur Steel Plant (DSP)",
+    "name": "Durgapur Steel Plant (DSP)",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "STEEL PLANT",
+    "full_type_tag": "[MAHARATNA \u2022 STEEL PLANT]",
+    "category": "Integrated Special Steel Refractory Plants",
+    "capacity": "",
+    "state": "West Bengal",
+    "coordinates": [
+      87.3119,
+      23.5204
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "IISCO Steel Plant (ISP)",
+    "name": "IISCO Steel Plant (ISP)",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "STEEL PLANT",
+    "full_type_tag": "[MAHARATNA \u2022 STEEL PLANT]",
+    "category": "Integrated Special Steel Refractory Plants",
+    "capacity": "",
+    "state": "West Bengal",
+    "coordinates": [
+      86.946,
+      23.668
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "Alloy Steels Plant (ASP)",
+    "name": "Alloy Steels Plant (ASP)",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "STEEL PLANT",
+    "full_type_tag": "[MAHARATNA \u2022 STEEL PLANT]",
+    "category": "Integrated Special Steel Refractory Plants",
+    "capacity": "",
+    "state": "West Bengal",
+    "coordinates": [
+      87.3119,
+      23.5204
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "Salem Steel Plant (SSP)",
+    "name": "Salem Steel Plant (SSP)",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "STEEL PLANT",
+    "full_type_tag": "[MAHARATNA \u2022 STEEL PLANT]",
+    "category": "Integrated Special Steel Refractory Plants",
+    "capacity": "",
+    "state": "Tamil Nadu",
+    "coordinates": [
+      78.143,
+      11.705
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "Visvesvaraya Iron and Steel Plant (VISL)",
+    "name": "Visvesvaraya Iron and Steel Plant (VISL)",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "STEEL PLANT",
+    "full_type_tag": "[MAHARATNA \u2022 STEEL PLANT]",
+    "category": "Integrated Special Steel Refractory Plants",
+    "capacity": "",
+    "state": "Karnataka",
+    "coordinates": [
+      75.7,
+      13.827
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL Refractory Unit (SRU)",
+    "name": "SAIL Refractory Unit (SRU)",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "STEEL PLANT",
+    "full_type_tag": "[MAHARATNA \u2022 STEEL PLANT]",
+    "category": "Integrated Special Steel Refractory Plants",
+    "capacity": "",
+    "state": "Jharkhand",
+    "coordinates": [
+      85.735,
+      23.686
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL Refractory Company Ltd (SRCL)",
+    "name": "SAIL Refractory Company Ltd (SRCL)",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "STEEL PLANT",
+    "full_type_tag": "[MAHARATNA \u2022 STEEL PLANT]",
+    "category": "Integrated Special Steel Refractory Plants",
+    "capacity": "",
+    "state": "Tamil Nadu",
+    "coordinates": [
+      78.152,
+      11.688
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_315",
+    "name": "SAIL_315",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Captive Mines Iron Ore Fluxes Coal",
+    "capacity": "",
+    "state": "Odisha",
+    "coordinates": [
+      85.29,
+      22.1067
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_316",
+    "name": "SAIL_316",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Captive Mines Iron Ore Fluxes Coal",
+    "capacity": "",
+    "state": "Odisha",
+    "coordinates": [
+      85.236,
+      22.064
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_317",
+    "name": "SAIL_317",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Captive Mines Iron Ore Fluxes Coal",
+    "capacity": "",
+    "state": "Odisha",
+    "coordinates": [
+      85.3,
+      22.123
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_318",
+    "name": "SAIL_318",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Captive Mines Iron Ore Fluxes Coal",
+    "capacity": "",
+    "state": "Odisha",
+    "coordinates": [
+      85.02,
+      22.13
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_319",
+    "name": "SAIL_319",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Captive Mines Iron Ore Fluxes Coal",
+    "capacity": "",
+    "state": "Odisha",
+    "coordinates": [
+      85.12,
+      22.0
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_320",
+    "name": "SAIL_320",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Captive Mines Iron Ore Fluxes Coal",
+    "capacity": "",
+    "state": "Odisha",
+    "coordinates": [
+      85.15,
+      21.99
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_321",
+    "name": "SAIL_321",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Captive Mines Iron Ore Fluxes Coal",
+    "capacity": "",
+    "state": "Jharkhand",
+    "coordinates": [
+      85.404,
+      22.201
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_322",
+    "name": "SAIL_322",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Captive Mines Iron Ore Fluxes Coal",
+    "capacity": "",
+    "state": "Jharkhand",
+    "coordinates": [
+      85.2667,
+      22.3083
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_323",
+    "name": "SAIL_323",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Captive Mines Iron Ore Fluxes Coal",
+    "capacity": "",
+    "state": "Jharkhand",
+    "coordinates": [
+      85.22,
+      22.4
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_324",
+    "name": "SAIL_324",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Captive Mines Iron Ore Fluxes Coal",
+    "capacity": "",
+    "state": "Chhattisgarh",
+    "coordinates": [
+      81.25,
+      21.75
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_325",
+    "name": "SAIL_325",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Captive Mines Iron Ore Fluxes Coal",
+    "capacity": "",
+    "state": "Madhya Pradesh",
+    "coordinates": [
+      80.3333,
+      23.8166
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_326",
+    "name": "SAIL_326",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Captive Mines Iron Ore Fluxes Coal",
+    "capacity": "",
+    "state": "Chhattisgarh",
+    "coordinates": [
+      82.3,
+      22.5
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_327",
+    "name": "SAIL_327",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Captive Mines Iron Ore Fluxes Coal",
+    "capacity": "",
+    "state": "Jharkhand",
+    "coordinates": [
+      86.632,
+      23.784
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_328",
+    "name": "SAIL_328",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Captive Mines Iron Ore Fluxes Coal",
+    "capacity": "",
+    "state": "Jharkhand",
+    "coordinates": [
+      86.405,
+      23.756
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_329",
+    "name": "SAIL_329",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Captive Mines Iron Ore Fluxes Coal",
+    "capacity": "",
+    "state": "Jharkhand",
+    "coordinates": [
+      86.41,
+      23.77
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_330",
+    "name": "SAIL_330",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "COAL MINE",
+    "full_type_tag": "[MAHARATNA \u2022 COAL MINE]",
+    "category": "Captive Mines Iron Ore Fluxes Coal",
+    "capacity": "",
+    "state": "Jharkhand",
+    "coordinates": [
+      86.38,
+      23.74
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_331",
+    "name": "SAIL_331",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing And Stockyard Network",
+    "capacity": "",
+    "state": "West Bengal",
+    "coordinates": [
+      88.3639,
+      22.5726
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_332",
+    "name": "SAIL_332",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing And Stockyard Network",
+    "capacity": "",
+    "state": "West Bengal",
+    "coordinates": [
+      88.3639,
+      22.5726
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_333",
+    "name": "SAIL_333",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing And Stockyard Network",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      72.8777,
+      19.076
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_334",
+    "name": "SAIL_334",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing And Stockyard Network",
+    "capacity": "",
+    "state": "Delhi",
+    "coordinates": [
+      77.209,
+      28.6139
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_335",
+    "name": "SAIL_335",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing And Stockyard Network",
+    "capacity": "",
+    "state": "Tamil Nadu",
+    "coordinates": [
+      80.2707,
+      13.0827
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_336",
+    "name": "SAIL_336",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing And Stockyard Network",
+    "capacity": "",
+    "state": "Gujarat",
+    "coordinates": [
+      72.5714,
+      23.0225
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_337",
+    "name": "SAIL_337",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing And Stockyard Network",
+    "capacity": "",
+    "state": "Karnataka",
+    "coordinates": [
+      77.5946,
+      12.9716
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_338",
+    "name": "SAIL_338",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing And Stockyard Network",
+    "capacity": "",
+    "state": "Madhya Pradesh",
+    "coordinates": [
+      77.4126,
+      23.2599
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_339",
+    "name": "SAIL_339",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing And Stockyard Network",
+    "capacity": "",
+    "state": "Odisha",
+    "coordinates": [
+      85.8245,
+      20.2961
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_340",
+    "name": "SAIL_340",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing And Stockyard Network",
+    "capacity": "",
+    "state": "Chandigarh (UT)",
+    "coordinates": [
+      76.7794,
+      30.7333
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_341",
+    "name": "SAIL_341",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing And Stockyard Network",
+    "capacity": "",
+    "state": "Assam",
+    "coordinates": [
+      91.7362,
+      26.1445
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_342",
+    "name": "SAIL_342",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing And Stockyard Network",
+    "capacity": "",
+    "state": "Telangana",
+    "coordinates": [
+      78.4867,
+      17.385
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_343",
+    "name": "SAIL_343",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing And Stockyard Network",
+    "capacity": "",
+    "state": "Rajasthan",
+    "coordinates": [
+      75.7873,
+      26.9124
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_344",
+    "name": "SAIL_344",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing And Stockyard Network",
+    "capacity": "",
+    "state": "Uttar Pradesh",
+    "coordinates": [
+      80.9462,
+      26.8467
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_345",
+    "name": "SAIL_345",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing And Stockyard Network",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      79.0882,
+      21.1458
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_346",
+    "name": "SAIL_346",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing And Stockyard Network",
+    "capacity": "",
+    "state": "Bihar",
+    "coordinates": [
+      85.1376,
+      25.5941
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_347",
+    "name": "SAIL_347",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing And Stockyard Network",
+    "capacity": "",
+    "state": "Jharkhand",
+    "coordinates": [
+      85.3096,
+      23.3441
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_348",
+    "name": "SAIL_348",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing And Stockyard Network",
+    "capacity": "",
+    "state": "Telangana",
+    "coordinates": [
+      78.4983,
+      17.4399
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_349",
+    "name": "SAIL_349",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing And Stockyard Network",
+    "capacity": "",
+    "state": "Chhattisgarh",
+    "coordinates": [
+      81.2833,
+      21.1833
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_350",
+    "name": "SAIL_350",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing And Stockyard Network",
+    "capacity": "",
+    "state": "Jharkhand",
+    "coordinates": [
+      86.1511,
+      23.6693
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_351",
+    "name": "SAIL_351",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing And Stockyard Network",
+    "capacity": "",
+    "state": "Odisha",
+    "coordinates": [
+      84.8628,
+      22.2278
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_352",
+    "name": "SAIL_352",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing And Stockyard Network",
+    "capacity": "",
+    "state": "West Bengal",
+    "coordinates": [
+      87.3119,
+      23.5204
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_353",
+    "name": "SAIL_353",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing And Stockyard Network",
+    "capacity": "",
+    "state": "West Bengal",
+    "coordinates": [
+      86.946,
+      23.668
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_354",
+    "name": "SAIL_354",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing And Stockyard Network",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      73.1,
+      19.1
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_355",
+    "name": "SAIL_355",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing And Stockyard Network",
+    "capacity": "",
+    "state": "Haryana",
+    "coordinates": [
+      77.3178,
+      28.4089
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_356",
+    "name": "SAIL_356",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing And Stockyard Network",
+    "capacity": "",
+    "state": "Uttar Pradesh",
+    "coordinates": [
+      77.4538,
+      28.6692
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_357",
+    "name": "SAIL_357",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing And Stockyard Network",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      79.0882,
+      21.1458
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "SAIL_358",
+    "name": "SAIL_358",
+    "company": "SAIL",
+    "sector": "Steel",
+    "psu_tier": "Maharatna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[MAHARATNA \u2022 OIL TERMINAL]",
+    "category": "Marketing And Stockyard Network",
+    "capacity": "",
+    "state": "Tamil Nadu",
+    "coordinates": [
+      80.32,
+      13.24
+    ],
+    "color": [
+      168,
+      85,
+      247
+    ],
+    "hex": "#A855F7"
+  },
+  {
+    "id": "Visakhapatnam Steel Plant (VSP)",
+    "name": "Visakhapatnam Steel Plant (VSP)",
+    "company": "RINL",
+    "sector": "Steel",
+    "psu_tier": "Navratna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[NAVRATNA \u2022 OIL TERMINAL]",
+    "category": "Visakhapatnam Steel Plant And Marketing Network",
+    "capacity": "",
+    "state": "Andhra Pradesh",
+    "coordinates": [
+      83.2543,
+      17.6978
+    ],
+    "color": [
+      147,
+      51,
+      234
+    ],
+    "hex": "#9333EA"
+  },
+  {
+    "id": "RINL Corporate Office (Marketing Head)",
+    "name": "RINL Corporate Office (Marketing Head)",
+    "company": "RINL",
+    "sector": "Steel",
+    "psu_tier": "Navratna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[NAVRATNA \u2022 OIL TERMINAL]",
+    "category": "Visakhapatnam Steel Plant And Marketing Network",
+    "capacity": "",
+    "state": "Andhra Pradesh",
+    "coordinates": [
+      83.29,
+      17.71
+    ],
+    "color": [
+      147,
+      51,
+      234
+    ],
+    "hex": "#9333EA"
+  },
+  {
+    "id": "Regional Office - North",
+    "name": "Regional Office - North",
+    "company": "RINL",
+    "sector": "Steel",
+    "psu_tier": "Navratna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[NAVRATNA \u2022 OIL TERMINAL]",
+    "category": "Visakhapatnam Steel Plant And Marketing Network",
+    "capacity": "",
+    "state": "Delhi",
+    "coordinates": [
+      77.209,
+      28.6139
+    ],
+    "color": [
+      147,
+      51,
+      234
+    ],
+    "hex": "#9333EA"
+  },
+  {
+    "id": "Regional Office - East",
+    "name": "Regional Office - East",
+    "company": "RINL",
+    "sector": "Steel",
+    "psu_tier": "Navratna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[NAVRATNA \u2022 OIL TERMINAL]",
+    "category": "Visakhapatnam Steel Plant And Marketing Network",
+    "capacity": "",
+    "state": "West Bengal",
+    "coordinates": [
+      88.3639,
+      22.5726
+    ],
+    "color": [
+      147,
+      51,
+      234
+    ],
+    "hex": "#9333EA"
+  },
+  {
+    "id": "Regional Office - West",
+    "name": "Regional Office - West",
+    "company": "RINL",
+    "sector": "Steel",
+    "psu_tier": "Navratna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[NAVRATNA \u2022 OIL TERMINAL]",
+    "category": "Visakhapatnam Steel Plant And Marketing Network",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      72.8777,
+      19.076
+    ],
+    "color": [
+      147,
+      51,
+      234
+    ],
+    "hex": "#9333EA"
+  },
+  {
+    "id": "Regional Office - South",
+    "name": "Regional Office - South",
+    "company": "RINL",
+    "sector": "Steel",
+    "psu_tier": "Navratna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[NAVRATNA \u2022 OIL TERMINAL]",
+    "category": "Visakhapatnam Steel Plant And Marketing Network",
+    "capacity": "",
+    "state": "Tamil Nadu",
+    "coordinates": [
+      80.2707,
+      13.0827
+    ],
+    "color": [
+      147,
+      51,
+      234
+    ],
+    "hex": "#9333EA"
+  },
+  {
+    "id": "Regional Office - Central",
+    "name": "Regional Office - Central",
+    "company": "RINL",
+    "sector": "Steel",
+    "psu_tier": "Navratna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[NAVRATNA \u2022 OIL TERMINAL]",
+    "category": "Visakhapatnam Steel Plant And Marketing Network",
+    "capacity": "",
+    "state": "Telangana",
+    "coordinates": [
+      78.4867,
+      17.385
+    ],
+    "color": [
+      147,
+      51,
+      234
+    ],
+    "hex": "#9333EA"
+  },
+  {
+    "id": "Branch Sales Office",
+    "name": "Branch Sales Office",
+    "company": "RINL",
+    "sector": "Steel",
+    "psu_tier": "Navratna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[NAVRATNA \u2022 OIL TERMINAL]",
+    "category": "Visakhapatnam Steel Plant And Marketing Network",
+    "capacity": "",
+    "state": "Gujarat",
+    "coordinates": [
+      72.5714,
+      23.0225
+    ],
+    "color": [
+      147,
+      51,
+      234
+    ],
+    "hex": "#9333EA"
+  },
+  {
+    "id": "Branch Sales Office_367",
+    "name": "Branch Sales Office",
+    "company": "RINL",
+    "sector": "Steel",
+    "psu_tier": "Navratna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[NAVRATNA \u2022 OIL TERMINAL]",
+    "category": "Visakhapatnam Steel Plant And Marketing Network",
+    "capacity": "",
+    "state": "Karnataka",
+    "coordinates": [
+      77.5946,
+      12.9716
+    ],
+    "color": [
+      147,
+      51,
+      234
+    ],
+    "hex": "#9333EA"
+  },
+  {
+    "id": "Branch Sales Office_368",
+    "name": "Branch Sales Office",
+    "company": "RINL",
+    "sector": "Steel",
+    "psu_tier": "Navratna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[NAVRATNA \u2022 OIL TERMINAL]",
+    "category": "Visakhapatnam Steel Plant And Marketing Network",
+    "capacity": "",
+    "state": "Madhya Pradesh",
+    "coordinates": [
+      77.4126,
+      23.2599
+    ],
+    "color": [
+      147,
+      51,
+      234
+    ],
+    "hex": "#9333EA"
+  },
+  {
+    "id": "Branch Sales Office_369",
+    "name": "Branch Sales Office",
+    "company": "RINL",
+    "sector": "Steel",
+    "psu_tier": "Navratna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[NAVRATNA \u2022 OIL TERMINAL]",
+    "category": "Visakhapatnam Steel Plant And Marketing Network",
+    "capacity": "",
+    "state": "Odisha",
+    "coordinates": [
+      85.8245,
+      20.2961
+    ],
+    "color": [
+      147,
+      51,
+      234
+    ],
+    "hex": "#9333EA"
+  },
+  {
+    "id": "Branch Sales Office_370",
+    "name": "Branch Sales Office",
+    "company": "RINL",
+    "sector": "Steel",
+    "psu_tier": "Navratna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[NAVRATNA \u2022 OIL TERMINAL]",
+    "category": "Visakhapatnam Steel Plant And Marketing Network",
+    "capacity": "",
+    "state": "Chandigarh (UT)",
+    "coordinates": [
+      76.7794,
+      30.7333
+    ],
+    "color": [
+      147,
+      51,
+      234
+    ],
+    "hex": "#9333EA"
+  },
+  {
+    "id": "Branch Sales Office_371",
+    "name": "Branch Sales Office",
+    "company": "RINL",
+    "sector": "Steel",
+    "psu_tier": "Navratna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[NAVRATNA \u2022 OIL TERMINAL]",
+    "category": "Visakhapatnam Steel Plant And Marketing Network",
+    "capacity": "",
+    "state": "Tamil Nadu",
+    "coordinates": [
+      76.9558,
+      11.0168
+    ],
+    "color": [
+      147,
+      51,
+      234
+    ],
+    "hex": "#9333EA"
+  },
+  {
+    "id": "Branch Sales Office_372",
+    "name": "Branch Sales Office",
+    "company": "RINL",
+    "sector": "Steel",
+    "psu_tier": "Navratna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[NAVRATNA \u2022 OIL TERMINAL]",
+    "category": "Visakhapatnam Steel Plant And Marketing Network",
+    "capacity": "",
+    "state": "Assam",
+    "coordinates": [
+      91.7362,
+      26.1445
+    ],
+    "color": [
+      147,
+      51,
+      234
+    ],
+    "hex": "#9333EA"
+  },
+  {
+    "id": "Branch Sales Office_373",
+    "name": "Branch Sales Office",
+    "company": "RINL",
+    "sector": "Steel",
+    "psu_tier": "Navratna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[NAVRATNA \u2022 OIL TERMINAL]",
+    "category": "Visakhapatnam Steel Plant And Marketing Network",
+    "capacity": "",
+    "state": "Madhya Pradesh",
+    "coordinates": [
+      75.8577,
+      22.7196
+    ],
+    "color": [
+      147,
+      51,
+      234
+    ],
+    "hex": "#9333EA"
+  },
+  {
+    "id": "Branch Sales Office_374",
+    "name": "Branch Sales Office",
+    "company": "RINL",
+    "sector": "Steel",
+    "psu_tier": "Navratna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[NAVRATNA \u2022 OIL TERMINAL]",
+    "category": "Visakhapatnam Steel Plant And Marketing Network",
+    "capacity": "",
+    "state": "Rajasthan",
+    "coordinates": [
+      75.7873,
+      26.9124
+    ],
+    "color": [
+      147,
+      51,
+      234
+    ],
+    "hex": "#9333EA"
+  },
+  {
+    "id": "Branch Sales Office_375",
+    "name": "Branch Sales Office",
+    "company": "RINL",
+    "sector": "Steel",
+    "psu_tier": "Navratna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[NAVRATNA \u2022 OIL TERMINAL]",
+    "category": "Visakhapatnam Steel Plant And Marketing Network",
+    "capacity": "",
+    "state": "Uttar Pradesh",
+    "coordinates": [
+      80.9462,
+      26.8467
+    ],
+    "color": [
+      147,
+      51,
+      234
+    ],
+    "hex": "#9333EA"
+  },
+  {
+    "id": "Branch Sales Office_376",
+    "name": "Branch Sales Office",
+    "company": "RINL",
+    "sector": "Steel",
+    "psu_tier": "Navratna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[NAVRATNA \u2022 OIL TERMINAL]",
+    "category": "Visakhapatnam Steel Plant And Marketing Network",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      79.0882,
+      21.1458
+    ],
+    "color": [
+      147,
+      51,
+      234
+    ],
+    "hex": "#9333EA"
+  },
+  {
+    "id": "Branch Sales Office_377",
+    "name": "Branch Sales Office",
+    "company": "RINL",
+    "sector": "Steel",
+    "psu_tier": "Navratna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[NAVRATNA \u2022 OIL TERMINAL]",
+    "category": "Visakhapatnam Steel Plant And Marketing Network",
+    "capacity": "",
+    "state": "Bihar",
+    "coordinates": [
+      85.1376,
+      25.5941
+    ],
+    "color": [
+      147,
+      51,
+      234
+    ],
+    "hex": "#9333EA"
+  },
+  {
+    "id": "Branch Sales Office_378",
+    "name": "Branch Sales Office",
+    "company": "RINL",
+    "sector": "Steel",
+    "psu_tier": "Navratna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[NAVRATNA \u2022 OIL TERMINAL]",
+    "category": "Visakhapatnam Steel Plant And Marketing Network",
+    "capacity": "",
+    "state": "Maharashtra",
+    "coordinates": [
+      73.8567,
+      18.5204
+    ],
+    "color": [
+      147,
+      51,
+      234
+    ],
+    "hex": "#9333EA"
+  },
+  {
+    "id": "Branch Sales Office_379",
+    "name": "Branch Sales Office",
+    "company": "RINL",
+    "sector": "Steel",
+    "psu_tier": "Navratna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[NAVRATNA \u2022 OIL TERMINAL]",
+    "category": "Visakhapatnam Steel Plant And Marketing Network",
+    "capacity": "",
+    "state": "Chhattisgarh",
+    "coordinates": [
+      81.6296,
+      21.2514
+    ],
+    "color": [
+      147,
+      51,
+      234
+    ],
+    "hex": "#9333EA"
+  },
+  {
+    "id": "Branch Sales Office_380",
+    "name": "Branch Sales Office",
+    "company": "RINL",
+    "sector": "Steel",
+    "psu_tier": "Navratna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[NAVRATNA \u2022 OIL TERMINAL]",
+    "category": "Visakhapatnam Steel Plant And Marketing Network",
+    "capacity": "",
+    "state": "Jharkhand",
+    "coordinates": [
+      85.3096,
+      23.3441
+    ],
+    "color": [
+      147,
+      51,
+      234
+    ],
+    "hex": "#9333EA"
+  },
+  {
+    "id": "Branch Sales Office_381",
+    "name": "Branch Sales Office",
+    "company": "RINL",
+    "sector": "Steel",
+    "psu_tier": "Navratna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[NAVRATNA \u2022 OIL TERMINAL]",
+    "category": "Visakhapatnam Steel Plant And Marketing Network",
+    "capacity": "",
+    "state": "Gujarat",
+    "coordinates": [
+      72.8311,
+      21.1702
+    ],
+    "color": [
+      147,
+      51,
+      234
+    ],
+    "hex": "#9333EA"
+  },
+  {
+    "id": "Branch Sales Office_382",
+    "name": "Branch Sales Office",
+    "company": "RINL",
+    "sector": "Steel",
+    "psu_tier": "Navratna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[NAVRATNA \u2022 OIL TERMINAL]",
+    "category": "Visakhapatnam Steel Plant And Marketing Network",
+    "capacity": "",
+    "state": "Gujarat",
+    "coordinates": [
+      73.1812,
+      22.3072
+    ],
+    "color": [
+      147,
+      51,
+      234
+    ],
+    "hex": "#9333EA"
+  },
+  {
+    "id": "Branch Sales Office_383",
+    "name": "Branch Sales Office",
+    "company": "RINL",
+    "sector": "Steel",
+    "psu_tier": "Navratna",
+    "type_label": "OIL TERMINAL",
+    "full_type_tag": "[NAVRATNA \u2022 OIL TERMINAL]",
+    "category": "Visakhapatnam Steel Plant And Marketing Network",
+    "capacity": "",
+    "state": "Andhra Pradesh",
+    "coordinates": [
+      83.2185,
+      17.6868
+    ],
+    "color": [
+      147,
+      51,
+      234
+    ],
+    "hex": "#9333EA"
+  }
+]

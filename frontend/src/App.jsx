@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense, lazy } from 'react';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -9,6 +9,8 @@ import UserView from './views/UserView';
 import ReviewerView from './views/ReviewerView';
 import AdminView from './views/AdminView';
 import AuditorView from './views/AuditorView';
+
+const GeoRadarView = lazy(() => import('./views/GeoRadarView'));
 
 function AppContent() {
   const { session, activePersona } = useAuth();
@@ -53,6 +55,17 @@ function AppContent() {
             {currentView === 'reviewer' && <ReviewerView />}
             {currentView === 'admin' && <AdminView />}
             {currentView === 'auditor' && <AuditorView />}
+            {currentView === 'georadar' && (
+              <Suspense
+                fallback={
+                  <div className="flex-1 min-h-[500px] flex items-center justify-center font-headline text-sm tracking-widest uppercase bg-raw-white">
+                    LOADING CPSE GEO-RADAR NETWORK...
+                  </div>
+                }
+              >
+                <GeoRadarView onViewChange={handleViewChange} />
+              </Suspense>
+            )}
           </>
         )}
       </main>
