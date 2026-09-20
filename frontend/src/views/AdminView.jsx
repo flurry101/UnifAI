@@ -36,8 +36,8 @@ export default function AdminView({ onOpenRbacModal }) {
   const filteredItems = catalog.filter((item) => {
     const q = filterQuery.toLowerCase();
     return (
-      item.cnmc_code.toLowerCase().includes(q) ||
-      item.standardized_description.toLowerCase().includes(q)
+      (item.cnmc_code || '').toLowerCase().includes(q) ||
+      (item.standardized_description || '').toLowerCase().includes(q)
     );
   });
 

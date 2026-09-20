@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 from sqlalchemy import text
 from app.database import get_db
@@ -12,7 +12,7 @@ from typing import List, Optional
 def search_materials(
     search: Optional[str] = None,
     cpse_id: Optional[str] = None,
-    limit: int = 50,
+    limit: int = Query(50, ge=1, le=200),
     db: Session = Depends(get_db)
 ):
     conditions = []
@@ -52,6 +52,14 @@ def get_material(material_id: str, db: Session = Depends(get_db)):
            OR original_material_code = :material_id
            OR material_id LIKE :prefix
            OR original_material_code LIKE :prefix
+        ORDER BY
+            CASE
+                WHEN material_id = :material_id THEN 0
+                WHEN original_material_code = :material_id THEN 1
+                ELSE 2
+            END,
+            material_id ASC,
+            original_material_code ASC
         LIMIT 1
     """)
     result = db.execute(query, {"material_id": material_id, "prefix": f"{material_id}%"}).fetchone()

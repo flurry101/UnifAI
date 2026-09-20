@@ -6,10 +6,7 @@ import { getUserProfile } from '../api/auth';
 
 /**
  * Synapse-aligned SSO / OAuth Callback Handler (mirrors frontend/src/routes/sso.login.tsx)
- * Supports:
- * 1. Server-side redirect with ?token=... (Synapse backend redirect)
- * 2. Client-side authorization code exchange with ?code=... (SPA token exchange)
- * 3. Smart role-based routing to user, reviewer, or admin workspace
+ * Exchanges a state-bound authorization code and routes the verified session.
  */
 export default function OAuthCallback({ onComplete }) {
   const { exchangeOAuthCode, switchPersona } = useAuth();
@@ -23,10 +20,18 @@ export default function OAuthCallback({ onComplete }) {
 
   const handleCallback = async () => {
     const params = new URLSearchParams(window.location.search);
-    const queryToken = params.get('token');
     const code = params.get('code');
+    const returnedState = params.get('state');
     const error = params.get('error');
     const errorDescription = params.get('error_description');
+
+    const expectedState = sessionStorage.getItem('unifai_oauth_state');
+    sessionStorage.removeItem('unifai_oauth_state');
+    if (!expectedState || !returnedState || expectedState !== returnedState) {
+      setStatus('error');
+      setErrorMessage('OAuth state validation failed. Please restart sign-in.');
+      return;
+    }
 
     if (error) {
       setStatus('error');
@@ -34,60 +39,38 @@ export default function OAuthCallback({ onComplete }) {
       return;
     }
 
-    // Path 1: Server-side SSO redirect with token (Synapse pattern)
-    if (queryToken) {
+    if (params.get('session') === 'established') {
       try {
-        localStorage.setItem('unifai_token', queryToken);
-        const queryRole = params.get('role');
-        const queryUser = params.get('username');
-        if (queryRole) localStorage.setItem('unifai_role', queryRole);
-        if (queryUser) localStorage.setItem('unifai_username', queryUser);
-
-        // Fetch user profile from /api/v1/auth/me
         const profile = await getUserProfile();
-        const effectiveRole = profile?.role || queryRole || 'CPSE_USER';
+        if (!profile) throw new Error('Failed to verify SSO session.');
+        const effectiveRole = profile.role || 'CPSE_USER';
         const targetPersona = effectiveRole === 'TECHNICAL_REVIEWER' ? 'reviewer' : (effectiveRole === 'NATIONAL_ADMIN' ? 'admin' : 'user');
-
         switchPersona(targetPersona);
-        setWelcomeText(`Authenticated as ${profile?.username || queryUser || 'User'} (${effectiveRole}).`);
+        setWelcomeText(`Authenticated as ${profile.username || 'User'} (${effectiveRole}).`);
         setStatus('success');
-
-        // Clear query parameters from URL cleanly
-        window.history.replaceState({}, document.title, window.location.pathname.replace('/auth/google/callback', '/') || '/');
-
-        setTimeout(() => {
-          if (onComplete) onComplete(targetPersona);
-        }, 800);
-        return;
+        window.history.replaceState({}, document.title, '/');
+        setTimeout(() => onComplete?.(targetPersona), 800);
       } catch (err) {
         setStatus('error');
         setErrorMessage(err.message || 'Failed to verify SSO session.');
-        return;
       }
+      return;
     }
 
-    // Path 2: Authorization code exchange (SPA pattern)
     if (code) {
       try {
-        const pendingRole = localStorage.getItem('unifai_pending_role') || 'CPSE_USER';
-        const pendingCpse = localStorage.getItem('unifai_pending_cpse') || 'IOCL';
         const redirectUri = `${window.location.origin}/auth/google/callback`;
 
         const res = await exchangeOAuthCode({
           code,
           redirectUri,
-          role: pendingRole,
-          cpseId: pendingCpse,
+          state: returnedState,
         });
 
         if (res.success) {
           setStatus('success');
-          // Clean up pending storage keys
-          localStorage.removeItem('unifai_pending_role');
-          localStorage.removeItem('unifai_pending_cpse');
-
           const profile = await getUserProfile();
-          const effectiveRole = profile?.role || pendingRole;
+          const effectiveRole = profile?.role || 'CPSE_USER';
           const targetPersona = effectiveRole === 'TECHNICAL_REVIEWER' ? 'reviewer' : (effectiveRole === 'NATIONAL_ADMIN' ? 'admin' : 'user');
 
           switchPersona(targetPersona);

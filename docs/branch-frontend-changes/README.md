@@ -29,7 +29,7 @@ unifAI Project Root
 │   │   └── cnmc.py             [UPDATED] /catalog alias route for CNMC master registry
 │   ├── database.py             [UPDATED] Pointed default DB to database/local.db with safe migrations
 │   ├── models.py               [UPDATED] User model expanded (email, auth_provider, avatar_url)
-│   └── schemas/auth.py         [UPDATED] Added GoogleExchangeRequest and GoogleAuthRequest
+│   └── schemas/auth.py         [UPDATED] Added GoogleExchangeRequest
 ├── database/
 │   ├── .gitkeep                [NEW] Preserves database folder structure in git
 │   └── local.db                [MOVED] Local SQLite database isolated from project root & git-ignored

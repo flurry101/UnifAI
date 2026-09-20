@@ -1,9 +1,12 @@
 import os
+import logging
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 from dotenv import load_dotenv
 
 load_dotenv()
+
+logger = logging.getLogger(__name__)
 
 os.makedirs("database", exist_ok=True)
 
@@ -27,8 +30,11 @@ try:
     # Test connection
     with engine.connect() as test_conn:
         pass
-except Exception as e:
-    # Graceful fallback to local SQLite database
+except Exception:
+    logger.exception("Database initialization failed")
+    if os.getenv("DATABASE_URL") and os.getenv("ALLOW_SQLITE_FALLBACK") != "1":
+        raise
+    # Graceful fallback to local SQLite database when explicitly permitted or unconfigured.
     SQLALCHEMY_DATABASE_URL = "sqlite:///./database/local.db"
     connect_args = {"check_same_thread": False}
     engine = create_engine(
@@ -45,11 +51,9 @@ def _migrate_columns():
                 try:
                     conn.exec_driver_sql(f"ALTER TABLE users ADD COLUMN {col} {col_type};")
                 except Exception:
-                    pass
+                    logger.exception("Column migration failed for %s", col)
     except Exception:
-        pass
-
-_migrate_columns()
+        logger.exception("Column migration transaction failed")
 
 Base = declarative_base()
 

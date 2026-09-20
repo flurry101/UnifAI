@@ -35,16 +35,6 @@ class RegisterRequest(BaseModel):
     role: str = "CPSE_USER"
     cpse_id: str = "IOCL"
 
-class GoogleAuthRequest(BaseModel):
-    id_token: Optional[str] = None
-    email: str
-    name: Optional[str] = None
-    avatar_url: Optional[str] = None
-    role: Optional[str] = "CPSE_USER"
-    cpse_id: Optional[str] = "IOCL"
-
 class GoogleExchangeRequest(BaseModel):
     code: str
     redirect_uri: Optional[str] = None
-    role: Optional[str] = "CPSE_USER"
-    cpse_id: Optional[str] = "IOCL"

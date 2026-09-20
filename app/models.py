@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Text, DateTime, ForeignKey, Enum as SQLEnum, JSON
+from sqlalchemy import Column, String, Text, DateTime, ForeignKey, Enum as SQLEnum, JSON, UniqueConstraint
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 import uuid
@@ -28,7 +28,6 @@ class User(Base):
     id = Column(String, primary_key=True, default=generate_uuid)
     cpse_id = Column(String, ForeignKey("cpse_tenant.id"), nullable=False)
     username = Column(String, unique=True, index=True, nullable=False)
-    hashed_password = Column(String, nullable=False)
     email = Column(String, unique=True, index=True, nullable=True)
     hashed_password = Column(String, nullable=True)
     auth_provider = Column(String, default="local") # "local" or "google"
@@ -40,6 +39,18 @@ class User(Base):
     created_at = Column(DateTime, default=datetime.datetime.utcnow)
 
     cpse = relationship("CpseTenant", back_populates="users")
+    identities = relationship("ExternalIdentity", back_populates="user", cascade="all, delete-orphan")
+
+class ExternalIdentity(Base):
+    __tablename__ = "external_identity"
+    __table_args__ = (UniqueConstraint("provider", "external_id", name="uq_external_identity_provider_id"),)
+
+    id = Column(String, primary_key=True, default=generate_uuid)
+    provider = Column(String, nullable=False)
+    external_id = Column(String, nullable=False)
+    user_id = Column(String, ForeignKey("users.id"), nullable=False, index=True)
+
+    user = relationship("User", back_populates="identities")
 
 class MatchProposal(Base):
     __tablename__ = "match_proposal"

@@ -77,6 +77,8 @@ export default function ReviewerView() {
       await submitReviewDecision(current.id, {
         action,
         relationship_override: chosenRelation,
+        reviewerNotes,
+        selectedEvidence,
       });
 
       setActionSuccess(`Decision [${action}] recorded for ${current.id}. Updated status: ${action === 'APPROVE' ? 'APPROVED' : 'REJECTED'}.`);

@@ -15,6 +15,10 @@ from app.models import CpseTenant, User, MatchProposal, CnmcRegistry, CpseCnmcMa
 from app.security.jwt import get_password_hash
 
 def init_db():
+    database_url = os.getenv("DATABASE_URL", "")
+    if database_url and not database_url.startswith("sqlite") and os.getenv("ALLOW_SEED_NON_LOCAL") != "1":
+        raise SystemExit("Refusing to seed a non-SQLite DATABASE_URL. Set ALLOW_SEED_NON_LOCAL=1 to override.")
+
     print("[1/5] Creating SQLAlchemy base schema...")
     Base.metadata.create_all(bind=engine)
 

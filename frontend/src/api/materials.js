@@ -91,54 +91,7 @@ export async function triggerAiMatch(materialId) {
     });
     return proposals;
   } catch (err) {
-    console.warn('Backend match execution failed, falling back to simulated inference response', err);
-    // Return structured inference response reflecting the ML architecture
-    return [
-      {
-        id: `PROP-${Date.now()}-1`,
-        query_material_id: materialId,
-        candidate_material_id: "BPCL-LPG-CYL-14.2",
-        candidate_description: "LPG CYLINDER 14.2KG CAPACITY COMPLETE WITH SC VALVE AS PER IS 3196",
-        candidate_cpse: "BPCL",
-        predicted_relation: "IDENTICAL",
-        confidence_level: "HIGH",
-        decision_status: "PROPOSED",
-        governance_state: "PENDING",
-        model_version: "Lane8-LGBM-v1.4.2",
-        lane7_probabilities: {
-          IDENTICAL: 0.942,
-          EQUIVALENT: 0.048,
-          VARIANT_OF: 0.007,
-          DISTINCT: 0.003
-        },
-        lane8_decision: {
-          rule: "EXACT_TECHNICAL_SPEC_MATCH",
-          auto_acceptable: true
-        }
-      },
-      {
-        id: `PROP-${Date.now()}-2`,
-        query_material_id: materialId,
-        candidate_material_id: "HPCL-CYL-SUB-14.2",
-        candidate_description: "CYLINDER DOMESTIC 14.2KG WITHOUT VALVE BODY BIS CERTIFIED",
-        candidate_cpse: "HPCL",
-        predicted_relation: "VARIANT_OF",
-        confidence_level: "MEDIUM",
-        decision_status: "REVIEW",
-        governance_state: "PENDING",
-        model_version: "Lane8-LGBM-v1.4.2",
-        lane7_probabilities: {
-          IDENTICAL: 0.121,
-          EQUIVALENT: 0.244,
-          VARIANT_OF: 0.589,
-          DISTINCT: 0.046
-        },
-        lane8_decision: {
-          rule: "TRIM_VALVE_SUB_COMPONENT_MISSING",
-          auto_acceptable: false
-        }
-      }
-    ];
+      throw err;
   }
 }
 

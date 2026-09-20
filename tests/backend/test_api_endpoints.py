@@ -8,11 +8,14 @@ from unittest.mock import patch
 from app.main import app
 from app.database import get_db, Base
 from app.models import User, MatchProposal
+import app.api.auth as auth_api
 
 # Mock security before importing jwt
 import app.security.jwt as jwt_module
 jwt_module.get_password_hash = lambda x: x + "_hashed"
 jwt_module.verify_password = lambda plain, hashed: plain + "_hashed" == hashed
+auth_api.get_password_hash = jwt_module.get_password_hash
+auth_api.verify_password = jwt_module.verify_password
 
 # Setup in-memory SQLite for testing
 
@@ -44,6 +47,20 @@ def setup_db():
     # Seed a tenant
     tenant = CpseTenant(id="tenant1", code="CPSE01", name="Test CPSE")
     db.add(tenant)
+
+    with engine.begin() as connection:
+        connection.exec_driver_sql("""
+            CREATE TABLE material_retrieval (
+                material_id TEXT PRIMARY KEY,
+                normalized_description TEXT
+            )
+        """)
+        connection.exec_driver_sql(
+            "INSERT INTO material_retrieval (material_id, normalized_description) VALUES ('MAT_Q1', 'Test material')"
+        )
+        connection.exec_driver_sql(
+            "INSERT INTO material_retrieval (material_id, normalized_description) VALUES ('MAT_C1', 'Candidate material')"
+        )
     
     # Seed a test user
     test_user = User(
@@ -71,6 +88,8 @@ def setup_db():
     db.commit()
     yield
     # Drop tables
+    with engine.begin() as connection:
+        connection.exec_driver_sql("DROP TABLE material_retrieval")
     Base.metadata.drop_all(bind=engine)
 
 @pytest.fixture
@@ -99,7 +118,7 @@ def test_login_failure():
         "/api/v1/auth/login",
         data={"username": "admin", "password": "wrongpassword"}
     )
-    assert response.status_code == 400
+    assert response.status_code == 401
 
 @patch("sqlalchemy.orm.Session.execute")
 def test_get_material(mock_execute):

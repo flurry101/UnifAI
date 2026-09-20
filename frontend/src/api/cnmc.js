@@ -65,13 +65,9 @@ export const SAMPLE_CNMC_CATALOG = [
 export async function fetchCnmcCatalog() {
   try {
     const list = await apiFetch('/api/v1/cnmc/');
-    if (Array.isArray(list) && list.length > 0) {
-      return list;
-    }
-    return SAMPLE_CNMC_CATALOG;
+     return list;
   } catch (err) {
-    console.warn('Unable to fetch /api/v1/cnmc/ from backend, using benchmark registry catalog:', err.message);
-    return SAMPLE_CNMC_CATALOG;
+     throw err;
   }
 }
 

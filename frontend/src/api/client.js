@@ -1,5 +1,15 @@
 // API Client for UnifAI Backend
 
+let accessToken = null;
+
+export function setAccessToken(token) {
+  accessToken = token || null;
+}
+
+export function getAccessToken() {
+  return accessToken;
+}
+
 const getBaseUrl = () => {
   if (typeof window !== 'undefined') {
     return window.localStorage.getItem('UNIF_API_URL') || '';
@@ -16,7 +26,7 @@ export async function apiFetch(endpoint, options = {}) {
   };
 
   // Add auth token if available
-  const token = localStorage.getItem('unifai_token');
+  const token = getAccessToken();
   if (token && !headers['Authorization']) {
     headers['Authorization'] = `Bearer ${token}`;
   }
@@ -30,6 +40,7 @@ export async function apiFetch(endpoint, options = {}) {
   try {
     const res = await fetch(url, {
       ...options,
+      credentials: 'include',
       headers,
     });
 

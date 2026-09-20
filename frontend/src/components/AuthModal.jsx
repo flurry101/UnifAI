@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import RawCard from './RawCard';
 import RawButton from './RawButton';
 import RawInput from './RawInput';
@@ -14,6 +14,13 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }) {
   const [cpseId, setCpseId] = useState('IOCL');
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      setMode(initialMode);
+      setErrorMsg(null);
+    }
+  }, [isOpen, initialMode]);
 
   const { login, register, switchPersona } = useAuth();
 
@@ -57,12 +64,12 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }) {
     setErrorMsg(null);
     setLoading(true);
     try {
-      // Store preferred role and CPSE organization for provisioning after callback
-      localStorage.setItem('unifai_pending_role', role);
-      localStorage.setItem('unifai_pending_cpse', cpseId);
-
       const redirectUri = `${window.location.origin}/auth/google/callback`;
-      const urlRes = await getGoogleOAuthUrl(redirectUri);
+      const stateBytes = new Uint8Array(32);
+      crypto.getRandomValues(stateBytes);
+      const state = Array.from(stateBytes, byte => byte.toString(16).padStart(2, '0')).join('');
+      sessionStorage.setItem('unifai_oauth_state', state);
+      const urlRes = await getGoogleOAuthUrl(redirectUri, state);
 
       if (urlRes.configured && urlRes.oauth_url) {
         // Traditional Google OAuth Redirect to Google Cloud Identity consent screen

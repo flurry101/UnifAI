@@ -1,6 +1,10 @@
 import sys
 import os
 
+if "pytest" in sys.modules:
+    import pytest
+    pytest.skip("Manual platform smoke test; run scripts/test_platform.py directly", allow_module_level=True)
+
 # Set environment for local test execution
 os.environ["DATABASE_URL"] = "sqlite:///./database/local.db"
 os.environ["USE_LOCAL_PIPELINE"] = "1"

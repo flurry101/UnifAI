@@ -1,5 +1,6 @@
 import os
 import json
+import logging
 from sqlalchemy.orm import Session
 from sqlalchemy import text
 from src.retrieval.vector_store import PostgresVectorStore
@@ -13,6 +14,8 @@ from src.matching.models import Pair
 from src.ingestion.unified_schema import UnifiedMaterialRecord, Provenance
 from app.models import MatchProposal
 import json
+
+logger = logging.getLogger(__name__)
 
 # Initialize engines lazily to avoid loading heavy models on startup if not used
 _retrieval_engine = None
@@ -90,19 +93,21 @@ def _local_match_candidates(query_row, all_candidates, db: Session):
             relation = "IDENTICAL"
             conf = "HIGH"
             decision_status = "PROPOSED"
-            lane7_probs = {"IDENTICAL": 0.942, "EQUIVALENT": 0.048, "VARIANT_OF": 0.007, "DISTINCT": 0.003}
+            identical_score = min(1.0, jaccard + 0.1 * len(key_matches))
+            lane7_probs = {"IDENTICAL": identical_score, "EQUIVALENT": 0.0, "VARIANT_OF": 0.0, "DISTINCT": 1.0 - identical_score}
             explanation = "High lexical and technical parameter alignment across CPSE catalogs."
         elif jaccard > 0.3 or len(key_matches) >= 1:
             relation = "EQUIVALENT" if "CYLINDER" in key_matches or "PIPE" in key_matches else "VARIANT_OF"
             conf = "MEDIUM"
             decision_status = "REVIEW"
-            lane7_probs = {"IDENTICAL": 0.180, "EQUIVALENT": 0.580, "VARIANT_OF": 0.210, "DISTINCT": 0.030}
+            equivalent_score = min(1.0, jaccard + 0.1 * len(key_matches))
+            lane7_probs = {"IDENTICAL": 0.0, "EQUIVALENT": equivalent_score, "VARIANT_OF": 1.0 - equivalent_score, "DISTINCT": 0.0}
             explanation = "Shared functional category with variance in operational attributes."
         else:
             relation = "DISTINCT"
             conf = "HIGH"
             decision_status = "REVIEW"
-            lane7_probs = {"IDENTICAL": 0.010, "EQUIVALENT": 0.020, "VARIANT_OF": 0.050, "DISTINCT": 0.920}
+            lane7_probs = {"IDENTICAL": 0.0, "EQUIVALENT": 0.0, "VARIANT_OF": 0.0, "DISTINCT": 1.0}
             explanation = "Commodity class and functional specifications diverge."
 
         # Check existing proposal
@@ -126,9 +131,12 @@ def _local_match_candidates(query_row, all_candidates, db: Session):
             lane8_decision={
                 "explanation": explanation,
                 "safety_rule_triggered": decision_status == "REVIEW",
-                "review_reason": "Dual-human validation required for cross-CPSE linkage." if decision_status == "REVIEW" else "Direct candidate mapping suggested."
+                "review_reason": "Dual-human validation required for cross-CPSE linkage." if decision_status == "REVIEW" else "Direct candidate mapping suggested.",
+                "is_heuristic": True,
+                "jaccard": jaccard,
+                "key_matches": key_matches,
             },
-            model_version="Lane7-Local-v1+Lane8-v1"
+            model_version="Heuristic-Local-v1+Lane8-v1"
         )
         db.add(proposal)
         proposals.append(proposal)
@@ -162,7 +170,7 @@ def match_material(material_id: str, db: Session):
 
     # 2. Check if local database / offline mode is active for instant zero-latency matching
     db_url = os.getenv("DATABASE_URL", "")
-    if db_url.startswith("sqlite") or os.getenv("USE_LOCAL_PIPELINE", "1") == "1":
+    if db_url.startswith("sqlite") or os.getenv("USE_LOCAL_PIPELINE", "0") == "1":
         all_cands_query = text("""
             SELECT material_id, cpse_id, original_material_code, normalized_description, source_system,
                    source_type, source_record_id, source_file, source_row, ingestion_timestamp, processing_version
@@ -211,7 +219,9 @@ def match_material(material_id: str, db: Session):
             
         db.commit()
         return proposals
-    except Exception as e:
+    except Exception:
+        logger.exception("Neural matching pipeline failed; using deterministic fallback")
+        db.rollback()
         # Fallback to local database matching across material_retrieval
         all_cands_query = text("""
             SELECT material_id, cpse_id, original_material_code, normalized_description, source_system,

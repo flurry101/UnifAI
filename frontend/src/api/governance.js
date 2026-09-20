@@ -79,10 +79,12 @@ export async function fetchPendingReviews() {
   }
 }
 
-export async function submitReviewDecision(proposalId, { action, relationship_override = null }) {
+export async function submitReviewDecision(proposalId, { action, relationship_override = null, reviewerNotes = '', selectedEvidence = [] }) {
   const payload = {
     action, // "APPROVE" | "REJECT"
     relationship_override,
+    reviewer_notes: reviewerNotes,
+    selected_evidence: selectedEvidence,
   };
 
   try {
@@ -91,17 +93,7 @@ export async function submitReviewDecision(proposalId, { action, relationship_ov
       body: payload,
     });
   } catch (err) {
-    // If backend returns 403 or 401 or offline, return simulated successful resolution
-    console.warn(`Decision submission intercepted or failed (${err.message}). Recording local governance resolution.`);
-    return {
-      id: proposalId,
-      governance_state: action === 'APPROVE' ? 'APPROVED' : 'REJECTED',
-      predicted_relation: relationship_override || 'EQUIVALENT',
-      decision_status: 'REVIEW',
-      updated_at: new Date().toISOString(),
-      _simulated: true,
-      _note: err.message
-    };
+    throw err;
   }
 }
 

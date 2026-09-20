@@ -45,16 +45,16 @@ Imported via Google Fonts in `frontend/index.html` and configured in `frontend/t
 
 All UI primitives are componentized in `frontend/src/components/`:
 
-- **[`RawButton.jsx`](file:///home/flux/hack/unifAI/frontend/src/components/RawButton.jsx)**:
+- **[`RawButton.jsx`](../../frontend/src/components/RawButton.jsx)**:
   - Supports `primary` (solid black, inverts to white), `secondary` (white with thick border, inverts to black), and `destructive` (red border/text).
   - Sizes: `small`, `medium`, `large`.
   - Enforces `0px` radius and `transition-none`.
-- **[`RawCard.jsx`](file:///home/flux/hack/unifAI/frontend/src/components/RawCard.jsx)**:
+- **[`RawCard.jsx`](../../frontend/src/components/RawCard.jsx)**:
   - Standard container with 2px solid black border.
   - `elevated` prop activates 3px structural border.
-- **[`RawInput.jsx`](file:///home/flux/hack/unifAI/frontend/src/components/RawInput.jsx)**:
+- **[`RawInput.jsx`](../../frontend/src/components/RawInput.jsx)**:
   - Form input with sunken background (`#F5F5F5`), 3px border, uppercase labels, and Space Mono typed text.
-- **[`StatusChip.jsx`](file:///home/flux/hack/unifAI/frontend/src/components/StatusChip.jsx)**:
+- **[`StatusChip.jsx`](../../frontend/src/components/StatusChip.jsx)**:
   - Bordered status badge showing `IDENTICAL`, `EQUIVALENT`, `VARIANT_OF`, `APPROVED`, `PROPOSED`, or `REJECTED`.
 
 ---

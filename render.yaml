@@ -20,7 +20,8 @@ services:
   - type: web
     name: unifai-backend
     runtime: docker
-    dockerfilePath: ./Dockerfile.backend
+    dockerfilePath: ./docker/Dockerfile.backend
+    dockerContext: .
     region: oregon
     plan: starter       # free tier has 512 MB RAM — too small for sentence-transformers
     healthCheckPath: /health
@@ -36,7 +37,7 @@ services:
       - key: ACCESS_TOKEN_EXPIRE_MINUTES
         value: "1440"
       - key: USE_LOCAL_PIPELINE
-        value: "1"
+        value: "0"
       - key: EMBEDDING_MODEL_ID
         value: Qwen/Qwen3-Embedding-0.6B
       - key: GOOGLE_CLIENT_ID
@@ -52,7 +53,8 @@ services:
   - type: web
     name: unifai-frontend
     runtime: docker
-    dockerfilePath: ./frontend/Dockerfile
+    dockerfilePath: ./docker/Dockerfile.frontend
+    dockerContext: ./frontend
     region: oregon
     plan: free
     envVars:

@@ -15,15 +15,16 @@ The `frontend` branch transforms unifAI's authentication system into a secure en
 [User Browser]
    │
    ├─ 1. Clicks "SIGN IN WITH GOOGLE" in AuthModal.jsx
-   │     - Saves preferred role & CPSE in localStorage
-   │     - Requests /api/v1/auth/google/url?redirect_uri=...
+  │     - Generates a cryptographically random state and stores it in sessionStorage
+  │     - Requests /api/v1/auth/google/url?redirect_uri=...&state=...
    │
    ├─ 2. Browser redirects to accounts.google.com consent screen
    │
-   ├─ 3. User approves; Google redirects to /auth/google/callback?code=...
+  ├─ 3. User approves; Google redirects to /auth/google/callback?code=...&state=...
    │
    ├─ 4. OAuthCallback.jsx activates
    │     - Captures code parameter
+  │     - Rejects missing or mismatched state before exchanging the code
    │     - Dispatches POST /api/v1/auth/google/exchange
    │
    ├─ 5. FastAPI Backend (app/api/auth.py)
@@ -32,8 +33,8 @@ The `frontend` branch transforms unifAI's authentication system into a secure en
    │     - Finds existing user or provisions new user with CPSE Tenant
    │     - Issues signed unifAI platform JWT access token
    │
-   └─ 6. Frontend receives JWT token
-         - Persists to localStorage (unifai_token, unifai_username, unifai_role)
+     └─ 6. Frontend receives JWT token
+       - Keeps the token in memory and rehydrates the profile through /auth/me
          - Switches active persona based on role
          - Smoothly navigates to authorized workspace (/user, /reviewer, or /admin)
 ```
@@ -51,11 +52,14 @@ Three new columns were added to the `User` model to support OAuth and profile id
 - `auth_provider`: `String(50)`, default `"local"` (`"local"` vs `"google"`).
 - `avatar_url`: `String(500)`, nullable (stores Google profile photo URI).
 
-### SQLite Zero-Downtime Safe Column Migration (`app/database.py`)
-To prevent `OperationalError: no such column` when running against existing SQLite files, an automated dynamic column migration helper `_migrate_columns()` inspects `PRAGMA table_info(users)` on startup and executes `ALTER TABLE users ADD COLUMN ...` if columns are absent.
+### User Profile Schema Migration
+User profile and OAuth columns are managed through the Alembic revision
+`9b7d3f4c2a1e_user_profile_columns.py`; startup no longer performs ad-hoc schema
+changes.
 
-### Sentinel Hash for OAuth Accounts
-To satisfy SQLite's `NOT NULL` constraint on `users.hashed_password` without exposing credentials, Google OAuth users are provisioned with a secure sentinel value: `hashed_password = "OAUTH_GOOGLE"`.
+### Non-password Marker for OAuth Accounts
+Google OAuth users do not have a password. Their nullable `hashed_password` field
+is left as `NULL`; `auth_provider = "google"` identifies the non-password account.
 
 ### Database Relocation & Isolation
 - Moved `local.db` $\rightarrow$ `database/local.db`.
