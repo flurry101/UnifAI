@@ -5,7 +5,7 @@ const SECTORS = [
   {
     code: 'SEC-01',
     name: 'OIL & GAS',
-    leadCpse: 'ONGC, IOCL, GAIL, BPCL, HPCL',
+    leadCpse: 'ONGC, IOCL, GAIL, BPCL, HPCL, CPCL',
   },
   {
     code: 'SEC-02',

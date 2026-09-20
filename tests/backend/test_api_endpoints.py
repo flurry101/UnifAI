@@ -133,7 +133,8 @@ def test_login_failure():
     )
     assert response.status_code == 401
 
-def test_google_identity_is_not_linked_by_email():
+def test_google_identity_links_existing_account_by_email():
+    """Existing accounts are silently linked to the OAuth provider rather than blocked."""
     db = TestingSessionLocal()
     db.add(User(
         username="local_user",
@@ -144,19 +145,23 @@ def test_google_identity_is_not_linked_by_email():
     ))
     db.commit()
 
-    with pytest.raises(auth_api.HTTPException) as exc_info:
-        auth_api._upsert_google_user(
-            db,
-            email="owner@example.com",
-            name="Google User",
-            avatar_url=None,
-            role="CPSE_USER",
-            cpse_id="tenant1",
-            google_subject="google-subject",
-        )
+    # Should NOT raise — should return the existing user and create an ExternalIdentity
+    user = auth_api._upsert_google_user(
+        db,
+        email="owner@example.com",
+        name="Google User",
+        avatar_url=None,
+        role="CPSE_USER",
+        cpse_id="tenant1",
+        google_subject="google-subject",
+    )
 
-    assert exc_info.value.status_code == 409
-    assert db.query(ExternalIdentity).count() == 0
+    assert user.username == "local_user"
+    assert user.email == "owner@example.com"
+    # ExternalIdentity should now be created linking the account
+    identity = db.query(ExternalIdentity).filter(ExternalIdentity.external_id == "google-subject").first()
+    assert identity is not None
+    assert identity.user_id == user.id
     db.close()
 
 def test_google_oauth_url_issues_signed_cookie_bound_state(monkeypatch):
@@ -222,6 +227,7 @@ def test_google_callback_uses_external_https_uri_for_state_exchange_and_cookies(
         async def get(self, url, headers):
             return FakeResponse({
                 "email": "oauth@example.com",
+                "email_verified": True,
                 "verified_email": True,
                 "sub": "google-subject",
                 "name": "OAuth User",
@@ -339,3 +345,136 @@ def test_list_cnmc():
     response = client.get("/api/v1/cnmc/")
     assert response.status_code == 200
     assert isinstance(response.json(), list)
+
+def test_google_callback_accepts_oidc_email_verified_claim(monkeypatch):
+    """Verifies that Google accounts returning standard OIDC email_verified: True succeed without legacy verified_email."""
+    callback_uri = "https://public.example/api/v1/auth/google/callback"
+    monkeypatch.setattr(auth_api, "GOOGLE_CLIENT_ID", "configured-client-id")
+    monkeypatch.setattr(auth_api, "GOOGLE_CLIENT_SECRET", "configured-client-secret")
+    monkeypatch.setattr(auth_api, "GOOGLE_REDIRECT_URI", callback_uri)
+    monkeypatch.setattr(auth_api, "SSO_LOGIN_CALLBACK_URL", "https://public.example/auth/google/callback")
+
+    class FakeResponse:
+        def __init__(self, payload):
+            self.status_code = 200
+            self._payload = payload
+
+        def json(self):
+            return self._payload
+
+    class FakeAsyncClient:
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, *args):
+            return None
+
+        async def post(self, url, data, headers):
+            return FakeResponse({"access_token": "google-access-token"})
+
+        async def get(self, url, headers):
+            # Only email_verified is present, verified_email is absent (standard Google v3 UserInfo)
+            return FakeResponse({
+                "email": "oidc_verified@example.com",
+                "email_verified": True,
+                "sub": "google-oidc-subject",
+                "name": "OIDC User",
+            })
+
+    monkeypatch.setattr(auth_api.httpx, "AsyncClient", lambda **kwargs: FakeAsyncClient())
+    monkeypatch.setattr(
+        auth_api,
+        "_upsert_google_user",
+        lambda **kwargs: SimpleNamespace(
+            username="oidc_user",
+            email="oidc_verified@example.com",
+            role="CPSE_USER",
+        ),
+    )
+    state = auth_api._create_oauth_state("browser-state")
+
+    response = client.get(
+        "/api/v1/auth/google/callback",
+        params={"code": "authorization-code", "state": state},
+        headers={"cookie": f"{auth_api.OAUTH_STATE_COOKIE}={state}"},
+        follow_redirects=False,
+    )
+
+    assert response.status_code == 307
+    assert response.headers["location"].startswith("https://public.example/auth/google/callback?")
+
+def test_supabase_exchange_success(monkeypatch):
+    monkeypatch.setattr(auth_api, "SUPABASE_URL", "https://test.supabase.co")
+    monkeypatch.setattr(auth_api, "SUPABASE_ANON_KEY", "test-anon-key")
+
+    class FakeResponse:
+        def __init__(self, payload, status_code=200):
+            self.status_code = status_code
+            self._payload = payload
+
+        def json(self):
+            return self._payload
+
+    class FakeAsyncClient:
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, *args):
+            return None
+
+        async def get(self, url, headers):
+            assert headers["apikey"] == "test-anon-key"
+            assert headers["Authorization"] == "Bearer valid-supabase-token"
+            return FakeResponse({
+                "id": "supabase-user-uuid-1234",
+                "email": "supabase_user@example.com",
+                "user_metadata": {
+                    "full_name": "Supabase User",
+                    "avatar_url": "https://example.com/avatar.png"
+                }
+            })
+
+    monkeypatch.setattr(auth_api.httpx, "AsyncClient", lambda **kwargs: FakeAsyncClient())
+
+    response = client.post(
+        "/api/v1/auth/supabase/exchange",
+        json={"supabase_token": "valid-supabase-token", "role": "CPSE_USER", "cpse_id": "IOCL"}
+    )
+
+    assert response.status_code == 200
+    data = response.json()
+    assert "access_token" in data
+    assert data["email"] == "supabase_user@example.com"
+    assert data["role"] == "CPSE_USER"
+
+def test_supabase_exchange_invalid_token(monkeypatch):
+    monkeypatch.setattr(auth_api, "SUPABASE_URL", "https://test.supabase.co")
+    monkeypatch.setattr(auth_api, "SUPABASE_ANON_KEY", "test-anon-key")
+
+    class FakeResponse:
+        def __init__(self, status_code=401):
+            self.status_code = status_code
+
+        def json(self):
+            return {"message": "Invalid JWT"}
+
+    class FakeAsyncClient:
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, *args):
+            return None
+
+        async def get(self, url, headers):
+            return FakeResponse(status_code=401)
+
+    monkeypatch.setattr(auth_api.httpx, "AsyncClient", lambda **kwargs: FakeAsyncClient())
+
+    response = client.post(
+        "/api/v1/auth/supabase/exchange",
+        json={"supabase_token": "invalid-supabase-token"}
+    )
+
+    assert response.status_code == 401
+    assert response.json()["detail"] == "Invalid or expired Supabase session token."
+

@@ -104,6 +104,27 @@ export async function exchangeGoogleCode({ code, redirectUri, state }) {
   }
 }
 
+export async function exchangeSupabaseToken({ supabaseToken, role, cpse_id }) {
+  try {
+    const data = await apiFetch('/api/v1/auth/supabase/exchange', {
+      method: 'POST',
+      body: {
+        supabase_token: supabaseToken,
+        role: role || 'CPSE_USER',
+        cpse_id: cpse_id || 'IOCL',
+      },
+    });
+
+    if (data.access_token) {
+      storeSession(data);
+      return { success: true, token: data.access_token, user: data };
+    }
+    return { success: false, error: 'Token missing in Supabase exchange response' };
+  } catch (err) {
+    return { success: false, error: err.message };
+  }
+}
+
 export async function getGoogleOAuthUrl(redirectUri = null, state = null) {
   try {
     const params = new URLSearchParams();

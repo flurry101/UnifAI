@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { PERSONAS, getCurrentSession, saveSession, clearSession, loginWithCredentials as apiLogin, registerUser as apiRegister, exchangeGoogleCode, probeCookieSession } from '../api/auth';
+import { PERSONAS, getCurrentSession, saveSession, clearSession, loginWithCredentials as apiLogin, registerUser as apiRegister, exchangeGoogleCode, exchangeSupabaseToken, probeCookieSession } from '../api/auth';
 import { checkBackendHealth } from '../api/client';
 
 const AuthContext = createContext(null);
@@ -135,6 +135,28 @@ export function AuthProvider({ children }) {
     return { success: false, error: res.error };
   };
 
+  const exchangeSupabaseSession = async (supabaseToken) => {
+    const res = await exchangeSupabaseToken({ supabaseToken });
+    if (res.success) {
+      const current = getCurrentSession();
+      let detectedPersona = 'user';
+      if (current.role === 'TECHNICAL_REVIEWER') detectedPersona = 'reviewer';
+      else if (current.role === 'NATIONAL_ADMIN') detectedPersona = 'admin';
+      setActivePersona(detectedPersona);
+      setSession({
+        token: res.token,
+        username: res.user?.username || 'google_user',
+        email: res.user?.email || null,
+        role: current.role,
+        auth_provider: 'google',
+        avatar_url: res.user?.avatar_url || null,
+        isAuthenticated: true,
+      });
+      return { success: true, persona: detectedPersona };
+    }
+    return { success: false, error: res.error };
+  };
+
   const logout = () => {
     clearSession();
     localStorage.removeItem('unifai_email');
@@ -169,6 +191,7 @@ export function AuthProvider({ children }) {
         login,
         register,
         exchangeOAuthCode,
+        exchangeSupabaseSession,
         logout,
       }}
     >

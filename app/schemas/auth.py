@@ -39,3 +39,9 @@ class GoogleExchangeRequest(BaseModel):
     code: str
     redirect_uri: Optional[str] = None
     state: Optional[str] = None
+
+class SupabaseExchangeRequest(BaseModel):
+    supabase_token: str
+    role: Optional[str] = "CPSE_USER"
+    cpse_id: Optional[str] = "IOCL"
+

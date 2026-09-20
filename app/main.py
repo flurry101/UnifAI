@@ -1,12 +1,21 @@
+from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
 from .api import auth, materials, matches, governance, cnmc
+from .database import engine, Base
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Ensure all SQLAlchemy-managed tables exist (safe no-op if already present)
+    Base.metadata.create_all(bind=engine)
+    yield
 
 app = FastAPI(
     title="UnifAI CPSE Harmonization Platform",
     description="Unified Enterprise Material Standardization and Harmonization Platform for CPSEs",
-    version="1.0.0"
+    version="1.0.0",
+    lifespan=lifespan,
 )
 
 app.add_middleware(

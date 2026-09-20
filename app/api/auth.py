@@ -14,7 +14,7 @@ from sqlalchemy import or_
 from app.database import get_db
 from app.models import User, CpseTenant, ExternalIdentity
 from app.security.jwt import verify_password, get_password_hash, create_access_token, SECRET_KEY, ALGORITHM
-from app.schemas.auth import Token, RegisterRequest, GoogleExchangeRequest
+from app.schemas.auth import Token, RegisterRequest, GoogleExchangeRequest, SupabaseExchangeRequest
 
 router = APIRouter()
 
@@ -24,6 +24,8 @@ GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID", "")
 GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET", "")
 GOOGLE_REDIRECT_URI = os.getenv("GOOGLE_REDIRECT_URI", "http://localhost:5173/auth/google/callback")
 SSO_LOGIN_CALLBACK_URL = os.getenv("SSO_LOGIN_CALLBACK_URL", "http://localhost:5173/auth/google/callback")
+SUPABASE_URL = os.getenv("SUPABASE_URL", "")
+SUPABASE_ANON_KEY = os.getenv("SUPABASE_ANON_KEY", "")
 OAUTH_STATE_COOKIE = "unifai_oauth_state"
 OAUTH_STATE_TTL_SECONDS = 10 * 60
 
@@ -214,20 +216,30 @@ def register(req: RegisterRequest, db: Session = Depends(get_db)):
         "avatar_url": None
     }
 
-def _upsert_google_user(db: Session, email: str, name: Optional[str], avatar_url: Optional[str], role: str, cpse_id: str, google_subject: str) -> User:
+def _upsert_google_user(
+    db: Session,
+    email: str,
+    name: Optional[str],
+    avatar_url: Optional[str],
+    role: str,
+    cpse_id: str,
+    google_subject: str,
+    provider: str = "google"
+) -> User:
     email = email.strip().lower()
     identity = db.query(ExternalIdentity).filter(
-        ExternalIdentity.provider == "google",
+        ExternalIdentity.provider == provider,
         ExternalIdentity.external_id == google_subject,
     ).first()
     user = identity.user if identity else None
 
-    if not identity and db.query(User).filter(User.email == email).first():
-        raise HTTPException(
-            status_code=status.HTTP_409_CONFLICT,
-            detail="An account with this email already exists. Sign in to that account before linking Google.",
-        )
-    
+    # If no identity found yet, check if email is already registered.
+    # For OAuth providers, silently link the existing account rather than blocking.
+    if not identity and not user:
+        existing_user = db.query(User).filter(User.email == email).first()
+        if existing_user:
+            user = existing_user  # will create ExternalIdentity below
+
     if not user:
         base_username = (name or email.split("@")[0]).replace(" ", "_").replace(".", "_")
         candidate_username = base_username
@@ -249,7 +261,7 @@ def _upsert_google_user(db: Session, email: str, name: Optional[str], avatar_url
             hashed_password=None,
             role=role or "CPSE_USER",
             cpse_id=cpse,
-            auth_provider="google",
+            auth_provider=provider,
             avatar_url=avatar_url
         )
         db.add(user)
@@ -259,9 +271,10 @@ def _upsert_google_user(db: Session, email: str, name: Optional[str], avatar_url
         if avatar_url and user.avatar_url != avatar_url:
             user.avatar_url = avatar_url
     if not identity:
-        db.add(ExternalIdentity(provider="google", external_id=google_subject, user_id=user.id))
+        db.add(ExternalIdentity(provider=provider, external_id=google_subject, user_id=user.id))
     db.commit()
     return user
+
 
 @router.post("/google/exchange", response_model=Token)
 async def google_exchange(
@@ -319,7 +332,8 @@ async def google_exchange(
         profile = userinfo_resp.json()
         email = profile.get("email")
         google_subject = profile.get("sub")
-        if not email or profile.get("verified_email") is not True or not google_subject:
+        is_email_verified = bool(profile.get("email_verified") or profile.get("verified_email"))
+        if not email or not is_email_verified or not google_subject:
             raise HTTPException(status_code=400, detail="Google account did not return a verified email address")
 
         name = profile.get("name") or profile.get("given_name")
@@ -408,7 +422,8 @@ async def google_callback_redirect(
 
         profile = userinfo_resp.json()
         email = profile.get("email")
-        if not email or profile.get("verified_email") is not True:
+        is_email_verified = bool(profile.get("email_verified") or profile.get("verified_email"))
+        if not email or not is_email_verified:
             return callback_response(error="missing_email", state=state)
         name = profile.get("name")
         avatar = profile.get("picture")
@@ -477,3 +492,73 @@ def get_google_oauth_url(
         "client_id": GOOGLE_CLIENT_ID,
         "redirect_uri": target_redirect
     }
+
+@router.post("/supabase/exchange", response_model=Token)
+async def supabase_exchange(
+    req: SupabaseExchangeRequest,
+    db: Session = Depends(get_db),
+):
+    """
+    Exchanges a Supabase session access token for an authenticated UnifAI platform JWT.
+    Validates the token against Supabase Auth API, retrieves user profile metadata,
+    and provisions or links the user to their CPSE Tenant.
+    """
+    if not SUPABASE_URL or not SUPABASE_ANON_KEY:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Supabase credentials (SUPABASE_URL, SUPABASE_ANON_KEY) are not configured."
+        )
+
+    supabase_url = SUPABASE_URL.strip().rstrip("/")
+    async with httpx.AsyncClient(timeout=10.0) as client:
+        resp = await client.get(
+            f"{supabase_url}/auth/v1/user",
+            headers={
+                "Authorization": f"Bearer {req.supabase_token}",
+                "apikey": SUPABASE_ANON_KEY,
+            }
+        )
+
+        if resp.status_code != 200:
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Invalid or expired Supabase session token."
+            )
+
+        user_data = resp.json()
+
+    supabase_user_id = user_data.get("id")
+    email = user_data.get("email")
+    if not supabase_user_id or not email:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Supabase user account did not return a valid email or subject ID."
+        )
+
+    metadata = user_data.get("user_metadata") or {}
+    name = metadata.get("full_name") or metadata.get("name") or email.split("@")[0]
+    avatar_url = metadata.get("avatar_url") or metadata.get("picture")
+
+    user = _upsert_google_user(
+        db=db,
+        email=email,
+        name=name,
+        avatar_url=avatar_url,
+        role=req.role or "CPSE_USER",
+        cpse_id=req.cpse_id or "IOCL",
+        google_subject=f"supabase_{supabase_user_id}",
+        provider="supabase",
+    )
+
+    access_token = create_access_token(data={"sub": user.username, "role": user.role, "email": user.email})
+    return {
+        "access_token": access_token,
+        "token_type": "bearer",
+        "username": user.username,
+        "email": user.email,
+        "role": user.role,
+        "cpse_id": user.cpse_id,
+        "auth_provider": "google",
+        "avatar_url": user.avatar_url
+    }
+
