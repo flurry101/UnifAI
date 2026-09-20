@@ -163,6 +163,19 @@ export function saveSession(personaKey, token = null) {
 
 export function clearSession() {
   localStorage.removeItem('unifai_active_persona');
+  setAccessToken(null);
+}
+
+export async function probeCookieSession() {
+  try {
+    const user = await apiFetch('/api/v1/auth/me');
+    return { status: 'authenticated', user };
+  } catch (err) {
+    if (err.status === 401 || err.status === 403) {
+      return { status: 'unauthenticated' };
+    }
+    return { status: 'unknown', error: err };
+  }
 }
 
 export async function getUserProfile() {
@@ -175,4 +188,3 @@ export async function getUserProfile() {
     return null;
   }
 }
-

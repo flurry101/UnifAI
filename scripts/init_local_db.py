@@ -10,14 +10,14 @@ import sqlite3
 import pandas as pd
 from datetime import datetime
 
-from app.database import engine, Base, SessionLocal
-from app.models import CpseTenant, User, MatchProposal, CnmcRegistry, CpseCnmcMapping, AuditLog
-from app.security.jwt import get_password_hash
-
 def init_db():
-    database_url = os.getenv("DATABASE_URL", "")
-    if database_url and not database_url.startswith("sqlite") and os.getenv("ALLOW_SEED_NON_LOCAL") != "1":
-        raise SystemExit("Refusing to seed a non-SQLite DATABASE_URL. Set ALLOW_SEED_NON_LOCAL=1 to override.")
+    database_url = os.getenv("DATABASE_URL", "sqlite:///./database/local.db")
+    if not database_url.startswith("sqlite:"):
+        raise SystemExit("Refusing to seed accounts into a non-SQLite DATABASE_URL.")
+
+    from app.database import engine, Base, SessionLocal
+    from app.models import CpseTenant, User, MatchProposal, CnmcRegistry, CpseCnmcMapping
+    from app.security.jwt import get_password_hash
 
     print("[1/5] Creating SQLAlchemy base schema...")
     Base.metadata.create_all(bind=engine)
@@ -290,4 +290,3 @@ def init_db():
 
 if __name__ == "__main__":
     init_db()
-

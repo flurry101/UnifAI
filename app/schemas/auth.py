@@ -38,3 +38,4 @@ class RegisterRequest(BaseModel):
 class GoogleExchangeRequest(BaseModel):
     code: str
     redirect_uri: Optional[str] = None
+    state: Optional[str] = None

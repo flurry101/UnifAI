@@ -68,10 +68,10 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }) {
       const stateBytes = new Uint8Array(32);
       crypto.getRandomValues(stateBytes);
       const state = Array.from(stateBytes, byte => byte.toString(16).padStart(2, '0')).join('');
-      sessionStorage.setItem('unifai_oauth_state', state);
       const urlRes = await getGoogleOAuthUrl(redirectUri, state);
 
       if (urlRes.configured && urlRes.oauth_url) {
+        sessionStorage.setItem('unifai_oauth_state', urlRes.state);
         // Traditional Google OAuth Redirect to Google Cloud Identity consent screen
         window.location.href = urlRes.oauth_url;
       } else {

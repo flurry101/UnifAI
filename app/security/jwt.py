@@ -5,7 +5,9 @@ from jose import jwt
 from passlib.context import CryptContext
 import os
 
-SECRET_KEY = os.getenv("JWT_SECRET") or os.getenv("SECRET_KEY", "super-secret-sih2026-unifai-key")
+SECRET_KEY = os.getenv("JWT_SECRET") or os.getenv("SECRET_KEY")
+if not SECRET_KEY:
+    raise RuntimeError("JWT_SECRET or SECRET_KEY must be set")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", str(60 * 24)))
 

@@ -1,8 +1,10 @@
 import os
+import secrets
+from datetime import datetime, timedelta, timezone
 from typing import Optional
 from urllib.parse import urlencode
 import httpx
-from fastapi import APIRouter, Depends, HTTPException, status, Query, Request
+from fastapi import APIRouter, Depends, HTTPException, status, Query, Request, Response
 from fastapi.responses import RedirectResponse
 from fastapi.security import OAuth2PasswordRequestForm, OAuth2PasswordBearer
 from jose import JWTError, jwt
@@ -22,12 +24,48 @@ GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID", "")
 GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET", "")
 GOOGLE_REDIRECT_URI = os.getenv("GOOGLE_REDIRECT_URI", "http://localhost:5173/auth/google/callback")
 SSO_LOGIN_CALLBACK_URL = os.getenv("SSO_LOGIN_CALLBACK_URL", "http://localhost:5173/auth/google/callback")
+OAUTH_STATE_COOKIE = "unifai_oauth_state"
+OAUTH_STATE_TTL_SECONDS = 10 * 60
 
 def _is_placeholder_credential(val: str) -> bool:
     if not val:
         return True
     lower = val.lower()
     return "sample" in lower or "placeholder" in lower or "your-" in lower
+
+def _create_oauth_state(redirect_uri: str, client_state: Optional[str]) -> str:
+    now = datetime.now(timezone.utc)
+    return jwt.encode(
+        {
+            "purpose": "google_oauth_state",
+            "nonce": secrets.token_urlsafe(32),
+            "redirect_uri": redirect_uri,
+            "client_state": client_state,
+            "iat": now,
+            "exp": now + timedelta(seconds=OAUTH_STATE_TTL_SECONDS),
+        },
+        SECRET_KEY,
+        algorithm=ALGORITHM,
+    )
+
+def _validate_oauth_state(request: Request, state: Optional[str], redirect_uri: str) -> dict:
+    cookie_state = request.cookies.get(OAUTH_STATE_COOKIE)
+    if not state or not cookie_state or not secrets.compare_digest(state, cookie_state):
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Missing or mismatched OAuth state")
+    try:
+        payload = jwt.decode(state, SECRET_KEY, algorithms=[ALGORITHM])
+    except JWTError as exc:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid or expired OAuth state") from exc
+    if (
+        payload.get("purpose") != "google_oauth_state"
+        or not payload.get("nonce")
+        or payload.get("redirect_uri") != redirect_uri
+    ):
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid OAuth state")
+    return payload
+
+def _consume_oauth_state(response: Response) -> None:
+    response.delete_cookie(OAUTH_STATE_COOKIE, path="/api/v1/auth/google")
 
 def get_current_user(request: Request, token: Optional[str] = Depends(oauth2_scheme), db: Session = Depends(get_db)) -> User:
     """
@@ -156,7 +194,13 @@ def _upsert_google_user(db: Session, email: str, name: Optional[str], avatar_url
         ExternalIdentity.provider == "google",
         ExternalIdentity.external_id == google_subject,
     ).first()
-    user = identity.user if identity else db.query(User).filter(User.email == email).first()
+    user = identity.user if identity else None
+
+    if not identity and db.query(User).filter(User.email == email).first():
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="An account with this email already exists. Sign in to that account before linking Google.",
+        )
     
     if not user:
         base_username = (name or email.split("@")[0]).replace(" ", "_").replace(".", "_")
@@ -194,19 +238,26 @@ def _upsert_google_user(db: Session, email: str, name: Optional[str], avatar_url
     return user
 
 @router.post("/google/exchange", response_model=Token)
-async def google_exchange(req: GoogleExchangeRequest, db: Session = Depends(get_db)):
+async def google_exchange(
+    req: GoogleExchangeRequest,
+    request: Request,
+    response: Response,
+    db: Session = Depends(get_db),
+):
     """
     Standard OAuth 2.0 Authorization Code Exchange (SPA flow):
     Exchanges code for Google tokens, retrieves profile from Google userinfo API,
     and returns authenticated platform JWT session.
     """
+    redirect_uri = req.redirect_uri or GOOGLE_REDIRECT_URI
+    _validate_oauth_state(request, req.state, redirect_uri)
+    _consume_oauth_state(response)
+
     if _is_placeholder_credential(GOOGLE_CLIENT_ID) or _is_placeholder_credential(GOOGLE_CLIENT_SECRET):
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Google OAuth is not configured with active credentials in .env. Please provide valid GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET."
         )
-
-    redirect_uri = req.redirect_uri or GOOGLE_REDIRECT_URI
 
     async with httpx.AsyncClient(timeout=10.0) as client:
         token_resp = await client.post(
@@ -283,16 +334,22 @@ async def google_callback_redirect(
     Processes code, provisions user, and redirects to frontend with ?token=...
     """
     frontend_callback = SSO_LOGIN_CALLBACK_URL
+    callback_uri = str(request.url).split("?")[0]
+    _validate_oauth_state(request, state, callback_uri)
+
+    def callback_response(**params: str) -> RedirectResponse:
+        delimiter = "&" if "?" in frontend_callback else "?"
+        response = RedirectResponse(f"{frontend_callback}{delimiter}{urlencode(params)}")
+        _consume_oauth_state(response)
+        return response
+
     if error:
-        suffix = f"&state={state}" if state else ""
-        return RedirectResponse(f"{frontend_callback}?error={error}{suffix}")
+        return callback_response(error=error, state=state)
     if not code:
-        suffix = f"&state={state}" if state else ""
-        return RedirectResponse(f"{frontend_callback}?error=missing_code{suffix}")
+        return callback_response(error="missing_code", state=state)
 
     if _is_placeholder_credential(GOOGLE_CLIENT_ID) or _is_placeholder_credential(GOOGLE_CLIENT_SECRET):
-        suffix = f"&state={state}" if state else ""
-        return RedirectResponse(f"{frontend_callback}?error=unconfigured_oauth{suffix}")
+        return callback_response(error="unconfigured_oauth", state=state)
 
     async with httpx.AsyncClient(timeout=10.0) as client:
         token_resp = await client.post(
@@ -301,20 +358,19 @@ async def google_callback_redirect(
                 "code": code,
                 "client_id": GOOGLE_CLIENT_ID,
                 "client_secret": GOOGLE_CLIENT_SECRET,
-                "redirect_uri": str(request.url).split("?")[0],
+                "redirect_uri": callback_uri,
                 "grant_type": "authorization_code",
             },
             headers={"Accept": "application/json"}
         )
 
         if token_resp.status_code != 200:
-            suffix = f"&state={state}" if state else ""
-            return RedirectResponse(f"{frontend_callback}?error=google_token_exchange_failed{suffix}")
+            return callback_response(error="google_token_exchange_failed", state=state)
 
         token_json = token_resp.json()
         google_access_token = token_json.get("access_token")
         if not google_access_token:
-            return RedirectResponse(f"{frontend_callback}?error=missing_google_access_token")
+            return callback_response(error="missing_google_access_token", state=state)
 
         userinfo_resp = await client.get(
             "https://www.googleapis.com/oauth2/v3/userinfo",
@@ -322,27 +378,22 @@ async def google_callback_redirect(
         )
 
         if userinfo_resp.status_code != 200:
-            suffix = f"&state={state}" if state else ""
-            return RedirectResponse(f"{frontend_callback}?error=userinfo_failed{suffix}")
+            return callback_response(error="userinfo_failed", state=state)
 
         profile = userinfo_resp.json()
         email = profile.get("email")
         if not email or profile.get("verified_email") is not True:
-            suffix = f"&state={state}" if state else ""
-            return RedirectResponse(f"{frontend_callback}?error=missing_email{suffix}")
+            return callback_response(error="missing_email", state=state)
         name = profile.get("name")
         avatar = profile.get("picture")
 
     google_subject = profile.get("sub")
     if not google_subject:
-        suffix = f"&state={state}" if state else ""
-        return RedirectResponse(f"{frontend_callback}?error=missing_subject{suffix}")
+        return callback_response(error="missing_subject", state=state)
     user = _upsert_google_user(db=db, email=email, name=name, avatar_url=avatar, role="CPSE_USER", cpse_id="IOCL", google_subject=google_subject)
     access_token = create_access_token(data={"sub": user.username, "role": user.role, "email": user.email})
 
-    delimiter = "&" if "?" in frontend_callback else "?"
-    redirect_url = f"{frontend_callback}{delimiter}{urlencode({'session': 'established', 'state': state or ''})}"
-    response = RedirectResponse(redirect_url)
+    response = callback_response(session="established", state=state)
     response.set_cookie(
         "unifai_session",
         access_token,
@@ -354,7 +405,12 @@ async def google_callback_redirect(
     return response
 
 @router.get("/google/url")
-def get_google_oauth_url(redirect_uri: Optional[str] = Query(None), state: Optional[str] = Query(None)):
+def get_google_oauth_url(
+    request: Request,
+    response: Response,
+    redirect_uri: Optional[str] = Query(None),
+    state: Optional[str] = Query(None),
+):
     """
     Returns the Google Cloud Console OAuth 2.0 consent URL for web redirection flow.
     """
@@ -369,19 +425,29 @@ def get_google_oauth_url(redirect_uri: Optional[str] = Query(None), state: Optio
             "redirect_uri": target_redirect
         }
     
+    signed_state = _create_oauth_state(target_redirect, state)
     params = {
         "client_id": GOOGLE_CLIENT_ID,
         "redirect_uri": target_redirect,
         "response_type": "code",
         "scope": "openid email profile",
         "access_type": "offline",
-        "prompt": "select_account"
+        "prompt": "select_account",
+        "state": signed_state,
     }
-    if state:
-        params["state"] = state
     oauth_url = f"https://accounts.google.com/o/oauth2/v2/auth?{urlencode(params)}"
+    response.set_cookie(
+        OAUTH_STATE_COOKIE,
+        signed_state,
+        max_age=OAUTH_STATE_TTL_SECONDS,
+        httponly=True,
+        secure=request.url.scheme == "https",
+        samesite="lax",
+        path="/api/v1/auth/google",
+    )
     return {
         "oauth_url": oauth_url,
+        "state": signed_state,
         "configured": True,
         "client_id": GOOGLE_CLIENT_ID,
         "redirect_uri": target_redirect

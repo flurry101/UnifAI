@@ -36,9 +36,19 @@ services:
     env_file:
       - .env.prod
     environment:
-      # Overrides the SQLite DATABASE_URL set in docker-compose.yml
-      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-unifai}:${POSTGRES_PASSWORD:?POSTGRES_PASSWORD must be set}@postgres:5432/${POSTGRES_DB:-unifai}
+      POSTGRES_DB: ${POSTGRES_DB:-unifai}
+      POSTGRES_USER: ${POSTGRES_USER:-unifai}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD must be set}
       USE_LOCAL_PIPELINE: ${USE_LOCAL_PIPELINE:-0}
+    command:
+      - python
+      - -c
+      - |
+        import os
+        from urllib.parse import quote
+        password = quote(os.environ["POSTGRES_PASSWORD"], safe="")
+        os.environ["DATABASE_URL"] = f"postgresql+psycopg://{os.environ['POSTGRES_USER']}:{password}@postgres:5432/{os.environ['POSTGRES_DB']}"
+        os.execvp("uvicorn", ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"])
     depends_on:
       postgres:
         condition: service_healthy
@@ -52,4 +62,3 @@ services:
 
 volumes:
   postgres_data:
-

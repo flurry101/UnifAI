@@ -101,7 +101,12 @@ def _local_match_candidates(query_row, all_candidates, db: Session):
             conf = "MEDIUM"
             decision_status = "REVIEW"
             equivalent_score = min(1.0, jaccard + 0.1 * len(key_matches))
-            lane7_probs = {"IDENTICAL": 0.0, "EQUIVALENT": equivalent_score, "VARIANT_OF": 1.0 - equivalent_score, "DISTINCT": 0.0}
+            lane7_probs = {
+                "IDENTICAL": 0.0,
+                "EQUIVALENT": equivalent_score if relation == "EQUIVALENT" else 1.0 - equivalent_score,
+                "VARIANT_OF": equivalent_score if relation == "VARIANT_OF" else 1.0 - equivalent_score,
+                "DISTINCT": 0.0,
+            }
             explanation = "Shared functional category with variance in operational attributes."
         else:
             relation = "DISTINCT"
@@ -232,4 +237,3 @@ def match_material(material_id: str, db: Session):
         """)
         all_candidates = db.execute(all_cands_query, {"id": actual_material_id}).fetchall()
         return _local_match_candidates(row, all_candidates, db)
-

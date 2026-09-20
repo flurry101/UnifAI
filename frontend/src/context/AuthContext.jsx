@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { PERSONAS, getCurrentSession, saveSession, clearSession, loginWithCredentials as apiLogin, registerUser as apiRegister, exchangeGoogleCode } from '../api/auth';
+import { PERSONAS, getCurrentSession, saveSession, clearSession, loginWithCredentials as apiLogin, registerUser as apiRegister, exchangeGoogleCode, probeCookieSession } from '../api/auth';
 import { checkBackendHealth } from '../api/client';
 
 const AuthContext = createContext(null);
@@ -10,23 +10,47 @@ export function AuthProvider({ children }) {
     token: null,
     username: 'cpse_user',
     role: 'CPSE_USER',
+    isAuthenticated: null,
   });
   const [health, setHealth] = useState({ online: false, checking: true });
 
   // Initialize session and poll health
   useEffect(() => {
+    let cancelled = false;
     const current = getCurrentSession();
     if (current.personaId && (current.personaId === 'user' || current.personaId === 'reviewer' || current.personaId === 'admin')) {
       setActivePersona(current.personaId);
     }
-    setSession({
+    const initialSession = {
       token: current.token,
       username: current.username,
       role: current.role || 'CPSE_USER',
       email: null,
       avatar_url: null,
-      isAuthenticated: !!current.token,
-    });
+      isAuthenticated: current.token ? true : null,
+    };
+    setSession(initialSession);
+
+    if (!current.token) {
+      probeCookieSession().then(result => {
+        if (cancelled || getCurrentSession().token) return;
+        if (result.status === 'authenticated') {
+          const user = result.user;
+          const persona = user.role === 'TECHNICAL_REVIEWER' ? 'reviewer' : (user.role === 'NATIONAL_ADMIN' ? 'admin' : 'user');
+          setActivePersona(persona);
+          setSession({
+            token: null,
+            username: user.username,
+            role: user.role || 'CPSE_USER',
+            email: user.email || null,
+            avatar_url: user.avatar_url || null,
+            isAuthenticated: true,
+          });
+        } else if (result.status === 'unauthenticated') {
+          setSession({ ...initialSession, isAuthenticated: false });
+        }
+      });
+    }
 
     const verifyHealth = async () => {
       const res = await checkBackendHealth();
@@ -35,7 +59,10 @@ export function AuthProvider({ children }) {
 
     verifyHealth();
     const interval = setInterval(verifyHealth, 15000);
-    return () => clearInterval(interval);
+    return () => {
+      cancelled = true;
+      clearInterval(interval);
+    };
   }, []);
 
   const switchPersona = (personaKey) => {
