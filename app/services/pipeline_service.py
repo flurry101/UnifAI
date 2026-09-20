@@ -101,10 +101,11 @@ def _local_match_candidates(query_row, all_candidates, db: Session):
             conf = "MEDIUM"
             decision_status = "REVIEW"
             equivalent_score = min(1.0, jaccard + 0.1 * len(key_matches))
+            selected_score = max(equivalent_score, 1.0 - equivalent_score, 0.500001)
             lane7_probs = {
                 "IDENTICAL": 0.0,
-                "EQUIVALENT": equivalent_score if relation == "EQUIVALENT" else 1.0 - equivalent_score,
-                "VARIANT_OF": equivalent_score if relation == "VARIANT_OF" else 1.0 - equivalent_score,
+                "EQUIVALENT": selected_score if relation == "EQUIVALENT" else 1.0 - selected_score,
+                "VARIANT_OF": selected_score if relation == "VARIANT_OF" else 1.0 - selected_score,
                 "DISTINCT": 0.0,
             }
             explanation = "Shared functional category with variance in operational attributes."

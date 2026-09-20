@@ -43,6 +43,20 @@ def _set_hashed_password_nullable(bind, nullable: bool) -> None:
         )
 
 
+def _ensure_email_deduplication_history_table(bind) -> None:
+    if "user_email_deduplication_history" in sa.inspect(bind).get_table_names():
+        return
+    op.create_table(
+        "user_email_deduplication_history",
+        sa.Column("user_id", sa.String(), nullable=False),
+        sa.Column("original_email", sa.String(), nullable=False),
+        sa.Column("retained_user_id", sa.String(), nullable=False),
+        sa.Column("migration_revision", sa.String(), nullable=False),
+        sa.Column("recorded_at", sa.DateTime(), nullable=False, server_default=sa.func.now()),
+        sa.PrimaryKeyConstraint("user_id", "migration_revision"),
+    )
+
+
 def _deduplicate_emails(bind) -> None:
     duplicate_emails = bind.execute(
         sa.text(
@@ -56,11 +70,27 @@ def _deduplicate_emails(bind) -> None:
             {"email": email},
         ).scalars().all()
         if len(user_ids) > 1:
+            retained_user_id = user_ids[0]
+            duplicate_user_ids = user_ids[1:]
+            for user_id in duplicate_user_ids:
+                bind.execute(
+                    sa.text(
+                        "INSERT INTO user_email_deduplication_history "
+                        "(user_id, original_email, retained_user_id, migration_revision) "
+                        "VALUES (:user_id, :original_email, :retained_user_id, :migration_revision)"
+                    ),
+                    {
+                        "user_id": user_id,
+                        "original_email": email,
+                        "retained_user_id": retained_user_id,
+                        "migration_revision": revision,
+                    },
+                )
             bind.execute(
                 sa.text("UPDATE users SET email = NULL WHERE id IN :user_ids").bindparams(
                     sa.bindparam("user_ids", expanding=True)
                 ),
-                {"user_ids": user_ids[1:]},
+                {"user_ids": duplicate_user_ids},
             )
 
 
@@ -75,6 +105,7 @@ def upgrade() -> None:
         op.add_column("users", sa.Column("avatar_url", sa.String(), nullable=True))
 
     _set_hashed_password_nullable(bind, True)
+    _ensure_email_deduplication_history_table(bind)
     _deduplicate_emails(bind)
     if "ix_users_email" not in _index_names(bind, "users"):
         op.create_index("ix_users_email", "users", ["email"], unique=True)
@@ -96,6 +127,7 @@ def upgrade() -> None:
 
 def downgrade() -> None:
     bind = op.get_bind()
+    # Keep user_email_deduplication_history as durable reconciliation data.
     if "external_identity" in sa.inspect(bind).get_table_names():
         if "ix_external_identity_user_id" in _index_names(bind, "external_identity"):
             op.drop_index("ix_external_identity_user_id", table_name="external_identity")

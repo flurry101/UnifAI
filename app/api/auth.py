@@ -2,7 +2,7 @@ import os
 import secrets
 from datetime import datetime, timedelta, timezone
 from typing import Optional
-from urllib.parse import urlencode
+from urllib.parse import urlencode, urlparse
 import httpx
 from fastapi import APIRouter, Depends, HTTPException, status, Query, Request, Response
 from fastapi.responses import RedirectResponse
@@ -33,7 +33,26 @@ def _is_placeholder_credential(val: str) -> bool:
     lower = val.lower()
     return "sample" in lower or "placeholder" in lower or "your-" in lower
 
-def _create_oauth_state(redirect_uri: str, client_state: Optional[str]) -> str:
+def _trusted_google_redirect_uri(requested_uri: Optional[str] = None) -> str:
+    redirect_uri = GOOGLE_REDIRECT_URI.strip()
+    parsed_uri = urlparse(redirect_uri)
+    if parsed_uri.scheme not in {"http", "https"} or not parsed_uri.netloc:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="GOOGLE_REDIRECT_URI must be an absolute HTTP(S) URL",
+        )
+    if requested_uri and requested_uri != redirect_uri:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="OAuth redirect URI does not match the configured callback",
+        )
+    return redirect_uri
+
+def _oauth_cookie_secure(redirect_uri: str) -> bool:
+    return urlparse(redirect_uri).scheme == "https"
+
+def _create_oauth_state(client_state: Optional[str]) -> str:
+    redirect_uri = _trusted_google_redirect_uri()
     now = datetime.now(timezone.utc)
     return jwt.encode(
         {
@@ -48,7 +67,8 @@ def _create_oauth_state(redirect_uri: str, client_state: Optional[str]) -> str:
         algorithm=ALGORITHM,
     )
 
-def _validate_oauth_state(request: Request, state: Optional[str], redirect_uri: str) -> dict:
+def _validate_oauth_state(request: Request, state: Optional[str]) -> dict:
+    redirect_uri = _trusted_google_redirect_uri()
     cookie_state = request.cookies.get(OAUTH_STATE_COOKIE)
     if not state or not cookie_state or not secrets.compare_digest(state, cookie_state):
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Missing or mismatched OAuth state")
@@ -64,8 +84,14 @@ def _validate_oauth_state(request: Request, state: Optional[str], redirect_uri: 
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid OAuth state")
     return payload
 
-def _consume_oauth_state(response: Response) -> None:
-    response.delete_cookie(OAUTH_STATE_COOKIE, path="/api/v1/auth/google")
+def _consume_oauth_state(response: Response, redirect_uri: str) -> None:
+    response.delete_cookie(
+        OAUTH_STATE_COOKIE,
+        path="/api/v1/auth/google",
+        httponly=True,
+        secure=_oauth_cookie_secure(redirect_uri),
+        samesite="lax",
+    )
 
 def get_current_user(request: Request, token: Optional[str] = Depends(oauth2_scheme), db: Session = Depends(get_db)) -> User:
     """
@@ -249,9 +275,9 @@ async def google_exchange(
     Exchanges code for Google tokens, retrieves profile from Google userinfo API,
     and returns authenticated platform JWT session.
     """
-    redirect_uri = req.redirect_uri or GOOGLE_REDIRECT_URI
-    _validate_oauth_state(request, req.state, redirect_uri)
-    _consume_oauth_state(response)
+    redirect_uri = _trusted_google_redirect_uri(req.redirect_uri)
+    _validate_oauth_state(request, req.state)
+    _consume_oauth_state(response, redirect_uri)
 
     if _is_placeholder_credential(GOOGLE_CLIENT_ID) or _is_placeholder_credential(GOOGLE_CLIENT_SECRET):
         raise HTTPException(
@@ -334,13 +360,13 @@ async def google_callback_redirect(
     Processes code, provisions user, and redirects to frontend with ?token=...
     """
     frontend_callback = SSO_LOGIN_CALLBACK_URL
-    callback_uri = str(request.url).split("?")[0]
-    _validate_oauth_state(request, state, callback_uri)
+    callback_uri = _trusted_google_redirect_uri()
+    _validate_oauth_state(request, state)
 
     def callback_response(**params: str) -> RedirectResponse:
         delimiter = "&" if "?" in frontend_callback else "?"
         response = RedirectResponse(f"{frontend_callback}{delimiter}{urlencode(params)}")
-        _consume_oauth_state(response)
+        _consume_oauth_state(response, callback_uri)
         return response
 
     if error:
@@ -399,14 +425,13 @@ async def google_callback_redirect(
         access_token,
         max_age=3600,
         httponly=True,
-        secure=request.url.scheme == "https",
+        secure=_oauth_cookie_secure(callback_uri),
         samesite="lax",
     )
     return response
 
 @router.get("/google/url")
 def get_google_oauth_url(
-    request: Request,
     response: Response,
     redirect_uri: Optional[str] = Query(None),
     state: Optional[str] = Query(None),
@@ -414,7 +439,7 @@ def get_google_oauth_url(
     """
     Returns the Google Cloud Console OAuth 2.0 consent URL for web redirection flow.
     """
-    target_redirect = redirect_uri or GOOGLE_REDIRECT_URI
+    target_redirect = _trusted_google_redirect_uri(redirect_uri)
 
     if _is_placeholder_credential(GOOGLE_CLIENT_ID):
         return {
@@ -425,7 +450,7 @@ def get_google_oauth_url(
             "redirect_uri": target_redirect
         }
     
-    signed_state = _create_oauth_state(target_redirect, state)
+    signed_state = _create_oauth_state(state)
     params = {
         "client_id": GOOGLE_CLIENT_ID,
         "redirect_uri": target_redirect,
@@ -441,7 +466,7 @@ def get_google_oauth_url(
         signed_state,
         max_age=OAUTH_STATE_TTL_SECONDS,
         httponly=True,
-        secure=request.url.scheme == "https",
+        secure=_oauth_cookie_secure(target_redirect),
         samesite="lax",
         path="/api/v1/auth/google",
     )

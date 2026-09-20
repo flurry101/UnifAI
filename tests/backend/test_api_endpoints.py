@@ -161,7 +161,8 @@ def test_google_identity_is_not_linked_by_email():
 
 def test_google_oauth_url_issues_signed_cookie_bound_state(monkeypatch):
     monkeypatch.setattr(auth_api, "GOOGLE_CLIENT_ID", "configured-client-id")
-    redirect_uri = "http://testserver/auth/google/callback"
+    redirect_uri = "https://public.example/auth/google/callback"
+    monkeypatch.setattr(auth_api, "GOOGLE_REDIRECT_URI", redirect_uri)
     response = client.get(
         "/api/v1/auth/google/url",
         params={"redirect_uri": redirect_uri, "state": "browser-state"},
@@ -173,11 +174,84 @@ def test_google_oauth_url_issues_signed_cookie_bound_state(monkeypatch):
     assert state == oauth_state
     assert response.cookies[auth_api.OAUTH_STATE_COOKIE] == state
     assert "HttpOnly" in response.headers["set-cookie"]
+    assert "Secure" in response.headers["set-cookie"]
     payload = jwt_module.jwt.decode(state, jwt_module.SECRET_KEY, algorithms=[jwt_module.ALGORITHM])
     assert payload["purpose"] == "google_oauth_state"
     assert payload["redirect_uri"] == redirect_uri
     assert payload["client_state"] == "browser-state"
     client.cookies.clear()
+
+def test_google_oauth_rejects_unconfigured_redirect_uri(monkeypatch):
+    monkeypatch.setattr(auth_api, "GOOGLE_CLIENT_ID", "configured-client-id")
+    monkeypatch.setattr(auth_api, "GOOGLE_REDIRECT_URI", "https://public.example/auth/google/callback")
+
+    response = client.get(
+        "/api/v1/auth/google/url",
+        params={"redirect_uri": "https://attacker.example/callback"},
+    )
+
+    assert response.status_code == 400
+    assert response.json()["detail"] == "OAuth redirect URI does not match the configured callback"
+
+def test_google_callback_uses_external_https_uri_for_state_exchange_and_cookies(monkeypatch):
+    callback_uri = "https://public.example/api/v1/auth/google/callback"
+    monkeypatch.setattr(auth_api, "GOOGLE_CLIENT_ID", "configured-client-id")
+    monkeypatch.setattr(auth_api, "GOOGLE_CLIENT_SECRET", "configured-client-secret")
+    monkeypatch.setattr(auth_api, "GOOGLE_REDIRECT_URI", callback_uri)
+    monkeypatch.setattr(auth_api, "SSO_LOGIN_CALLBACK_URL", "https://public.example/auth/google/callback")
+
+    class FakeResponse:
+        def __init__(self, payload):
+            self.status_code = 200
+            self._payload = payload
+
+        def json(self):
+            return self._payload
+
+    class FakeAsyncClient:
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, *args):
+            return None
+
+        async def post(self, url, data, headers):
+            assert data["redirect_uri"] == callback_uri
+            return FakeResponse({"access_token": "google-access-token"})
+
+        async def get(self, url, headers):
+            return FakeResponse({
+                "email": "oauth@example.com",
+                "verified_email": True,
+                "sub": "google-subject",
+                "name": "OAuth User",
+            })
+
+    monkeypatch.setattr(auth_api.httpx, "AsyncClient", lambda **kwargs: FakeAsyncClient())
+    monkeypatch.setattr(
+        auth_api,
+        "_upsert_google_user",
+        lambda **kwargs: SimpleNamespace(
+            username="oauth_user",
+            email="oauth@example.com",
+            role="CPSE_USER",
+        ),
+    )
+    state = auth_api._create_oauth_state("browser-state")
+
+    response = client.get(
+        "/api/v1/auth/google/callback",
+        params={"code": "authorization-code", "state": state},
+        headers={"cookie": f"{auth_api.OAUTH_STATE_COOKIE}={state}"},
+        follow_redirects=False,
+    )
+
+    assert response.status_code == 307
+    assert response.headers["location"].startswith("https://public.example/auth/google/callback?")
+    set_cookie_headers = response.headers.get_list("set-cookie")
+    assert len(set_cookie_headers) == 2
+    assert all("Secure" in header for header in set_cookie_headers)
+    assert any(header.startswith("unifai_session=") for header in set_cookie_headers)
 
 def test_google_callback_rejects_missing_or_mismatched_state():
     client.cookies.clear()
@@ -186,20 +260,29 @@ def test_google_callback_rejects_missing_or_mismatched_state():
     assert response.json()["detail"] == "Missing or mismatched OAuth state"
 
 @pytest.mark.parametrize(
-    ("description", "expected_relation"),
-    [("PIPE A", "EQUIVALENT"), ("VALVE A", "VARIANT_OF")],
+    ("query_description", "candidate_description", "expected_relation", "raw_score"),
+    [
+        ("PIPE A", "PIPE B", "EQUIVALENT", 1 / 3 + 0.1),
+        ("VALVE A", "VALVE B", "VARIANT_OF", 1 / 3 + 0.1),
+        ("PIPE A B", "PIPE A C D", "EQUIVALENT", 0.5),
+    ],
 )
-def test_local_pipeline_probability_favors_selected_relation(description, expected_relation):
+def test_local_pipeline_probability_favors_selected_relation(
+    query_description,
+    candidate_description,
+    expected_relation,
+    raw_score,
+):
     from app.services.pipeline_service import _local_match_candidates
 
     query = SimpleNamespace(
         material_id="query",
-        normalized_description=description,
+        normalized_description=query_description,
         original_material_code=None,
     )
     candidate = SimpleNamespace(
         material_id="candidate",
-        normalized_description=description.replace(" A", " B"),
+        normalized_description=candidate_description,
         original_material_code=None,
     )
     db = MagicMock()
@@ -210,8 +293,9 @@ def test_local_pipeline_probability_favors_selected_relation(description, expect
     selected_score = proposal.lane7_probabilities[expected_relation]
     other_relation = "VARIANT_OF" if expected_relation == "EQUIVALENT" else "EQUIVALENT"
     assert proposal.predicted_relation == expected_relation
-    assert selected_score == pytest.approx(1 / 3 + 0.1)
+    assert selected_score == pytest.approx(max(raw_score, 1 - raw_score, 0.500001))
     assert proposal.lane7_probabilities[other_relation] == pytest.approx(1 - selected_score)
+    assert selected_score > proposal.lane7_probabilities[other_relation]
     assert proposal.lane7_probabilities["IDENTICAL"] == 0.0
     assert proposal.lane7_probabilities["DISTINCT"] == 0.0
 
