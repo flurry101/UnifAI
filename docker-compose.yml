@@ -1,0 +1,43 @@
+version: "3.9"
+
+# ============================================================
+# LOCAL DEVELOPMENT — uses SQLite (zero-setup, no Postgres)
+# Usage: docker compose up
+# ============================================================
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.backend
+    container_name: unifai-backend
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - DATABASE_URL=sqlite:///./database/local.db
+      - USE_LOCAL_PIPELINE=1
+    volumes:
+      - ./database:/app/database
+      - ./artifacts:/app/artifacts:ro
+    ports:
+      - "8000:8000"
+    networks:
+      - unifai-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ../docker/Dockerfile.frontend
+    container_name: unifai-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - unifai-network
+
+networks:
+  unifai-network:
+    driver: bridge

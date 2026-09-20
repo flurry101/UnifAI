@@ -22,7 +22,7 @@ def submit_decision(
     proposal_id: str, 
     request: GovernanceDecisionRequest,
     db: Session = Depends(get_db),
-    user: TokenData = Depends(require_role(["REVIEWER", "NATIONAL_ADMIN", "ADMIN"]))
+    user: TokenData = Depends(require_role(["REVIEWER", "TECHNICAL_REVIEWER", "NATIONAL_ADMIN", "ADMIN"]))
 ):
     try:
         updated_proposal = record_human_decision(

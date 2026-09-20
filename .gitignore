@@ -1,9 +1,17 @@
 # Environment and Secrets
 .env
+.env.prod
 .venv/
 venv/
 __pycache__/
 *.pyc
+
+# Frontend dependencies and build output
+node_modules/
+dist/
+build/
+coverage/
+.vite/
 
 # ML/AI Models & Caches
 .ipynb_checkpoints/
@@ -23,3 +31,14 @@ artifacts/
 !artifacts/matching_model/
 !artifacts/matching_model/*
 
+# Skills
+docs/skills/*.md
+
+# Databases & SQLite
+*.db
+*.sqlite
+*.sqlite3
+database/*.db
+database/*.sqlite
+database/*.sqlite3
+!database/.gitkeep
