@@ -46,10 +46,10 @@ export default function AuditorView() {
         <div>
           <div className="flex items-center gap-3">
             <h1 className="font-headline text-3xl md:text-4xl text-raw-black">
-              AUDIT &amp; COMPLIANCE WORKSPACE
+              AUDIT &amp; COMPLIANCE DASHBOARD
             </h1>
             <span className="font-mono text-xs bg-raw-black text-raw-white px-2.5 py-1 font-bold">
-              ROLE: AUDITOR / OVERSIGHT
+              ROLE: CPSE USER
             </span>
           </div>
           <p className="font-body text-sm text-[#444444] mt-1 uppercase">
@@ -173,4 +173,3 @@ export default function AuditorView() {
     </div>
   );
 }
-

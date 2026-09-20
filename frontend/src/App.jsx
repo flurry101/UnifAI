@@ -49,7 +49,7 @@ function AppContent() {
                 onOpenAuthModal={handleOpenAuthModal}
               />
             )}
-            {currentView === 'user' && <UserView />}
+            {currentView === 'user' && <UserView onViewChange={handleViewChange} />}
             {currentView === 'reviewer' && <ReviewerView />}
             {currentView === 'admin' && <AdminView />}
             {currentView === 'auditor' && <AuditorView />}

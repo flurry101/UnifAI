@@ -8,6 +8,30 @@ router = APIRouter()
 
 from typing import List, Optional
 
+def _normalize_cpse(cpse_raw: Optional[str]) -> str:
+    if not cpse_raw:
+        return "CPSE"
+    val = cpse_raw.lower()
+    if "iocl" in val:
+        return "IOCL"
+    if "ongc" in val:
+        return "ONGC"
+    if "gail" in val:
+        return "GAIL"
+    if "ntpc" in val:
+        return "NTPC"
+    if "bpcl" in val:
+        return "BPCL"
+    if "hpcl" in val:
+        return "HPCL"
+    if "oil-india" in val or "oil" in val:
+        return "OIL INDIA"
+    if "bhel" in val:
+        return "BHEL"
+    if "sail" in val:
+        return "SAIL"
+    return cpse_raw.replace(".com", "").replace(".co.in", "").upper()
+
 @router.get("", response_model=List[MaterialResponse])
 def search_materials(
     search: Optional[str] = None,
@@ -17,6 +41,9 @@ def search_materials(
 ):
     conditions = []
     params = {"limit": limit}
+    # Exclude synthetic mock items from general browsing unless explicitly searched for
+    if not search or "MOCK" not in search.upper():
+        conditions.append("material_id NOT LIKE 'MOCK-%' AND (original_material_code IS NULL OR original_material_code NOT LIKE 'MOCK-%')")
     if search:
         conditions.append("(material_id LIKE :search OR original_material_code LIKE :search OR normalized_description LIKE :search)")
         params["search"] = f"%{search}%"
@@ -24,17 +51,28 @@ def search_materials(
         conditions.append("cpse_id = :cpse_id")
         params["cpse_id"] = cpse_id
     where_clause = " WHERE " + " AND ".join(conditions) if conditions else ""
+    order_clause = """
+        ORDER BY
+            CASE
+                WHEN cpse_id IN ('IOCL', 'ONGC', 'GAIL', 'NTPC', 'BPCL') THEN 0
+                WHEN cpse_id LIKE '%iocl%' THEN 1
+                WHEN cpse_id LIKE '%ntpc%' THEN 2
+                ELSE 3
+            END,
+            material_id
+    """
     query = text(f"""
         SELECT material_id, cpse_id, original_material_code, normalized_description, source_system
         FROM material_retrieval
         {where_clause}
+        {order_clause}
         LIMIT :limit
     """)
     results = db.execute(query, params).fetchall()
     return [
         {
             "material_id": r[0],
-            "cpse_id": r[1],
+            "cpse_id": _normalize_cpse(r[1]),
             "original_material_code": r[2],
             "normalized_description": r[3],
             "source_system": r[4]

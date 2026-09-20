@@ -4,7 +4,7 @@ This document outlines the API endpoints required to orchestrate the UnifAI Mach
 
 ## 1. Authentication & Roles
 - Roles scope data access by CPSE. 
-- Roles: `CPSE_USER`, `TECHNICAL_REVIEWER`, `CPSE_ADMIN`, `NATIONAL_ADMIN`, `AUDITOR`.
+- Roles: `CPSE_USER`, `TECHNICAL_REVIEWER`, `NATIONAL_ADMIN`, `AUDITOR`.
 
 ### `POST /api/v1/auth/login`
 - **Purpose**: Authenticate users.

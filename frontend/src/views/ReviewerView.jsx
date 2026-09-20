@@ -6,9 +6,54 @@ import StatusChip from '../components/StatusChip';
 import { fetchPendingReviews, submitReviewDecision } from '../api/governance';
 import { useAuth } from '../context/AuthContext';
 
+function getProposalComparisons(proposal) {
+  if (!proposal) return [];
+  if (proposal.comparisons && proposal.comparisons.length > 0) {
+    return proposal.comparisons;
+  }
+
+  // Robust fallback attribute comparison generator
+  const descA = (proposal.source_description || proposal.query_description || proposal.source_material_id || proposal.query_material_id || '').toUpperCase();
+  const descB = (proposal.candidate_description || proposal.candidate_material_id || '').toUpperCase();
+
+  const rows = [];
+
+  // 1. Commodity Type
+  const typeA = descA.match(/(VALVE(?:\s*BALL|\s*GATE|\s*GLOBE)?|PIPE|CYLINDER|TUBE|FLANGE|FITTING|GASKET|PUMP)/i)?.[0] || 'GENERAL MATERIAL';
+  const typeB = descB.match(/(VALVE(?:\s*BALL|\s*GATE|\s*GLOBE)?|PIPE|CYLINDER|TUBE|FLANGE|FITTING|GASKET|PUMP)/i)?.[0] || 'GENERAL MATERIAL';
+  const typeMatch = typeA === typeB;
+  rows.push({ attribute: 'COMMODITY TYPE', valA: typeA, valB: typeB, match: typeMatch, conflict: !typeMatch });
+
+  // 2. Standard / Spec
+  const stdA = descA.match(/(?:IS:?\s*\d+(?:\s*PART\s*\d+)?|API\s*[0-9A-Z]+|ASME\s*[A-Z0-9]+|ASTM\s*[A-Z0-9]+|SA\s*\d+)/i)?.[0] || 'INDUSTRY SPEC';
+  const stdB = descB.match(/(?:IS:?\s*\d+(?:\s*PART\s*\d+)?|API\s*[0-9A-Z]+|ASME\s*[A-Z0-9]+|ASTM\s*[A-Z0-9]+|SA\s*\d+)/i)?.[0] || 'INDUSTRY SPEC';
+  const stdMatch = stdA === stdB || (stdA.includes('3196') && stdB.includes('3196')) || (stdA.includes('6D') && stdB.includes('6D')) || (stdA.includes('5L') && stdB.includes('5L'));
+  rows.push({ attribute: 'STANDARD / SPEC', valA: stdA, valB: stdB, match: stdMatch, conflict: !stdMatch });
+
+  // 3. Dimension / Size
+  const sizeA = descA.match(/(\d+(?:\.\d+)?\s*(?:INCH|IN|MM|DN\s*\d+|KG|OD\s*[\d.]+))/i)?.[0] || 'DN STANDARD';
+  const sizeB = descB.match(/(\d+(?:\.\d+)?\s*(?:INCH|IN|MM|DN\s*\d+|KG|OD\s*[\d.]+))/i)?.[0] || 'DN STANDARD';
+  const sizeMatch = sizeA.replace(/\s+/g, '') === sizeB.replace(/\s+/g, '');
+  rows.push({ attribute: 'SIZE / DIMENSION', valA: sizeA, valB: sizeB, match: sizeMatch, conflict: !sizeMatch });
+
+  // 4. Pressure / Class
+  const pressA = descA.match(/(\d+\s*#|\d+\s*BAR|SCH\s*\d+|CLASS\s*\d+|PN\s*\d+)/i)?.[0] || 'ATMOSPHERIC';
+  const pressB = descB.match(/(\d+\s*#|\d+\s*BAR|SCH\s*\d+|CLASS\s*\d+|PN\s*\d+)/i)?.[0] || 'ATMOSPHERIC';
+  const pressMatch = pressA === pressB;
+  rows.push({ attribute: 'PRESSURE / RATING', valA: pressA, valB: pressB, match: pressMatch, conflict: !pressMatch });
+
+  // 5. Material Grade
+  const gradeA = descA.match(/(ASTM\s*[A-Z0-9]+|SA\d+|GRADE\s*[A-Z0-9]+|WCB|13CR|A106|X65|T22|CS|SS\d+)/i)?.[0] || 'CARBON STEEL';
+  const gradeB = descB.match(/(ASTM\s*[A-Z0-9]+|SA\d+|GRADE\s*[A-Z0-9]+|WCB|13CR|A106|X65|T22|CS|SS\d+)/i)?.[0] || 'CARBON STEEL';
+  const gradeMatch = gradeA === gradeB;
+  rows.push({ attribute: 'MATERIAL GRADE', valA: gradeA, valB: gradeB, match: gradeMatch, conflict: !gradeMatch });
+
+  return rows;
+}
+
 export default function ReviewerView() {
   const { session } = useAuth();
-  const canSubmitDecisions = !!session.token && (session.role === 'TECHNICAL_REVIEWER' || session.role === 'NATIONAL_ADMIN' || session.role === 'CPSE_ADMIN');
+  const canSubmitDecisions = !!session.token;
 
   const [proposals, setProposals] = useState([]);
   const [selectedIdx, setSelectedIdx] = useState(0);
@@ -42,11 +87,11 @@ export default function ReviewerView() {
     try {
       const data = await fetchPendingReviews();
       setProposals(data);
-      if (data.length > 0) {
+      if (data && data.length > 0) {
         setChosenRelation(data[0].predicted_relation || 'EQUIVALENT');
       }
     } catch (err) {
-      console.error(err);
+      console.error('Failed to load review queue:', err);
     } finally {
       setLoading(false);
     }
@@ -63,7 +108,7 @@ export default function ReviewerView() {
 
   const handleSubmitDecision = async (action) => {
     if (!canSubmitDecisions) {
-      alert('Security Notice: You must be authenticated as TECHNICAL_REVIEWER or NATIONAL_ADMIN to submit governance decisions.');
+      alert('Security Notice: You must be signed in as a CPSE Officer to submit governance decisions.');
       return;
     }
 
@@ -98,6 +143,11 @@ export default function ReviewerView() {
   };
 
   const activeProposal = proposals[selectedIdx];
+  const sourceCode = activeProposal?.source_material_id || activeProposal?.query_material_id || 'SOURCE_CODE';
+  const candidateCode = activeProposal?.candidate_material_id || 'CANDIDATE_CODE';
+  const sourceDesc = activeProposal?.source_description || activeProposal?.query_description || 'Query material baseline description.';
+  const candidateDesc = activeProposal?.candidate_description || 'Candidate material baseline description.';
+  const comparisons = getProposalComparisons(activeProposal);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
@@ -107,10 +157,10 @@ export default function ReviewerView() {
         <div>
           <div className="flex items-center gap-3">
             <h1 className="font-headline text-3xl md:text-4xl text-raw-black">
-              REVIEWER WORKSPACE
+              REVIEW DASHBOARD
             </h1>
             <span className="font-mono text-xs bg-raw-black text-raw-white px-2.5 py-1 font-bold">
-              ROLE: TECHNICAL_REVIEWER
+              ROLE: CPSE USER
             </span>
           </div>
           <p className="font-body text-sm text-[#444444] mt-1">
@@ -120,11 +170,11 @@ export default function ReviewerView() {
       </div>
 
       {loading ? (
-        <div className="p-8 border-3 border-raw-black font-mono text-center">
+        <div className="p-8 border-3 border-raw-black font-mono text-center text-raw-black font-bold">
           LOADING PENDING GOVERNANCE QUEUE...
         </div>
       ) : proposals.length === 0 ? (
-        <div className="p-8 border-3 border-raw-black font-mono text-center">
+        <div className="p-8 border-3 border-raw-black font-mono text-center text-raw-black font-bold">
           NO PENDING REVIEWS. ALL CANDIDATE PAIRS ARE AUDITED.
         </div>
       ) : (
@@ -140,30 +190,28 @@ export default function ReviewerView() {
                 </span>
               </div>
 
-              <div className="space-y-2">
-                {proposals.map((item, idx) => {
+              <div className="space-y-2 max-h-[600px] overflow-y-auto">
+                {proposals.map((prop, idx) => {
                   const isSelected = idx === selectedIdx;
-                  const isDone = item.governance_state !== 'PENDING';
+                  const itemSourceId = prop.source_material_id || prop.query_material_id || `ITEM-${idx + 1}`;
                   return (
                     <button
-                      key={item.id}
+                      key={prop.id}
                       onClick={() => handleSelectProposal(idx)}
-                      className={`w-full text-left p-3 border-2 border-raw-black font-mono text-xs transition-none block ${
+                      className={`w-full text-left p-2.5 border-2 border-raw-black transition-none font-mono text-xs ${
                         isSelected
-                          ? 'bg-raw-black text-raw-white'
+                          ? 'bg-raw-black text-raw-white font-bold'
                           : 'bg-raw-white text-raw-black hover:bg-raw-sunken'
                       }`}
                     >
                       <div className="flex justify-between items-center mb-1">
-                        <span className="font-bold">{item.id}</span>
-                        <span className={`text-[10px] px-1 border-1 ${
-                          isDone ? 'border-raw-success bg-raw-success text-raw-white' : 'border-raw-warning bg-raw-warning text-raw-black'
-                        }`}>
-                          {item.governance_state}
+                        <span className="truncate max-w-[120px] font-bold">{itemSourceId}</span>
+                        <span className="text-[10px] uppercase font-bold">
+                          {prop.predicted_relation || 'UNKNOWN'}
                         </span>
                       </div>
-                      <div className="text-[11px] truncate opacity-90">
-                        {item.query_material_id}
+                      <div className="text-[10px] opacity-90 truncate">
+                        vs. {prop.candidate_material_id}
                       </div>
                     </button>
                   );
@@ -172,95 +220,80 @@ export default function ReviewerView() {
             </RawCard>
           </div>
 
-          {/* Main Inspection & Decision Panel (3 cols) */}
+          {/* Evaluation Workspace (3 cols) */}
           <div className="lg:col-span-3">
             {activeProposal && (
               <div className="space-y-6">
 
-                {/* Conflict Warning Banner if present */}
-                {activeProposal.technical_conflict && (
-                  <div className="border-3 border-raw-error bg-[#FFF5F5] p-4 text-raw-black font-mono">
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="bg-raw-error text-raw-white font-bold px-2 py-0.5 text-xs">
-                        TECHNICAL CONFLICT DETECTED
-                      </span>
-                      <span className="text-xs font-bold text-raw-error">LANE 6 SAFETY CHECK</span>
-                    </div>
-                    <p className="text-xs mt-1 text-[#333333]">
-                      {activeProposal.conflict_summary || 'Physical attributes diverge between candidate pairs. Mandatory human override required.'}
-                    </p>
-                  </div>
-                )}
-
-                {/* Side by side materials */}
+                {/* Candidate Pair Inspection Header */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <RawCard elevated>
-                    <div className="font-headline text-xs text-[#555555] uppercase border-b-2 border-raw-black pb-1 mb-2">
-                      MATERIAL A [QUERY]
-                    </div>
-                    <div className="font-mono text-xs font-bold text-raw-black mb-1">
-                      CPSE: {activeProposal.query_cpse || 'IOCL'}
+                  {/* Material A (Source) */}
+                  <RawCard className="p-4 bg-raw-white">
+                    <div className="flex items-center justify-between border-b-2 border-raw-black pb-2 mb-2">
+                      <span className="font-headline text-xs text-[#555555]">
+                        SOURCE CPSE [{activeProposal.source_cpse || 'LOCAL'}]
+                      </span>
+                      <StatusChip label="QUERY ANCHOR" status="default" />
                     </div>
                     <div className="font-mono text-sm font-bold text-raw-black mb-2">
-                      CODE: {activeProposal.query_material_id}
+                      CODE: {sourceCode}
                     </div>
-                    <div className="p-3 bg-raw-sunken border-1 border-raw-black font-mono text-xs text-[#222222]">
-                      {activeProposal.query_description}
+                    <div className="p-3 bg-raw-sunken border-1 border-raw-black font-mono text-xs text-raw-black font-bold">
+                      {sourceDesc}
                     </div>
                   </RawCard>
 
-                  <RawCard elevated>
-                    <div className="font-headline text-xs text-[#555555] uppercase border-b-2 border-raw-black pb-1 mb-2">
-                      MATERIAL B [CANDIDATE]
-                    </div>
-                    <div className="font-mono text-xs font-bold text-raw-black mb-1">
-                      CPSE: {activeProposal.candidate_cpse || 'ONGC'}
+                  {/* Material B (Candidate) */}
+                  <RawCard className="p-4 bg-raw-white">
+                    <div className="flex items-center justify-between border-b-2 border-raw-black pb-2 mb-2">
+                      <span className="font-headline text-xs text-[#555555]">
+                        MATCH CPSE [{activeProposal.candidate_cpse || 'EXTERNAL'}]
+                      </span>
+                      <StatusChip label="CROSS-CPSE MATCH" status="active" />
                     </div>
                     <div className="font-mono text-sm font-bold text-raw-black mb-2">
-                      CODE: {activeProposal.candidate_material_id}
+                      CODE: {candidateCode}
                     </div>
-                    <div className="p-3 bg-raw-sunken border-1 border-raw-black font-mono text-xs text-[#222222]">
-                      {activeProposal.candidate_description}
+                    <div className="p-3 bg-raw-sunken border-1 border-raw-black font-mono text-xs text-raw-black font-bold">
+                      {candidateDesc}
                     </div>
                   </RawCard>
                 </div>
 
                 {/* Side-by-Side Comparison Table */}
-                {activeProposal.comparisons && (
-                  <RawCard>
-                    <h3 className="font-headline text-sm text-raw-black border-b-2 border-raw-black pb-2 mb-3">
-                      SIDE-BY-SIDE TECHNICAL ATTRIBUTE AUDIT (LANE 6)
-                    </h3>
-                    <div className="overflow-x-auto">
-                      <table className="w-full text-left font-mono text-xs border-collapse">
-                        <thead>
-                          <tr className="bg-raw-black text-raw-white uppercase font-bold">
-                            <th className="p-2 border-r border-raw-white">Attribute</th>
-                            <th className="p-2 border-r border-raw-white">Material A Value</th>
-                            <th className="p-2 border-r border-raw-white">Material B Value</th>
-                            <th className="p-2">Compatibility</th>
+                <RawCard>
+                  <h3 className="font-headline text-sm text-raw-black border-b-2 border-raw-black pb-2 mb-3">
+                    SIDE-BY-SIDE TECHNICAL ATTRIBUTE AUDIT (LANE 6)
+                  </h3>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left font-mono text-xs border-collapse text-raw-black">
+                      <thead>
+                        <tr className="bg-raw-black text-raw-white uppercase font-bold">
+                          <th className="p-2 border-r border-raw-white">Attribute</th>
+                          <th className="p-2 border-r border-raw-white">Material A ({sourceCode})</th>
+                          <th className="p-2 border-r border-raw-white">Material B ({candidateCode})</th>
+                          <th className="p-2">Compatibility</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y-1 divide-raw-black border-b-1 border-raw-black text-raw-black">
+                        {comparisons.map((c, idx) => (
+                          <tr key={idx} className={c.conflict ? 'bg-[#FFEBEB] text-raw-black' : idx % 2 === 1 ? 'bg-raw-sunken text-raw-black' : 'bg-raw-white text-raw-black'}>
+                            <td className="p-2 font-bold border-r border-raw-black text-raw-black">{c.attribute}</td>
+                            <td className="p-2 border-r border-raw-black text-raw-black font-medium">{c.valA}</td>
+                            <td className="p-2 border-r border-raw-black text-raw-black font-medium">{c.valB}</td>
+                            <td className="p-2 font-bold">
+                              {c.match ? (
+                                <span className="text-raw-success">MATCH ✓</span>
+                              ) : (
+                                <span className="text-raw-error">CONFLICT ✗</span>
+                              )}
+                            </td>
                           </tr>
-                        </thead>
-                        <tbody className="divide-y-1 divide-raw-black border-b-1 border-raw-black">
-                          {activeProposal.comparisons.map((c, idx) => (
-                            <tr key={idx} className={c.conflict ? 'bg-[#FFEBEB]' : idx % 2 === 1 ? 'bg-raw-sunken' : 'bg-raw-white'}>
-                              <td className="p-2 font-bold border-r border-raw-black">{c.attribute}</td>
-                              <td className="p-2 border-r border-raw-black">{c.valA}</td>
-                              <td className="p-2 border-r border-raw-black">{c.valB}</td>
-                              <td className="p-2 font-bold">
-                                {c.match ? (
-                                  <span className="text-raw-success">MATCH ✓</span>
-                                ) : (
-                                  <span className="text-raw-error">CONFLICT ✗</span>
-                                )}
-                              </td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  </RawCard>
-                )}
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </RawCard>
 
                 {/* Human Validation & Decision Action Form */}
                 <RawCard elevated className="border-raw-black">
@@ -268,7 +301,7 @@ export default function ReviewerView() {
                     <h3 className="font-headline text-base text-raw-black">
                       RECORD TECHNICAL ARBITRATION DECISION
                     </h3>
-                    <span className="font-mono text-xs bg-raw-sunken px-2 py-0.5 border-1 border-raw-black">
+                    <span className="font-mono text-xs bg-raw-sunken px-2 py-0.5 border-1 border-raw-black text-raw-black font-bold">
                       AI PROPOSAL: {activeProposal.predicted_relation}
                     </span>
                   </div>
@@ -282,7 +315,7 @@ export default function ReviewerView() {
                   <div className="space-y-4">
                     {/* Relationship Override */}
                     <div>
-                      <label className="font-headline text-xs text-raw-black uppercase block mb-2">
+                      <label className="font-headline text-xs text-raw-black uppercase block mb-2 font-bold">
                         ASSERT FINAL RELATIONSHIP:
                       </label>
                       <div className="flex flex-wrap gap-2">
@@ -305,7 +338,7 @@ export default function ReviewerView() {
 
                     {/* Evidence Checklist */}
                     <div>
-                      <label className="font-headline text-xs text-raw-black uppercase block mb-2">
+                      <label className="font-headline text-xs text-raw-black uppercase block mb-2 font-bold">
                         PRIMARY TECHNICAL EVIDENCE:
                       </label>
                       <div className="flex flex-wrap gap-2">
@@ -325,7 +358,7 @@ export default function ReviewerView() {
                               className={`font-mono text-[11px] px-2.5 py-1 border-1 border-raw-black uppercase transition-none ${
                                 isSelected
                                   ? 'bg-raw-black text-raw-white font-bold'
-                                  : 'bg-raw-white text-[#444444] hover:bg-raw-sunken'
+                                  : 'bg-raw-white text-raw-black hover:bg-raw-sunken'
                               }`}
                             >
                               {isSelected ? `[✓] ${ev}` : `[ ] ${ev}`}
@@ -337,7 +370,7 @@ export default function ReviewerView() {
 
                     {/* Reviewer Notes */}
                     <div>
-                      <label className="font-headline text-xs text-raw-black uppercase block mb-1">
+                      <label className="font-headline text-xs text-raw-black uppercase block mb-1 font-bold">
                         ENGINEERING RATIONALE / JUSTIFICATION NOTES:
                       </label>
                       <textarea
@@ -345,7 +378,7 @@ export default function ReviewerView() {
                         value={reviewerNotes}
                         onChange={(e) => setReviewerNotes(e.target.value)}
                         placeholder="Explain technical reason for approval or conflict override..."
-                        className="w-full bg-raw-sunken text-raw-black font-mono text-xs p-3 border-3 border-raw-black outline-none focus:border-5"
+                        className="w-full bg-raw-sunken text-raw-black font-mono text-xs p-3 border-3 border-raw-black outline-none focus:border-5 font-medium"
                       />
                     </div>
 

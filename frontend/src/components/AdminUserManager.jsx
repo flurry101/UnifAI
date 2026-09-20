@@ -3,18 +3,17 @@ import RawCard from './RawCard';
 import RawButton from './RawButton';
 import { listUsers, updateUserRole } from '../api/admin';
 
-const VALID_ROLES = ['CPSE_USER', 'TECHNICAL_REVIEWER', 'CPSE_ADMIN', 'NATIONAL_ADMIN', 'AUDITOR'];
+const VALID_ROLES = ['CPSE_USER', 'TECHNICAL_REVIEWER', 'NATIONAL_ADMIN', 'AUDITOR'];
 
 const ROLE_BADGE = {
   CPSE_USER:          { label: 'USER',      color: 'bg-gray-100 text-gray-700' },
   TECHNICAL_REVIEWER: { label: 'REVIEWER',  color: 'bg-blue-100 text-blue-800' },
-  CPSE_ADMIN:         { label: 'CPSE ADMIN',color: 'bg-amber-100 text-amber-800' },
   NATIONAL_ADMIN:     { label: 'NATL ADMIN',color: 'bg-red-100 text-red-800' },
   AUDITOR:            { label: 'AUDITOR',   color: 'bg-purple-100 text-purple-800' },
 };
 
 /**
- * AdminUserManager — visible only to NATIONAL_ADMIN / CPSE_ADMIN.
+ * AdminUserManager — visible only to NATIONAL_ADMIN.
  * Lists all users and allows role changes via the admin API.
  */
 export default function AdminUserManager({ currentUserRole }) {
@@ -49,7 +48,7 @@ export default function AdminUserManager({ currentUserRole }) {
   // What roles can the current admin assign?
   const assignableRoles = currentUserRole === 'NATIONAL_ADMIN'
     ? VALID_ROLES
-    : VALID_ROLES.filter((r) => !['CPSE_ADMIN', 'NATIONAL_ADMIN'].includes(r));
+    : VALID_ROLES.filter((r) => !['NATIONAL_ADMIN'].includes(r));
 
   return (
     <RawCard elevated className="bg-raw-white p-6">
@@ -58,9 +57,7 @@ export default function AdminUserManager({ currentUserRole }) {
           USER MANAGEMENT — ROLE CONTROL
         </h2>
         <p className="font-mono text-xs text-[#666] mt-1">
-          {currentUserRole === 'NATIONAL_ADMIN'
-            ? 'NATIONAL_ADMIN: You can promote or demote any user.'
-            : 'CPSE_ADMIN: You can manage non-admin roles within your CPSE.'}
+          NATIONAL_ADMIN: You can promote or demote any user.
         </p>
       </div>
 

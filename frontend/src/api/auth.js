@@ -7,7 +7,8 @@ function storeSession(data) {
     if (typeof window !== 'undefined') {
       window.localStorage.setItem('unifai_token', data.access_token);
       if (data.role) {
-        window.localStorage.setItem('unifai_role', data.role);
+        const cleanRole = data.role === 'CPSE_ADMIN' ? 'CPSE_USER' : data.role;
+        window.localStorage.setItem('unifai_role', cleanRole);
       }
       if (data.username) {
         window.localStorage.setItem('unifai_username', data.username);
@@ -27,88 +28,51 @@ export const PERSONAS = {
   USER: {
     id: 'user',
     role: 'CPSE_USER',
-    displayTitle: 'USER',
-    badge: 'CPSE OPERATIONAL USER',
+    displayTitle: 'DASHBOARD',
+    badge: 'CPSE OFFICER',
     description: 'Ingest local materials, inspect specifications, and invoke AI matching pipelines.',
     defaultUsername: 'cpse_user',
     cpse: 'ONGC / IOCL',
   },
   REVIEWER: {
     id: 'reviewer',
-    role: 'TECHNICAL_REVIEWER',
-    displayTitle: 'REVIEWER',
-    badge: 'TECHNICAL REVIEWER',
+    role: 'CPSE_USER',
+    displayTitle: 'REVIEW',
+    badge: 'CPSE OFFICER',
     description: 'Evaluate technical attribute conflicts, inspect feature differences, and record decisions.',
-    defaultUsername: 'reviewer',
+    defaultUsername: 'cpse_user',
     cpse: 'CENTRAL REVIEW BOARD',
   },
   ADMIN: {
     id: 'admin',
-    role: 'NATIONAL_ADMIN',
-    displayTitle: 'NATIONAL ADMIN',
-    badge: 'NATIONAL ADMIN',
+    role: 'CPSE_USER',
+    displayTitle: 'CNMC CATALOG',
+    badge: 'CPSE OFFICER',
     tagline: 'Common National Material Catalog (CNMC) Registry & Harmonization',
-    description: 'Manage global CNMC catalog, view cross-CPSE lineage, and inspect RBAC security audit.',
-    defaultUsername: 'admin',
+    description: 'Inspect global CNMC catalog and view cross-CPSE lineage.',
+    defaultUsername: 'cpse_user',
     cpse: 'NATIONAL HARMONIZATION CELL',
   },
   AUDITOR: {
     id: 'auditor',
-    role: 'AUDITOR',
-    displayTitle: 'AUDITOR',
-    badge: 'REGULATORY AUDITOR',
+    role: 'CPSE_USER',
+    displayTitle: 'AUDIT',
+    badge: 'CPSE OFFICER',
     tagline: 'Immutable Regulatory Audit Trail & Governance Compliance',
     description: 'Inspect real-time decision logs, model reasoning trails, and verify compliance with national procurement standards.',
-    defaultUsername: 'auditor',
+    defaultUsername: 'cpse_user',
     cpse: 'CAG / REGULATORY OVERSIGHT',
-  },
-  CPSE_ADMIN: {
-    id: 'admin',
-    role: 'CPSE_ADMIN',
-    displayTitle: 'CPSE ADMIN',
-    badge: 'ENTERPRISE & SYSTEM ADMIN',
-    tagline: 'Full Cross-Workspace Authority & User Administration',
-    description: 'Full administrative control across all CPSE workspaces, user role provisioning, and cross-enterprise harmonization.',
-    defaultUsername: 'cpse_admin',
-    cpse: 'CENTRAL ENTERPRISE COMMAND',
   },
 };
 
-export function getAccessibleWorkspaces(role) {
-  // CPSE_ADMIN (The super admin / first user): Can access and switch between ALL workspaces
-  if (role === 'CPSE_ADMIN') {
-    return [
-      { id: 'user', label: 'CPSE USER', shortLabel: 'USER', tagline: 'Local Material Catalog' },
-      { id: 'reviewer', label: 'TECHNICAL REVIEWER', shortLabel: 'REVIEWER', tagline: 'Conflict Resolution' },
-      { id: 'admin', label: 'NATIONAL ADMIN', shortLabel: 'NATL ADMIN', tagline: 'CNMC Master Registry & Users' },
-      { id: 'auditor', label: 'AUDITOR', shortLabel: 'AUDITOR', tagline: 'Audit Trail & Compliance' },
-    ];
-  }
-  // NATIONAL_ADMIN: Can see auditor, cpse_user, technical_reviewer views (+ admin)
-  if (role === 'NATIONAL_ADMIN') {
-    return [
-      { id: 'admin', label: 'NATIONAL ADMIN', shortLabel: 'NATL ADMIN', tagline: 'CNMC Master Registry' },
-      { id: 'auditor', label: 'AUDITOR', shortLabel: 'AUDITOR', tagline: 'Audit Trail & Compliance' },
-      { id: 'reviewer', label: 'TECHNICAL REVIEWER', shortLabel: 'REVIEWER', tagline: 'Conflict Resolution' },
-      { id: 'user', label: 'CPSE USER', shortLabel: 'USER', tagline: 'Local Material Catalog' },
-    ];
-  }
-  // TECHNICAL_REVIEWER: Can see cpse_user and their own view only
-  if (role === 'TECHNICAL_REVIEWER') {
-    return [
-      { id: 'reviewer', label: 'TECHNICAL REVIEWER', shortLabel: 'REVIEWER', tagline: 'Conflict Resolution' },
-      { id: 'user', label: 'CPSE USER', shortLabel: 'USER', tagline: 'Local Material Catalog' },
-    ];
-  }
-  // AUDITOR: auditor view only
-  if (role === 'AUDITOR') {
-    return [
-      { id: 'auditor', label: 'AUDITOR', shortLabel: 'AUDITOR', tagline: 'Audit Trail & Compliance' },
-    ];
-  }
-  // CPSE_USER: user view only
+export function getAccessibleWorkspaces(_role) {
+  // All 5 roles are merged into one CPSE Officer access model:
+  // Every CPSE user has full access to all 4 functional dashboards.
   return [
-    { id: 'user', label: 'CPSE USER', shortLabel: 'USER', tagline: 'Local Material Catalog' },
+    { id: 'user', label: 'MATERIAL HARMONIZATION DASHBOARD', shortLabel: 'DASHBOARD', tagline: 'Local Material Ingestion & AI Matching' },
+    { id: 'reviewer', label: 'REVIEW DASHBOARD', shortLabel: 'REVIEW', tagline: 'Technical Conflict Arbitration & Ground Truth' },
+    { id: 'admin', label: 'CNMC CATALOG DASHBOARD', shortLabel: 'CNMC CATALOG', tagline: 'Common National Material Catalog Master' },
+    { id: 'auditor', label: 'AUDIT & COMPLIANCE DASHBOARD', shortLabel: 'AUDIT', tagline: 'Immutable Regulatory Audit Trail & Governance' },
   ];
 }
 
@@ -236,15 +200,15 @@ export function getCurrentSession() {
   const savedRole = typeof window !== 'undefined' ? window.localStorage.getItem('unifai_role') : null;
   const savedUsername = typeof window !== 'undefined' ? window.localStorage.getItem('unifai_username') : null;
 
-  let role = savedRole || 'CPSE_USER';
+  let role = (savedRole === 'CPSE_ADMIN' ? 'CPSE_USER' : savedRole) || 'CPSE_USER';
   if (token) {
     const payload = parseJwt(token);
     if (payload) {
       const appRole = payload.app_metadata?.unifai_role || payload.app_metadata?.role;
       if (appRole && appRole !== 'authenticated') {
-        role = appRole;
+        role = appRole === 'CPSE_ADMIN' ? 'CPSE_USER' : appRole;
       } else if (payload.role && payload.role !== 'authenticated') {
-        role = payload.role;
+        role = payload.role === 'CPSE_ADMIN' ? 'CPSE_USER' : payload.role;
       }
     }
   }
@@ -260,7 +224,7 @@ export function getCurrentSession() {
     token,
     username: savedUsername,
     personaId,
-    role,
+    role: role === 'CPSE_ADMIN' ? 'CPSE_USER' : role,
   };
 }
 

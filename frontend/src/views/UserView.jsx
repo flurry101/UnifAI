@@ -3,12 +3,48 @@ import RawCard from '../components/RawCard';
 import RawButton from '../components/RawButton';
 import RawInput from '../components/RawInput';
 import StatusChip from '../components/StatusChip';
-import { SAMPLE_MATERIALS, fetchMaterialById, triggerAiMatch } from '../api/materials';
+import { SAMPLE_MATERIALS, searchMaterials, fetchMaterialById, triggerAiMatch } from '../api/materials';
 import { useAuth } from '../context/AuthContext';
 
-export default function UserView() {
+function extractAttributes(mat) {
+  if (!mat) return {};
+  if (mat.specifications && Object.keys(mat.specifications).length > 0) {
+    return mat.specifications;
+  }
+  const desc = (mat.normalized_description || mat.original_description || '').toUpperCase();
+  const specs = {};
+
+  // Standard
+  const stdMatch = desc.match(/(?:IS:?\s*\d+(?:\s*PART\s*\d+)?|API\s*[0-9A-Z]+|ASME\s*[A-Z0-9]+|ASTM\s*[A-Z0-9]+|SA\s*\d+\s*[A-Z0-9]*|DIN\s*\d+)/i);
+  if (stdMatch) specs['STANDARD'] = stdMatch[0];
+
+  // Size / Dimension
+  const sizeMatch = desc.match(/(\d+(?:\.\d+)?\s*(?:INCH|IN|MM|DN\s*\d+|KG|LITERS|L|OD\s*[\d.]+\s*MM|THK\s*[\d.]+\s*MM))/i);
+  if (sizeMatch) specs['DIMENSION / SIZE'] = sizeMatch[0];
+
+  // Pressure / Rating
+  const pressMatch = desc.match(/(\d+\s*#|\d+\s*BAR|\d+\s*PSI|SCH\s*\d+|CLASS\s*\d+|PN\s*\d+)/i);
+  if (pressMatch) specs['RATING / PRESSURE'] = pressMatch[0];
+
+  // Material Grade
+  const gradeMatch = desc.match(/(ASTM\s*[A-Z0-9]+|SA\d+\s*[A-Z0-9]+|GRADE\s*[A-Z0-9]+|WCB|13CR|A106|X65|T22|CS|SS\d+|ALLOY\s*STEEL|CARBON\s*STEEL)/i);
+  if (gradeMatch) specs['MATERIAL GRADE'] = gradeMatch[0];
+
+  // Commodity / Type
+  const typeMatch = desc.match(/(VALVE(?:\s*BALL|\s*GATE|\s*GLOBE)?|PIPE|CYLINDER|TUBE\s*BOILER|FLANGE|FITTING|GASKET|PUMP)/i);
+  if (typeMatch) specs['COMMODITY TYPE'] = typeMatch[0];
+
+  if (Object.keys(specs).length === 0) {
+    specs['STATUS'] = 'INGESTED ERP RECORD';
+    specs['SOURCE SYSTEM'] = mat.source_system || 'ENTERPRISE ERP';
+  }
+  return specs;
+}
+
+export default function UserView({ onViewChange }) {
   const { session } = useAuth();
 
+  const [availableMaterials, setAvailableMaterials] = useState(SAMPLE_MATERIALS);
   const [searchId, setSearchId] = useState(SAMPLE_MATERIALS[0].material_id);
   const [selectedMaterial, setSelectedMaterial] = useState(SAMPLE_MATERIALS[0]);
   const [loadingMaterial, setLoadingMaterial] = useState(false);
@@ -16,8 +52,37 @@ export default function UserView() {
   const [matchResults, setMatchResults] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
 
+  // Ingest from Supabase / SQLite on mount
   useEffect(() => {
-    handleLookup(SAMPLE_MATERIALS[0].material_id);
+    async function loadIngested() {
+      try {
+        const list = await searchMaterials('', 40);
+        // Strictly filter out synthetic test mock items (e.g. MOCK-1)
+        const cleanIngested = (list || []).filter((item) => {
+          const code = (item.original_material_code || item.material_id || '').toUpperCase();
+          return !code.startsWith('MOCK');
+        });
+
+        // Prioritize verified engineering benchmarks, followed by genuine ingested CPSE catalog records
+        const combined = [...SAMPLE_MATERIALS];
+        cleanIngested.forEach((item) => {
+          if (!combined.some((c) => c.material_id === item.material_id)) {
+            combined.push(item);
+          }
+        });
+
+        setAvailableMaterials(combined);
+        // Default to first real benchmark material
+        setSelectedMaterial(SAMPLE_MATERIALS[0]);
+        setSearchId(SAMPLE_MATERIALS[0].material_id);
+      } catch (err) {
+        console.warn('Failed to load ingested materials from API, using verified benchmarks:', err);
+        setAvailableMaterials(SAMPLE_MATERIALS);
+        setSelectedMaterial(SAMPLE_MATERIALS[0]);
+        setSearchId(SAMPLE_MATERIALS[0].material_id);
+      }
+    }
+    loadIngested();
   }, []);
 
   const handleLookup = async (idToSearch) => {
@@ -52,6 +117,9 @@ export default function UserView() {
     }
   };
 
+  const currentSpecs = extractAttributes(selectedMaterial);
+  const itemDescription = selectedMaterial?.normalized_description || selectedMaterial?.original_description || 'NO SPECIFICATION TEXT PROVIDED IN RECORD';
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
 
@@ -60,10 +128,10 @@ export default function UserView() {
         <div>
           <div className="flex items-center gap-3">
             <h1 className="font-headline text-3xl md:text-4xl text-raw-black">
-              USER WORKSPACE
+              MATERIAL HARMONIZATION DASHBOARD
             </h1>
             <span className="font-mono text-xs bg-raw-black text-raw-white px-2.5 py-1 font-bold">
-              ROLE: CPSE_USER
+              ROLE: CPSE USER
             </span>
           </div>
           <p className="font-body text-sm text-[#444444] mt-1">
@@ -74,112 +142,109 @@ export default function UserView() {
 
       {/* Preset Quick Selectors */}
       <div className="mb-6">
-        <label className="font-headline text-xs text-raw-black block uppercase tracking-wider mb-2">
-          LOAD VERIFIED BENCHMARK MATERIAL (CLICK TO INSPECT):
-        </label>
-        <div className="flex flex-wrap gap-2">
-          {SAMPLE_MATERIALS.map((mat) => (
-            <button
-              key={mat.material_id}
-              onClick={() => {
-                setSearchId(mat.material_id);
-                handleLookup(mat.material_id);
-              }}
-              className={`font-mono text-xs px-3 py-1.5 border-2 border-raw-black uppercase font-bold transition-none ${
-                selectedMaterial?.material_id === mat.material_id
-                  ? 'bg-raw-black text-raw-white'
-                  : 'bg-raw-white text-raw-black hover:bg-raw-black hover:text-raw-white'
-              }`}
-            >
-              [{mat.cpse_id}] {mat.original_material_code}
-            </button>
-          ))}
+        <div className="flex items-center justify-between mb-2">
+          <label className="font-headline text-xs text-raw-black block uppercase tracking-wider">
+            INGESTED CPSE MATERIALS &amp; VERIFIED BENCHMARKS ({availableMaterials.length} RECORDS):
+          </label>
+          <span className="font-mono text-[11px] text-[#666666]">CLICK TO INSPECT RECORD</span>
+        </div>
+        <div className="flex flex-wrap gap-2 max-h-36 overflow-y-auto p-2 border-2 border-raw-black bg-raw-sunken">
+          {availableMaterials.map((mat) => {
+            const isSelected = selectedMaterial?.material_id === mat.material_id;
+            return (
+              <button
+                key={mat.material_id}
+                onClick={() => {
+                  setSelectedMaterial(mat);
+                  setSearchId(mat.material_id);
+                  handleLookup(mat.material_id);
+                }}
+                className={`font-mono text-xs px-2.5 py-1 border-1 border-raw-black uppercase font-bold transition-none ${
+                  isSelected
+                    ? 'bg-raw-black text-raw-white'
+                    : 'bg-raw-white text-raw-black hover:bg-raw-black hover:text-raw-white'
+                }`}
+              >
+                [{mat.cpse_id || 'LOCAL'}] {mat.original_material_code || mat.material_id}
+              </button>
+            );
+          })}
         </div>
       </div>
 
       {/* Material Lookup Form */}
-      <RawCard className="mb-8">
-        <div className="flex flex-col sm:flex-row items-end gap-3">
-          <div className="flex-1 w-full">
-            <RawInput
-              label="QUERY MATERIAL ID / SYSTEM CODE"
-              value={searchId}
-              onChange={(e) => setSearchId(e.target.value)}
-              placeholder="e.g. MAT-IOCL-CYL-14KG, MAT-IOCL-, or 1236/1231"
-              helperText="Query by enterprise material code, ID prefix (e.g. MAT-IOCL-), or commodity description."
-            />
-          </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        <div className="md:col-span-2">
+          <RawInput
+            label="MATERIAL MASTER LOOKUP (CPSE RECORD ID OR CODE)"
+            placeholder="e.g. MAT-IOCL-CYL-14KG, MAT-ONGC-VLV-BALL-6IN..."
+            value={searchId}
+            onChange={(e) => setSearchId(e.target.value)}
+          />
+        </div>
+        <div className="flex items-end">
           <RawButton
-            variant="secondary"
+            variant="default"
             size="medium"
             onClick={() => handleLookup(searchId)}
             disabled={loadingMaterial}
-            className="w-full sm:w-auto h-[48px]"
+            className="w-full"
           >
-            {loadingMaterial ? 'LOOKING UP...' : 'SEARCH MATERIAL'}
+            {loadingMaterial ? 'RETRIEVING RECORD...' : 'INSPECT SPECIFICATION →'}
           </RawButton>
         </div>
+      </div>
 
-        {errorMsg && (
-          <div className="mt-4 p-3 bg-raw-white border-2 border-raw-error text-raw-error font-mono text-xs font-bold">
-            [ERROR] {errorMsg}
-          </div>
-        )}
-      </RawCard>
+      {/* Error Banner */}
+      {errorMsg && (
+        <div className="p-4 mb-6 bg-raw-white border-3 border-raw-warning font-mono text-xs text-raw-black">
+          [SYSTEM WARNING] {errorMsg}
+        </div>
+      )}
 
-      {/* Active Material Card */}
+      {/* Material Inspector Card */}
       {selectedMaterial && (
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-
-          {/* Main Specs (2 cols) */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          
+          {/* Detailed Specifications (2 cols) */}
           <div className="lg:col-span-2">
             <RawCard elevated className="h-full flex flex-col justify-between">
               <div>
-                <div className="flex flex-wrap items-center justify-between border-b-2 border-raw-black pb-3 mb-4 gap-2">
+                <div className="flex items-center justify-between border-b-2 border-raw-black pb-3 mb-4">
                   <div>
-                    <span className="font-mono text-xs font-bold text-raw-black">
-                      CPSE ORIGIN: <span className="bg-raw-black text-raw-white px-1.5 py-0.5">{selectedMaterial.cpse_id || 'CENTRAL'}</span>
+                    <span className="font-mono text-xs bg-raw-black text-raw-white px-2 py-0.5 font-bold mr-2">
+                      {selectedMaterial.cpse_id || 'INTERNAL'}
                     </span>
-                    <span className="font-mono text-xs text-[#555555] ml-3">
-                      SYSTEM: {selectedMaterial.source_system || 'ERP_DB'}
+                    <span className="font-mono text-sm font-bold text-raw-black">
+                      {selectedMaterial.original_material_code || selectedMaterial.material_id}
                     </span>
                   </div>
-                  <StatusChip label="INVENTORY ACTIVE" status="active" />
+                  <StatusChip label="INGESTED LOCAL RECORD" status="active" />
                 </div>
 
                 <div className="mb-4">
                   <span className="font-headline text-xs text-[#555555] uppercase block mb-1">
-                    ORIGINAL MATERIAL CODE
+                    ITEM DESCRIPTION (UNSTRUCTURED ERP TEXT)
                   </span>
-                  <div className="font-mono text-lg font-bold text-raw-black">
-                    {selectedMaterial.original_material_code || selectedMaterial.material_id}
+                  <div className="p-3 bg-raw-sunken border-1 border-raw-black font-mono text-sm text-raw-black font-bold">
+                    {itemDescription}
                   </div>
                 </div>
 
+                {/* Extracted Attributes */}
                 <div className="mb-6">
-                  <span className="font-headline text-xs text-[#555555] uppercase block mb-1">
-                    NORMALIZED TECHNICAL DESCRIPTION (LANE 2)
+                  <span className="font-headline text-xs text-[#555555] uppercase block mb-2">
+                    EXTRACTED ATTRIBUTES (LANE 3 SYNTACTIC EXTRACTION)
                   </span>
-                  <div className="p-3 bg-raw-sunken border-2 border-raw-black font-mono text-sm leading-relaxed text-raw-black">
-                    {selectedMaterial.normalized_description || 'No normalized description recorded.'}
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 font-mono text-xs">
+                    {Object.entries(currentSpecs).map(([key, val]) => (
+                      <div key={key} className="p-2 border-1 border-raw-black bg-raw-white">
+                        <span className="text-[#666666] block text-[10px] uppercase font-bold">{key}</span>
+                        <span className="font-bold text-raw-black">{val}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
-
-                {selectedMaterial.specifications && (
-                  <div className="mb-6">
-                    <span className="font-headline text-xs text-[#555555] uppercase block mb-2">
-                      EXTRACTED ATTRIBUTES (LANE 3 SYNTACTIC EXTRACTION)
-                    </span>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 font-mono text-xs">
-                      {Object.entries(selectedMaterial.specifications).map(([key, val]) => (
-                        <div key={key} className="p-2 border-1 border-raw-black bg-raw-white">
-                          <span className="text-[#666666] block text-[10px] uppercase font-bold">{key}</span>
-                          <span className="font-bold text-raw-black">{val}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
               </div>
 
               {/* Match Trigger Button */}
@@ -305,9 +370,21 @@ export default function UserView() {
 
                     <div className="p-2 border-1 border-raw-black bg-[#FAFAFA] font-mono text-xs flex items-center justify-between mb-4">
                       <span>DECISION ROUTING:</span>
-                      <span className={`font-bold ${proposal.decision_status === 'REVIEW' ? 'text-raw-warning' : 'text-raw-success'}`}>
-                        {proposal.decision_status === 'REVIEW' ? 'ROUTED TO REVIEWER' : 'ELIGIBLE FOR AUTO-MAP'}
-                      </span>
+                      {proposal.decision_status === 'REVIEW' ? (
+                        <button
+                          type="button"
+                          onClick={() => onViewChange && onViewChange('reviewer')}
+                          className="font-headline text-xs uppercase px-2.5 py-1 bg-raw-black text-raw-white hover:bg-raw-warning hover:text-raw-black font-bold flex items-center gap-1 cursor-pointer transition-none border-1 border-raw-black"
+                          title="Open Review Dashboard to evaluate this proposal"
+                        >
+                          <span>OPEN IN REVIEW DASHBOARD</span>
+                          <span>→</span>
+                        </button>
+                      ) : (
+                        <span className="font-bold text-raw-success">
+                          ELIGIBLE FOR AUTO-MAP
+                        </span>
+                      )}
                     </div>
                   </div>
 

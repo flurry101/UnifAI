@@ -89,7 +89,7 @@ export default function Header({ currentView, onViewChange, onOpenAuthModal }) {
               <div className="font-mono text-xs border-2 border-raw-black px-2.5 py-1 bg-raw-sunken flex items-center gap-1.5">
                 <span className="font-bold text-raw-black">{session.username}</span>
                 <span className="bg-raw-black text-raw-white px-1 text-[10px] font-bold">
-                  {session.role || 'CPSE_USER'}
+                  CPSE USER
                 </span>
               </div>
 
@@ -145,11 +145,8 @@ export default function Header({ currentView, onViewChange, onOpenAuthModal }) {
             </span>
           </div>
           <div className="text-[11px] text-[#555] hidden sm:block">
-            STAKEHOLDER ROLE: <strong className="text-raw-black">{session.role}</strong>
-            {session.role === 'CPSE_ADMIN' && ' (Super Admin: Full Workspace Access)'}
-            {session.role === 'NATIONAL_ADMIN' && ' (National Authority: CNMC, Review & Audit)'}
-            {session.role === 'TECHNICAL_REVIEWER' && ' (Governance: Review & Ingestion)'}
-            {session.role === 'AUDITOR' && ' (Regulatory Transparency & Logging)'}
+            STAKEHOLDER ROLE: <strong className="text-raw-black">CPSE USER</strong>
+            {' (Unified CPSE Access: Harmonization, Review, CNMC & Audit)'}
           </div>
         </div>
       )}
@@ -169,7 +166,7 @@ export default function Header({ currentView, onViewChange, onOpenAuthModal }) {
               <div className="font-mono text-xs p-2 bg-raw-white border-1 border-raw-black flex justify-between">
                 <span>USER: <strong>{session.username}</strong></span>
                 <span className="bg-raw-black text-raw-white px-1 text-[10px] font-bold">
-                  {session.role || 'CPSE_USER'}
+                  CPSE USER
                 </span>
               </div>
 

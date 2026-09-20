@@ -171,6 +171,11 @@ def get_current_user(request: Request, token: Optional[str] = Depends(oauth2_sch
         raise credentials_exception
     return user
 
+def _clean_user_role(role: Optional[str]) -> str:
+    if not role or role == "CPSE_ADMIN":
+        return "CPSE_USER"
+    return role
+
 @router.get("/me")
 def get_current_user_profile(current_user: User = Depends(get_current_user)):
     """
@@ -179,7 +184,7 @@ def get_current_user_profile(current_user: User = Depends(get_current_user)):
     return {
         "username": current_user.username,
         "email": current_user.email,
-        "role": current_user.role,
+        "role": _clean_user_role(current_user.role),
         "cpse_id": current_user.cpse_id,
         "auth_provider": current_user.auth_provider or "local",
         "avatar_url": current_user.avatar_url
@@ -206,13 +211,14 @@ def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depend
             headers={"WWW-Authenticate": "Bearer"},
         )
     
-    access_token = create_access_token(data={"sub": user.username, "role": user.role, "email": user.email})
+    effective_role = _clean_user_role(user.role)
+    access_token = create_access_token(data={"sub": user.username, "role": effective_role, "email": user.email})
     return {
         "access_token": access_token,
         "token_type": "bearer",
         "username": user.username,
         "email": user.email,
-        "role": user.role,
+        "role": effective_role,
         "cpse_id": user.cpse_id,
         "auth_provider": user.auth_provider or "local",
         "avatar_url": user.avatar_url

@@ -4,6 +4,8 @@ import { checkBackendHealth } from '../api/client';
 
 const AuthContext = createContext(null);
 
+const sanitizeRole = (role) => (!role || role === 'CPSE_ADMIN' ? 'CPSE_USER' : role);
+
 export function AuthProvider({ children }) {
   const [activePersona, setActivePersona] = useState('user');
   const [session, setSession] = useState({
@@ -17,6 +19,9 @@ export function AuthProvider({ children }) {
   // Initialize session and poll health
   useEffect(() => {
     let cancelled = false;
+    if (typeof window !== 'undefined' && window.localStorage.getItem('unifai_role') === 'CPSE_ADMIN') {
+      window.localStorage.setItem('unifai_role', 'CPSE_USER');
+    }
     const current = getCurrentSession();
     if (current.personaId && (current.personaId === 'user' || current.personaId === 'reviewer' || current.personaId === 'admin')) {
       setActivePersona(current.personaId);
@@ -24,7 +29,7 @@ export function AuthProvider({ children }) {
     const initialSession = {
       token: current.token,
       username: current.username || (current.token ? 'authenticated_user' : 'cpse_user'),
-      role: current.role || 'CPSE_USER',
+      role: sanitizeRole(current.role),
       email: typeof window !== 'undefined' ? window.localStorage.getItem('unifai_email') : null,
       avatar_url: typeof window !== 'undefined' ? window.localStorage.getItem('unifai_avatar') : null,
       isAuthenticated: current.token ? true : null,
@@ -35,7 +40,7 @@ export function AuthProvider({ children }) {
       // Validate token and fetch up-to-date role/profile from backend
       getUserProfile().then((profile) => {
         if (cancelled || !profile) return;
-        const role = profile.role || current.role || 'CPSE_USER';
+        const role = sanitizeRole(profile.role || current.role);
         const persona = role === 'NATIONAL_ADMIN' ? 'admin' : (role === 'TECHNICAL_REVIEWER' ? 'reviewer' : 'user');
         setActivePersona(persona);
         setSession({
@@ -58,12 +63,13 @@ export function AuthProvider({ children }) {
         if (cancelled || getCurrentSession().token) return;
         if (result.status === 'authenticated') {
           const user = result.user;
-          const persona = user.role === 'TECHNICAL_REVIEWER' ? 'reviewer' : (user.role === 'NATIONAL_ADMIN' ? 'admin' : 'user');
+          const role = sanitizeRole(user.role);
+          const persona = role === 'TECHNICAL_REVIEWER' ? 'reviewer' : (role === 'NATIONAL_ADMIN' ? 'admin' : 'user');
           setActivePersona(persona);
           setSession({
             token: null,
             username: user.username,
-            role: user.role || 'CPSE_USER',
+            role,
             email: user.email || null,
             avatar_url: user.avatar_url || null,
             isAuthenticated: true,
@@ -98,14 +104,15 @@ export function AuthProvider({ children }) {
     const res = await apiLogin(username, password);
     if (res.success) {
       const current = getCurrentSession();
+      const role = sanitizeRole(current.role);
       let detectedPersona = 'user';
-      if (current.role === 'TECHNICAL_REVIEWER') detectedPersona = 'reviewer';
-      else if (current.role === 'NATIONAL_ADMIN') detectedPersona = 'admin';
+      if (role === 'TECHNICAL_REVIEWER') detectedPersona = 'reviewer';
+      else if (role === 'NATIONAL_ADMIN') detectedPersona = 'admin';
       setActivePersona(detectedPersona);
       setSession({
         token: res.token,
         username: username,
-        role: current.role,
+        role,
         email: res.user?.email || null,
         avatar_url: res.user?.avatar_url || null,
         isAuthenticated: true,
@@ -116,17 +123,18 @@ export function AuthProvider({ children }) {
   };
 
   const register = async ({ username, email, password, role, cpse_id }) => {
-    const res = await apiRegister({ username, email, password, role, cpse_id });
+    const res = await apiRegister({ username, email, password, role: sanitizeRole(role), cpse_id });
     if (res.success) {
       const current = getCurrentSession();
+      const cleanRole = sanitizeRole(current.role);
       let detectedPersona = 'user';
-      if (current.role === 'TECHNICAL_REVIEWER') detectedPersona = 'reviewer';
-      else if (current.role === 'NATIONAL_ADMIN') detectedPersona = 'admin';
+      if (cleanRole === 'TECHNICAL_REVIEWER') detectedPersona = 'reviewer';
+      else if (cleanRole === 'NATIONAL_ADMIN') detectedPersona = 'admin';
       setActivePersona(detectedPersona);
       setSession({
         token: res.token,
         username: username,
-        role: current.role,
+        role: cleanRole,
         email: res.user?.email || email || null,
         isAuthenticated: true,
       });
@@ -139,15 +147,16 @@ export function AuthProvider({ children }) {
     const res = await exchangeGoogleCode({ code, redirectUri, state });
     if (res.success) {
       const current = getCurrentSession();
+      const cleanRole = sanitizeRole(current.role);
       let detectedPersona = 'user';
-      if (current.role === 'TECHNICAL_REVIEWER') detectedPersona = 'reviewer';
-      else if (current.role === 'NATIONAL_ADMIN') detectedPersona = 'admin';
+      if (cleanRole === 'TECHNICAL_REVIEWER') detectedPersona = 'reviewer';
+      else if (cleanRole === 'NATIONAL_ADMIN') detectedPersona = 'admin';
       setActivePersona(detectedPersona);
       setSession({
         token: res.token,
         username: res.user?.username || 'google_user',
         email: res.user?.email || null,
-        role: current.role,
+        role: cleanRole,
         auth_provider: 'google',
         avatar_url: res.user?.avatar_url || null,
         isAuthenticated: true,
@@ -161,7 +170,7 @@ export function AuthProvider({ children }) {
     const res = await exchangeSupabaseToken({ supabaseToken });
     if (res.success) {
       const user = res.user;
-      const effectiveRole = user?.role || 'CPSE_USER';
+      const effectiveRole = sanitizeRole(user?.role);
       const detectedPersona = effectiveRole === 'NATIONAL_ADMIN' ? 'admin' : (effectiveRole === 'TECHNICAL_REVIEWER' ? 'reviewer' : 'user');
       setActivePersona(detectedPersona);
       setSession({

@@ -3,7 +3,6 @@ Admin endpoints for user management.
 
 Access control:
   - NATIONAL_ADMIN : full access (list all users, set any role)
-  - CPSE_ADMIN     : can list users in their CPSE, promote to non-admin roles only
 """
 
 import logging
@@ -19,13 +18,13 @@ from app.api.auth import get_current_user
 logger = logging.getLogger(__name__)
 router = APIRouter()
 
-VALID_ROLES = {"CPSE_USER", "TECHNICAL_REVIEWER", "CPSE_ADMIN", "NATIONAL_ADMIN", "AUDITOR"}
-ADMIN_ONLY_ROLES = {"CPSE_ADMIN", "NATIONAL_ADMIN"}
+VALID_ROLES = {"CPSE_USER", "TECHNICAL_REVIEWER", "NATIONAL_ADMIN", "AUDITOR"}
+ADMIN_ONLY_ROLES = {"NATIONAL_ADMIN"}
 
 # ── Helpers ─────────────────────────────────────────────────────────────────────
 
 def _require_admin(current_user: User) -> User:
-    if current_user.role not in ("NATIONAL_ADMIN", "CPSE_ADMIN"):
+    if current_user.role != "NATIONAL_ADMIN":
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
             detail="Admin access required.",
@@ -61,7 +60,7 @@ def list_users(
 ):
     """
     List all registered users.
-    NATIONAL_ADMIN sees everyone; CPSE_ADMIN sees only their CPSE.
+    NATIONAL_ADMIN sees everyone.
     """
     _require_admin(current_user)
     query = db.query(User)
@@ -77,7 +76,7 @@ async def update_user_role(
 ):
     """
     Change a user's role.
-    - CPSE_ADMIN and NATIONAL_ADMIN can assign any role to any user.
+    - NATIONAL_ADMIN can assign any role to any user.
     """
     _require_admin(current_user)
 

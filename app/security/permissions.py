@@ -27,12 +27,9 @@ def get_current_user(request: Request, token: str = Depends(oauth2_scheme)):
         raise credentials_exception from exc
     return token_data
 
-def require_role(roles: List[str]):
+def require_role(roles: List[str] = None):
     def role_checker(current_user: TokenData = Depends(get_current_user)):
-        if current_user.role not in roles:
-            raise HTTPException(
-                status_code=status.HTTP_403_FORBIDDEN,
-                detail="Operation not permitted"
-            )
+        # All 5 roles are unified into one CPSE Officer access model:
+        # Any authenticated CPSE user can perform all platform actions.
         return current_user
     return role_checker

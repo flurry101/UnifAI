@@ -2,13 +2,11 @@ import React, { useState, useEffect } from 'react';
 import RawCard from '../components/RawCard';
 import RawButton from '../components/RawButton';
 import StatusChip from '../components/StatusChip';
-import AdminUserManager from '../components/AdminUserManager';
 import { fetchCnmcCatalog } from '../api/cnmc';
 import { useAuth } from '../context/AuthContext';
 
-export default function AdminView({ onOpenRbacModal }) {
+export default function AdminView() {
   const { session } = useAuth();
-  const isAdmin = !!session.token && session.role === 'NATIONAL_ADMIN';
 
   const [catalog, setCatalog] = useState([]);
   const [selectedCnmc, setSelectedCnmc] = useState(null);
@@ -50,10 +48,10 @@ export default function AdminView({ onOpenRbacModal }) {
         <div>
           <div className="flex items-center gap-3">
             <h1 className="font-headline text-3xl md:text-4xl text-raw-black">
-              ADMIN WORKSPACE
+              CNMC CATALOG DASHBOARD
             </h1>
             <span className="font-mono text-xs bg-raw-black text-raw-white px-2.5 py-1 font-bold">
-              ROLE: NATIONAL_ADMIN
+              ROLE: CPSE USER
             </span>
           </div>
           <p className="font-body text-sm text-[#444444] mt-1">
@@ -258,13 +256,6 @@ export default function AdminView({ onOpenRbacModal }) {
         </div>
 
       </div>
-
-      {/* User Management — visible to NATIONAL_ADMIN and CPSE_ADMIN */}
-      {(session.role === 'NATIONAL_ADMIN' || session.role === 'CPSE_ADMIN') && (
-        <div className="mt-8">
-          <AdminUserManager currentUserRole={session.role} />
-        </div>
-      )}
 
     </div>
   );

@@ -13,7 +13,7 @@ This schema implements the strict boundary between AI Recommendations and Human 
 - **id**: UUID (PK)
 - **cpse_id**: UUID (FK)
 - **username**: VARCHAR
-- **role**: ENUM ('CPSE_USER', 'TECHNICAL_REVIEWER', 'CPSE_ADMIN', 'NATIONAL_ADMIN', 'AUDITOR')
+- **role**: ENUM ('CPSE_USER', 'TECHNICAL_REVIEWER', 'NATIONAL_ADMIN', 'AUDITOR')
 
 ### `material_master`
 - **id**: UUID (PK)
